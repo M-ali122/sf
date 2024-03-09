@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../registration/registration_form.dart';
+import '../../../registration/view/registration_form.dart';
 
 
 class SplashController extends GetxController {

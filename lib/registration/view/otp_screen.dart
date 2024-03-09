@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/registration/view/password_screen.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
-import '../helper/view/Appbutton.dart';
-import '../helper/view/OtpCustomeConatiner.dart';
-import '../helper/view/progress_bar.dart';
-import '../helper/view/textfield.dart';
+import '../../helper/view/Appbutton.dart';
+import '../../helper/view/OtpCustomeConatiner.dart';
+import '../../helper/view/progress_bar.dart';
+import '../../helper/view/textfield.dart';
 
 class OtpScreen extends StatelessWidget {
   static String route = 'OtpScreen';
@@ -31,7 +32,7 @@ class OtpScreen extends StatelessWidget {
                /// Custom progress bar
                   const Expanded(
                     child: CustomeProgressBar(
-                      progressValue: 0.04,
+                      progressValue: 0.13,
                     ),
                   ),
                   const SizedBox(width: 50),
@@ -59,7 +60,8 @@ class OtpScreen extends StatelessWidget {
               style: theme.textTheme.overline,)
               ),
               SizedBox(height: 10.h,),
-              Center(child: Text(
+              Center(
+                  child: Text(
                 "You can resend code in 55 s",
                 style: theme.textTheme.overline,)
               ),
@@ -68,7 +70,9 @@ class OtpScreen extends StatelessWidget {
               /// App Button
               AppButton(
                   title: 'Continue',
-                  onTap: (){}
+                  onTap: (){
+                    Get.toNamed(PasswordScreen.route);
+                  }
               ),
               const SizedBox(height: 30,),
             ],

@@ -12,10 +12,12 @@
     final String? heading;
     final controller;
     final onChange;
-    final Color? filledColor; // Corrected FilledColor to camelCase
+    final Color? filledColor;
+    final bool? isVisible;
     const CustomTextField({
       Key? key,
       this.icon,
+      this.isVisible,
       this.heading,
       this.title,
       this.controller,
@@ -33,17 +35,18 @@
       return Container(
         width: Get.width,
         // height: 54.h,
-        margin: const EdgeInsets.all(5.0),
+        margin: EdgeInsets.all(5.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(heading!),
             // SizedBox(height: 5,),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2.0),
+              padding:  EdgeInsets.symmetric(horizontal: 2.0),
               child: TextFormField(
                 controller: controller,
                 onChanged: onChange,
+                obscureText: isVisible ?? false,
                 textCapitalization: TextCapitalization.words,
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric( vertical: 15),
