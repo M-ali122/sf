@@ -24,7 +24,7 @@ class OtpScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ListView(
             children: [
-              SizedBox(height: 10.h),
+              SizedBox(height: 25.h),
               Row(
                 children: [
                   SvgPicture.string(icon.backIcon),

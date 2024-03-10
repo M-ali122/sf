@@ -10,6 +10,8 @@ import 'package:sf_app/resources/icon/icon.dart';
 import '../helper/view/Appbutton.dart';
 import '../helper/view/progress_bar.dart';
 import '../helper/view/textfield.dart';
+import '../pages/screens/terms_and_condition.dart';
+import '../resources/icon/svgs.dart';
 
 
 class UploadProfileView extends StatelessWidget {
@@ -26,7 +28,7 @@ class UploadProfileView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ListView(
             children: [
-              SizedBox(height: 10.h),
+              SizedBox(height: 25.h),
               Row(
                 children: [
                   GestureDetector(
@@ -65,7 +67,7 @@ class UploadProfileView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.string(
-                        icon.image3,
+                        Svgs.galleryIcon,
                       color: AppColor.GreyScale500,
                     ),
                     const SizedBox(height: 10,),
@@ -92,7 +94,7 @@ class UploadProfileView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.string(
-                      icon.image3,
+                      Svgs.galleryIcon,
                       color: AppColor.GreyScale500,
                     ),
                     const SizedBox(height: 10,),
@@ -151,7 +153,7 @@ class UploadProfileView extends StatelessWidget {
               AppButton(
                   title: 'Continue',
                   onTap: (){
-                    Get.toNamed(UploadProfileView.route);
+                    Get.toNamed(TermAndCondition.route);
                   }
               ),
               const SizedBox(height: 30,),

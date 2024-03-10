@@ -10,7 +10,8 @@ import '../../resources/color/app_color.dart';
     final String title;
     final  onTap;
     final Gradient? gradient;
-    final Color? background,foreground;
+    final Color? background;
+        final Color? foreground;
     final double margin;
     const AppButton({
       super.key,
@@ -32,7 +33,8 @@ import '../../resources/color/app_color.dart';
           margin: EdgeInsets.symmetric(horizontal: margin),
           decoration: BoxDecoration(
             // color: background?? Color(0xff72975E),
-            gradient: AppColor.mainGradient,
+            // gradient: AppColor.mainGradient ?? gradient,
+            gradient: gradient ?? AppColor.mainGradient,
             borderRadius: BorderRadius.circular(25),
           ),
           // padding: const EdgeInsets.all(16),

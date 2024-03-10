@@ -24,18 +24,31 @@ class AppColor {
   static const Color alartDisabledButton = Color(0xFF393939);
 
   ///Gradients
-  static const LinearGradient mainGradient = LinearGradient(
-    colors: [Color(0xFF72975E), Color(0xFF475736)],
+  static  LinearGradient mainGradient = LinearGradient(
+    colors: [Color(0xFF72975E),Color(0xFF475736), ],
     // begin: Alignment.topLeft,
     // end: Alignment.bottomRight,
     // stops: [0.0, 1.0],
     // tileMode: TileMode.clamp,
   );
 
+  static const LinearGradient buttonGredient = LinearGradient(
+    colors: [Color(0xffF3F3F3), Color(0xffF3F3F3)],
+    // begin: Alignment.topLeft,
+    // end: Alignment.bottomRight,
+    // stops: [0.0, 1.0],
+    // tileMode: TileMode.clamp,
+  );
+
+
   static const LinearGradient blackGradient = LinearGradient(
     colors: [Color(0xFF101010), Color(0xFF313130)],
   );
 
+  static const LinearGradient welcomeConatiner = LinearGradient(
+      colors: [Color(0xffFFFFFF),Color(0xffFFFFFF00)]
+  );
+  
   static const LinearGradient blueGradient = LinearGradient(
     colors: [Color(0xFF335EF7), Color(0xFF5F82FF)],
     begin: Alignment.topLeft,

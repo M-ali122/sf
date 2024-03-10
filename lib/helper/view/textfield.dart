@@ -30,17 +30,17 @@
 
     @override
     Widget build(BuildContext context) {
-       // final ThemeData theme = Theme.of(context);
-      final theme = Get.theme;
+      var theme = Get.theme;
       return Container(
         width: Get.width,
-        // height: 54.h,
         margin: EdgeInsets.all(5.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(heading!),
-            // SizedBox(height: 5,),
+            Text(
+              heading!,
+            style: theme.textTheme.bodyText1,
+            ),
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: 2.0),
               child: TextFormField(
@@ -51,12 +51,10 @@
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric( vertical: 15),
                   hintText: title,
+                   // label: Text('Full Name'),
                    focusedBorder: const UnderlineInputBorder(
-                     borderSide: BorderSide(color: AppColor.GreyScale500),
                    ),
-                   hintStyle: theme.textTheme.headline5,
                    prefixIcon: icon,
-                  prefixIconColor: const Color(0xffB0B0B0),
                 ),
               ),
             ),
