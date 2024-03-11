@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -22,12 +23,17 @@ class OtpScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: ListView(
+          child: Column(
             children: [
               SizedBox(height: 25.h),
               Row(
                 children: [
-                  SvgPicture.string(icon.backIcon),
+                  GestureDetector(
+                    onTap: () {
+                      Get.back();
+                    },
+                      child: SvgPicture.string(icon.backIcon),
+                  ),
                   const SizedBox(width: 50),
                /// Custom progress bar
                   const Expanded(
@@ -65,8 +71,7 @@ class OtpScreen extends StatelessWidget {
                 "You can resend code in 55 s",
                 style: theme.textTheme.overline,)
               ),
-
-              SizedBox(height:130.h),
+              Spacer(),
               /// App Button
               AppButton(
                   title: 'Continue',

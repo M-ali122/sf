@@ -73,6 +73,13 @@ class AppColor {
     tileMode: TileMode.clamp,
   );
 
+  static const LinearGradient circleButtonGradient = LinearGradient(
+      colors: [
+        Color(0xFFF3F3F3),
+        Color(0xFFF3F3F3),
+      ]
+  );
+
   static const LinearGradient greenGradient = LinearGradient(
     colors: [Color(0xFF22BB9C), Color(0xFF35DEBC)],
     begin: Alignment.topLeft,

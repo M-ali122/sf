@@ -52,8 +52,9 @@
                   contentPadding: const EdgeInsets.symmetric( vertical: 15),
                   hintText: title,
                    // label: Text('Full Name'),
-                   focusedBorder: const UnderlineInputBorder(
-                   ),
+                   // focusedBorder: const UnderlineInputBorder(
+                   //   // borderSide: BorderSide(color: AppColor.red)
+                   // ),
                    prefixIcon: icon,
                 ),
               ),

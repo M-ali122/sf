@@ -1,9 +1,12 @@
 
 import 'package:flutter/material.dart';
-import 'package:sf_app/pages/onboarding/account_type.dart';
+import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 import 'package:sf_app/registration/view/otp_screen.dart';
 
+import '../../pages/onboarding/onboarding_third_screen.dart';
+import '../../pages/onboarding/view/explore_trending_style.dart';
+import '../../pages/onboarding/view/onboard_second_screen.dart';
 import '../../pages/screens/terms_and_condition.dart';
 import '../../registration/uplaod_profile_screen.dart';
 import '../../registration/view/password_screen.dart';
@@ -21,5 +24,8 @@ class AppRoute {
     UploadProfileView.route: (p0) => UploadProfileView(),
     TermAndCondition.route: (p0) => TermAndCondition(),
     AccountType.route: (p0) => AccountType(),
+    Explore_Trending.route: (p0) => Explore_Trending(),
+    OnboardSecond.route: (p0) => OnboardSecond(),
+    OnboardThird.route: (p0) => OnboardThird()
   };
 }

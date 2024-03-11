@@ -6,7 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
-import 'package:sf_app/pages/onboarding/account_type.dart';
+import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -28,7 +28,7 @@ class TermAndCondition extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: ListView(
+          child: Column(
             children: [
               SizedBox(height: 25.h),
               Row(
@@ -136,7 +136,8 @@ class TermAndCondition extends StatelessWidget {
                 padding: EdgeInsets.only(left: 22.0,right: 10),
                 child: Text('By checking the box, you agree to our terms and conditions'),
               ),
-              const SizedBox(height: 140,),
+              Spacer(),
+              // const SizedBox(height: 140,),
               AppButton(title: 'continue', onTap: (){
                 // showDialog(
                 //   builder: (context) {
@@ -159,7 +160,7 @@ class TermAndCondition extends StatelessWidget {
                 //   },
                 //   context: context
                 // );
-                // Get.toNamed(AccountType.route);
+                Get.toNamed(AccountType.route);
               }),
               SizedBox(height: 30,),
             ],

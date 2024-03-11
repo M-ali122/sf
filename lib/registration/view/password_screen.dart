@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,12 +28,16 @@ class PasswordScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: ListView(
+          child: Column(
             children: [
               SizedBox(height: 25.h),
               Row(
                 children: [
-                  SvgPicture.string(icon.backIcon),
+                  GestureDetector(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: SvgPicture.string(icon.backIcon)),
                   const SizedBox(width: 50),
                   /// Custom progress bar
                   const Expanded(
@@ -51,7 +56,7 @@ class PasswordScreen extends StatelessWidget {
              SizedBox(height: 20.h,),
 
               /// otp custom Container
-              CustomTextField(
+              const CustomTextField(
                 heading: 'Password',
                 title: 'Password',
                 isVisible: true,
@@ -104,13 +109,12 @@ class PasswordScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20,),
-              CustomTextField(
+              const SizedBox(height: 20,),
+              const CustomTextField(
                 heading: 'Confirm your password',
                 title: 'Write Here',
               ),
-
-              SizedBox(height:130.h),
+              Spacer(),
               /// App Button
               AppButton(
                   title: 'Continue',

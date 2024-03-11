@@ -12,70 +12,20 @@ class OtpCustomConatiner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return Row(
-    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //   children: [
-    //     Container(
-    //       height: 70.h,
-    //       width: 84.w,
-    //       decoration: BoxDecoration(
-    //           borderRadius: BorderRadius.circular(16),
-    //           color: AppColor.GreyScale50,
-    //         border: Border.all(
-    //           color: color?? AppColor.GreyScale200,
-    //         )
-    //       ),
-    //       child: Center(child: Text('1')),
-    //     ),
-    //     Container(
-    //       height: 70.h,
-    //       width: 84.w,
-    //       decoration: BoxDecoration(
-    //           borderRadius: BorderRadius.circular(16),
-    //           color: AppColor.GreyScale50,
-    //           border: Border.all(
-    //             color: color?? AppColor.GreyScale200,
-    //           )
-    //       ),
-    //       child: Center(child: Text('1')),
-    //     ),
-    //     Container(
-    //       height: 70.h,
-    //       width: 84.w,
-    //       decoration: BoxDecoration(
-    //           borderRadius: BorderRadius.circular(16),
-    //           color: AppColor.GreyScale50,
-    //           border: Border.all(
-    //             color: color?? AppColor.secondaryColor500,
-    //           )
-    //       ),
-    //       child: Center(child: Text('1')),
-    //     ),
-    //     Container(
-    //       height: 70.h,
-    //       width: 84.w,
-    //       decoration: BoxDecoration(
-    //           borderRadius: BorderRadius.circular(16),
-    //           color: AppColor.GreyScale50,
-    //           border: Border.all(
-    //             color: color?? AppColor.GreyScale200,
-    //           )
-    //       ),
-    //       child: Center(child: Text('1')),
-    //     ),
-    //   ],
-    // );
+
 
     return Container(
       height: 60,
       child: OtpTextField(
+        fillColor: AppColor.GreyScale50,
+        filled: true,
         margin: EdgeInsets.symmetric(horizontal: 11),
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         enabledBorderColor: AppColor.GreyScale200,
         focusedBorderColor: AppColor.secondaryColor500,
         numberOfFields: 4,
-        borderColor: Colors.green,
+        // borderColor: Colors.green,
         borderRadius: BorderRadius.circular(16),
         fieldWidth: 60,
         showFieldAsBox: true,
