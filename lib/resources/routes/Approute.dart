@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:sf_app/pages/home/view/home_view.dart';
 import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 import 'package:sf_app/registration/view/otp_screen.dart';
@@ -26,6 +27,9 @@ class AppRoute {
     AccountType.route: (p0) => AccountType(),
     Explore_Trending.route: (p0) => Explore_Trending(),
     OnboardSecond.route: (p0) => OnboardSecond(),
-    OnboardThird.route: (p0) => OnboardThird()
+    OnboardThird.route: (p0) => OnboardThird(),
+
+
+    HomeView.route:(p0) => HomeView(),
   };
 }

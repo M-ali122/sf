@@ -129,6 +129,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/circleButton.dart';
+import 'package:sf_app/pages/home/view/home_view.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 
 import '../../../resources/icon/svgs.dart';
@@ -252,6 +253,7 @@ class OnboardThird extends StatelessWidget {
                 SizedBox(width: 10,),
                 CircleButton(
                   onTap: (){
+                    Get.offAllNamed(HomeView.route);
                   },
                   icon: Icons.arrow_forward,
                 ),
