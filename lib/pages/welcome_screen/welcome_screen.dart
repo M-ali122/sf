@@ -29,7 +29,7 @@ class WelcomeView extends StatelessWidget {
             child: Container(
               height: 600,
               width: Get.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -56,7 +56,7 @@ class WelcomeView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
                     children: [
-                      SizedBox(height: 60,),
+                      SizedBox(height: 40,),
                       Text(
                         'Connecting Threads, Creating Style.',
                         style: theme.textTheme.headline4,

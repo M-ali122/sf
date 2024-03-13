@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -10,7 +8,6 @@ import 'package:sf_app/resources/icon/icon.dart';
 import '../../helper/view/Appbutton.dart';
 import '../../helper/view/OtpCustomeConatiner.dart';
 import '../../helper/view/progress_bar.dart';
-import '../../helper/view/textfield.dart';
 
 class OtpScreen extends StatelessWidget {
   static String route = 'OtpScreen';

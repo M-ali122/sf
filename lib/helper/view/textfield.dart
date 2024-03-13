@@ -8,6 +8,7 @@
     final Widget? icon; // Corrected to Widget?
     final VoidCallback? onTap; // Corrected to VoidCallback?
     final Color? bg;
+    final Border? border;
     final Color? fg;
     final String? heading;
     final controller;
@@ -17,9 +18,11 @@
     const CustomTextField({
       Key? key,
       this.icon,
+      this.border,
       this.isVisible,
       this.heading,
       this.title,
+
       this.controller,
       this.onTap,
       this.onChange,
@@ -42,7 +45,7 @@
             style: theme.textTheme.bodyText1,
             ),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 2.0),
+              padding:  const EdgeInsets.symmetric(horizontal: 2.0),
               child: TextFormField(
                 controller: controller,
                 onChanged: onChange,

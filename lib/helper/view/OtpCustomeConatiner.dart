@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 import '../../resources/color/app_color.dart';
 
@@ -27,7 +29,7 @@ class OtpCustomConatiner extends StatelessWidget {
         numberOfFields: 4,
         // borderColor: Colors.green,
         borderRadius: BorderRadius.circular(16),
-        fieldWidth: 60,
+        fieldWidth: Get.width * 0.17,
         showFieldAsBox: true,
         decoration: InputDecoration(
         ),

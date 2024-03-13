@@ -97,7 +97,7 @@ class AppColor {
   );
 
   ///Grey scale
-  static const Color GreyScale900 = Color(0xFF212121);
+  static const Color  GreyScale900 = Color(0xFF212121);
   static const Color GreyScale800 = Color(0xFF424242);
   static const Color GreyScale700 = Color(0xFF616161);
   static const Color GreyScale600 = Color(0xFF757575);

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -9,7 +7,6 @@ import 'package:sf_app/resources/icon/icon.dart';
 
 import '../helper/view/Appbutton.dart';
 import '../helper/view/progress_bar.dart';
-import '../helper/view/textfield.dart';
 import '../pages/screens/terms_and_condition.dart';
 import '../resources/icon/svgs.dart';
 
@@ -26,7 +23,7 @@ class UploadProfileView extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: ListView(
+          child: Column(
             children: [
               SizedBox(height: 25.h),
               Row(
@@ -119,8 +116,8 @@ class UploadProfileView extends StatelessWidget {
                   Text('or',
                   style: theme.textTheme.bodyText2,
                   ),
-                  SizedBox(width: 10,),
-                  Expanded(
+                  const SizedBox(width: 10,),
+                  const Expanded(
                       child: Divider(
                         height: 1,
                         color: AppColor.GreyScale200,
@@ -128,7 +125,7 @@ class UploadProfileView extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Container(
                 height: 58,
                 width: Get.width,
@@ -147,8 +144,7 @@ class UploadProfileView extends StatelessWidget {
                   ],
                 ),
               ),
-
-              SizedBox(height:130.h),
+              Spacer(),
               /// App Button
               AppButton(
                   title: 'Continue',

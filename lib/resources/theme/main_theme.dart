@@ -33,6 +33,8 @@
 // }
 //
 
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -56,17 +58,18 @@ class MainTheme {
         fontWeight: FontWeight.w400,
         fontSize: 24,
       ),
-      enabledBorder: UnderlineInputBorder(
+      enabledBorder: const UnderlineInputBorder(
         borderSide: BorderSide(color: AppColor.GreyScale500)
       ),
       focusedBorder: const UnderlineInputBorder(
         borderSide: BorderSide(color: AppColor.secondaryColor400),
       ),
-      iconColor: Color(0xffB0B0B0),
+      iconColor: const Color(0xffB0B0B0),
     ),
 
     textTheme:
     Typography.englishLike2018.apply(fontSizeFactor: 1.sp).copyWith(
+      // ignore: deprecated_member_use
       headline1:  GoogleFonts.urbanist(fontSize: 24, fontWeight: FontWeight.w700),
       headline2:  GoogleFonts.urbanist(fontSize: 18, fontWeight: FontWeight.w600),
       headline3:  const TextStyle(fontSize: 48, fontWeight: FontWeight.w700),
