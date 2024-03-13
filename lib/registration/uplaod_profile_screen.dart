@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:sf_app/registration/controller/passController.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -22,6 +24,7 @@ class UploadProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Get.theme;
 
+    PasswordStrengthController controller = Get.put(PasswordStrengthController());
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -40,7 +43,7 @@ class UploadProfileView extends StatelessWidget {
                   /// Custom progress bar
                   const Expanded(
                     child: CustomeProgressBar(
-                      progressValue: 0.7,
+                      progressValue: 0.8,
                     ),
                   ),
                   const SizedBox(width: 50),
@@ -49,7 +52,11 @@ class UploadProfileView extends StatelessWidget {
               SizedBox(height: 30.h),
               Text(
                 'Upload your profile picture & your brand logo',
-                style: theme.textTheme.headline4,
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 32,
+                  color: Color.fromRGBO(33, 33, 33, 1),
+                ),
               ),
               SizedBox(height: 20.h,),
 
@@ -60,7 +67,8 @@ class UploadProfileView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24),
                   color: AppColor.GreyScale50,
                   border: Border.all(
-                    color: AppColor.secondaryColor500
+                    width: 3,
+                    color: Color.fromRGBO(201, 179, 114, 1)
                   )
                 ),
                 child: Column(
@@ -87,7 +95,8 @@ class UploadProfileView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24),
                     color: AppColor.GreyScale50,
                     border: Border.all(
-                        color: AppColor.secondaryColor500
+                        width: 3,
+                        color: Color.fromRGBO(201, 179, 114, 1)
                     )
                 ),
                 child: Column(
@@ -129,26 +138,32 @@ class UploadProfileView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20,),
-              Container(
-                height: 58,
-                width: Get.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: AppColor.backGroundSilver
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.string(icon.camera),
-                    SizedBox(width: 10.w,),
-                    Text('Open Camera & Take Photo',
-                      style: theme.textTheme.bodyText1,
-                    ),
-                  ],
+              GestureDetector(
+                onTap: (){
+
+                  controller.getImage(ImageSource.camera);
+                },
+                child: Container(
+                  height: 58,
+                  width: Get.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: AppColor.backGroundSilver
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.string(icon.camera),
+                      SizedBox(width: 10.w,),
+                      Text('Open Camera & Take Photo',
+                        style: theme.textTheme.bodyText1,
+                      ),
+                    ],
+                  ),
                 ),
               ),
 
-              SizedBox(height:130.h),
+              SizedBox(height:100.h),
               /// App Button
               AppButton(
                   title: 'Continue',

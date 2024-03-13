@@ -25,24 +25,36 @@ class WelcomeView extends StatelessWidget {
               child: Image.asset('assets/Rectangle.png'),
           ),
           Positioned(
-            top: 200,
+              top: 58,
+              left: 24,
+              child: Container(
+                width: 85,
+                height: 37,
+                decoration: BoxDecoration(
+                  color:  Color.fromRGBO(255, 255, 255, 1),
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                
+                child: Image.asset('assets/s1.png'),
+              )),
+          Positioned(
+            top: 70,
             child: Container(
-              height: 600,
+              height: 500,
               width: Get.width,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      // AppColor.white54,
-                      // AppColor.white,
-                      // AppColor.white,
-                      // AppColor.white.withOpacity(0.4),
-                      Colors.white12,
-                      Colors.white54,
+
+                      Colors.white10.withOpacity(0.0),
+                      Colors.white38,
+                      Colors.white70.withOpacity(0.1),
+                      Colors.white.withOpacity(0.2),
                       Colors.white,
                       Colors.white,
-                      Colors.white
+                      Colors.white,
                     ]
                 )
               ),
@@ -61,13 +73,18 @@ class WelcomeView extends StatelessWidget {
                         'Connecting Threads, Creating Style.',
                         style: theme.textTheme.headline4,
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: 15,),
                       Text(
-                        'Welcome to the only fashion app you will ever need!',
+                        'Welcome to the only fashion app you will ever need!',style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "Mulish",
+                        color: Color.fromRGBO(33, 33, 33, 1),
+                      ),
                       ),
                       SizedBox(height: 20,),
                       AppButton(
-                          title: 'sign up',
+                          title: 'Sign Up',
                           onTap: (){
                             Get.toNamed(RegistrationForm.route);
                           }
@@ -76,7 +93,7 @@ class WelcomeView extends StatelessWidget {
                       AppButton(
                           gradient: AppColor.buttonGredient,
                           foreground: AppColor.black,
-                          title: 'login',
+                          title: 'Log In',
                           onTap: (){
                           }
                       ),

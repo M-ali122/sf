@@ -61,7 +61,7 @@ class RegistrationForm extends GetWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: ListView(
             children: [
               SizedBox(height: 25.h),
@@ -75,7 +75,7 @@ class RegistrationForm extends GetWidget {
                   const SizedBox(width: 50),
                   const Expanded(
                     child: CustomeProgressBar(
-                      progressValue: 0.04,
+                      progressValue: 0.06,
                     ),
                   ),
                   const SizedBox(width: 50),
@@ -84,29 +84,33 @@ class RegistrationForm extends GetWidget {
               SizedBox(height: 30.h),
               Text(
                 'Fill the information below',
-                 style: theme.textTheme.headline4,
+                 style: TextStyle(
+                   fontSize: 32,
+                   fontWeight: FontWeight.w700,
+                   color: Color.fromRGBO(33, 33, 33, 1)
+                 ),
               ),
               SizedBox(height: 30.h,),
               const CustomTextField(
                 heading: 'Full Name',
                 title: 'Write Here',
               ),
-              SizedBox(height: 15.h,),
+              SizedBox(height: 45.h,),
               const CustomTextField(
                 heading: 'User Name',
                 title: 'Write Here',
               ),
-              SizedBox(height: 15.h,),
+          SizedBox(height: 45.h,),
               const CustomTextField(
                 heading: 'Email',
                 title: 'Write Here',
               ),
-              SizedBox(height: 15.h,),
+              SizedBox(height: 45.h,),
               const CustomTextField(
                 heading: 'Phone Number',
                 title: 'Write Here',
               ),
-              SizedBox(height: 15.h,),
+              SizedBox(height: 45.h,),
               const CustomTextField(
                 heading: 'Bio (optional)',
                 title: 'Write Here',

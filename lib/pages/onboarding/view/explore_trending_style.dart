@@ -1,136 +1,12 @@
-// // import 'package:flutter/cupertino.dart';
-// // import 'package:flutter/material.dart';
-// // import 'package:flutter/widgets.dart';
-// // import 'package:flutter_spinkit/flutter_spinkit.dart';
-// // import 'package:flutter_svg/flutter_svg.dart';
-// // import 'package:get/get.dart';
-// //
-// // import '../../../resources/icon/svgs.dart';
-// //
-// // class Explore_Trending extends StatelessWidget {
-// //   static const String route = 'Explore_Trending';
-// //
-// //   const Explore_Trending({Key? key}) : super(key: key);
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //
-// //     var theme = Get.theme;
-// //
-// //     return Scaffold(
-// //       body: Stack(
-// //         children: [
-// //           Positioned(
-// //               left: 280,
-// //               top: -10,
-// //               child: SvgPicture.string(Svgs.appbarCircle)),
-// //           const Positioned(
-// //               top: 60,
-// //               left: 310,
-// //               child: Text('Skip')),
-// //           Positioned(
-// //               top: 50,
-// //               left: 50,
-// //               child: Image.asset('assets/Group.png'),
-// //           ),
-// //           Positioned(
-// //               top: 400,
-// //               left: -42,
-// //               child: SvgPicture.string(Svgs.halfCircleDown),
-// //           ),
-// //           Positioned(
-// //             top: 650,
-// //             child: Text('Explore Trending Styles',
-// //             style: theme.textTheme.headline4,
-// //             ),
-// //           )
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-//
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
-// import 'package:flutter_spinkit/flutter_spinkit.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:get/get.dart';
-//
-// import '../../../resources/icon/svgs.dart';
-//
-// class Explore_Trending extends StatelessWidget {
-//   static const String route = 'Explore_Trending';
-//
-//   const Explore_Trending({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//
-//     var theme = Get.theme;
-//
-//     return Scaffold(
-//       body: SingleChildScrollView(
-//         child: Stack(
-//           children: [
-//             Positioned(
-//                 left: 260,
-//                 top: -10,
-//                 child: SvgPicture.string(Svgs.appbarCircle)),
-//             const Positioned(
-//                 top: 60,
-//                 left: 300,
-//                 child: Text('Skip')),
-//             Positioned(
-//               top: 50,
-//               left: 50,
-//               child: Container(
-//                   height: 330,
-//                   width: 250,
-//                   child: Image.asset('assets/Group.png',fit: BoxFit.scaleDown,),),
-//             ),
-//             Positioned(
-//               top: 220,
-//               left: -20,
-//               child: SvgPicture.string(Svgs.halfCircleDown),
-//             ),
-//             Positioned(
-//               top: 400,
-//               left: 16,
-//               right: 16,
-//               child: Text('Explore Trending Styles',
-//                 style: theme.textTheme.headline4,
-//               ),
-//             ),
-//             Positioned(
-//               top: 490,
-//               left: 16,
-//               right: 16,
-//               child: Align(
-//                 alignment: Alignment.center,
-//                 child: Text('Dive into a world of'
-//                     ' inspiration! Explore trending styles, '
-//                     'browse curated collections, and discover'
-//                     ' fashion pieces that resonate with your unique taste.',
-//                   style: theme.textTheme.overline,
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/view/circleButton.dart';
+import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
-
 import '../../../resources/icon/svgs.dart';
 import 'onboard_second_screen.dart';
 
@@ -141,8 +17,8 @@ class Explore_Trending extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    OnboardingController onboardingController = Get.put(OnboardingController());
     var theme = Get.theme;
-
     return Scaffold(
       body: Stack(
         children: [
@@ -151,11 +27,30 @@ class Explore_Trending extends StatelessWidget {
             top: -10,
             child: SvgPicture.string(Svgs.appbarCircle),
           ),
-          const Positioned(
-            top: 60,
+          Positioned(
+            top: 78,
             left: 300,
-            child: Text('Skip'),
+            child: Container(
+              width: 35, // Adjust the width of the underline as needed
+              height: 1.5, // Adjust the height of the underline as needed
+              color: Colors.black, // Adjust the color of the underline as needed
+            ),
           ),
+          Positioned(
+              top: 60,
+                left: 300,
+              child: GestureDetector(
+                onTap: (){
+                  onboardingController.pagecontrol.jumpToPage(2);
+                },
+                child: Text('Skip',style: GoogleFonts.mulish(
+                    color: Color.fromRGBO(71, 87, 54, 1),
+                    fontSize:16,
+                  fontWeight: FontWeight.w700
+                )),
+              )),
+
+
           Positioned(
             top: 50,
             left: 50,
@@ -163,6 +58,28 @@ class Explore_Trending extends StatelessWidget {
               height: 330,
               width: 250,
               child: Image.asset('assets/Group.png', fit: BoxFit.scaleDown,),
+            ),
+          ),
+
+          Positioned(
+            top: 240,
+            child: Container(
+              width: Get.width,
+              height: 185,
+              decoration: BoxDecoration(
+
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+
+                        Colors.white10.withOpacity(0.0),
+                        Colors.white54,
+                      Colors.white70,
+                        Colors.white,
+                      ]
+                  )
+              ),
             ),
           ),
           Positioned(
@@ -173,8 +90,8 @@ class Explore_Trending extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(
               top: 170,
-              left: 16,
-              right: 16,
+              left: 0,
+              right: 0,
             ),
             child: Center(
               child: Text(
@@ -184,68 +101,70 @@ class Explore_Trending extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              top: 400,
-              left: 16,
-              right: 16
+            padding: EdgeInsets.only(
+              top: 480,
+              left: 0,
+              right: 0
             ),
-            child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Dive into a world of'
-                    ' inspiration! Explore trending styles, '
-                    'browse curated collections, and discover'
-                    ' fashion pieces that resonate with your unique taste.',
-                style: theme.textTheme.overline,
+                'Dive into a world of inspiration! Explore trending styles, browse curated collections, and discover fashion pieces that resonate with your unique taste.',
+                style: GoogleFonts.mulish(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                  color: Color.fromRGBO(33, 33, 33, 1),
+                ),textAlign: TextAlign.center,
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 560.0),
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 32,
-                    height: 8,
-                    decoration: BoxDecoration(
-                      gradient: AppColor.mainGradient,
-                      borderRadius: BorderRadius.circular(4)
-                    ),
-                  ),
-                  SizedBox(width: 5,),
-                  Container(
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(
-                        color: AppColor.GreyScale200,
-                        borderRadius: BorderRadius.circular(4)
-                    ),
-                  ),
-                  SizedBox(width: 5,),
-                  Container(
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(
-                        color: AppColor.GreyScale200,
-                        borderRadius: BorderRadius.circular(4)
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 670.0),
-            child: Center(
-              child: CircleButton(
-                  onTap: (){
-                    Get.toNamed(OnboardSecond.route);
-                  },
-                icon: Icons.arrow_forward,
-              ),
-            ),
-          )
+          // Padding(
+          //   padding: const EdgeInsets.only(top: 560.0),
+          //   child: Center(
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: [
+          //         Container(
+          //           width: 32,
+          //           height: 8,
+          //           decoration: BoxDecoration(
+          //             gradient: AppColor.mainGradient,
+          //             borderRadius: BorderRadius.circular(4)
+          //           ),
+          //         ),
+          //         SizedBox(width: 5,),
+          //         Container(
+          //           width: 8,
+          //           height: 8,
+          //           decoration: BoxDecoration(
+          //               color: AppColor.GreyScale200,
+          //               borderRadius: BorderRadius.circular(4)
+          //           ),
+          //         ),
+          //         SizedBox(width: 5,),
+          //         Container(
+          //           width: 8,
+          //           height: 8,
+          //           decoration: BoxDecoration(
+          //               color: AppColor.GreyScale200,
+          //               borderRadius: BorderRadius.circular(4)
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.only(top: 670.0),
+          //   child: Center(
+          //     child: CircleButton(
+          //         onTap: (){
+          //           Get.toNamed(OnboardSecond.route);
+          //         },
+          //       icon: Icons.arrow_forward,
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );

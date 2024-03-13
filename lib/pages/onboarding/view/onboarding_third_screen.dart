@@ -128,11 +128,13 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/view/circleButton.dart';
 import 'package:sf_app/pages/home/view/home_view.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 
-import '../../../resources/icon/svgs.dart';
+import '../../../../resources/icon/svgs.dart';
+import '../controller/onboarding_controller.dart';
 
 class OnboardThird extends StatelessWidget {
   static const String route = 'OnboardThird';
@@ -142,7 +144,7 @@ class OnboardThird extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Get.theme;
-
+    OnboardingController onboardingController = Get.put(OnboardingController());
     return Scaffold(
       body: Stack(
         children: [
@@ -151,11 +153,29 @@ class OnboardThird extends StatelessWidget {
             top: -10,
             child: SvgPicture.string(Svgs.appbarCircle),
           ),
-          const Positioned(
-            top: 60,
+          Positioned(
+            top: 78,
             left: 300,
-            child: Text('Skip'),
+            child: Container(
+              width: 35, // Adjust the width of the underline as needed
+              height: 1.5, // Adjust the height of the underline as needed
+              color: Colors.black, // Adjust the color of the underline as needed
+            ),
           ),
+          Positioned(
+              top: 60,
+              left: 300,
+              child: GestureDetector(
+                onTap: (){
+                  onboardingController.pagecontrol.jumpToPage(2);
+                },
+                child: Text('Skip',style: GoogleFonts.mulish(
+                    color: Color.fromRGBO(71, 87, 54, 1),
+                    fontSize:16,
+                    fontWeight: FontWeight.w700
+                )),
+              )),
+
           Positioned(
             top: 50,
             left: 50,
@@ -163,6 +183,28 @@ class OnboardThird extends StatelessWidget {
               height: 330,
               width: 250,
               child: Image.asset('assets/onboarding3.png', fit: BoxFit.scaleDown,),
+            ),
+          ),
+
+
+          Positioned(
+            top: 240,
+            child: Container(
+              width: Get.width,
+              height: 185,
+              decoration: BoxDecoration(
+
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.white10.withOpacity(0.0),
+                        Colors.white54,
+                        Colors.white70,
+                        Colors.white,
+                      ]
+                  )
+              ),
             ),
           ),
           Positioned(
@@ -173,8 +215,8 @@ class OnboardThird extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(
               top: 170,
-              left: 16,
-              right: 16,
+              left: 0,
+              right: 0,
             ),
             child: Center(
               child: Text(
@@ -185,81 +227,25 @@ class OnboardThird extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-                top: 380,
-                left: 22,
-                right: 16
+                top: 470,
+                left: 0,
+                right: 0
             ),
-            child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Text(
                "Ready to elevate your wardrobe? Shop confidently "
                    "from a diverse range of brands, designers, and "
                    "styles. Enjoy secure transactions, easy returns, and deals !",
-                style: theme.textTheme.overline,
+                  style: GoogleFonts.mulish(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                    color: Color.fromRGBO(33, 33, 33, 1),
+                  ),textAlign: TextAlign.center,
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 560.0),
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(
-                        color: AppColor.GreyScale200,
-                        borderRadius: BorderRadius.circular(4)
-                    ),
-                  ),
-                  SizedBox(width: 5,),
-                  Container(
-                    width: 32,
-                    height: 8,
-                    decoration: BoxDecoration(
-                        gradient: AppColor.mainGradient,
-                        borderRadius: BorderRadius.circular(4)
-                    ),
-                  ),
-                  SizedBox(width: 5,),
-                  Container(
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(
-                        color: AppColor.GreyScale200,
-                        borderRadius: BorderRadius.circular(4)
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-                top: 670.0,
-                right: 16,
-                left: 16
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CircleButton(
-                  onTap: (){
-                    Get.back();
-                  },
-                  gradient: AppColor.circleButtonGradient,
-                  icon: Icons.arrow_back,
-                ),
-                SizedBox(width: 10,),
-                CircleButton(
-                  onTap: (){
-                    Get.offAllNamed(HomeView.route);
-                  },
-                  icon: Icons.arrow_forward,
-                ),
-              ],
-            ),
-          )
+
         ],
       ),
     );

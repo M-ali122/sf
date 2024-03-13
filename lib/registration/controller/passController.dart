@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:image_picker/image_picker.dart';
 class PasswordStrengthController extends GetxController {
   final TextEditingController passwordController = TextEditingController();
   final RxString passwordStrength = ''.obs;
@@ -18,4 +18,22 @@ class PasswordStrengthController extends GetxController {
       passwordStrength.value = 'Moderate';
     }
   }
+
+  XFile? _image;
+  XFile? get image => _image;
+
+
+  Future<void> getImage(ImageSource source) async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: source);
+
+      if (pickedFile != null) {
+        _image = XFile(pickedFile.path);
+        print("pickekd");
+      } else {
+        print('No image selected.');
+      }
+
+  }
+
 }

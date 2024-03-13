@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:sf_app/pages/home/view/home_view.dart';
+import 'package:sf_app/pages/onboarding/onboardind_view.dart';
 import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 import 'package:sf_app/registration/view/otp_screen.dart';
 
-import '../../pages/onboarding/onboarding_third_screen.dart';
+import '../../pages/onboarding/view/onboarding_third_screen.dart';
 import '../../pages/onboarding/view/explore_trending_style.dart';
 import '../../pages/onboarding/view/onboard_second_screen.dart';
 import '../../pages/screens/terms_and_condition.dart';
@@ -31,5 +32,6 @@ class AppRoute {
 
 
     HomeView.route:(p0) => HomeView(),
+    OnbaordingView.route:(p0) => OnbaordingView(),
   };
 }
