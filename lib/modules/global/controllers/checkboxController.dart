@@ -1,9 +1,16 @@
 import 'package:get/get.dart';
 
 class CheckboxController extends GetxController {
-  var isChecked = false.obs;
+  var isPrivacyChecked = false.obs;
 
-  void toggleCheckbox(bool value) {
-    isChecked.value = value;
+  void togglePrivacyCheckbox(bool value) {
+    isPrivacyChecked.value = value;
+  }
+
+
+  var isTermsChecked = false.obs;
+
+  void toggleTermsCheckbox(bool value) {
+    isTermsChecked.value = value;
   }
 }

@@ -20,6 +20,9 @@ dependencies:
   password_strength_checker: ^1.2.2
   password_strength_indicator_plus: ^0.0.1
   password_strength_indicator:
+  regexpattern: ^2.6.0
+  image_picker: ^1.0.7
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:

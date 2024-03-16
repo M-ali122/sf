@@ -1,8 +1,6 @@
 import 'package:get/get.dart';
 import 'package:sf_app/pages/welcome_screen/welcome_screen.dart';
 
-
-
 class SplashController extends GetxController {
   @override
   void onInit() {
@@ -12,9 +10,6 @@ class SplashController extends GetxController {
 
   void splashService() async {
     await Future.delayed(const Duration(seconds: 3));
-
-    Get.to(() => WelcomeView());
-
+    Get.off(() => WelcomeView());
   }
-
 }

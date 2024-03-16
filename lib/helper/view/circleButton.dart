@@ -30,8 +30,8 @@ class CircleButton extends StatelessWidget{
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 62,
-        height: 62,
+        width: 55,
+        height: 55,
         margin: EdgeInsets.symmetric(horizontal: margin),
         decoration: BoxDecoration(
           gradient: gradient ?? AppColor.mainGradient,

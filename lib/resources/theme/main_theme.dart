@@ -81,7 +81,7 @@ class MainTheme {
       subtitle2:  GoogleFonts.mulish(fontSize: 14, fontWeight: FontWeight.w600),
       bodyText1:  GoogleFonts.mulish(fontSize: 16, fontWeight: FontWeight.w700),
       bodyText2:  GoogleFonts.mulish(fontSize: 18, fontWeight: FontWeight.w400,color:AppColor.GreyScale700),
-      button:  const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+      button:  GoogleFonts.mulish(fontSize: 18, fontWeight: FontWeight.w700),
       caption:  GoogleFonts.mulish(fontSize: 12, fontWeight: FontWeight.w500),
       // overline: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       overline: GoogleFonts.mulish(fontSize: 18, fontWeight: FontWeight.w500),

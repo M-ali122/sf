@@ -1,12 +1,220 @@
+// import 'package:flutter/material.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:get/get.dart';
+// import 'package:image_picker/image_picker.dart';
+// import 'package:sf_app/registration/controller/passController.dart';
+// import 'package:sf_app/resources/color/app_color.dart';
+// import 'package:sf_app/resources/icon/icon.dart';
+
+// import '../helper/view/Appbutton.dart';
+// import '../helper/view/progress_bar.dart';
+// import '../pages/screens/terms_and_condition.dart';
+// import '../resources/icon/svgs.dart';
+
+
+// class UploadProfileView extends StatelessWidget {
+//   static String route = 'UploadProfileView';
+//   const UploadProfileView({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final theme = Get.theme;
+
+//     PasswordStrengthController controller = Get.put(PasswordStrengthController());
+//     return Scaffold(
+//       body: SafeArea(
+//         child: Padding(
+//           padding: const EdgeInsets.symmetric(horizontal: 16),
+//           child: Column(
+//             children: [
+//               SizedBox(height: 25.h),
+//               Row(
+//                 children: [
+//                   GestureDetector(
+//                       onTap: () {
+//                         Get.back();
+//                       },
+//                       child: SvgPicture.string(icon.backIcon)),
+//                   const SizedBox(width: 50),
+//                   /// Custom progress bar
+//                   const Expanded(
+//                     child: CustomeProgressBar(
+//                       progressValue: 0.8,
+//                     ),
+//                   ),
+//                   const SizedBox(width: 50),
+//                 ],
+//               ),
+//               SizedBox(height: 30.h),
+//               Text(
+//                 'Upload your profile picture & your brand logo',
+//                 style: TextStyle(
+//                   fontWeight: FontWeight.w700,
+//                   fontSize: 32,
+//                   color: Color.fromRGBO(33, 33, 33, 1),
+//                 ),
+//               ),
+//               SizedBox(height: 20.h,),
+
+//               Container(
+//                 height: 101,
+//                 width: Get.width,
+//                 decoration: BoxDecoration(
+//                   borderRadius: BorderRadius.circular(24),
+//                   color: AppColor.GreyScale50,
+//                   border: Border.all(
+//                     width: 3,
+//                     color: Color.fromRGBO(201, 179, 114, 1)
+//                   )
+//                 ),
+//                 child: Column(
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   children: [
+//                     SvgPicture.string(
+//                         Svgs.galleryIcon,
+//                       color: AppColor.GreyScale500,
+//                     ),
+//                     const SizedBox(height: 10,),
+//                     Text(
+//                         'Profile Picture',
+//                       style: theme.textTheme.subtitle1,
+//                     ),
+//                   ],
+//                 ),
+//               ),
+
+//               const SizedBox(height: 20,),
+//               Container(
+//                 height: 101,
+//                 width: Get.width,
+//                 decoration: BoxDecoration(
+//                     borderRadius: BorderRadius.circular(24),
+//                     color: AppColor.GreyScale50,
+//                     border: Border.all(
+//                         width: 3,
+//                         color: Color.fromRGBO(201, 179, 114, 1)
+//                     )
+//                 ),
+//                 child: Column(
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   children: [
+//                     SvgPicture.string(
+//                       Svgs.galleryIcon,
+//                       color: AppColor.GreyScale500,
+//                     ),
+//                     const SizedBox(height: 10,),
+//                     Text(
+//                       'Brand Logo',
+//                       style: theme.textTheme.subtitle1,
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               const SizedBox(height: 20,),
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: [
+//                   Expanded(
+//                     child: Divider(
+//                       height: 1,
+//                       color: AppColor.GreyScale200,
+//                     ),
+//                   ),
+//                   SizedBox(width: 10,),
+//                   Text('or',
+//                   style: theme.textTheme.bodyText2,
+//                   ),
+//                   const SizedBox(width: 10,),
+//                   const Expanded(
+//                       child: Divider(
+//                         height: 1,
+//                         color: AppColor.GreyScale200,
+//                       )
+//                   ),
+//                 ],
+//               ),
+
+//               const SizedBox(height: 20,),
+//               Container(
+//                 height: 58,
+//                 width: Get.width,
+//                 decoration: BoxDecoration(
+//                   borderRadius: BorderRadius.circular(100),
+//                   color: AppColor.backGroundSilver
+//                 ),
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   children: [
+//                     SvgPicture.string(icon.camera),
+//                     SizedBox(width: 10.w,),
+//                     Text('Open Camera & Take Photo',
+//                       style: theme.textTheme.bodyText1,
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               Spacer(),
+// // =======
+// //               SizedBox(height: 20,),
+// //               GestureDetector(
+// //                 onTap: (){
+
+// //                   controller.getImage(ImageSource.camera);
+// //                 },
+// //                 child: Container(
+// //                   height: 58,
+// //                   width: Get.width,
+// //                   decoration: BoxDecoration(
+// //                     borderRadius: BorderRadius.circular(100),
+// //                     color: AppColor.backGroundSilver
+// //                   ),
+// //                   child: Row(
+// //                     mainAxisAlignment: MainAxisAlignment.center,
+// //                     children: [
+// //                       SvgPicture.string(icon.camera),
+// //                       SizedBox(width: 10.w,),
+// //                       Text('Open Camera & Take Photo',
+// //                         style: theme.textTheme.bodyText1,
+// //                       ),
+// //                     ],
+// //                   ),
+// //                 ),
+// //               ),
+
+// //               SizedBox(height:100.h),
+// // >>>>>>> 9974508597de6240b38cce8d67f2fd134acb9f5a
+//               /// App Button
+//               AppButton(
+//                   title: 'Continue',
+//                   onTap: (){
+//                     Get.toNamed(TermAndCondition.route);
+//                   }
+//               ),
+//               const SizedBox(height: 30,),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:sf_app/registration/controller/passController.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
 import '../helper/view/Appbutton.dart';
 import '../helper/view/progress_bar.dart';
+import '../helper/view/textfield.dart';
 import '../pages/screens/terms_and_condition.dart';
 import '../resources/icon/svgs.dart';
 
@@ -19,11 +227,12 @@ class UploadProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Get.theme;
 
+    PasswordStrengthController controller = Get.put(PasswordStrengthController());
     return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
+          child: ListView(
             children: [
               SizedBox(height: 25.h),
               Row(
@@ -37,7 +246,7 @@ class UploadProfileView extends StatelessWidget {
                   /// Custom progress bar
                   const Expanded(
                     child: CustomeProgressBar(
-                      progressValue: 0.7,
+                      progressValue: 0.8,
                     ),
                   ),
                   const SizedBox(width: 50),
@@ -46,7 +255,11 @@ class UploadProfileView extends StatelessWidget {
               SizedBox(height: 30.h),
               Text(
                 'Upload your profile picture & your brand logo',
-                style: theme.textTheme.headline4,
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 32,
+                  color: Color.fromRGBO(33, 33, 33, 1),
+                ),
               ),
               SizedBox(height: 20.h,),
 
@@ -57,7 +270,8 @@ class UploadProfileView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24),
                   color: AppColor.GreyScale50,
                   border: Border.all(
-                    color: AppColor.secondaryColor500
+                    width: 3,
+                    color: Color.fromRGBO(201, 179, 114, 1)
                   )
                 ),
                 child: Column(
@@ -84,7 +298,8 @@ class UploadProfileView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24),
                     color: AppColor.GreyScale50,
                     border: Border.all(
-                        color: AppColor.secondaryColor500
+                        width: 3,
+                        color: Color.fromRGBO(201, 179, 114, 1)
                     )
                 ),
                 child: Column(
@@ -116,8 +331,8 @@ class UploadProfileView extends StatelessWidget {
                   Text('or',
                   style: theme.textTheme.bodyText2,
                   ),
-                  const SizedBox(width: 10,),
-                  const Expanded(
+                  SizedBox(width: 10,),
+                  Expanded(
                       child: Divider(
                         height: 1,
                         color: AppColor.GreyScale200,
@@ -125,26 +340,33 @@ class UploadProfileView extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 20,),
-              Container(
-                height: 58,
-                width: Get.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: AppColor.backGroundSilver
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.string(icon.camera),
-                    SizedBox(width: 10.w,),
-                    Text('Open Camera & Take Photo',
-                      style: theme.textTheme.bodyText1,
-                    ),
-                  ],
+              SizedBox(height: 20,),
+              GestureDetector(
+                onTap: (){
+
+                  controller.getImage(ImageSource.camera);
+                },
+                child: Container(
+                  height: 58,
+                  width: Get.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: AppColor.backGroundSilver
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.string(icon.camera),
+                      SizedBox(width: 10.w,),
+                      Text('Open Camera & Take Photo',
+                        style: theme.textTheme.bodyText1,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              Spacer(),
+
+              SizedBox(height:100.h),
               /// App Button
               AppButton(
                   title: 'Continue',

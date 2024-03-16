@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -55,29 +57,23 @@ class TermAndCondition extends StatelessWidget {
               const SizedBox(height: 30,),
               Row(
                 children: [
-                  // Obx(
-                  //       () => Checkbox(
-                  //         fillColor: MaterialStatePropertyAll(Color(0xff72975E),),
-                  //     value: checkboxController.isChecked.value,
-                  //     side: BorderSide(style: BorderStyle.none),
-                  //     onChanged: (value) {
-                  //       checkboxController.toggleCheckbox(value!);
-                  //     },
-                  //   ),
-                  // ),
+
 
                   Obx(
                         () => Checkbox(
                           visualDensity: VisualDensity.compact,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5)),
-                      fillColor: MaterialStateProperty.all<Color>(
-                        const Color(0xff72975E),
-                      ),
-                      value: checkboxController.isChecked.value,
-                      side: const BorderSide(style: BorderStyle.none),
+                          fillColor: checkboxController.isPrivacyChecked.value ? MaterialStateProperty.all(
+                            const Color(0xff72975E),
+                          ) : MaterialStateProperty.all<Color>(
+
+                            const Color(0xffFFFFFF),
+                          ),
+                      value: checkboxController.isPrivacyChecked.value,
+                      // side: const BorderSide(style: BorderStyle.none),
                       onChanged: (value) {
-                        checkboxController.toggleCheckbox(value!);
+                        checkboxController.togglePrivacyCheckbox(value!);
                       },
                     ),
                   ),
@@ -106,13 +102,16 @@ class TermAndCondition extends StatelessWidget {
                       visualDensity: VisualDensity.compact,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
-                      fillColor: MaterialStateProperty.all<Color>(
+                      fillColor: checkboxController.isTermsChecked.value ? MaterialStateProperty.all(
                         const Color(0xff72975E),
+                      ) : MaterialStateProperty.all<Color>(
+
+                        const Color(0xffFFFFFF),
                       ),
-                      value: checkboxController.isChecked.value,
-                      side: const BorderSide(style: BorderStyle.none),
+                      value: checkboxController.isTermsChecked.value,
+                      // side: const BorderSide(style: BorderStyle.none),
                       onChanged: (value) {
-                        checkboxController.toggleCheckbox(value!);
+                        checkboxController.toggleTermsCheckbox(value!);
                       },
                     ),
                   ),
@@ -136,21 +135,33 @@ class TermAndCondition extends StatelessWidget {
                 padding: EdgeInsets.only(left: 22.0,right: 10),
                 child: Text('By checking the box, you agree to our terms and conditions'),
               ),
-              Spacer(),
+              const Spacer(),
               // const SizedBox(height: 140,),
-              AppButton(title: 'continue', onTap: (){
+              AppButton(title: 'Continue', onTap: (){
                 // showDialog(
                 //   builder: (context) {
                 //     return AlertDialog(
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(64.0),
+                //       ),
                 //       backgroundColor: AppColor.white,
                 //       icon: SvgPicture.string(Svgs.RegistrationCompleted),
-                //       title: Text('Registration Completed',
-                //       style: theme.textTheme.headline1,
+                //       title: Text('Registration Completed',style: TextStyle(
+                //           fontSize: 22,
+                //           fontWeight: FontWeight.w700,
+                //           fontFamily: "Mulish",
+                //           color: Color.fromRGBO(33, 33, 33, 1),
+                //     ),
                 //       ),
                 //       actions: [
-                //         Text('You will be redirected to the choice page in a moment '),
-                //         SizedBox(height: 10,),
-                //         SpinKitCircle(
+                //         const Text('You will be redirected to the choice page in a moment',textAlign: TextAlign.center,style: TextStyle(
+                //           fontSize: 14,
+                //           fontWeight: FontWeight.w400,
+                //           fontFamily: "Mulish",
+                //           color: Color.fromRGBO(33, 33, 33, 1),
+                //         ),),
+                //         const SizedBox(height: 25,),
+                //         const SpinKitCircle(
                 //           color: Color(0xff72975E),
                 //           size: 50.0,
                 //           // controller: AnimatedController,
@@ -160,9 +171,13 @@ class TermAndCondition extends StatelessWidget {
                 //   },
                 //   context: context
                 // );
-                Get.toNamed(AccountType.route);
+
+                // Timer.periodic(Duration(seconds: 2), (timer) {
+                  Get.offAllNamed(AccountType.route);
+                // });
+                // Get.toNamed(AccountType.route);
               }),
-              SizedBox(height: 30,),
+              const SizedBox(height: 30,),
             ],
           ),
         ),

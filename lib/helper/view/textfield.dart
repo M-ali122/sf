@@ -36,30 +36,48 @@
       var theme = Get.theme;
       return Container(
         width: Get.width,
-        margin: EdgeInsets.all(5.0),
+        // margin: EdgeInsets.only(left: 16,right: 16,bottom: 4),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               heading!,
-            style: theme.textTheme.bodyText1,
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  color: Color.fromRGBO(33, 33, 33, 1)
+              ),
             ),
+            SizedBox(height: 8,),
             Padding(
-              padding:  const EdgeInsets.symmetric(horizontal: 2.0),
+
+              padding:  EdgeInsets.symmetric(horizontal: 2.0,),
+
               child: TextFormField(
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromRGBO(33,33,33,1),
+                ),
                 controller: controller,
                 onChanged: onChange,
                 obscureText: isVisible ?? false,
                 textCapitalization: TextCapitalization.words,
                 decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric( vertical: 15),
+                  contentPadding: const EdgeInsets.symmetric( vertical: 5),
                   hintText: title,
-                   // label: Text('Full Name'),
-                   // focusedBorder: const UnderlineInputBorder(
-                   //   // borderSide: BorderSide(color: AppColor.red)
-                   // ),
+                   hintStyle: TextStyle(
+                     fontWeight: FontWeight.w500,
+                     fontSize: 24,
+                     color: Color.fromRGBO(158, 158, 158, 1),
+                   ),
                    prefixIcon: icon,
                 ),
+
+                // validator: (value) {
+                //
+                //
+                // },
               ),
             ),
           ],

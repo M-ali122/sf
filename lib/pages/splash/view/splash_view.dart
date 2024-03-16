@@ -37,13 +37,13 @@ class Splash_View extends GetWidget<SplashController> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Center(child: Image.asset('assets/splashlogo.png')),
               ),
 
               Positioned(
                 left: -175,
-                // bottom: 5,
+                bottom: -5,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
@@ -63,7 +63,7 @@ class Splash_View extends GetWidget<SplashController> {
                 ),
               ),
               Positioned(
-                bottom: 0,
+                bottom: 50,
                 left: 0,
                 right: 0,
                 child: Padding(

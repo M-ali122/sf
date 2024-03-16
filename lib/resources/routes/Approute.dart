@@ -2,8 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:sf_app/pages/home/view/home_view.dart';
 import 'package:sf_app/pages/navbar/view/navbar_view.dart';
+import 'package:sf_app/pages/onboarding/onboardind_view.dart';
 import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
+import 'package:sf_app/pages/top_categories/women_categories.dart';
 import 'package:sf_app/registration/view/otp_screen.dart';
 
 import '../../pages/onboarding/view/onboarding_third_screen.dart';
@@ -32,6 +34,12 @@ class AppRoute {
     BottomnavBar.route: (p0) => const BottomnavBar(),
 
 
+
     HomeView.route:(p0) =>  HomeView(),
+    WomenCategroies.route: (p0) => WomenCategroies(),
+// =======
+//     HomeView.route:(p0) => HomeView(),
+    OnbaordingView.route:(p0) => OnbaordingView(),
+// >>>>>>> 9974508597de6240b38cce8d67f2fd134acb9f5a
   };
 }
