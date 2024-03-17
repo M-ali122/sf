@@ -1,3 +1,4 @@
+// <<<<<<< HEAD
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,6 +39,8 @@
 //   }
 //
 // }
+// =======
+// >>>>>>> 690d6e6b8ae384d496ee4308f9e03b91c1e4f733
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -49,11 +52,14 @@ import 'package:sf_app/resources/icon/icon.dart';
 import '../../helper/view/progress_bar.dart';
 import '../../helper/view/textfield.dart';
 
-class RegistrationForm extends GetWidget {
+class RegistrationForm extends StatelessWidget {
   static String route = 'RegistrationForm';
 
+  const RegistrationForm({super.key});
+@override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),

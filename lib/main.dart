@@ -31,8 +31,8 @@ class MainApp extends StatelessWidget {
           initialBinding: MainBindings(),
           translations: AppDictionary(),
 
-          home: child,
 
+          // home: child,
           routes: AppRoute().routes,
           initialRoute: Splash_View.route,
         );
