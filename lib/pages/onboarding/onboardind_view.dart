@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/pages/navbar/view/navbar_view.dart';
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/pages/onboarding/view/explore_trending_style.dart';
 import 'package:sf_app/pages/onboarding/view/onboard_second_screen.dart';
@@ -52,6 +53,8 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                             onTap: () {
                               if(controller.isLast.isTrue){
                                 /// home screen call here
+                                print("last");
+                                Get.offAllNamed(BottomnavBar.route);
                                 // Get.offAllNamed()
                               }else{
                               controller.pagecontrol.nextPage(

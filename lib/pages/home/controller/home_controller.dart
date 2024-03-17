@@ -7,4 +7,10 @@ class HomeController extends GetxController {
     seletedIndex.value = value;
     update();
   }
+
+  // RxString selected
+  // toggleButton()
+
+
+
 }

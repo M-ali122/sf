@@ -9,7 +9,7 @@ import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
 class BottomnavBar extends GetWidget<BottomNavBarController> {
-  static const String route = 'BNavBar';
+  static const String route = 'bottomnavbar';
    const BottomnavBar({super.key});
   @override
   Widget build(BuildContext context) {

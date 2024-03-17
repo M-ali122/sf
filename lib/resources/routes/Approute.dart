@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
+import 'package:sf_app/pages/home/pages/product_details.dart';
 import 'package:sf_app/pages/home/view/home_view.dart';
 import 'package:sf_app/pages/navbar/view/navbar_view.dart';
 import 'package:sf_app/pages/onboarding/onboardind_view.dart';
 import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
-import 'package:sf_app/pages/top_categories/women_categories.dart';
+import 'package:sf_app/pages/home/pages/women_categories.dart';
 import 'package:sf_app/registration/view/otp_screen.dart';
 
 import '../../pages/onboarding/view/onboarding_third_screen.dart';
@@ -18,46 +18,30 @@ import '../../registration/view/registration_form.dart';
 
 class AppRoute {
   final Map<String, Widget Function(BuildContext)> routes = {
-
-// <<<<<<< HEAD
-//     Splash_View.route: (p0) => const Splash_View(),
-//
-//     /// client screen routes
-//     RegistrationForm.route: (p0) => RegistrationForm(),
-// =======
-    Splash_View.route: (p0) => const  Splash_View(),
+    Splash_View.route: (p0) => const Splash_View(),
 
     /// client screen routes
-    RegistrationForm.route: (p0) => const  RegistrationForm(),
-// >>>>>>> 690d6e6b8ae384d496ee4308f9e03b91c1e4f733
+    RegistrationForm.route: (p0) => const RegistrationForm(),
+
     OtpScreen.route: (p0) => const OtpScreen(),
     PasswordScreen.route: (p0) => const PasswordScreen(),
     UploadProfileView.route: (p0) => const UploadProfileView(),
     TermAndCondition.route: (p0) => TermAndCondition(),
-// <<<<<<< HEAD
-//     AccountType.route: (p0) => const AccountType(),
-//     Explore_Trending.route: (p0) => const Explore_Trending(),
-//     OnboardSecond.route: (p0) => const OnboardSecond(),
-//     OnboardThird.route: (p0) => const OnboardThird(),
-//
-//
-//     HomeView.route:(p0) => const HomeView(),
-//     OnbaordingView.route:(p0) => const OnbaordingView(),
-// =======
-    AccountType.route: (p0) => AccountType(),
+
+    AccountType.route: (p0) => const AccountType(),
     Explore_Trending.route: (p0) => const Explore_Trending(),
     OnboardSecond.route: (p0) => const OnboardSecond(),
     OnboardThird.route: (p0) => const OnboardThird(),
     BottomnavBar.route: (p0) => const BottomnavBar(),
 
-
-
-    HomeView.route:(p0) =>  HomeView(),
+    HomeView.route: (p0) => HomeView(),
     WomenCategroies.route: (p0) => WomenCategroies(),
-// =======
-//     HomeView.route:(p0) => HomeView(),
-    OnbaordingView.route:(p0) => OnbaordingView(),
-// >>>>>>> 9974508597de6240b38cce8d67f2fd134acb9f5a
-// >>>>>>> 690d6e6b8ae384d496ee4308f9e03b91c1e4f733
+    ProductDetails.route:(p0) => ProductDetails(),
+
+    OnbaordingView.route: (p0) => const OnbaordingView(),
+
+
+
+
   };
 }
