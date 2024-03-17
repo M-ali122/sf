@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 class CustomeProgressBar extends StatelessWidget {
@@ -16,8 +18,8 @@ class CustomeProgressBar extends StatelessWidget {
       minHeight: 8,
       value: progressValue,
       borderRadius: BorderRadius.circular(12),
-      backgroundColor: Color(0xffEEEEEE),
-      valueColor: AlwaysStoppedAnimation<Color>(Color(0xff72975E)),
+      backgroundColor: const Color(0xffEEEEEE),
+      valueColor: const AlwaysStoppedAnimation<Color>(Color(0xff72975E)),
     );
   }
 }

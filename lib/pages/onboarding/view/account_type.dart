@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
@@ -9,11 +7,9 @@ import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
 
-import 'explore_trending_style.dart';
-
 class AccountType extends StatelessWidget {
   static String route = 'AccountType';
-  AccountType({super.key});
+  const AccountType({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +80,7 @@ class AccountType extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
@@ -127,14 +123,14 @@ class AccountType extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               AppButton(
                   title: 'Continue',
                   onTap: () {
                     Get.toNamed(OnbaordingView.route);
                     // Get.toNamed(Explore_Trending.route);
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
             ],

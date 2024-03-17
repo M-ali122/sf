@@ -1,7 +1,7 @@
-  import 'package:flutter/material.dart';
-  import 'package:get/get.dart';
+  // ignore_for_file: prefer_typing_uninitialized_variables
 
-  import '../../resources/color/app_color.dart';
+  import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
   class CustomTextField extends StatelessWidget {
     final String? title;
@@ -14,8 +14,7 @@
     final onChange;
     final Color? filledColor;
     final bool? isVisible;
-    const CustomTextField({
-      Key? key,
+    const CustomTextField({super.key,
       this.icon,
       this.isVisible,
       this.heading,
@@ -30,8 +29,8 @@
 
     @override
     Widget build(BuildContext context) {
-      var theme = Get.theme;
-      return Container(
+
+      return SizedBox(
         width: Get.width,
         // margin: EdgeInsets.only(left: 16,right: 16,bottom: 4),
         child: Column(
@@ -39,17 +38,17 @@
           children: [
             Text(
               heading!,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Color.fromRGBO(33, 33, 33, 1)
               ),
             ),
-            SizedBox(height: 8,),
+            const SizedBox(height: 8,),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 2.0,),
+              padding:  const EdgeInsets.symmetric(horizontal: 2.0,),
               child: TextFormField(
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
                   color: Color.fromRGBO(33,33,33,1),
@@ -61,7 +60,7 @@
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric( vertical: 5),
                   hintText: title,
-                   hintStyle: TextStyle(
+                   hintStyle: const TextStyle(
                      fontWeight: FontWeight.w500,
                      fontSize: 24,
                      color: Color.fromRGBO(158, 158, 158, 1),

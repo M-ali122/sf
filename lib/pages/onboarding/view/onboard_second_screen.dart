@@ -122,19 +122,13 @@
 //     );
 //   }
 // }
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sf_app/helper/view/circleButton.dart';
-import 'package:sf_app/resources/color/app_color.dart';
 
 import '../../../resources/icon/svgs.dart';
 import '../controller/onboarding_controller.dart';
-import 'onboarding_third_screen.dart';
 
 class OnboardSecond extends StatelessWidget {
   static const String route = 'OnboardSecond';
@@ -170,7 +164,7 @@ class OnboardSecond extends StatelessWidget {
                   onboardingController.pagecontrol.jumpToPage(2);
                 },
                 child: Text('Skip',style: GoogleFonts.mulish(
-                    color: Color.fromRGBO(71, 87, 54, 1),
+                    color: const Color.fromRGBO(71, 87, 54, 1),
                     fontSize:16,
                     fontWeight: FontWeight.w700
                 )),
@@ -179,7 +173,7 @@ class OnboardSecond extends StatelessWidget {
           Positioned(
             top: 50,
             left: 50,
-            child: Container(
+            child: SizedBox(
               height: 330,
               width: 250,
               child: Image.asset('assets/svgSecond.png', fit: BoxFit.scaleDown,),
@@ -239,7 +233,7 @@ class OnboardSecond extends StatelessWidget {
                 style: GoogleFonts.mulish(
                   fontWeight: FontWeight.w500,
                   fontSize: 18,
-                  color: Color.fromRGBO(33, 33, 33, 1),
+                  color: const Color.fromRGBO(33, 33, 33, 1),
                 ),textAlign: TextAlign.center,
               ),
             ),

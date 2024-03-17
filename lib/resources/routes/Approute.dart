@@ -17,21 +17,21 @@ import '../../registration/view/registration_form.dart';
 class AppRoute {
   final Map<String, Widget Function(BuildContext)> routes = {
 
-    Splash_View.route: (p0) => Splash_View(),
+    Splash_View.route: (p0) => const Splash_View(),
 
     /// client screen routes
     RegistrationForm.route: (p0) => RegistrationForm(),
-    OtpScreen.route: (p0) => OtpScreen(),
-    PasswordScreen.route: (p0) => PasswordScreen(),
-    UploadProfileView.route: (p0) => UploadProfileView(),
+    OtpScreen.route: (p0) => const OtpScreen(),
+    PasswordScreen.route: (p0) => const PasswordScreen(),
+    UploadProfileView.route: (p0) => const UploadProfileView(),
     TermAndCondition.route: (p0) => TermAndCondition(),
-    AccountType.route: (p0) => AccountType(),
-    Explore_Trending.route: (p0) => Explore_Trending(),
-    OnboardSecond.route: (p0) => OnboardSecond(),
-    OnboardThird.route: (p0) => OnboardThird(),
+    AccountType.route: (p0) => const AccountType(),
+    Explore_Trending.route: (p0) => const Explore_Trending(),
+    OnboardSecond.route: (p0) => const OnboardSecond(),
+    OnboardThird.route: (p0) => const OnboardThird(),
 
 
-    HomeView.route:(p0) => HomeView(),
-    OnbaordingView.route:(p0) => OnbaordingView(),
+    HomeView.route:(p0) => const HomeView(),
+    OnbaordingView.route:(p0) => const OnbaordingView(),
   };
 }

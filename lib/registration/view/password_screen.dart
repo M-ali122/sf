@@ -1,16 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:password_strength_checker/password_strength_checker.dart';
-import 'package:password_strength_indicator_plus/password_strength_indicator_plus.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
-import 'package:password_strength_indicator/password_strength_indicator.dart';
 
 import '../../helper/view/Appbutton.dart';
-import '../../helper/view/OtpCustomeConatiner.dart';
 import '../../helper/view/progress_bar.dart';
 import '../../helper/view/textfield.dart';
 import '../controller/passController.dart';

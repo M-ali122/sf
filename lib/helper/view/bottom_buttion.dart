@@ -1,9 +1,8 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:linear_progress_bar/ui/dots_indicator.dart';
-import 'package:sf_app/resources/icon/icon.dart';
-import 'package:sf_app/resources/icon/svgs.dart';
 
 class BottomButton extends StatelessWidget {
   String icon;
@@ -20,7 +19,7 @@ class BottomButton extends StatelessWidget {
         children: [
           SvgPicture.string(icon),
           // Icon(Icons.home),
-          Text(title,style: TextStyle(
+          Text(title,style: const TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 10,
           ),),

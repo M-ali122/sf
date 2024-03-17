@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/resources/color/app_color.dart';
-import 'package:sf_app/resources/icon/svgs.dart';
 
 import '../../registration/view/registration_form.dart';
 
@@ -31,7 +27,7 @@ class WelcomeView extends StatelessWidget {
                 width: 85,
                 height: 37,
                 decoration: BoxDecoration(
-                  color:  Color.fromRGBO(255, 255, 255, 1),
+                  color:  const Color.fromRGBO(255, 255, 255, 1),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 
@@ -68,13 +64,13 @@ class WelcomeView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
                     children: [
-                      SizedBox(height: 60,),
+                      const SizedBox(height: 60,),
                       Text(
                         'Connecting Threads, Creating Style.',
                         style: theme.textTheme.headline4,
                       ),
-                      SizedBox(height: 15,),
-                      Text(
+                      const SizedBox(height: 15,),
+                      const Text(
                         'Welcome to the only fashion app you will ever need!',style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -82,14 +78,14 @@ class WelcomeView extends StatelessWidget {
                         color: Color.fromRGBO(33, 33, 33, 1),
                       ),
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                       AppButton(
                           title: 'Sign Up',
                           onTap: (){
                             Get.toNamed(RegistrationForm.route);
                           }
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       AppButton(
                           gradient: AppColor.buttonGredient,
                           foreground: AppColor.black,

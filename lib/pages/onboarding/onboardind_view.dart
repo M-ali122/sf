@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
@@ -22,20 +23,23 @@ class OnbaordingView extends GetWidget<OnboardingController> {
           body: PageView(
             controller: controller.pagecontrol,
             onPageChanged: (index) {
-              print(index.runtimeType);
+              if (kDebugMode) {
+                print(index.runtimeType);
+              }
               controller.changePageIndex(index);
               // setState(() {
               //   islastpage = index == 3;
               // });
             },
-            children: [
-              const Explore_Trending(),
-              const OnboardSecond(),
-              const OnboardThird(),
+            children: const [
+              Explore_Trending(),
+              OnboardSecond(),
+              OnboardThird(),
             ],
           ),
 
           floatingActionButton:
+              // ignore: unrelated_type_equality_checks
               controller.pageIndex == 1 || controller.pageIndex == 2
                   ? Stack(
                       children: [

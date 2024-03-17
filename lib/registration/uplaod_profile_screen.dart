@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -11,10 +9,8 @@ import 'package:sf_app/resources/icon/icon.dart';
 
 import '../helper/view/Appbutton.dart';
 import '../helper/view/progress_bar.dart';
-import '../helper/view/textfield.dart';
 import '../pages/screens/terms_and_condition.dart';
 import '../resources/icon/svgs.dart';
-
 
 class UploadProfileView extends StatelessWidget {
   static String route = 'UploadProfileView';
@@ -24,7 +20,8 @@ class UploadProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Get.theme;
 
-    PasswordStrengthController controller = Get.put(PasswordStrengthController());
+    PasswordStrengthController controller =
+        Get.put(PasswordStrengthController());
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -40,6 +37,7 @@ class UploadProfileView extends StatelessWidget {
                       },
                       child: SvgPicture.string(icon.backIcon)),
                   const SizedBox(width: 50),
+
                   /// Custom progress bar
                   const Expanded(
                     child: CustomeProgressBar(
@@ -50,7 +48,7 @@ class UploadProfileView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 30.h),
-              Text(
+              const Text(
                 'Upload your profile picture & your brand logo',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
@@ -58,36 +56,10 @@ class UploadProfileView extends StatelessWidget {
                   color: Color.fromRGBO(33, 33, 33, 1),
                 ),
               ),
-              SizedBox(height: 20.h,),
-
-              Container(
-                height: 101,
-                width: Get.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
-                  color: AppColor.GreyScale50,
-                  border: Border.all(
-                    width: 3,
-                    color: Color.fromRGBO(201, 179, 114, 1)
-                  )
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.string(
-                        Svgs.galleryIcon,
-                      color: AppColor.GreyScale500,
-                    ),
-                    const SizedBox(height: 10,),
-                    Text(
-                        'Profile Picture',
-                      style: theme.textTheme.subtitle1,
-                    ),
-                  ],
-                ),
+              SizedBox(
+                height: 20.h,
               ),
 
-              const SizedBox(height: 20,),
               Container(
                 height: 101,
                 width: Get.width,
@@ -95,10 +67,7 @@ class UploadProfileView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24),
                     color: AppColor.GreyScale50,
                     border: Border.all(
-                        width: 3,
-                        color: Color.fromRGBO(201, 179, 114, 1)
-                    )
-                ),
+                        width: 3, color: const Color.fromRGBO(201, 179, 114, 1))),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -106,7 +75,38 @@ class UploadProfileView extends StatelessWidget {
                       Svgs.galleryIcon,
                       color: AppColor.GreyScale500,
                     ),
-                    const SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Profile Picture',
+                      style: theme.textTheme.subtitle1,
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 101,
+                width: Get.width,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    color: AppColor.GreyScale50,
+                    border: Border.all(
+                        width: 3, color: const Color.fromRGBO(201, 179, 114, 1))),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.string(
+                      Svgs.galleryIcon,
+                      color: AppColor.GreyScale500,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Text(
                       'Brand Logo',
                       style: theme.textTheme.subtitle1,
@@ -114,48 +114,57 @@ class UploadProfileView extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: Divider(
                       height: 1,
                       color: AppColor.GreyScale200,
                     ),
                   ),
-                  SizedBox(width: 10,),
-                  Text('or',
-                  style: theme.textTheme.bodyText2,
+                  const SizedBox(
+                    width: 10,
                   ),
-                  SizedBox(width: 10,),
-                  Expanded(
+                  Text(
+                    'or',
+                    style: theme.textTheme.bodyText2,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Expanded(
                       child: Divider(
-                        height: 1,
-                        color: AppColor.GreyScale200,
-                      )
-                  ),
+                    height: 1,
+                    color: AppColor.GreyScale200,
+                  )),
                 ],
               ),
-              SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               GestureDetector(
-                onTap: (){
-
+                onTap: () {
                   controller.getImage(ImageSource.camera);
                 },
                 child: Container(
                   height: 58,
                   width: Get.width,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: AppColor.backGroundSilver
-                  ),
+                      borderRadius: BorderRadius.circular(100),
+                      color: AppColor.backGroundSilver),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SvgPicture.string(icon.camera),
-                      SizedBox(width: 10.w,),
-                      Text('Open Camera & Take Photo',
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Text(
+                        'Open Camera & Take Photo',
                         style: theme.textTheme.bodyText1,
                       ),
                     ],
@@ -163,15 +172,17 @@ class UploadProfileView extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height:100.h),
+              SizedBox(height: 100.h),
+
               /// App Button
               AppButton(
                   title: 'Continue',
-                  onTap: (){
+                  onTap: () {
                     Get.toNamed(TermAndCondition.route);
-                  }
+                  }),
+              const SizedBox(
+                height: 30,
               ),
-              const SizedBox(height: 30,),
             ],
           ),
         ),

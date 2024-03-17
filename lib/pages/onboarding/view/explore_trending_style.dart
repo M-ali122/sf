@@ -1,14 +1,12 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sf_app/helper/view/circleButton.dart';
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
-import 'package:sf_app/resources/color/app_color.dart';
+
 import '../../../resources/icon/svgs.dart';
-import 'onboard_second_screen.dart';
 
 class Explore_Trending extends StatelessWidget {
   static const String route = 'Explore_Trending';
@@ -44,7 +42,7 @@ class Explore_Trending extends StatelessWidget {
                   onboardingController.pagecontrol.jumpToPage(2);
                 },
                 child: Text('Skip',style: GoogleFonts.mulish(
-                    color: Color.fromRGBO(71, 87, 54, 1),
+                    color: const Color.fromRGBO(71, 87, 54, 1),
                     fontSize:16,
                   fontWeight: FontWeight.w700
                 )),
@@ -101,7 +99,7 @@ class Explore_Trending extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 480,
               left: 0,
               right: 0
@@ -113,7 +111,7 @@ class Explore_Trending extends StatelessWidget {
                 style: GoogleFonts.mulish(
                     fontWeight: FontWeight.w500,
                     fontSize: 18,
-                  color: Color.fromRGBO(33, 33, 33, 1),
+                  color: const Color.fromRGBO(33, 33, 33, 1),
                 ),textAlign: TextAlign.center,
               ),
             ),

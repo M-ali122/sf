@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -24,7 +23,7 @@ class AppColor {
   static const Color alartDisabledButton = Color(0xFF393939);
 
   ///Gradients
-  static  LinearGradient mainGradient = LinearGradient(
+  static  LinearGradient mainGradient = const LinearGradient(
     colors: [Color(0xFF72975E),Color(0xFF475736), ],
     // begin: Alignment.topLeft,
     // end: Alignment.bottomRight,
@@ -124,14 +123,14 @@ class AppColor {
 
   ///transparent
 
-  static  Color transparentSilver = Color(0xFF101010).withOpacity(0.08);
-  static  Color transparentPurple = Color(0xFF7210FF).withOpacity(0.8);
-  static  Color transparentBlue = Color(0xFF335EF7).withOpacity(0.8);
-  static  Color transparentOrange = Color(0xFFFF9800).withOpacity(0.8);
-  static  Color transparentYellow = Color(0xFFFACC15).withOpacity(0.8);
-  static  Color transparentRed = Color(0xFFF75555).withOpacity(0.8);
-  static  Color transparentGreen = Color(0xFF4CAF50).withOpacity(0.8);
-  static  Color transparentCyan = Color(0xFF00BCD4).withOpacity(0.8);
+  static  Color transparentSilver = const Color(0xFF101010).withOpacity(0.08);
+  static  Color transparentPurple = const Color(0xFF7210FF).withOpacity(0.8);
+  static  Color transparentBlue = const Color(0xFF335EF7).withOpacity(0.8);
+  static  Color transparentOrange = const Color(0xFFFF9800).withOpacity(0.8);
+  static  Color transparentYellow = const Color(0xFFFACC15).withOpacity(0.8);
+  static  Color transparentRed = const Color(0xFFF75555).withOpacity(0.8);
+  static  Color transparentGreen = const Color(0xFF4CAF50).withOpacity(0.8);
+  static  Color transparentCyan = const Color(0xFF00BCD4).withOpacity(0.8);
 
 
 

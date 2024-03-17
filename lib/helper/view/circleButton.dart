@@ -1,6 +1,6 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 import '../../resources/color/app_color.dart';
 
@@ -8,6 +8,7 @@ import '../../resources/color/app_color.dart';
 class CircleButton extends StatelessWidget{
   ///This will be button [title]
   final String? title;
+  // ignore: prefer_typing_uninitialized_variables
   final  onTap;
   final Gradient? gradient;
   final Color? background;
@@ -26,7 +27,7 @@ class CircleButton extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    final theme = Get.theme;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(

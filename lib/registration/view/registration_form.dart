@@ -38,17 +38,13 @@
 //   }
 //
 // }
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/registration/view/otp_screen.dart';
 import 'package:sf_app/resources/icon/icon.dart';
-import 'package:sf_app/resources/icon/svgs.dart';
-import 'package:sf_app/resources/theme/main_theme.dart';
 
 import '../../helper/view/progress_bar.dart';
 import '../../helper/view/textfield.dart';
@@ -57,7 +53,6 @@ class RegistrationForm extends GetWidget {
   static String route = 'RegistrationForm';
 
   Widget build(BuildContext context) {
-    final theme = Get.theme;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -82,7 +77,7 @@ class RegistrationForm extends GetWidget {
                 ],
               ),
               SizedBox(height: 30.h),
-              Text(
+              const Text(
                 'Fill the information below',
                  style: TextStyle(
                    fontSize: 32,

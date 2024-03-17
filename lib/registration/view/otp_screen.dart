@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -10,7 +8,6 @@ import 'package:sf_app/resources/icon/icon.dart';
 import '../../helper/view/Appbutton.dart';
 import '../../helper/view/OtpCustomeConatiner.dart';
 import '../../helper/view/progress_bar.dart';
-import '../../helper/view/textfield.dart';
 
 class OtpScreen extends StatelessWidget {
   static String route = 'OtpScreen';
@@ -24,7 +21,7 @@ class OtpScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: SingleChildScrollView(
-            child: Container(
+            child: SizedBox(
               width: Get.width,
               height: Get.height,
               child:  Column(
@@ -64,7 +61,7 @@ class OtpScreen extends StatelessWidget {
                   const OtpCustomConatiner(),
                   const SizedBox(height: 30,),
 
-                  Center(child: Text(
+                  const Center(child: Text(
                     "Didn't receive an email?",
                     style: TextStyle(
                       fontSize: 18,
@@ -77,7 +74,7 @@ class OtpScreen extends StatelessWidget {
                     child: RichText(
                       text: TextSpan(
                         style: theme.textTheme.overline,
-                        children: [
+                        children: const [
                           TextSpan(
                               text: "You can resend code in ",
                               style: TextStyle(
@@ -102,7 +99,7 @@ class OtpScreen extends StatelessWidget {
                     ),
                   ),
 
-                  Spacer(),
+                  const Spacer(),
                   /// App Button
                   AppButton(
                       title: 'Continue',

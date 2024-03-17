@@ -56,13 +56,13 @@ class MainTheme {
         fontWeight: FontWeight.w400,
         fontSize: 24,
       ),
-      enabledBorder: UnderlineInputBorder(
+      enabledBorder: const UnderlineInputBorder(
         borderSide: BorderSide(color: AppColor.GreyScale500)
       ),
       focusedBorder: const UnderlineInputBorder(
         borderSide: BorderSide(color: AppColor.secondaryColor400),
       ),
-      iconColor: Color(0xffB0B0B0),
+      iconColor: const Color(0xffB0B0B0),
     ),
 
     textTheme:

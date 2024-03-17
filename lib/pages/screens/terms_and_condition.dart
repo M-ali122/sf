@@ -1,17 +1,11 @@
-import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
-import 'package:sf_app/resources/icon/svgs.dart';
 
 import '../../helper/view/progress_bar.dart';
 import '../../modules/global/controllers/checkboxController.dart';
