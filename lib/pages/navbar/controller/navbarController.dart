@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/pages/home/view/home_view.dart';
+import 'package:sf_app/pages/order/view/order_view.dart';
 
 class BottomNavBarController extends GetxController {
   
@@ -23,8 +24,8 @@ final List<Widget> pages = [
 Center(
   child: HomeView(),
 ),
-const Center(
-  child: Text('Order'),
+ Center(
+  child: OrderView(),
 ),
 const Center(
   child: Text('Community'),

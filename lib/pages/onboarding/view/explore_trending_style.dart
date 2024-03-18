@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 
@@ -21,13 +22,13 @@ class Explore_Trending extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            left: 260,
+            left: Get.width * 0.79,
             top: -10,
             child: SvgPicture.string(Svgs.appbarCircle),
           ),
           Positioned(
             top: 78,
-            left: 300,
+            left: Get.width * 0.87,
             child: Container(
               width: 35, // Adjust the width of the underline as needed
               height: 1.5, // Adjust the height of the underline as needed
@@ -36,7 +37,7 @@ class Explore_Trending extends StatelessWidget {
           ),
           Positioned(
               top: 60,
-                left: 300,
+                left: Get.width * 0.87,
               child: GestureDetector(
                 onTap: (){
                   onboardingController.pagecontrol.jumpToPage(2);
@@ -51,9 +52,9 @@ class Explore_Trending extends StatelessWidget {
 
           Positioned(
             top: 50,
-            left: 50,
+            left: Get.width * 0.2,
             child: Container(
-              height: 330,
+              height: 400,
               width: 250,
               child: Image.asset('assets/Group.png', fit: BoxFit.scaleDown,),
             ),
@@ -82,12 +83,12 @@ class Explore_Trending extends StatelessWidget {
           ),
           Positioned(
             top: 220,
-            left: -20,
+            // left: -20,
             child: SvgPicture.string(Svgs.halfCircleDown),
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 170,
+              top: 120,
               left: 0,
               right: 0,
             ),
@@ -99,8 +100,8 @@ class Explore_Trending extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              top: 480,
+            padding: EdgeInsets.only(
+              top: Get.height * 0.6,
               left: 0,
               right: 0
             ),

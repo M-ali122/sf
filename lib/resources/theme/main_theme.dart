@@ -70,7 +70,7 @@ class MainTheme {
     textTheme:
     Typography.englishLike2018.apply(fontSizeFactor: 1.sp).copyWith(
       // ignore: deprecated_member_use
-      headline1:  GoogleFonts.urbanist(fontSize: 24, fontWeight: FontWeight.w700),
+      headline1:  GoogleFonts.mulish(fontSize: 24, fontWeight: FontWeight.w700),
       headline2:  GoogleFonts.urbanist(fontSize: 18, fontWeight: FontWeight.w600),
       headline3:  const TextStyle(fontSize: 48, fontWeight: FontWeight.w700),
       headline4:   GoogleFonts.mulish(fontSize: 30, fontWeight: FontWeight.w700),
@@ -85,6 +85,8 @@ class MainTheme {
       caption:  GoogleFonts.mulish(fontSize: 12, fontWeight: FontWeight.w500),
       // overline: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       overline: GoogleFonts.mulish(fontSize: 18, fontWeight: FontWeight.w500),
+      
+      // bodyLarge: GoogleFonts.mulish(fontWeight: FontWeight.w600,fontSize: 16, color: AppColor.white)
 
     ),
   );

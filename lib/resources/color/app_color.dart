@@ -123,6 +123,7 @@ class AppColor {
 
   ///transparent
 
+  // static Color transparentrallow = Color(0xffFACC1514).withOpacity(0.2); 
   static  Color transparentSilver = const Color(0xFF101010).withOpacity(0.08);
   static  Color transparentPurple = const Color(0xFF7210FF).withOpacity(0.8);
   static  Color transparentBlue = const Color(0xFF335EF7).withOpacity(0.8);

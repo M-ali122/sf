@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sf_app/modules/global/controllers/bindings.dart';
 import 'package:sf_app/pages/home/pages/product_details.dart';
+import 'package:sf_app/pages/order/view/order_view.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 import 'package:sf_app/resources/languages/dictionary.dart';
 import 'package:sf_app/resources/routes/Approute.dart';
@@ -34,7 +35,7 @@ class MainApp extends StatelessWidget {
           // home: child,
           routes: AppRoute().routes,
           // initialRoute: Splash_View.route,
-          initialRoute: ProductDetails.route,
+          initialRoute: OrderView.route,
         );
       },
     );
