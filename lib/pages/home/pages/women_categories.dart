@@ -34,7 +34,7 @@ class WomenCategroies extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 10.0),
-                    child: SvgPicture.string(icon.backIcon),
+                    child: SvgPicture.string(Appicons.backIcon),
                   ),
                   SizedBox(
                     width: 20,

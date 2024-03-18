@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
+import 'package:sf_app/helper/view/review_field.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -36,7 +37,7 @@ class ProductDetails extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0),
-                        child: SvgPicture.string(icon.backIcon,color :Color.fromRGBO(255, 255, 255, 1),),
+                        child: SvgPicture.string(Appicons.backIcon,color :Color.fromRGBO(255, 255, 255, 1),),
                       ),
                       SizedBox(
                         width: 30,
@@ -52,7 +53,7 @@ class ProductDetails extends StatelessWidget {
                       Spacer(),
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0),
-                        child: SvgPicture.string(icon.moreSquare,color :Color.fromRGBO(255, 255, 255, 1),),
+                        child: SvgPicture.string(Appicons.moreSquare,color :Color.fromRGBO(255, 255, 255, 1),),
                       ),
 
 
@@ -178,6 +179,7 @@ class ProductDetails extends StatelessWidget {
               // const SizedBox(
               //   height: 5,
               // ),
+              ReviewField(),
               const SizedBox(
                 height: 30,
               ),

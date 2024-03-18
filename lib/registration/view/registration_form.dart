@@ -72,7 +72,7 @@ class RegistrationForm extends StatelessWidget {
                       onTap: () {
                         Get.back();
                       },
-                      child: SvgPicture.string(icon.backIcon)),
+                      child: SvgPicture.string(Appicons.backIcon)),
                   const SizedBox(width: 50),
                   const Expanded(
                     child: CustomeProgressBar(

@@ -47,7 +47,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          icon.home,
+                          Appicons.home,
                           color: controller.currentIndex.value == 0 ? AppColor.primaryColor500 : AppColor.GreyScale500,
                           height: 24,
                           width: 24,  
@@ -77,7 +77,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          icon.document,
+                          Appicons.document,
                           color: controller.currentIndex.value == 1 ?AppColor.primaryColor500  : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
@@ -107,7 +107,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          icon.diccovery,
+                          Appicons.diccovery,
                           color: controller.currentIndex.value == 2 ? AppColor.primaryColor500 : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
@@ -137,7 +137,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          icon.profile,
+                          Appicons.profile,
                           color: controller.currentIndex.value == 3 ?AppColor.primaryColor500  : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,

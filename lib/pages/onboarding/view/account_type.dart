@@ -29,7 +29,7 @@ class AccountType extends StatelessWidget {
                 onTap: () {
                   Get.back();
                 },
-                child: SvgPicture.string(icon.backIcon),
+                child: SvgPicture.string(Appicons.backIcon),
               ),
               const SizedBox(
                 height: 20,

@@ -35,7 +35,7 @@ class UploadProfileView extends StatelessWidget {
                       onTap: () {
                         Get.back();
                       },
-                      child: SvgPicture.string(icon.backIcon)),
+                      child: SvgPicture.string(Appicons.backIcon)),
                   const SizedBox(width: 50),
 
                   /// Custom progress bar
@@ -159,7 +159,7 @@ class UploadProfileView extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SvgPicture.string(icon.camera),
+                      SvgPicture.string(Appicons.camera),
                       SizedBox(
                         width: 10.w,
                       ),
