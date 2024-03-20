@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 import 'package:sf_app/pages/home/pages/product_details.dart';
+import 'package:sf_app/pages/home/pages/women_categories.dart';
 import 'package:sf_app/pages/home/view/home_view.dart';
+import 'package:sf_app/pages/message/view/inbox.dart';
 import 'package:sf_app/pages/navbar/view/navbar_view.dart';
 import 'package:sf_app/pages/onboarding/onboardind_view.dart';
 import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/pages/order/view/order_detail_tabs.dart';
 import 'package:sf_app/pages/order/view/order_view.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
-import 'package:sf_app/pages/home/pages/women_categories.dart';
 import 'package:sf_app/registration/view/otp_screen.dart';
 
-import '../../pages/onboarding/view/onboarding_third_screen.dart';
 import '../../pages/onboarding/view/explore_trending_style.dart';
 import '../../pages/onboarding/view/onboard_second_screen.dart';
+import '../../pages/onboarding/view/onboarding_third_screen.dart';
 import '../../pages/screens/terms_and_condition.dart';
 import '../../registration/uplaod_profile_screen.dart';
 import '../../registration/view/password_screen.dart';
@@ -43,6 +45,9 @@ class AppRoute {
 
     OnbaordingView.route: (p0) => const OnbaordingView(),
     OrderTabbarScreen.route: (p0) =>  OrderTabbarScreen(),
+    CommunityTabs.route: (p0) => CommunityTabs(),
+
+    Inbox.route:(p0) => Inbox(),
 
 
 

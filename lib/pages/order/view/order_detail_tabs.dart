@@ -7,7 +7,7 @@
 // class OrderDetailScreen extends StatelessWidget {
 //   static String route = 'OrderDetailScreen';
 //    OrderDetailScreen({super.key});
-    
+
 //     final theme = Get.theme;
 
 //   @override
@@ -35,7 +35,7 @@
 //                     const Spacer(),
 //                   SvgPicture.string(Appicons.moresquareBorder),
 //                   const SizedBox(height: 20,),
-                   
+
 //                 ],
 //               )
 //             ],
@@ -47,9 +47,13 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sf_app/pages/order/view/message.dart';
 import 'package:sf_app/pages/order/view/order_detail.dart';
+import 'package:sf_app/pages/order/view/tracking_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -77,7 +81,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
     super.dispose();
     _tabController.dispose();
   }
-  
+
   final theme = Get.theme;
 
   @override
@@ -88,28 +92,75 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             children: [
-
               // give the tab bar a height [can change hheight to preferred height]
-              const SizedBox(height: 25,),
-               Row(
+              const SizedBox(
+                height: 25,
+              ),
+              Row(
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Get.back();
                     },
                     child: SvgPicture.string(Appicons.backIcon),
-                    ),
-                    const SizedBox(width: 20,),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
                   Text(
                     'Order detail',
                     style: theme.textTheme.displayLarge,
-                    ),
-                    const Spacer(),
-                  SvgPicture.string(Appicons.moresquareBorder),
-                
+                  ),
+                  const Spacer(),
+                  PopupMenuButton<String>(
+                    color: AppColor.white,
+                    onSelected: (value) {},
+                    itemBuilder: (BuildContext context) =>
+                        <PopupMenuEntry<String>>[
+                      PopupMenuItem<String>(
+                        value: 'option1',
+                        child: Row(
+                          children: [
+                            SvgPicture.string(Appicons.arrowdone),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text('Complete order'),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem<String>(
+                        value: 'option2',
+                        child: Row(
+                          children: [
+                            SvgPicture.string(Appicons.chatBorder),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text('Contact deigner'),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem<String>(
+                        value: 'option3',
+                        child: Row(
+                          children: [
+                            SvgPicture.string(Appicons.cancellOrder),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text('Cancel order'),
+                          ],
+                        ),
+                      ),
+                    ],
+                    icon: SvgPicture.string(Appicons.moresquareBorder),
+                  ),
                 ],
               ),
-              const SizedBox(height: 30,),
+              const SizedBox(
+                height: 30,
+              ),
               Container(
                 height: 52,
                 decoration: BoxDecoration(
@@ -119,16 +170,16 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                   ),
                 ),
                 child: TabBar(
+                  labelStyle: theme.textTheme.bodyText1,
                   dividerColor: Colors.transparent,
                   indicatorSize: TabBarIndicatorSize.tab,
                   controller: _tabController,
                   // give the indicator a decoration (color and border radius)
                   indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      25.0,
-                    ),
-                    gradient: AppColor.mainGradient 
-                  ),
+                      borderRadius: BorderRadius.circular(
+                        25.0,
+                      ),
+                      gradient: AppColor.mainGradient),
                   labelColor: Colors.white,
                   // unselectedLabelColor: Colors.black,
                   tabs: const [
@@ -139,7 +190,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                       text: 'Tracking',
                     ),
                     Tab(
-                      text: 'Buy Now',
+                      text: 'Message',
                     ),
                   ],
                 ),
@@ -148,28 +199,14 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
               Expanded(
                 child: TabBarView(
                   controller: _tabController,
-                  children:  [
-                  //  const SizedBox(height: 20,), 
+                  children: [
+                    //  const SizedBox(height: 20,),
                     OrderDetailScreen(),
-          
+
                     // second tab bar view widget
-                    const Center(
-                      child: Text(
-                        'Buy Now',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                     const Center(
-                      child: Text(
-                        'Try',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                    Center(child: TrackingOrder()),
+                    Center(
+                      child: OrderMessage(),
                     ),
                   ],
                 ),

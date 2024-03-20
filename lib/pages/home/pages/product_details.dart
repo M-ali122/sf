@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sf_app/helper/view/Appbutton.dart';
-import 'package:sf_app/helper/view/review_field.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
-
-import '../../../resources/icon/svgs.dart';
 
 class ProductDetails extends StatelessWidget {
   static const String route = 'ProductDetails';
@@ -37,9 +33,9 @@ class ProductDetails extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0),
-                        child: SvgPicture.string(Appicons.backIcon,color :Color.fromRGBO(255, 255, 255, 1),),
+                        child: SvgPicture.string(Appicons.backIcon,color :const Color.fromRGBO(255, 255, 255, 1),),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Text(
@@ -47,13 +43,13 @@ class ProductDetails extends StatelessWidget {
                         style: GoogleFonts.mulish(
                           fontWeight:FontWeight.w700,
                           fontSize:24,
-                          color :Color.fromRGBO(255, 255, 255, 1),
+                          color :const Color.fromRGBO(255, 255, 255, 1),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0),
-                        child: SvgPicture.string(Appicons.moreSquare,color :Color.fromRGBO(255, 255, 255, 1),),
+                        child: SvgPicture.string(Appicons.moresquareBorder,color :const Color.fromRGBO(255, 255, 255, 1),),
                       ),
 
 
@@ -64,7 +60,7 @@ class ProductDetails extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -127,8 +123,8 @@ class ProductDetails extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15.0, top: 15),
+              const Padding(
+                padding: EdgeInsets.only(left: 15.0, top: 15),
                 child: Text(
                   'Green Polo',
                   style: TextStyle(
@@ -179,96 +175,95 @@ class ProductDetails extends StatelessWidget {
               // const SizedBox(
               //   height: 5,
               // ),
-              ReviewField(),
               const SizedBox(
                 height: 30,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0),
+                padding: const EdgeInsets.only(left: 15.0),
                 child: Text(
                   'Description',
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
-                      color: Color.fromRGBO(33, 33, 33, 1)),
+                      color: const Color.fromRGBO(33, 33, 33, 1)),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0, right: 15),
+                padding: const EdgeInsets.only(left: 15.0, right: 15),
                 child: Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
-                      color: Color.fromRGBO(66, 66, 66, 1)),
+                      color: const Color.fromRGBO(66, 66, 66, 1)),
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0),
+                padding: const EdgeInsets.only(left: 15.0),
                 child: Text(
                   'Materiel Details',
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
-                      color: Color.fromRGBO(33, 33, 33, 1)),
+                      color: const Color.fromRGBO(33, 33, 33, 1)),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0),
+                padding: const EdgeInsets.only(left: 15.0),
                 child: Text(
                   "100% Coton",
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
-                      color: Color.fromRGBO(66, 66, 66, 1)),
+                      color: const Color.fromRGBO(66, 66, 66, 1)),
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0),
+                padding: const EdgeInsets.only(left: 15.0),
                 child: Text(
                   'Care Instructions',
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
-                      color: Color.fromRGBO(33, 33, 33, 1)),
+                      color: const Color.fromRGBO(33, 33, 33, 1)),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0, right: 15),
+                padding: const EdgeInsets.only(left: 15.0, right: 15),
                 child: Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
-                      color: Color.fromRGBO(66, 66, 66, 1)),
+                      color: const Color.fromRGBO(66, 66, 66, 1)),
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0),
+                padding: const EdgeInsets.only(left: 15.0),
                 child: Text(
                   'Gallery Photos',
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
-                      color: Color.fromRGBO(33, 33, 33, 1)),
+                      color: const Color.fromRGBO(33, 33, 33, 1)),
                 ),
               ),
               const SizedBox(
@@ -287,7 +282,7 @@ class ProductDetails extends StatelessWidget {
                         width: 80,
                         height: 80,
                         decoration: BoxDecoration(
-                          image: DecorationImage(
+                          image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage("assets/ariveldesigin.png")),
                           borderRadius: BorderRadius.circular(12),
@@ -297,7 +292,7 @@ class ProductDetails extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 70,
               ),
             ],
@@ -313,7 +308,7 @@ class ProductDetails extends StatelessWidget {
               width: 160,
               height: 54,
               decoration: BoxDecoration(
-                color: Color.fromRGBO(243, 243, 243, 1),
+                color: const Color.fromRGBO(243, 243, 243, 1),
                   // gradient: const LinearGradient(
                   //   colors: [
                   //     Color.fromRGBO(114, 151, 94, 1), // Starting color

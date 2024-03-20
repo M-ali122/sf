@@ -13,8 +13,9 @@ class ReviewField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ListTile(
-          contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-          leading: CircleAvatar(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          leading: const CircleAvatar(
+            backgroundImage:AssetImage("assets/cmtprofile.png") ,
             radius: 25,
           ),
           title: Text(
@@ -22,36 +23,36 @@ class ReviewField extends StatelessWidget {
             style: GoogleFonts.mulish(
               fontWeight: FontWeight.w700,
               fontSize: 16,
-              color: Color.fromRGBO(33, 33, 33, 1),
+              color: const Color.fromRGBO(33, 33, 33, 1),
             ),
           ),
 
           trailing: SvgPicture.string(Appicons.moresquareBorder),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 16.0, top: 5),
+          padding: const EdgeInsets.only(left: 16.0, top: 5),
           child: Text(
             "Yes it is !!!",
             style: GoogleFonts.mulish(
               fontWeight: FontWeight.w400,
               fontSize: 14,
-              color: Color.fromRGBO(33, 33, 33, 1),
+              color: const Color.fromRGBO(33, 33, 33, 1),
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 16.0, top: 8),
+          padding: const EdgeInsets.only(left: 16.0, top: 8),
           child: Row(
             children: [
               Text(
-                "20",
+                "😊 20",
                 style: GoogleFonts.mulish(
                   fontWeight: FontWeight.w700,
                   fontSize: 12,
-                  color: Color.fromRGBO(33, 33, 33, 1),
+                  color: const Color.fromRGBO(33, 33, 33, 1),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(
@@ -59,10 +60,10 @@ class ReviewField extends StatelessWidget {
                 style: GoogleFonts.mulish(
                   fontWeight: FontWeight.w700,
                   fontSize: 12,
-                  color: Color.fromRGBO(97, 97, 97, 1),
+                  color: const Color.fromRGBO(97, 97, 97, 1),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(
@@ -70,7 +71,7 @@ class ReviewField extends StatelessWidget {
                 style: GoogleFonts.mulish(
                   fontWeight: FontWeight.w700,
                   fontSize: 12,
-                  color: Color.fromRGBO(97, 97, 97, 1),
+                  color: const Color.fromRGBO(97, 97, 97, 1),
                 ),
               ),
             ],

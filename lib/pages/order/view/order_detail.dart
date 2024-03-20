@@ -14,7 +14,7 @@ class OrderDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           const SizedBox(height: 30,),
           Container(
@@ -97,6 +97,211 @@ class OrderDetailScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+            const SizedBox(height: 20,),
+            Container(
+             height: 112,
+             width: Get.width,
+             decoration: BoxDecoration(
+             borderRadius: BorderRadius.circular(16),
+             color: AppColor.white,
+             boxShadow: [
+             BoxShadow(
+             color: Colors.grey.withOpacity(0.2), // Shadow color
+             spreadRadius:1,
+             blurRadius: 10,
+             offset: Offset(0, 1), 
+            ),
+             ],
+            ),
+            child:  Column(
+              children: [
+                ListTile(
+                  title: Text(
+                    'Client Name',
+                    style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                    ),
+                  trailing: Text(
+                    'Name',
+                    style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                    ),
+                ),
+                ListTile(
+                  title: Text('Client address',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                  ),
+                  trailing: Text('Location name',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20,),
+          Container(
+             height: 235,
+             width: Get.width,
+             decoration: BoxDecoration(
+             borderRadius: BorderRadius.circular(16),
+             color: AppColor.white,
+             boxShadow: [
+             BoxShadow(
+             color: Colors.grey.withOpacity(0.2), // Shadow color
+             spreadRadius:1,
+             blurRadius: 10,
+             offset: Offset(0, 1), 
+            ),
+             ],
+            ),
+            child:  Column(
+              children: [
+                ListTile(
+                  title: Text(
+                    'Product price',
+                    style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                    ),
+                  trailing: Text(
+                    '100 SAR',
+                    style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                    ),
+                ),
+                ListTile(
+                  title: Text('Product quantity',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                  ),
+                  trailing: Text('02',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                  ),
+                ),
+                ListTile(
+                  title: Text('Shipping cost',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                  ),
+                  trailing: Text('20 SAR',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                  ),
+                ),
+                ListTile(
+                  title: Text('Total cost',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                  ),
+                  trailing: Text('220 SAR',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20,),
+          Container(
+             height: 186,
+             width: Get.width,
+             decoration: BoxDecoration(
+             borderRadius: BorderRadius.circular(16),
+             color: AppColor.white,
+             boxShadow: [
+             BoxShadow(
+             color: Colors.grey.withOpacity(0.2), // Shadow color
+             spreadRadius:1,
+             blurRadius: 10,
+             offset: Offset(0, 1), 
+            ),
+             ],
+            ),
+            child:  Column(
+              children: [
+                ListTile(
+                  title: Text(
+                    'Purchase date',
+                    style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                    ),
+                  trailing: Text(
+                    '10/01/2024',
+                    style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                    ),
+                ),
+                ListTile(
+                  title: Text('Payment method',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                  ),
+                  trailing: Text('visa card',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                  ),
+                ),
+                ListTile(
+                  title: Text('Transaction ID',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w500,
+                      fontSize:16,
+                    ),
+                  ),
+                  trailing: Text('#541564165',
+                  style: GoogleFonts.mulish(
+                      fontWeight:FontWeight.w700,
+                      fontSize:16,
+                      color: AppColor.secondaryColor500
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20,),
         ],  
       ),
     );

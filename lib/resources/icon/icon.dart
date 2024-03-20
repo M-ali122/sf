@@ -1189,4 +1189,30 @@ class Appicons {
 </svg>
 
 ''';
+
+static String tworoundedContainer = '''
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M27 14C27 21.1797 21.1797 27 14 27C6.8203 27 1 21.1797 1 14C1 6.8203 6.8203 1 14 1C21.1797 1 27 6.8203 27 14Z" stroke="#475736" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 20C17.3137 20 20 17.3137 20 14C20 10.6863 17.3137 8 14 8C10.6863 8 8 10.6863 8 14C8 17.3137 10.6863 20 14 20Z" fill="#475736" stroke="#475736" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+''';
+
+
+
+static String arrowdone = '''
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.03345 10.0004L9.01178 11.9779L12.9668 8.02295" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.2915 10.0003C2.2915 15.7812 4.219 17.7087 9.99984 17.7087C15.7807 17.7087 17.7082 15.7812 17.7082 10.0003C17.7082 4.21949 15.7807 2.29199 9.99984 2.29199C4.219 2.29199 2.2915 4.21949 2.2915 10.0003Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+''';
+static String cancellOrder = '''
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9953 7.99609L8.00195 11.9894" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 11.9946L8 7.99463" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.29175 10.0003C2.29175 15.7812 4.21925 17.7087 10.0001 17.7087C15.7809 17.7087 17.7084 15.7812 17.7084 10.0003C17.7084 4.21949 15.7809 2.29199 10.0001 2.29199C4.21925 2.29199 2.29175 4.21949 2.29175 10.0003Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+''';
+
+
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 import 'package:sf_app/pages/home/view/home_view.dart';
 import 'package:sf_app/pages/order/view/order_view.dart';
 
@@ -27,8 +28,8 @@ Center(
  Center(
   child: OrderView(),
 ),
-const Center(
-  child: Text('Community'),
+ Center(
+  child: CommunityTabs()
 ),
 const Center(
   child: Text('Profile'),
