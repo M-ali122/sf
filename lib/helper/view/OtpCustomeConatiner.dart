@@ -27,7 +27,7 @@ class OtpCustomConatiner extends StatelessWidget {
         focusedBorderColor: AppColor.secondaryColor500,
         numberOfFields: 4,
         borderRadius: BorderRadius.circular(16),
-        fieldWidth: 60,
+        fieldWidth: 70,
         showFieldAsBox: true,
         decoration: const InputDecoration(
         ),

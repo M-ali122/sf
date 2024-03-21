@@ -89,14 +89,9 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/pages/community/view/community_card_design.dart';
-import 'package:sf_app/pages/order/view/message.dart';
-import 'package:sf_app/pages/order/view/order_detail.dart';
-import 'package:sf_app/pages/order/view/tracking_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 

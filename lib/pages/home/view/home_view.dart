@@ -13,9 +13,9 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Get.theme;
+    final theme = Get.theme;
 
-    Widget buildCategory(String label, String imagePath) {
+    Widget buildCategory(String label, String imagePath,  {TextStyle? textStyle}) {
       return Container(
         width: 162,
         height: 80,
@@ -30,7 +30,10 @@ class HomeView extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: Padding(
                 padding: const EdgeInsets.only(top: 5.0),
-                child: Text(label),
+                child: Text(
+                  label,
+                  style: textStyle  ,
+                  ),
               ),
             ),
             Container(
@@ -140,10 +143,12 @@ class HomeView extends StatelessWidget {
                     child: buildCategory(
                       'Women',
                       'assets/women.png',
+                      textStyle: theme.textTheme.headline5
                     ),
                   ),
                   const Spacer(),
-                  buildCategory('Men', 'assets/men.png'),
+                  buildCategory('Men', 'assets/men.png',
+                      textStyle: theme.textTheme.headline5),
                 ],
               ),
             ),
@@ -153,9 +158,11 @@ class HomeView extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  buildCategory('Shoe', 'assets/shoe.png'),
+                  buildCategory('Shoe', 'assets/shoe.png',
+                      textStyle: theme.textTheme.headline5),
                   const Spacer(),
-                  buildCategory('Bag', 'assets/bag.png'),
+                  buildCategory('Bag', 'assets/bag.png',
+                      textStyle: theme.textTheme.headline5),
                 ],
               ),
             ),
@@ -165,9 +172,11 @@ class HomeView extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  buildCategory('Lifestyle', 'assets/lifestyle.png'),
+                  buildCategory('Lifestyle', 'assets/lifestyle.png',
+                      textStyle: theme.textTheme.headline5),
                   const Spacer(),
-                  buildCategory('Sports', 'assets/sport.png'),
+                  buildCategory('Sports', 'assets/sport.png',
+                      textStyle: theme.textTheme.headline5),
                 ],
               ),
             ),
@@ -248,7 +257,7 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
@@ -257,10 +266,10 @@ class HomeView extends StatelessWidget {
                 height: 292,
                 decoration: BoxDecoration(boxShadow: [
                   BoxShadow(
-                      blurRadius: 60,
-                      offset: const Offset(0, 4),
+                      blurRadius: 40,
+                      offset: const Offset(0, 1),
                       spreadRadius: 0,
-                      color: const Color(0xff04060F14).withOpacity(0.4)),
+                      color: const Color(0xff04060F14).withOpacity(0.2)),
                 ]),
                 child: ListView(
                   shrinkWrap: true,
@@ -294,14 +303,14 @@ class HomeView extends StatelessWidget {
                                       style: theme.textTheme.button,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 15.0),
                                     child: SvgPicture.string(Svgs.arivelRow),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Padding(
@@ -312,45 +321,45 @@ class HomeView extends StatelessWidget {
                                         Container(
                                           height: 12,
                                           width: 12,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xffFFCD90)),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         Container(
                                           height: 12,
                                           width: 12,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: AppColor.red),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         Container(
                                           height: 12,
                                           width: 12,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xff313131)),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        Icon(
+                                        const Icon(
                                           Icons.add_circle_outline,
                                           size: 16,
                                         ),
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 15.0),
+                                  const Padding(
+                                    padding: EdgeInsets.only(left: 15.0),
                                     child: Text('100 SAR'),
                                   )
                                 ],
@@ -392,14 +401,14 @@ class HomeView extends StatelessWidget {
                                       style: theme.textTheme.button,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 15.0),
                                     child: SvgPicture.string(Svgs.arivelRow),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Padding(
@@ -410,45 +419,45 @@ class HomeView extends StatelessWidget {
                                         Container(
                                           height: 12,
                                           width: 12,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xffFFCD90)),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         Container(
                                           height: 12,
                                           width: 12,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: AppColor.red),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         Container(
                                           height: 12,
                                           width: 12,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xff313131)),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        Icon(
+                                        const Icon(
                                           Icons.add_circle_outline,
                                           size: 16,
                                         ),
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 15.0),
+                                  const Padding(
+                                    padding: EdgeInsets.only(left: 15.0),
                                     child: Text('100 SAR'),
                                   )
                                 ],

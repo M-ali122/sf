@@ -74,7 +74,7 @@ class MainTheme {
       headline2:  GoogleFonts.urbanist(fontSize: 18, fontWeight: FontWeight.w600),
       headline3:  const TextStyle(fontSize: 48, fontWeight: FontWeight.w700),
       headline4:   GoogleFonts.mulish(fontSize: 30, fontWeight: FontWeight.w700),
-      headline5:  const TextStyle(fontSize: 24, fontWeight: FontWeight.w400,),
+      headline5:  GoogleFonts.mulish(fontSize: 14, fontWeight: FontWeight.w700,),
       headline6:  GoogleFonts.mulish(fontSize: 20, fontWeight: FontWeight.w700),
       subtitle1:  GoogleFonts.mulish(fontSize: 16,
         color: AppColor.GreyScale500, fontWeight: FontWeight.w500,),
@@ -86,7 +86,7 @@ class MainTheme {
       // overline: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       overline: GoogleFonts.mulish(fontSize: 18, fontWeight: FontWeight.w500),
       
-      // bodyLarge: GoogleFonts.mulish(fontWeight: FontWeight.w600,fontSize: 16, color: AppColor.white)
+      // bodyLarge: GoogleFonts.mulish(fontWeight: FontWeight.w700,fontSize: 14,)
 
     ),
   );

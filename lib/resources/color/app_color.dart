@@ -9,7 +9,8 @@ class AppColor {
   static const Color primaryColor100 = Color(0xFFC7D4BA);
 
 
-  static const Color secondaryColor500 = Color(0xFFC9B372);
+  static const Color secondaryColor500 = Color.fromRGBO(201, 179, 114, 1);
+
   static const Color secondaryColor400 = Color(0xFFD7C798);
   static const Color secondaryColor300 = Color(0xFFE6DBBD);
   static const Color secondaryColor200 = Color(0xFFF4EFE1);
@@ -30,6 +31,14 @@ class AppColor {
     // stops: [0.0, 1.0],
     // tileMode: TileMode.clamp,
   );
+
+
+  static  LinearGradient textfieldGredient = const LinearGradient(
+    colors: [
+      Color.fromRGBO(153, 153, 153, 0.4),
+      Color.fromRGBO(202, 202, 202, 0.4),
+    ]
+    );
 
   static const LinearGradient buttonGredient = LinearGradient(
     colors: [Color(0xffF3F3F3), Color(0xffF3F3F3)],

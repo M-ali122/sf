@@ -33,7 +33,11 @@ class ProductDetails extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0),
-                        child: SvgPicture.string(Appicons.backIcon,color :const Color.fromRGBO(255, 255, 255, 1),),
+                        child: GestureDetector(
+                          onTap: (){
+                            Get.back();
+                          },
+                          child: SvgPicture.string(Appicons.backIcon,color :const Color.fromRGBO(255, 255, 255, 1),)),
                       ),
                       const SizedBox(
                         width: 30,

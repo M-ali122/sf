@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sf_app/modules/global/controllers/bindings.dart';
+import 'package:sf_app/pages/community/view/community_card_design.dart';
 import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 // <<<<<<< HEAD
 import 'package:sf_app/pages/home/pages/product_details.dart';

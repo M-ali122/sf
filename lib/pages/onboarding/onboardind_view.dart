@@ -47,7 +47,7 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                         Positioned(
                           // left: ,
                           // top: 0,
-                          right: 50,
+                          right: 60,
                           bottom: 0,
                           child: CircleButton(
                             onTap: () {
@@ -87,14 +87,13 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                           left: 50,
                           bottom: 0,
                           child: CircleButton(
+                            gradient: AppColor.buttonGredient,
+                            foreground: AppColor.Dark1,
                             onTap: () {
 
                                 controller.pagecontrol.previousPage(
                                     duration: const Duration(milliseconds: 500),
                                     curve: Curves.easeInOut);
-
-
-
                               // Get.toNamed(OnboardSecond.route);
                             },
                             icon: Icons.arrow_back,

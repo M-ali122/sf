@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/pages/community/view/community_card_design.dart';
 import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 import 'package:sf_app/pages/home/pages/product_details.dart';
 import 'package:sf_app/pages/home/pages/women_categories.dart';
@@ -41,13 +42,13 @@ class AppRoute {
 
     HomeView.route: (p0) => HomeView(),
     WomenCategroies.route: (p0) => WomenCategroies(),
-    ProductDetails.route:(p0) => ProductDetails(),
+    ProductDetails.route:(p0) => const ProductDetails(),
 
     OnbaordingView.route: (p0) => const OnbaordingView(),
-    OrderTabbarScreen.route: (p0) =>  OrderTabbarScreen(),
-    CommunityTabs.route: (p0) => CommunityTabs(),
-
-    Inbox.route:(p0) => Inbox(),
+    OrderTabbarScreen.route: (p0) =>  const OrderTabbarScreen(),
+    CommunityTabs.route: (p0) => const CommunityTabs(),
+    CardDesign.route: (p0) => CardDesign(),
+    Inbox.route:(p0) => const Inbox(),
 
 
 

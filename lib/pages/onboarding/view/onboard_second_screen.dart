@@ -58,7 +58,7 @@ class OnboardSecond extends StatelessWidget {
           ),
 
           Positioned(
-            top: 240,
+            top: 270,
             child: Container(
               width: Get.width,
               height: 185,
