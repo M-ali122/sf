@@ -65,9 +65,10 @@ class UploadProfileView extends StatelessWidget {
                 width: Get.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
-                    color: AppColor.GreyScale50,
+                    color: Color.fromRGBO(250, 250, 250, 1),
                     border: Border.all(
-                        width: 3, color: const Color.fromRGBO(201, 179, 114, 1))),
+                        width: 3,
+                        color: const Color.fromRGBO(201, 179, 114, 1))),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -94,9 +95,10 @@ class UploadProfileView extends StatelessWidget {
                 width: Get.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
-                    color: AppColor.GreyScale50,
+                    color: Color.fromRGBO(250, 250, 250, 1),
                     border: Border.all(
-                        width: 3, color: const Color.fromRGBO(201, 179, 114, 1))),
+                        width: 3,
+                        color: const Color.fromRGBO(201, 179, 114, 1))),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -155,7 +157,7 @@ class UploadProfileView extends StatelessWidget {
                   width: Get.width,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
-                      color: AppColor.backGroundSilver),
+                      color: Color.fromRGBO(243, 243, 243, 1)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
