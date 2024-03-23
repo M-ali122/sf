@@ -1229,8 +1229,28 @@ class Appicons {
 </svg>
  ''';
 
-  static const String appButton = '''
+  static String profileBorderplus = '''
 
+ <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.26858 18.1735C5.09024 18.1735 2.37524 17.6926 2.37524 15.7676C2.37524 13.8426 5.07274 12.0918 8.26858 12.0918C11.4469 12.0918 14.1619 13.826 14.1619 15.7501C14.1619 17.6743 11.4644 18.1735 8.26858 18.1735Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9428 6.77441V10.1161" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.648 8.44499H14.2396" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.26861 9.34699C10.3544 9.34699 12.0461 7.65532 12.0461 5.56949C12.0461 3.48283 10.3544 1.79199 8.26861 1.79199C6.18278 1.79199 4.49111 3.48283 4.49111 5.56949C4.48361 7.64782 6.16361 9.33949 8.24195 9.34699H8.26861Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+''';
+
+  static String image3border = '''
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5857 1.29102H5.37567C2.86567 1.29102 1.2915 3.06935 1.2915 5.58602V12.3743C1.2915 14.891 2.859 16.6694 5.37567 16.6694H12.5815C15.1023 16.6694 16.669 14.891 16.669 12.3743V5.58602C16.6723 3.06935 15.1048 1.29102 12.5857 1.29102Z" stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.91944 6.32056C7.91944 7.17056 7.23111 7.85889 6.38111 7.85889C5.53194 7.85889 4.84277 7.17056 4.84277 6.32056C4.84277 5.47056 5.53194 4.78223 6.38111 4.78223C7.23027 4.78306 7.91861 5.47139 7.91944 6.32056Z" stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.6725 11.4582C15.9033 10.6665 14.4242 9.06738 12.8158 9.06738C11.2067 9.06738 10.2792 12.5949 8.73167 12.5949C7.18417 12.5949 5.77833 10.9999 4.53833 12.0224C3.29833 13.044 2.125 15.1332 2.125 15.1332" stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+''';
+
+  static const String appButton = '''
 
 <svg width="424" height="106" viewBox="0 0 424 106" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_123_3538)">

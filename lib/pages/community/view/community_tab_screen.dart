@@ -126,83 +126,87 @@ class _CommunityTabsState extends State<CommunityTabs>
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            children: [
-              // give the tab bar a height [can change hheight to preferred height]
-              const SizedBox(
-                height: 25,
+        child: Column(
+          children: [
+            // give the tab bar a height [can change hheight to preferred height]
+            const SizedBox(
+              height: 25,
+            ),
+            Row(
+              children: [
+                Image.asset('assets/s_f_logo.png'),
+                const SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Community',
+                  style: theme.textTheme.displayLarge,
+                ),
+                const Spacer(),
+               SvgPicture.string(Appicons.searchBorder)
+              ],
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: 52,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(243, 243, 243, 1),
+                borderRadius: BorderRadius.circular(
+                  25.0,
+                ),
               ),
-              Row(
-                children: [
-                  Image.asset('assets/s_f_logo.png'),
-                  const SizedBox(
-                    width: 20,
+              child: TabBar(
+                labelStyle: theme.textTheme.bodyText1,
+                dividerColor: Colors.transparent,
+                indicatorSize: TabBarIndicatorSize.tab,
+                controller: _tabController,
+                // give the indicator a decoration (color and border radius)
+                indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      25.0,
+                    ),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromRGBO(114, 151, 94, 1),
+                        Color.fromRGBO(71, 87, 54, 1),
+                      ]
+                      )
+                    ),
+                labelColor: Colors.white,
+                // unselectedLabelColor: Colors.black,
+                unselectedLabelStyle: theme.textTheme.bodyText1,
+                tabs: const [
+                  Tab(
+                    text: 'Trending',
                   ),
-                  Text(
-                    'Community',
-                    style: theme.textTheme.displayLarge,
+                  Tab(
+                    text: 'Following',
                   ),
-                  const Spacer(),
-                 SvgPicture.string(Appicons.searchBorder)
+                  Tab(
+                    text: 'Events',
+                  ),
                 ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                height: 52,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(
-                    25.0,
+            ),
+            // tab bar view here
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  //  const SizedBox(height: 20,),
+                  // Text('data'),
+                  CardDesign(),
+                  // second tab bar view widget
+                  Center(child: Text('dare')),
+                  Center(
+                    child: Text('demo'),
                   ),
-                ),
-                child: TabBar(
-                  labelStyle: theme.textTheme.bodyText1,
-                  dividerColor: Colors.transparent,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  controller: _tabController,
-                  // give the indicator a decoration (color and border radius)
-                  indicator: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        25.0,
-                      ),
-                      gradient: AppColor.mainGradient),
-                  labelColor: Colors.white,
-                  // unselectedLabelColor: Colors.black,
-                  tabs: const [
-                    Tab(
-                      text: 'Trending',
-                    ),
-                    Tab(
-                      text: 'Following',
-                    ),
-                    Tab(
-                      text: 'Events',
-                    ),
-                  ],
-                ),
+                ],
               ),
-              // tab bar view here
-              Expanded(
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    //  const SizedBox(height: 20,),
-                    // Text('data'),
-                    CardDesign(),
-                    // second tab bar view widget
-                    Center(child: Text('dare')),
-                    Center(
-                      child: Text('demo'),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

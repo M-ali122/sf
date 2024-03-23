@@ -36,7 +36,7 @@ class TrackingOrder extends StatelessWidget {
             ),
             child: SvgPicture.string(Svgs.orderinDevlivery,fit: BoxFit.cover,)
             ),
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
             Container(
               height: 496,
               width: Get.width,
@@ -63,8 +63,8 @@ class TrackingOrder extends StatelessWidget {
                       style: theme.textTheme.headline6,
                       ),
                   ), 
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40.0),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 40.0),
                       child: Divider(),
                     ),
                     Padding(
@@ -74,7 +74,7 @@ class TrackingOrder extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 70.0),
                       child: ListTile(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 3),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 3),
                         leading: SvgPicture.string(Appicons.tworoundedContainer),
                         title: Text(
                           'Order is being Delivered - Dec...',
@@ -87,7 +87,7 @@ class TrackingOrder extends StatelessWidget {
                           '08:40 AM',
                           style: theme.textTheme.caption,
                           ),
-                        subtitle: Text('address name'),
+                        subtitle: const Text('address name'),
                       ),
                     ),     
                     Padding(
@@ -97,7 +97,7 @@ class TrackingOrder extends StatelessWidget {
                      Padding(
                        padding: const EdgeInsets.only(top: 160.0),
                        child: ListTile(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 3),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 3),
                         leading: SvgPicture.string(Appicons.tworoundedContainer,color: AppColor.GreyScale400,),
                         title: Text(
                           'Order is being Delivered - Dec...',
@@ -110,7 +110,7 @@ class TrackingOrder extends StatelessWidget {
                           '08:40 AM',
                           style: theme.textTheme.caption,
                           ),
-                        subtitle: Text('address name'),
+                        subtitle: const Text('address name'),
                                            ),
                      ),  
                      Padding(
@@ -120,7 +120,7 @@ class TrackingOrder extends StatelessWidget {
                      Padding(
                        padding: const EdgeInsets.only(top: 260.0),
                        child: ListTile(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 3),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 3),
                         leading: SvgPicture.string(Appicons.tworoundedContainer,color: AppColor.GreyScale400,),
                         title: Text(
                           'Order is being Delivered - Dec...',
@@ -133,13 +133,13 @@ class TrackingOrder extends StatelessWidget {
                           '08:40 AM',
                           style: theme.textTheme.caption,
                           ),
-                        subtitle: Text('address name'),
+                        subtitle: const Text('address name'),
                                            ),
                      ),  
                      Padding(
                        padding: const EdgeInsets.only(top: 360.0),
                        child: ListTile(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 3),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 3),
                         leading: SvgPicture.string(Appicons.tworoundedContainer,color: AppColor.GreyScale400,),
                         title: Text(
                           'Order is being Delivered - Dec...',
@@ -152,7 +152,7 @@ class TrackingOrder extends StatelessWidget {
                           '08:40 AM',
                           style: theme.textTheme.caption,
                           ),
-                        subtitle: Text('address name'),
+                        subtitle: const Text('address name'),
                                            ),
                      ),                   
                 ],
