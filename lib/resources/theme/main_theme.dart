@@ -72,7 +72,7 @@ class MainTheme {
       // ignore: deprecated_member_use
       headline1:  GoogleFonts.mulish(fontSize: 24, fontWeight: FontWeight.w700),
       headline2:  GoogleFonts.urbanist(fontSize: 18, fontWeight: FontWeight.w600),
-      headline3:  const TextStyle(fontSize: 48, fontWeight: FontWeight.w700),
+      headline3:  GoogleFonts.mulish(fontSize: 12, fontWeight: FontWeight.w700),
       headline4:   GoogleFonts.mulish(fontSize: 30, fontWeight: FontWeight.w700),
       headline5:  GoogleFonts.mulish(fontSize: 14, fontWeight: FontWeight.w700,),
       headline6:  GoogleFonts.mulish(fontSize: 20, fontWeight: FontWeight.w700),

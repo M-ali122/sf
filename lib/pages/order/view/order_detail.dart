@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/get_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 
 class OrderDetailScreen extends StatelessWidget {
