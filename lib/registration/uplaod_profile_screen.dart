@@ -172,7 +172,7 @@ class UploadProfileView extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 100.h),
+              SizedBox(height: Get.height * 0.3),
 
               /// App Button
               AppButton(

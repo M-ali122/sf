@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../resources/color/app_color.dart';
 
@@ -15,12 +16,16 @@ import '../../resources/color/app_color.dart';
     final  onTap;
     final Gradient? gradient;
     final Color? background;
-        final Color? foreground;
+    final double? width;
+    final double? height;    
+    final Color? foreground;
     final double margin;
     const AppButton({
       super.key,
       required this.title,
       required this.onTap,
+      this.width,
+      this.height,
       this.background,this.foreground,
       this.margin=0,
       this.gradient
@@ -32,8 +37,8 @@ import '../../resources/color/app_color.dart';
       return GestureDetector(
         onTap: onTap,
         child: Container(
-          width: Get.width,
-          height: 58.h,
+          width: width??Get.width,
+          height: height??58.h,
           margin: EdgeInsets.symmetric(horizontal: margin),
           decoration: BoxDecoration(
             // color: background?? Color(0xff72975E),
@@ -43,7 +48,10 @@ import '../../resources/color/app_color.dart';
           ),
           // padding: const EdgeInsets.all(16),
           alignment: Alignment.center,
-          child: Text(title,style: TextStyle(color: foreground??Colors.white),),
+          child: Text(title,style: GoogleFonts.mulish(
+            fontWeight: FontWeight.w700,
+            fontSize: 16,
+            color: foreground??Colors.white),),
         ),
       );
     }

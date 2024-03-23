@@ -19,7 +19,7 @@ class WomenCategroies extends StatelessWidget {
       // backgroundColor: AppColor.ba,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: ListView(
             shrinkWrap: true,
             children: [
@@ -30,7 +30,11 @@ class WomenCategroies extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 10.0),
-                    child: SvgPicture.string(Appicons.backIcon),
+                    child: GestureDetector(
+                      onTap: (){
+                        Get.back();
+                      },
+                      child: SvgPicture.string(Appicons.backIcon)),
                   ),
                   SizedBox(
                     width: 20,
@@ -102,7 +106,7 @@ class WomenCategroies extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 12,
                     ),
                     Container(
                       height: 42,
@@ -121,7 +125,7 @@ class WomenCategroies extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 12,
                     ),
                     Container(
                       height: 42,
@@ -140,7 +144,7 @@ class WomenCategroies extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 13,
                     ),
                     Container(
                       height: 42,

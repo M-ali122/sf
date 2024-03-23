@@ -1,130 +1,7 @@
-// // import 'package:flutter/cupertino.dart';
-// // import 'package:flutter/material.dart';
-// // import 'package:flutter/widgets.dart';
-// // import 'package:flutter_spinkit/flutter_spinkit.dart';
-// // import 'package:flutter_svg/flutter_svg.dart';
-// // import 'package:get/get.dart';
-// //
-// // import '../../../resources/icon/svgs.dart';
-// //
-// // class Explore_Trending extends StatelessWidget {
-// //   static const String route = 'Explore_Trending';
-// //
-// //   const Explore_Trending({Key? key}) : super(key: key);
-// //
-// //   @override
-// //   Widget build(BuildContext context) {
-// //
-// //     var theme = Get.theme;
-// //
-// //     return Scaffold(
-// //       body: Stack(
-// //         children: [
-// //           Positioned(
-// //               left: 280,
-// //               top: -10,
-// //               child: SvgPicture.string(Svgs.appbarCircle)),
-// //           const Positioned(
-// //               top: 60,
-// //               left: 310,
-// //               child: Text('Skip')),
-// //           Positioned(
-// //               top: 50,
-// //               left: 50,
-// //               child: Image.asset('assets/Group.png'),
-// //           ),
-// //           Positioned(
-// //               top: 400,
-// //               left: -42,
-// //               child: SvgPicture.string(Svgs.halfCircleDown),
-// //           ),
-// //           Positioned(
-// //             top: 650,
-// //             child: Text('Explore Trending Styles',
-// //             style: theme.textTheme.headline4,
-// //             ),
-// //           )
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-//
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
-// import 'package:flutter_spinkit/flutter_spinkit.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:get/get.dart';
-//
-// import '../../../resources/icon/svgs.dart';
-//
-// class Explore_Trending extends StatelessWidget {
-//   static const String route = 'Explore_Trending';
-//
-//   const Explore_Trending({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//
-//     var theme = Get.theme;
-//
-//     return Scaffold(
-//       body: SingleChildScrollView(
-//         child: Stack(
-//           children: [
-//             Positioned(
-//                 left: 260,
-//                 top: -10,
-//                 child: SvgPicture.string(Svgs.appbarCircle)),
-//             const Positioned(
-//                 top: 60,
-//                 left: 300,
-//                 child: Text('Skip')),
-//             Positioned(
-//               top: 50,
-//               left: 50,
-//               child: Container(
-//                   height: 330,
-//                   width: 250,
-//                   child: Image.asset('assets/Group.png',fit: BoxFit.scaleDown,),),
-//             ),
-//             Positioned(
-//               top: 220,
-//               left: -20,
-//               child: SvgPicture.string(Svgs.halfCircleDown),
-//             ),
-//             Positioned(
-//               top: 400,
-//               left: 16,
-//               right: 16,
-//               child: Text('Explore Trending Styles',
-//                 style: theme.textTheme.headline4,
-//               ),
-//             ),
-//             Positioned(
-//               top: 490,
-//               left: 16,
-//               right: 16,
-//               child: Align(
-//                 alignment: Alignment.center,
-//                 child: Text('Dive into a world of'
-//                     ' inspiration! Explore trending styles, '
-//                     'browse curated collections, and discover'
-//                     ' fashion pieces that resonate with your unique taste.',
-//                   style: theme.textTheme.overline,
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../resources/icon/svgs.dart';
@@ -143,13 +20,13 @@ class OnboardSecond extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            left: 260,
+            left: Get.width * 0.79,
             top: -10,
             child: SvgPicture.string(Svgs.appbarCircle),
           ),
           Positioned(
             top: 78,
-            left: 300,
+            left: Get.width * 0.87,
             child: Container(
               width: 35, // Adjust the width of the underline as needed
               height: 1.5, // Adjust the height of the underline as needed
@@ -158,7 +35,7 @@ class OnboardSecond extends StatelessWidget {
           ),
           Positioned(
               top: 60,
-              left: 300,
+              left: Get.width * 0.87,
               child: GestureDetector(
                 onTap: (){
                   onboardingController.pagecontrol.jumpToPage(2);
@@ -172,26 +49,24 @@ class OnboardSecond extends StatelessWidget {
 
           Positioned(
             top: 50,
-            left: 50,
+            left: Get.width * 0.2,
             child: SizedBox(
-              height: 330,
+              height: 400,
               width: 250,
               child: Image.asset('assets/svgSecond.png', fit: BoxFit.scaleDown,),
             ),
           ),
 
           Positioned(
-            top: 240,
+            top: 270,
             child: Container(
               width: Get.width,
               height: 185,
               decoration: BoxDecoration(
-
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-
                         Colors.white10.withOpacity(0.0),
                         Colors.white54,
                         Colors.white70,
@@ -203,12 +78,12 @@ class OnboardSecond extends StatelessWidget {
           ),
           Positioned(
             top: 220,
-            left: -20,
+            // left: -20,
             child: SvgPicture.string(Svgs.halfCircleDown),
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 170,
+              top: 230,
               left: 0,
               right: 0,
             ),
@@ -220,8 +95,8 @@ class OnboardSecond extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-                top: 470,
+            padding: EdgeInsets.only(
+                top: Get.height * 0.68,
                 left: 0,
                 right: 0
             ),

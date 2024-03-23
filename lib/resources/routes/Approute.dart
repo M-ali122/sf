@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/pages/community/view/community_card_design.dart';
+import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 import 'package:sf_app/pages/home/pages/product_details.dart';
 import 'package:sf_app/pages/home/pages/women_categories.dart';
 import 'package:sf_app/pages/home/view/home_view.dart';
@@ -6,6 +8,8 @@ import 'package:sf_app/pages/message/view/inbox.dart';
 import 'package:sf_app/pages/navbar/view/navbar_view.dart';
 import 'package:sf_app/pages/onboarding/onboardind_view.dart';
 import 'package:sf_app/pages/onboarding/view/account_type.dart';
+import 'package:sf_app/pages/order/view/order_detail_tabs.dart';
+import 'package:sf_app/pages/order/view/order_view.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 import 'package:sf_app/registration/view/otp_screen.dart';
 
@@ -34,14 +38,17 @@ class AppRoute {
     OnboardSecond.route: (p0) => const OnboardSecond(),
     OnboardThird.route: (p0) => const OnboardThird(),
     BottomnavBar.route: (p0) => const BottomnavBar(),
+    OrderView.route: (p0) =>  OrderView(),
 
     HomeView.route: (p0) => HomeView(),
     WomenCategroies.route: (p0) => WomenCategroies(),
-    ProductDetails.route:(p0) => ProductDetails(),
+    ProductDetails.route:(p0) => const ProductDetails(),
 
     OnbaordingView.route: (p0) => const OnbaordingView(),
-
-    Inbox.route:(p0) => Inbox(),
+    OrderTabbarScreen.route: (p0) =>  const OrderTabbarScreen(),
+    CommunityTabs.route: (p0) => const CommunityTabs(),
+    CardDesign.route: (p0) => CardDesign(),
+    Inbox.route:(p0) => const Inbox(),
 
 
 

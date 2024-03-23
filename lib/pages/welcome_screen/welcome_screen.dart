@@ -64,7 +64,7 @@ class WelcomeView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
                     children: [
-                      const SizedBox(height: 60,),
+                      const SizedBox(height: 50,),
                       Text(
                         'Connecting Threads, Creating Style.',
                         style: theme.textTheme.headline4,
@@ -78,7 +78,7 @@ class WelcomeView extends StatelessWidget {
                         color: Color.fromRGBO(33, 33, 33, 1),
                       ),
                       ),
-                      const SizedBox(height: 20,),
+                      const SizedBox(height: 14,),
                       AppButton(
                           title: 'Sign Up',
                           onTap: (){
