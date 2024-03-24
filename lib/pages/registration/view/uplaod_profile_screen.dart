@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sf_app/registration/controller/passController.dart';
+import 'package:sf_app/pages/registration/controller/passController.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
-import '../helper/view/Appbutton.dart';
-import '../helper/view/progress_bar.dart';
-import '../pages/screens/terms_and_condition.dart';
-import '../resources/icon/svgs.dart';
+import '../../../helper/view/Appbutton.dart';
+import '../../../helper/view/progress_bar.dart';
+import 'terms_and_condition.dart';
+import '../../../resources/icon/svgs.dart';
 
 class UploadProfileView extends StatelessWidget {
   static String route = 'UploadProfileView';
