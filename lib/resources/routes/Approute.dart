@@ -28,7 +28,7 @@ class AppRoute {
     Splash_View.route: (p0) => const Splash_View(),
 
     /// client screen routes
-    RegistrationScreen.route: (p0) => const RegistrationForm(),
+    RegistrationScreen.route: (p0) => const RegistrationScreen(),
     LoginScreen.route: (p0) => const LoginScreen(),
     OtpScreen.route: (p0) => const OtpScreen(),
     PasswordScreen.route: (p0) => const PasswordScreen(),
