@@ -15,11 +15,17 @@ class CustomeProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    num progress = 0;
+    if (progressValue == 0) {
+      progress = 0.1;
+    } else {
+      progress = progressValue / 10;
+    }
     return SizedBox(
       width: 216.w,
       child: LinearProgressIndicator(
         minHeight: 8,
-        value: progressValue,
+        value: progress.toDouble(),
         borderRadius: BorderRadius.circular(12),
         backgroundColor: const Color(0xffEEEEEE),
         valueColor: const AlwaysStoppedAnimation<Color>(Color(0xff72975E)),

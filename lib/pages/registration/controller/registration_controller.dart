@@ -9,10 +9,24 @@ import 'package:sf_app/pages/registration/view/uplaod_profile_screen.dart';
 class RegistrationController extends GetxController {
   final RxBool busy = false.obs;
   final RxList<Widget> views = [
-    RegistrationForm(),
-    OtpScreen(),
-    PasswordScreen(),
-    UploadProfileView(),
+    const RegistrationForm(),
+    const OtpScreen(),
+    const PasswordScreen(),
+    const UploadProfileView(),
     TermAndCondition(),
   ].obs;
+  final RxInt currentSelectedViewIndex = 0.obs;
+
+  onChangeView(int index) {
+    currentSelectedViewIndex.value = index;
+
+    update();
+  }
+
+  onRegister() async {
+    //TODO : logics of saving user input
+
+    //Navigate to Email verification
+    onChangeView(1);
+  }
 }

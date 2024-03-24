@@ -14,10 +14,15 @@ class RegistrationScreen extends StatelessWidget {
     Get.put(controller);
     return Scaffold(
       appBar: AppBar(
-        title: const CustomeProgressBar(
-          progressValue: 0.06,
+        title: Obx(
+          () => CustomeProgressBar(
+            progressValue: controller.currentSelectedViewIndex.value,
+          ),
         ),
         centerTitle: true,
+      ),
+      body: Obx(
+        () => controller.views[controller.currentSelectedViewIndex.value],
       ),
     );
   }
