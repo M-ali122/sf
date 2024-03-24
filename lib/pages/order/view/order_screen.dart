@@ -18,7 +18,7 @@ class OrderView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: SafeArea(
-          child: Column(
+          child: ListView(
             children: [
               const SizedBox(height: 24,),
               Row(
@@ -131,7 +131,7 @@ class OrderView extends StatelessWidget {
                                 Text('44.00 SAR',
                                 style: theme.textTheme.bodyLarge,
                                 ),
-                                const SizedBox(width: 10,),
+                                const SizedBox(width: 3,),
                                 AppButton(
                                   title: 'See detail',
                                    onTap: (){
@@ -220,7 +220,7 @@ class OrderView extends StatelessWidget {
                                 Text('44.00 SAR',
                                 style: theme.textTheme.bodyLarge,
                                 ),
-                                const SizedBox(width: 10,),
+                                const SizedBox(width: 3,),
                                 AppButton(
                                   title: 'See detail',
                                    onTap: (){},
@@ -307,7 +307,7 @@ class OrderView extends StatelessWidget {
                                 Text('44.00 SAR',
                                 style: theme.textTheme.bodyLarge,
                                 ),
-                                const SizedBox(width: 10,),
+                                const SizedBox(width: 3,),
                                 AppButton(
                                   title: 'See detail',
                                    onTap: (){
