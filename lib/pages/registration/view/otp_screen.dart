@@ -1,102 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sf_app/pages/registration/view/password_screen.dart';
+import 'package:sf_app/helper/extensions/spacings.dart';
+import 'package:sf_app/pages/registration/controller/registration_controller.dart';
 
 import '../../../helper/view/Appbutton.dart';
 import '../../../helper/view/OtpCustomeConatiner.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends GetWidget<RegistrationController> {
   static String route = 'OtpScreen';
   const OtpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final theme = Get.theme;
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) => controller.startTimer(),
+    );
     return Scaffold(
       body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: SingleChildScrollView(
-            child: SizedBox(
-              width: Get.width,
-              height: Get.height,
-              child: Column(
-                children: [
-                  Text(
-                    'Email verification needed',
-                    style: theme.textTheme.headline4,
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'We have sent the OTP verification code to '
-                    'your email. Check your email and enter the code below.',
-                    style: theme.textTheme.bodyText2,
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-
-                  /// otp custom Container
-                  const OtpCustomConatiner(),
-                  const SizedBox(
-                    height: 30,
-                  ),
-
-                  const Center(
-                      child: Text(
-                    "Didn't receive an email?",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color.fromRGBO(33, 33, 33, 1),
-                    ),
-                  )),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Center(
-                    child: RichText(
-                      text: TextSpan(
-                        style: theme.textTheme.overline,
-                        children: const [
-                          TextSpan(
-                              text: "You can resend code in ",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: Color.fromRGBO(33, 33, 33, 1),
-                              )),
-                          TextSpan(
-                            text: "55",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Color.fromRGBO(71, 87, 54, 1),
-                            ), // Set the color to green
-                          ),
-                          TextSpan(text: " s")
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  const Spacer(),
-
-                  /// App Button
-                  AppButton(
-                      title: 'Continue',
-                      onTap: () {
-                        Get.toNamed(PasswordScreen.route);
-                      }),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                ],
-              ),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            Text(
+              'Email verification needed',
+              style: theme.textTheme.headline4,
             ),
-          )),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              'We have sent the OTP verification code to '
+              'your email. Check your email and enter the code below.',
+              style: theme.textTheme.bodyText2!.copyWith(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w400,
+                  color: const Color(0xff424242)),
+            ),
+            24.height,
+
+            /// otp custom Container
+            const OtpCustomConatiner(),
+            const SizedBox(
+              height: 30,
+            ),
+
+            const Center(
+                child: Text(
+              "Didn't receive an email?",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            )),
+            24.height,
+            Center(
+                child: Obx(
+              () => RichText(
+                text: TextSpan(
+                  style: theme.textTheme.overline,
+                  children: [
+                    TextSpan(
+                        text: "You can resend code in ",
+                        style: TextStyle(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w500,
+                        )),
+                    TextSpan(
+                      text: "${controller.resentOtpTimer.value} s",
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w500,
+                      ), // Set the color to green
+                    ),
+                  ],
+                ),
+              ),
+            )),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(24),
+        child: AppButton(
+          title: 'Continue',
+          onTap: () async {
+            controller.verifyOtp();
+          },
+        ),
+      ),
     );
   }
 }

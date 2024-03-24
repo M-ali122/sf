@@ -61,6 +61,7 @@ class WelcomeView extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: 420.h,
+              color: Colors.white,
               width: Get.width,
               padding: const EdgeInsets.only(
                   left: 24, right: 24, top: 32, bottom: 36),
