@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,11 +22,11 @@ class Settings extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(
-                    width: 5,
+                    width: 5.w,
                   ),
                   SvgPicture.string(Appicons.backIcon),
-                  const SizedBox(
-                    width: 20,
+                  SizedBox(
+                    width: 20.w,
                   ),
                   Text(
                     'Settings',
@@ -34,7 +35,7 @@ class Settings extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 20.h,
               ),
               coustomeTile(
                   OnTap: () {
