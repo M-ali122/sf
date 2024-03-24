@@ -26,7 +26,7 @@ class AppColor {
   static const Color secondaryColor400 = Color(0xFFD7C798);
   static const Color secondaryColor300 = Color(0xFFE6DBBD);
   static const Color secondaryColor200 = Color(0xFFF4EFE1);
-  static const Color secondaryColor100 = Color(0xFFFBF9F4);
+  static const Color secondaryColor100 = Color.fromRGBO(251, 249, 244, 1);
 
   static const Color alartSuccess = Color(0xFF4ADE80);
   static const Color alartInfo = Color(0xFF246BFD);

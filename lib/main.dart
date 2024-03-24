@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sf_app/modules/global/controllers/bindings.dart';
+import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 import 'package:sf_app/resources/languages/dictionary.dart';
 import 'package:sf_app/resources/routes/Approute.dart';
 import 'package:sf_app/resources/theme/main_theme.dart';
@@ -33,8 +34,8 @@ class MainApp extends StatelessWidget {
           translations: AppDictionary(),
           // home: child,
           routes: AppRoute().routes,
-          // initialRoute: BottomnavBar.route,
-          initialRoute: Splash_View.route,
+          initialRoute: CommunityTabs.route,
+          // initialRoute: Splash_View.route,
         );
       },
     );

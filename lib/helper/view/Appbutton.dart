@@ -11,6 +11,7 @@ class AppButton extends StatelessWidget {
   final onTap;
   final Gradient? gradient;
   final Color? background;
+  final TextStyle? style;
   final double? width;
   final double? height;
   final Color? foreground;
@@ -23,6 +24,7 @@ class AppButton extends StatelessWidget {
       this.height,
       this.background,
       this.foreground,
+      this.style,
       this.margin = 0,
       this.gradient});
 
@@ -52,10 +54,11 @@ class AppButton extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           title,
-          style: TextStyle(
+          style: style ?? TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 16.sp,
-              color: foreground ?? Colors.white),
+              color: foreground ?? Colors.white
+              ),
         ),
       ),
     );
