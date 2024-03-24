@@ -130,6 +130,7 @@ class TermAndCondition extends GetWidget<RegistrationController> {
                   title: 'Continue',
                   onTap: () {
                     // Get.toNamed(AccountType.route);
+                    controller.completeRegistration();
                   }),
               const SizedBox(
                 height: 30,
