@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/pages/auth/screens/login.dart';
 import 'package:sf_app/pages/community/view/community_card_design.dart';
 import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 import 'package:sf_app/pages/home/pages/product_details.dart';
@@ -11,23 +12,24 @@ import 'package:sf_app/pages/onboarding/view/account_type.dart';
 import 'package:sf_app/pages/order/view/order_detail_tabs.dart';
 import 'package:sf_app/pages/order/view/order_view.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
-import 'package:sf_app/registration/view/otp_screen.dart';
+import 'package:sf_app/pages/registration/screens/registration_screen.dart';
+import 'package:sf_app/pages/registration/view/otp_screen.dart';
 
 import '../../pages/onboarding/view/explore_trending_style.dart';
 import '../../pages/onboarding/view/onboard_second_screen.dart';
 import '../../pages/onboarding/view/onboarding_third_screen.dart';
-import '../../pages/screens/terms_and_condition.dart';
-import '../../registration/uplaod_profile_screen.dart';
-import '../../registration/view/password_screen.dart';
-import '../../registration/view/registration_form.dart';
+import '../../pages/registration/view/terms_and_condition.dart';
+import '../../pages/registration/view/uplaod_profile_screen.dart';
+import '../../pages/registration/view/password_screen.dart';
+import '../../pages/registration/view/registration_form.dart';
 
 class AppRoute {
   final Map<String, Widget Function(BuildContext)> routes = {
     Splash_View.route: (p0) => const Splash_View(),
 
     /// client screen routes
-    RegistrationForm.route: (p0) => const RegistrationForm(),
-
+    RegistrationScreen.route: (p0) => const RegistrationForm(),
+    LoginScreen.route: (p0) => const LoginScreen(),
     OtpScreen.route: (p0) => const OtpScreen(),
     PasswordScreen.route: (p0) => const PasswordScreen(),
     UploadProfileView.route: (p0) => const UploadProfileView(),
@@ -38,20 +40,16 @@ class AppRoute {
     OnboardSecond.route: (p0) => const OnboardSecond(),
     OnboardThird.route: (p0) => const OnboardThird(),
     BottomnavBar.route: (p0) => const BottomnavBar(),
-    OrderView.route: (p0) =>  OrderView(),
+    OrderView.route: (p0) => OrderView(),
 
     HomeView.route: (p0) => HomeView(),
     WomenCategroies.route: (p0) => WomenCategroies(),
-    ProductDetails.route:(p0) => const ProductDetails(),
+    ProductDetails.route: (p0) => const ProductDetails(),
 
     OnbaordingView.route: (p0) => const OnbaordingView(),
-    OrderTabbarScreen.route: (p0) =>  const OrderTabbarScreen(),
+    OrderTabbarScreen.route: (p0) => const OrderTabbarScreen(),
     CommunityTabs.route: (p0) => const CommunityTabs(),
     CardDesign.route: (p0) => CardDesign(),
-    Inbox.route:(p0) => const Inbox(),
-
-
-
-
+    Inbox.route: (p0) => const Inbox(),
   };
 }

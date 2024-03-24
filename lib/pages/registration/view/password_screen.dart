@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
-import '../../helper/view/Appbutton.dart';
-import '../../helper/view/progress_bar.dart';
-import '../../helper/view/textfield.dart';
+import '../../../helper/view/Appbutton.dart';
+import '../../../helper/view/progress_bar.dart';
+import '../../../helper/view/textfield.dart';
 import '../controller/passController.dart';
-import '../uplaod_profile_screen.dart';
+import 'uplaod_profile_screen.dart';
 
 class PasswordScreen extends StatelessWidget {
   static String route = 'PasswordScreen';

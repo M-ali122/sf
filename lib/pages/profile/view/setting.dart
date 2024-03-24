@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/pages/profile/view/edit_profile.dart';
+import 'package:sf_app/pages/profile/view/language.dart';
 import 'package:sf_app/pages/profile/view/notification.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -52,6 +53,9 @@ class Settings extends StatelessWidget {
                   leadings: Appicons.notificationBorder,
                   trailings: Appicons.arrowforword),
               coustomeTile(
+                  OnTap: () {
+                    Get.to(Language());
+                  },
                   title: 'Language',
                   leadings: Appicons.morecircleBorder,
                   trailings: Appicons.arrowforword,

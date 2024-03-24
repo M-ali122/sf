@@ -6,7 +6,6 @@ import 'package:sf_app/resources/languages/dictionary.dart';
 import 'package:sf_app/resources/routes/Approute.dart';
 import 'package:sf_app/resources/theme/main_theme.dart';
 import 'package:sf_app/resources/utils.dart';
-import 'pages/navbar/view/navbar_view.dart';
 import 'pages/splash/view/splash_view.dart';
 
 void main() {
@@ -33,8 +32,8 @@ class MainApp extends StatelessWidget {
           translations: AppDictionary(),
           // home: child,
           routes: AppRoute().routes,
-          initialRoute: BottomnavBar.route,
-          // initialRoute: Splash_View.route,
+          // initialRoute: BottomnavBar.route,
+          initialRoute: Splash_View.route,
         );
       },
     );
