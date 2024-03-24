@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/pages/profile/view/edit_profile.dart';
+import 'package:sf_app/pages/profile/view/language.dart';
 import 'package:sf_app/pages/profile/view/notification.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -21,11 +23,11 @@ class Settings extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(
-                    width: 5,
+                    width: 5.w,
                   ),
                   SvgPicture.string(Appicons.backIcon),
-                  const SizedBox(
-                    width: 20,
+                  SizedBox(
+                    width: 20.w,
                   ),
                   Text(
                     'Settings',
@@ -34,7 +36,7 @@ class Settings extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 20.h,
               ),
               coustomeTile(
                   OnTap: () {
@@ -51,6 +53,9 @@ class Settings extends StatelessWidget {
                   leadings: Appicons.notificationBorder,
                   trailings: Appicons.arrowforword),
               coustomeTile(
+                  OnTap: () {
+                    Get.to(Language());
+                  },
                   title: 'Language',
                   leadings: Appicons.morecircleBorder,
                   trailings: Appicons.arrowforword,

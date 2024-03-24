@@ -1,13 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
-class Notifications extends StatelessWidget {
+class Notifications extends StatefulWidget {
   Notifications({super.key});
 
+  @override
+  State<Notifications> createState() => _NotificationsState();
+}
+
+class _NotificationsState extends State<Notifications> {
   final theme = Get.theme;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,14 +27,14 @@ class Notifications extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(
-                    width: 10,
+                    width: 10.w,
                   ),
                   SvgPicture.string(Appicons.backIcon),
-                  const SizedBox(
-                    width: 20,
+                  SizedBox(
+                    width: 20.w,
                   ),
-                  const SizedBox(
-                    width: 20,
+                  SizedBox(
+                    width: 20.w,
                   ),
                   Text(
                     'Notification',
@@ -34,7 +42,14 @@ class Notifications extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 20.h,
+              ),
               toggleButton('General Notification'),
+              toggleButton('Promotion'),
+              toggleButton('Order update'),
+              toggleButton('Community mention'),
+              toggleButton('App Updates'),
             ],
           ),
         ),
@@ -42,16 +57,26 @@ class Notifications extends StatelessWidget {
     );
   }
 
-  bool isSwitched = true;
+  bool isSwitched = false;
+
   Widget toggleButton(String? title) {
     return ListTile(
       title: Text(title!),
       trailing: Switch(
         value: isSwitched,
-        onChanged: (value) {},
+        onChanged: (value) {
+          print(value);
+          setState(() {
+            isSwitched = value;
+          });
+        },
+        // activeTrackColor: Color.fromRGBO(71, 87, 54, 1),
+        // activeColor: Colors.white,
 
-        activeColor: Color.fromARGB(66, 66, 66, 1), // Color when switch is ON
-        inactiveThumbColor: Colors.grey, // Color when switch is OFF
+        // inactiveTrackColor: Colors.white,
+
+        // inactiveThumbColor:
+        //     Color.fromRGBO(71, 87, 54, 1), // Color when switch is OFF
       ),
     );
   }

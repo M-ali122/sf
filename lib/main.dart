@@ -6,7 +6,6 @@ import 'package:sf_app/resources/languages/dictionary.dart';
 import 'package:sf_app/resources/routes/Approute.dart';
 import 'package:sf_app/resources/theme/main_theme.dart';
 import 'package:sf_app/resources/utils.dart';
-
 import 'pages/splash/view/splash_view.dart';
 
 void main() {
