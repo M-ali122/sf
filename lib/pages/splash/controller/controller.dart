@@ -9,7 +9,8 @@ class SplashController extends GetxController {
   }
 
   void splashService() async {
+    //Run auth and other checks
     await Future.delayed(const Duration(seconds: 3));
-    Get.off(() => WelcomeView());
+    Get.off(() => const WelcomeView());
   }
 }

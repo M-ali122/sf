@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/resources/color/app_color.dart';
 
 import '../controller/controller.dart';
 
@@ -17,12 +20,13 @@ class Splash_View extends GetWidget<SplashController> {
         return Scaffold(
           body: Stack(
             children: [
+              //Top Circle
               Positioned(
-                left: 220,
-                top: -60,
+                left: 257.w,
+                top: -36.h,
                 child: Container(
-                  height: 197,
-                  width: 197,
+                  height: 197.h,
+                  width: 197.w,
                   decoration: const ShapeDecoration(
                     shape: CircleBorder(
                       side: BorderSide(
@@ -33,25 +37,23 @@ class Splash_View extends GetWidget<SplashController> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Center(child: Image.asset('assets/splashlogo.png')),
               ),
-
+              //Bottom Circle
               Positioned(
-                left: -175,
-                bottom: -5,
+                left: -175.w,
+                bottom: -5.h,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                    height: 250,
-                    width: 334,
-                    margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 2 + 80),
-                    // width: MediaQuery.of(context).size.width,
+                    height: 334.h,
+                    width: 334.w,
                     alignment: Alignment.center,
                     decoration: const ShapeDecoration(
                       shape: CircleBorder(
                         side: BorderSide(
-                          color: Color(0xffC9B372),
+                          color: AppColor.borderColor,
                         ),
                       ),
                     ),
@@ -59,15 +61,12 @@ class Splash_View extends GetWidget<SplashController> {
                 ),
               ),
               Positioned(
-                bottom: 50,
+                bottom: 90.h,
                 left: 0,
                 right: 0,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 480.0),
-                  child: SpinKitCircle(
-                    color: Color(0xff72975E),
-                    size: 50.0,
-                  ),
+                child: SpinKitCircle(
+                  color: Get.theme.secondaryHeaderColor,
+                  size: 60.0,
                 ),
               ),
             ],
