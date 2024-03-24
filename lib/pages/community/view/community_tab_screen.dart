@@ -1,98 +1,9 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_svg/svg.dart';
-// import 'package:get/get_core/get_core.dart';
-// import 'package:get/get_navigation/get_navigation.dart';
-// import 'package:sf_app/resources/icon/icon.dart';
-// import 'package:sf_app/resources/icon/svgs.dart';
-
-// class CommunityScreen extends StatelessWidget {
-//   static String route = 'CommunityScreen';  
-//    CommunityScreen({super.key});
-    
-//      final theme = Get.theme;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 24.0),
-//           child: Column(
-//             children: [
-//               const SizedBox(height: 25,),
-//               Row(
-//                 children: [
-//                   Image.asset('assets/s_f_logo.png'),
-//                   const SizedBox(width: 15,),
-//                   Text(
-//                     'Community',
-//                     style: theme.textTheme.headline1,
-//                     ),
-//                     const Spacer(),
-//                   SvgPicture.string(Appicons.searchBorder)   
-//                 ],
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:get/get.dart';
-// import 'package:sf_app/resources/icon/icon.dart';
-
-// class OrderDetailScreen extends StatelessWidget {
-//   static String route = 'OrderDetailScreen';
-//    OrderDetailScreen({super.key});
-
-//     final theme = Get.theme;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 24.0),
-//           child: Column(
-//             children: [
-//               const SizedBox(height: 25),
-//               Row(
-//                 children: [
-//                   GestureDetector(
-//                     onTap: (){
-//                       Get.back();
-//                     },
-//                     child: SvgPicture.string(Appicons.backIcon),
-//                     ),
-//                     const SizedBox(width: 20,),
-//                   Text(
-//                     'Order detail',
-//                     style: theme.textTheme.displayLarge,
-//                     ),
-//                     const Spacer(),
-//                   SvgPicture.string(Appicons.moresquareBorder),
-//                   const SizedBox(height: 20,),
-
-//                 ],
-//               )
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/pages/community/view/community_card_design.dart';
-import 'package:sf_app/resources/color/app_color.dart';
+import 'package:sf_app/pages/community/view/event_screen.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
 class CommunityTabs extends StatefulWidget {
@@ -134,7 +45,10 @@ class _CommunityTabsState extends State<CommunityTabs>
             ),
             Row(
               children: [
-                Image.asset('assets/s_f_logo.png'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Image.asset('assets/s_f_logo.png'),
+                ),
                 const SizedBox(
                   width: 20,
                 ),
@@ -142,52 +56,62 @@ class _CommunityTabsState extends State<CommunityTabs>
                   'Community',
                   style: theme.textTheme.displayLarge,
                 ),
-                const Spacer(),
-               SvgPicture.string(Appicons.searchBorder)
+                 SizedBox(
+                  width: 130.w,
+                ),
+               Padding(
+                 padding: const EdgeInsets.only(left: 24.0),
+                 child: SvgPicture.string(Appicons.searchBorder),
+               )
               ],
             ),
             const SizedBox(
               height: 30,
             ),
-            Container(
-              height: 52,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(243, 243, 243, 1),
-                borderRadius: BorderRadius.circular(
-                  25.0,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Container(
+                height: 52,
+                
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(243, 243, 243, 1),
+                  borderRadius: BorderRadius.circular(
+                    25.0,
+                  ),
                 ),
-              ),
-              child: TabBar(
-                labelStyle: theme.textTheme.bodyText1,
-                dividerColor: Colors.transparent,
-                indicatorSize: TabBarIndicatorSize.tab,
-                controller: _tabController,
-                // give the indicator a decoration (color and border radius)
-                indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      25.0,
+                child: TabBar(
+                  labelStyle: theme.textTheme.bodyText1,
+                  dividerColor: Colors.transparent,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  controller: _tabController,
+                  // give the indicator a decoration (color and border radius)
+                  indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        25.0,
+                      ),
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color.fromRGBO(114, 151, 94, 1),
+                          Color.fromRGBO(71, 87, 54, 1),
+                        ]
+                        )
+                      ),
+                  labelColor: Colors.white,
+                  // unselectedLabelColor: Colors.black,
+                  unselectedLabelStyle: theme.textTheme.bodyText1,
+                  
+                  tabs: const [
+                    Tab(
+                      text: 'Trending',
                     ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Color.fromRGBO(114, 151, 94, 1),
-                        Color.fromRGBO(71, 87, 54, 1),
-                      ]
-                      )
+                    Tab(
+                      text: 'Following',
                     ),
-                labelColor: Colors.white,
-                // unselectedLabelColor: Colors.black,
-                unselectedLabelStyle: theme.textTheme.bodyText1,
-                tabs: const [
-                  Tab(
-                    text: 'Trending',
-                  ),
-                  Tab(
-                    text: 'Following',
-                  ),
-                  Tab(
-                    text: 'Events',
-                  ),
-                ],
+                    Tab(
+                      text: 'Events',
+                    ),
+                  ],
+                ),
               ),
             ),
             // tab bar view here
@@ -199,10 +123,10 @@ class _CommunityTabsState extends State<CommunityTabs>
                   // Text('data'),
                   CardDesign(),
                   // second tab bar view widget
-                  Center(child: Text('dare')),
                   Center(
                     child: Text('demo'),
                   ),
+                  EventScreen(),
                 ],
               ),
             ),
