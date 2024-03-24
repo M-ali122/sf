@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
+import 'package:sf_app/pages/auth/screens/login.dart';
+import 'package:sf_app/pages/registration/screens/registration_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
-
-import '../../registration/view/registration_form.dart';
 
 class WelcomeView extends StatelessWidget {
   static String route = 'WelcomeView';
@@ -15,22 +17,25 @@ class WelcomeView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset('assets/welcomePage.png'),
-          Positioned(
-              top: 100,
-              child: Image.asset('assets/Rectangle.png'),
+          Image.asset(
+            'assets/welcomePage.png',
+            fit: BoxFit.contain,
           ),
           Positioned(
-              top: 58,
-              left: 24,
+            top: 100,
+            child: Image.asset('assets/Rectangle.png'),
+          ),
+          //Logo badge
+          Positioned(
+              top: 74.h,
+              left: 24.w,
               child: Container(
-                width: 85,
-                height: 37,
+                width: 85.w,
+                height: 37.h,
                 decoration: BoxDecoration(
-                  color:  const Color.fromRGBO(255, 255, 255, 1),
+                  color: const Color.fromRGBO(255, 255, 255, 1),
                   borderRadius: BorderRadius.circular(100),
                 ),
-                
                 child: Image.asset('assets/s1.png'),
               )),
           Positioned(
@@ -39,65 +44,63 @@ class WelcomeView extends StatelessWidget {
               height: 500,
               width: Get.width,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-
-                      Colors.white10.withOpacity(0.0),
-                      Colors.white38,
-                      Colors.white70.withOpacity(0.1),
-                      Colors.white.withOpacity(0.2),
-                      Colors.white,
-                      Colors.white,
-                      Colors.white,
-                    ]
-                )
-              ),
-            ),),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: SizedBox(
-                height: 340,
-                width: Get.width,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 50,),
-                      Text(
-                        'Connecting Threads, Creating Style.',
-                        style: theme.textTheme.headline4,
-                      ),
-                      const SizedBox(height: 15,),
-                      const Text(
-                        'Welcome to the only fashion app you will ever need!',style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: "Mulish",
-                        color: Color.fromRGBO(33, 33, 33, 1),
-                      ),
-                      ),
-                      const SizedBox(height: 14,),
-                      AppButton(
-                          title: 'Sign Up',
-                          onTap: (){
-                            Get.toNamed(RegistrationForm.route);
-                          }
-                      ),
-                      const SizedBox(height: 10,),
-                      AppButton(
-                          gradient: AppColor.buttonGredient,
-                          foreground: AppColor.black,
-                          title: 'Log In',
-                          onTap: (){
-                          }
-                      ),
-                    ],
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    Colors.white10.withOpacity(0.0),
+                    Colors.white38,
+                    Colors.white70.withOpacity(0.1),
+                    Colors.white.withOpacity(0.2),
+                    Colors.white,
+                    Colors.white,
+                  ])),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 420.h,
+              color: Colors.white,
+              width: Get.width,
+              padding: const EdgeInsets.only(
+                  left: 24, right: 24, top: 32, bottom: 36),
+              child: Column(
+                children: [
+                  Text(
+                    'Connecting Threads, Creating Style.',
+                    style: theme.textTheme.headline4,
                   ),
-                ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    'Welcome to the only fashion app you will ever need!',
+                    style: TextStyle(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w500,
+                      color: const Color(0xff212121),
+                    ),
+                  ),
+                  24.height,
+                  AppButton(
+                      title: 'Sign Up',
+                      onTap: () {
+                        Get.toNamed(RegistrationScreen.route);
+                      }),
+                  16.height,
+                  AppButton(
+                    gradient: AppColor.buttonGredient,
+                    foreground: AppColor.black,
+                    title: 'Log In',
+                    onTap: () async {
+                      Get.toNamed(LoginScreen.route);
+                    },
+                  ),
+                ],
               ),
-            )
+            ),
+          )
         ],
       ),
     );

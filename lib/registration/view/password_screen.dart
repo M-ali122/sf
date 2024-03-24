@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/pages/registration/controller/passController.dart';
+import 'package:sf_app/pages/registration/view/uplaod_profile_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
 import '../../helper/view/Appbutton.dart';
 import '../../helper/view/progress_bar.dart';
 import '../../helper/view/custome_textfield.dart';
-import '../controller/passController.dart';
-import '../uplaod_profile_screen.dart';
 
 class PasswordScreen extends StatelessWidget {
   static String route = 'PasswordScreen';
@@ -43,7 +43,7 @@ class PasswordScreen extends StatelessWidget {
 
                         /// Custom progress bar
                         const Expanded(
-                          child: CustomeProgressBar(progressValue: 0.6),
+                          child: CustomeProgressBar(),
                         ),
                         const SizedBox(width: 50),
                       ],
