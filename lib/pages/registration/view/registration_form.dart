@@ -1,59 +1,12 @@
-// <<<<<<< HEAD
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:get/get.dart';
-// import 'package:sf_app/resources/icon/icon.dart';
-// import 'package:sf_app/resources/icon/svgs.dart';
-// import 'package:sf_app/resources/theme/main_theme.dart';
-//
-// class RegistrationForm extends GetWidget{
-//   static String route = 'RegistrationForm';
-//
-//   Widget build(BuildContext context){
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Padding(
-//           padding: EdgeInsets.symmetric(horizontal: 16),
-//           child: ListView(
-//             children: [
-//               SizedBox(height: 10.h,),
-//               Row(
-//                 children: [
-//                   SvgPicture.string(icon.backIcon),
-//                   SizedBox(width: 50,),
-//                   SvgPicture.string(Svgs.linearProgress),
-//                 ],
-//               ),
-//               SizedBox(height: 30.h,),
-//               Text(
-//                   'Fill the information below',
-//               )
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//
-//   }
-//
-// }
-// =======
-// >>>>>>> 690d6e6b8ae384d496ee4308f9e03b91c1e4f733
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
+import 'package:sf_app/helper/view/custome_textfield.dart';
 import 'package:sf_app/pages/registration/controller/registration_controller.dart';
-import 'package:sf_app/pages/registration/view/otp_screen.dart';
-import 'package:sf_app/resources/icon/icon.dart';
 
-import '../../../helper/view/progress_bar.dart';
-import '../../../helper/view/textfield.dart';
-
-class RegistrationForm extends StatelessWidget {
+class RegistrationForm extends GetWidget<RegistrationController> {
+  static String route = 'RegistrationForm';
   const RegistrationForm({super.key});
   @override
   Widget build(BuildContext context) {
@@ -111,8 +64,8 @@ class RegistrationForm extends StatelessWidget {
               ),
               AppButton(
                   title: 'Continue',
-                  onTap: () {
-                    Get.toNamed(OtpScreen.route);
+                  onTap: () async {
+                    controller.onRegister();
                   }),
               const SizedBox(
                 height: 30,

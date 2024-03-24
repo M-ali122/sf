@@ -1,7 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sf_app/pages/navbar/view/navbar_view.dart';
+
+import 'package:sf_app/helper/extensions/spacings.dart';
+import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/pages/onboarding/view/explore_trending_style.dart';
 import 'package:sf_app/pages/onboarding/view/onboard_second_screen.dart';
@@ -47,19 +50,19 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                         Positioned(
                           // left: ,
                           // top: 0,
-                          right: 60,
+                          right: 60.w,
                           bottom: 0,
                           child: CircleButton(
                             onTap: () {
-                              if(controller.isLast.isTrue){
+                              if (controller.isLast.isTrue) {
                                 /// home screen call here
-                                print("last");
+
                                 Get.offAllNamed(BottomnavBar.route);
                                 // Get.offAllNamed()
-                              }else{
-                              controller.pagecontrol.nextPage(
-                                  duration: const Duration(milliseconds: 500),
-                                  curve: Curves.easeInOut);
+                              } else {
+                                controller.pagecontrol.nextPage(
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeInOut);
                               }
                               // Get.toNamed(OnboardSecond.route);
                             },
@@ -67,33 +70,34 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                           ),
                         ),
                         Positioned(
-                          bottom: 60,
-                          left: 150,
+                          bottom: 87.h,
+                          left: 0,
                           right: 0,
-                          child: SmoothPageIndicator(
-                            controller: controller.pagecontrol,
-                            count: 3,
-                            effect: const ExpandingDotsEffect(
-                              spacing: 10,
-                              dotHeight: 8,
-                              dotWidth: 8,
-                              activeDotColor: AppColor.primaryColor500,
-                              dotColor: Color.fromRGBO(238, 238, 238, 1),
-                              // activeDotColor: Colors.black
+                          child: Center(
+                            child: SmoothPageIndicator(
+                              controller: controller.pagecontrol,
+                              count: 3,
+                              effect: const ExpandingDotsEffect(
+                                spacing: 10,
+                                dotHeight: 8,
+                                dotWidth: 8,
+                                activeDotColor: AppColor.primaryColor500,
+                                dotColor: Color.fromRGBO(238, 238, 238, 1),
+                                // activeDotColor: Colors.black
+                              ),
                             ),
                           ),
                         ),
                         Positioned(
-                          left: 50,
+                          left: 50.w,
                           bottom: 0,
                           child: CircleButton(
                             gradient: AppColor.buttonGredient,
                             foreground: AppColor.Dark1,
                             onTap: () {
-
-                                controller.pagecontrol.previousPage(
-                                    duration: const Duration(milliseconds: 500),
-                                    curve: Curves.easeInOut);
+                              controller.pagecontrol.previousPage(
+                                  duration: const Duration(milliseconds: 500),
+                                  curve: Curves.easeInOut);
                               // Get.toNamed(OnboardSecond.route);
                             },
                             icon: Icons.arrow_back,
@@ -115,9 +119,7 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                             dotColor: Color.fromRGBO(238, 238, 238, 1),
                           ),
                         ),
-                        const SizedBox(
-                          height: 5,
-                        ),
+                        24.height,
                         CircleButton(
                           onTap: () {
                             controller.pagecontrol.nextPage(

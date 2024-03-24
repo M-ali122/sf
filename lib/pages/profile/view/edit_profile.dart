@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/helper/view/doubled_outline_button.dart';
-import 'package:sf_app/helper/view/textfield.dart';
+import 'package:sf_app/helper/view/custome_textfield.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
 class EditProfile extends StatelessWidget {

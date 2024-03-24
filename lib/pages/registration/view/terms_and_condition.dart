@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
-import 'package:sf_app/pages/onboarding/view/account_type.dart';
+import 'package:sf_app/pages/registration/controller/registration_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
-import 'package:sf_app/resources/icon/icon.dart';
 
-import '../../../helper/view/progress_bar.dart';
 import '../../../modules/global/controllers/checkboxController.dart';
 
-class TermAndCondition extends StatelessWidget {
+class TermAndCondition extends GetWidget<RegistrationController> {
   static String route = 'TermAndCondition';
   TermAndCondition({super.key});
 
@@ -22,38 +20,15 @@ class TermAndCondition extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 25.h),
-              Row(
-                children: [
-                  GestureDetector(
-                      onTap: () {
-                        Get.back();
-                      },
-                      child: SvgPicture.string(Appicons.backIcon)),
-                  const SizedBox(width: 50),
-
-                  /// Custom progress bar
-                  const Expanded(
-                    child: CustomeProgressBar(
-                      progressValue: 1.0,
-                    ),
-                  ),
-                  const SizedBox(width: 50),
-                ],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
               Text(
                 'Terms and Conditions',
                 style: theme.textTheme.headline4,
               ),
-              const SizedBox(
-                height: 30,
-              ),
+              24.height,
               Row(
                 children: [
                   Obx(
@@ -63,7 +38,7 @@ class TermAndCondition extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5)),
                       fillColor: checkboxController.isPrivacyChecked.value
                           ? MaterialStateProperty.all(
-                              const Color(0xff72975E),
+                              AppColor.primaryColor500,
                             )
                           : MaterialStateProperty.all<Color>(
                               const Color(0xffFFFFFF),
@@ -78,25 +53,30 @@ class TermAndCondition extends StatelessWidget {
                   RichText(
                     text: TextSpan(
                       style: theme.textTheme.headline2,
-                      children: const <TextSpan>[
-                        TextSpan(text: 'I agree to the '),
+                      children: <TextSpan>[
                         TextSpan(
-                            text: 'Privacy Policy',
-                            style:
-                                TextStyle(color: AppColor.secondaryColor500)),
-                        TextSpan(text: ' of\n Fashin Hub Saudi'),
+                            text: 'I agree to the ',
+                            style: TextStyle(
+                                fontSize: 18.sp, fontWeight: FontWeight.w600)),
+                        TextSpan(
+                          text: 'Privacy Policy',
+                          style: TextStyle(
+                              color: AppColor.secondaryColor500,
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        TextSpan(
+                            text: ' of\n Fashin Hub Saudi',
+                            style: TextStyle(
+                                fontSize: 18.sp, fontWeight: FontWeight.w600)),
                       ],
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              24.height,
               const Divider(),
-              const SizedBox(
-                height: 10,
-              ),
+              24.height,
               Row(
                 children: [
                   Obx(
@@ -106,7 +86,7 @@ class TermAndCondition extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5)),
                       fillColor: checkboxController.isTermsChecked.value
                           ? MaterialStateProperty.all(
-                              const Color(0xff72975E),
+                              AppColor.primaryColor500,
                             )
                           : MaterialStateProperty.all<Color>(
                               const Color(0xffFFFFFF),
@@ -135,57 +115,22 @@ class TermAndCondition extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 22.0, right: 10),
+              24.height,
+              Padding(
+                padding: EdgeInsets.only(left: 22.0.w, right: 10.w),
                 child: Text(
-                    'By checking the box, you agree to our terms and conditions'),
+                  'By checking the box, you agree to our terms and conditions',
+                  style:
+                      TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
+                ),
               ),
               const Spacer(),
               // const SizedBox(height: 140,),
               AppButton(
                   title: 'Continue',
                   onTap: () {
-                    // showDialog(
-                    //   builder: (context) {
-                    //     return AlertDialog(
-                    //       shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(64.0),
-                    //       ),
-                    //       backgroundColor: AppColor.white,
-                    //       icon: SvgPicture.string(Svgs.RegistrationCompleted),
-                    //       title: Text('Registration Completed',style: TextStyle(
-                    //           fontSize: 22,
-                    //           fontWeight: FontWeight.w700,
-                    //           fontFamily: "Mulish",
-                    //           color: Color.fromRGBO(33, 33, 33, 1),
-                    //     ),
-                    //       ),
-                    //       actions: [
-                    //         const Text('You will be redirected to the choice page in a moment',textAlign: TextAlign.center,style: TextStyle(
-                    //           fontSize: 14,
-                    //           fontWeight: FontWeight.w400,
-                    //           fontFamily: "Mulish",
-                    //           color: Color.fromRGBO(33, 33, 33, 1),
-                    //         ),),
-                    //         const SizedBox(height: 25,),
-                    //         const SpinKitCircle(
-                    //           color: Color(0xff72975E),
-                    //           size: 50.0,
-                    //           // controller: AnimatedController,
-                    //         ),
-                    //       ],
-                    //     );
-                    //   },
-                    //   context: context
-                    // );
-
-                    // Timer.periodic(Duration(seconds: 2), (timer) {
-                    Get.offAllNamed(AccountType.route);
-                    // });
                     // Get.toNamed(AccountType.route);
+                    controller.completeRegistration();
                   }),
               const SizedBox(
                 height: 30,

@@ -5,6 +5,6 @@ extension Spacing on num {
         height: toDouble(),
       );
   Widget get width => SizedBox(
-        height: toDouble(),
+        width: toDouble(),
       );
 }

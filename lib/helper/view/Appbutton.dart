@@ -14,6 +14,7 @@ class AppButton extends StatelessWidget {
   final TextStyle? style;
   final double? width;
   final double? height;
+  final double? radius;
   final Color? foreground;
   final double margin;
   const AppButton(
@@ -26,7 +27,8 @@ class AppButton extends StatelessWidget {
       this.foreground,
       this.style,
       this.margin = 0,
-      this.gradient});
+      this.gradient,
+      this.radius});
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,7 @@ class AppButton extends StatelessWidget {
         width: (width ?? 380).w,
         height: (height ?? 58).h,
         margin: EdgeInsets.symmetric(horizontal: margin),
+        // color: background,
         decoration: BoxDecoration(
           gradient: gradient ??
               const LinearGradient(
@@ -48,7 +51,7 @@ class AppButton extends StatelessWidget {
                 ],
               ),
           // gradient: gradient ?? AppColor.mainGradient,
-          borderRadius: BorderRadius.circular(100.r),
+          borderRadius: BorderRadius.circular(radius ?? 100.r),
         ),
         // padding: const EdgeInsets.all(16),
         alignment: Alignment.center,
