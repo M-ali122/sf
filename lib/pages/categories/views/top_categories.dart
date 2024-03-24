@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/pages/categories/db/statuc_data.dart';
+import 'package:sf_app/pages/categories/screens/category_products.dart';
 import 'package:sf_app/pages/categories/views/category_card_view.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -39,8 +40,15 @@ class TopCategoriesView extends StatelessWidget {
               childAspectRatio: (Get.height / Get.width),
             ),
             itemBuilder: (context, index) {
-              return CategoryCardView(
-                category: CategoriesStaticData().categories[index],
+              return GestureDetector(
+                onTap: () async {
+                  //
+                  Get.to(() => CategoryProducts.route,
+                      arguments: CategoriesStaticData().categories[index]);
+                },
+                child: CategoryCardView(
+                  category: CategoriesStaticData().categories[index],
+                ),
               );
             },
             itemCount: CategoriesStaticData().categories.length,
