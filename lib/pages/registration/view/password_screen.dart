@@ -53,7 +53,7 @@ class PasswordScreen extends GetWidget<RegistrationController> {
                       children: [
                         SizedBox(
                           height: 4,
-                          width: Get.width * .8,
+                          width: Get.width * .6,
                           child: ListView.separated(
                             separatorBuilder: (context, index) {
                               return SizedBox(

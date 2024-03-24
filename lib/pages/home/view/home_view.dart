@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sf_app/pages/home/pages/women_categories.dart';
+import 'package:sf_app/helper/extensions/spacings.dart';
+import 'package:sf_app/pages/categories/views/top_categories.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -11,45 +12,11 @@ import 'package:sf_app/resources/icon/svgs.dart';
 class HomeView extends StatelessWidget {
   static const String route = "HomeView";
 
+  const HomeView({super.key});
+
   @override
   Widget build(BuildContext context) {
     final theme = Get.theme;
-
-    Widget buildCategory(String label, String imagePath,  {TextStyle? textStyle}) {
-      return Container(
-        width: 162,
-        height: 80,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: const Color.fromRGBO(76, 175, 80, 0.08),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 5.0),
-                child: Text(
-                  label,
-                  style: textStyle  ,
-                  ),
-              ),
-            ),
-            Container(
-              height: Get.height,
-              width: 80,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imagePath),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -60,16 +27,17 @@ class HomeView extends StatelessWidget {
               child: Row(
                 children: [
                   Image.asset('assets/Image.png'),
-                  SizedBox(width: 10.h),
+                  16.width,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text('Welcome Back'),
+                      6.height,
                       Text(
                         'User Name',
                         style: GoogleFonts.mulish(
                           fontWeight: FontWeight.w700,
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           color: AppColor.GreyScale900,
                         ),
                       ),
@@ -82,7 +50,7 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 30.h),
+            24.height,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: TextField(
@@ -116,73 +84,11 @@ class HomeView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20.h),
+            24.height,
+            const TopCategoriesView(),
+            24.height,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
-                children: [
-                  Text(
-                    'Top Categories',
-                    style: theme.textTheme.headline6,
-                  ),
-                  const Spacer(),
-                  SvgPicture.string(Appicons.arrowforword),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Get.toNamed(WomenCategroies.route);
-                    },
-                    child: buildCategory(
-                      'Women',
-                      'assets/women.png',
-                      textStyle: theme.textTheme.headline5
-                    ),
-                  ),
-                  const Spacer(),
-                  buildCategory('Men', 'assets/men.png',
-                      textStyle: theme.textTheme.headline5),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  buildCategory('Shoe', 'assets/shoe.png',
-                      textStyle: theme.textTheme.headline5),
-                  const Spacer(),
-                  buildCategory('Bag', 'assets/bag.png',
-                      textStyle: theme.textTheme.headline5),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  buildCategory('Lifestyle', 'assets/lifestyle.png',
-                      textStyle: theme.textTheme.headline5),
-                  const Spacer(),
-                  buildCategory('Sports', 'assets/sport.png',
-                      textStyle: theme.textTheme.headline5),
-                ],
-              ),
-            ),
-            SizedBox(height: 20.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 children: [
                   Text(
@@ -194,13 +100,11 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            24.height,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: SizedBox(
-                height: 70,
+                height: 70.h,
                 child: ListView(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -241,9 +145,7 @@ class HomeView extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            24.height,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Row(
@@ -257,9 +159,7 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            24.height,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Container(
@@ -275,7 +175,7 @@ class HomeView extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   children: [
-                    Container(
+                    SizedBox(
                       height: 292,
                       width: 203,
                       child: Stack(

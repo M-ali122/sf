@@ -10,7 +10,7 @@ import 'package:sf_app/resources/icon/icon.dart';
 
 class BottomnavBar extends GetWidget<BottomNavBarController> {
   static const String route = 'bottomnavbar';
-   const BottomnavBar({super.key});
+  const BottomnavBar({super.key});
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BottomNavBarController>(
@@ -27,11 +27,13 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
           bottomNavigationBar: Container(
             height: 70.h,
             width: 375.w,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(30), topLeft: Radius.circular(30)),
-              color: AppColor.white
-            ),
+            margin: EdgeInsets.only(bottom: 16.h),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(30.r),
+                  topLeft: Radius.circular(30.r),
+                ),
+                color: AppColor.white),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -48,14 +50,16 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                         ),
                         SvgPicture.string(
                           Appicons.home,
-                          color: controller.currentIndex.value == 0 ? AppColor.primaryColor500 : AppColor.GreyScale500,
-                          height: 24,
-                          width: 24,  
+                          color: controller.currentIndex.value == 0
+                              ? AppColor.primaryColor500
+                              : AppColor.GreyScale500,
+                          height: 24.h,
+                          width: 24.w,
                         ),
                         Text(
                           "Home",
                           style: TextStyle(
-                            fontSize: 11,
+                            fontSize: 11.sp,
                             color: controller.currentIndex.value == 0
                                 ? AppColor.primaryColor500
                                 : AppColor.GreyScale500,
@@ -78,18 +82,19 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                         ),
                         SvgPicture.string(
                           Appicons.document,
-                          color: controller.currentIndex.value == 1 ?AppColor.primaryColor500  : AppColor.GreyScale500,
+                          color: controller.currentIndex.value == 1
+                              ? AppColor.primaryColor500
+                              : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
                         ),
                         Text(
                           "Order",
                           style: TextStyle(
-                            fontSize: 11,
-                            color: controller.currentIndex.value == 1
-                                ? AppColor.primaryColor500 
-                                : AppColor.GreyScale500
-                          ),
+                              fontSize: 11.sp,
+                              color: controller.currentIndex.value == 1
+                                  ? AppColor.primaryColor500
+                                  : AppColor.GreyScale500),
                         )
                       ],
                     ),
@@ -108,18 +113,19 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                         ),
                         SvgPicture.string(
                           Appicons.diccovery,
-                          color: controller.currentIndex.value == 2 ? AppColor.primaryColor500 : AppColor.GreyScale500,
+                          color: controller.currentIndex.value == 2
+                              ? AppColor.primaryColor500
+                              : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
                         ),
                         Text(
                           "Community",
                           style: TextStyle(
-                            fontSize: 11,
-                            color: controller.currentIndex.value == 2
-                                ?AppColor.primaryColor500 
-                                :AppColor.GreyScale500
-                          ),
+                              fontSize: 11.sp,
+                              color: controller.currentIndex.value == 2
+                                  ? AppColor.primaryColor500
+                                  : AppColor.GreyScale500),
                         )
                       ],
                     ),
@@ -138,15 +144,16 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                         ),
                         SvgPicture.string(
                           Appicons.profile,
-                          color: controller.currentIndex.value == 3 ?AppColor.primaryColor500  : AppColor.GreyScale500,
+                          color: controller.currentIndex.value == 3
+                              ? AppColor.primaryColor500
+                              : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
                         ),
                         Text(
                           "Profile",
                           style: TextStyle(
-                            fontSize: 11,
-
+                            fontSize: 11.sp,
                             color: controller.currentIndex.value == 3
                                 ? Colors.white
                                 : const Color(0xff5E5E67),
@@ -156,7 +163,6 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
