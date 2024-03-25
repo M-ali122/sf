@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/pages/categories/views/top_categories.dart';
+import 'package:sf_app/pages/community/view/desinger_profile.dart';
 import 'package:sf_app/pages/order/view/order_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
@@ -131,7 +132,7 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        // Get.to();
+                        Get.to(DesignerProfile());
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(right: 15.0),
