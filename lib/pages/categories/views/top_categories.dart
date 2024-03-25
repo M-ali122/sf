@@ -30,7 +30,11 @@ class TopCategoriesView extends StatelessWidget {
                   style: Get.theme.textTheme.headline6,
                 ),
                 const Spacer(),
-                SvgPicture.string(Appicons.arrowforword),
+                GestureDetector(
+                  onTap: (){
+                    Get.back();
+                  },
+                  child: SvgPicture.string(Appicons.arrowforword)),
               ],
             ),
           ),
@@ -45,12 +49,14 @@ class TopCategoriesView extends StatelessWidget {
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
               childAspectRatio: (Get.height / Get.width),
-            ),
+            ),  
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () async {
-                  Get.to(() => CategoryProducts.route,
-                      arguments: CategoriesStaticData().categories[index]);
+                  // Get.to(() => CategoryProducts.route,
+                  //     arguments: CategoriesStaticData().categories[index]);
+                  Get.to(CategoryProducts(), // Navigate to CategoryProducts widget
+                        arguments: CategoriesStaticData().categories[index]);
                 },
                 child: CategoryCardView(
                   category: CategoriesStaticData().categories[index],

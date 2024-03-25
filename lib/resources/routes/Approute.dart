@@ -50,5 +50,6 @@ class AppRoute {
     CommunityTabs.route: (p0) => const CommunityTabs(),
     CardDesign.route: (p0) => CardDesign(),
     Inbox.route: (p0) => const Inbox(),
+    
   };
 }

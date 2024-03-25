@@ -25,7 +25,11 @@ class SeeAll extends StatelessWidget {
                   SizedBox(
                     width: 10.w,
                   ),
-                  SvgPicture.string(Appicons.backIcon),
+                  GestureDetector(
+                    onTap: (){
+                      Get.back();
+                    },
+                    child: SvgPicture.string(Appicons.backIcon)),
                   SizedBox(
                     width: 20.w,
                   ),
