@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,8 +10,6 @@ import 'package:sf_app/pages/order/view/order_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
-
-import '../../see_all_pages/designers_all.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String route = "HomeScreen";
@@ -68,8 +65,8 @@ class HomeScreen extends StatelessWidget {
                         title: 'ALert',
                         content: Image.asset('assets/underbuild.png',height: 80,width: 60,),
                         actions: [
-                          Text('App Under build')
-                        ]                      );
+                          const Text('App Under build')
+                        ]);
                     },
                     child: SvgPicture.string(Svgs.chat),),
                 ],

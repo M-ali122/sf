@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
+import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/pages/onboarding/onboardind_view.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
@@ -18,6 +19,9 @@ class AccountType extends StatefulWidget {
 }
 
 class _AccountTypeState extends State<AccountType> {
+   
+   final OnboardingController controller = Get.put(OnboardingController());
+
   final theme = Get.theme;
   String selectedType = 'Customer';
   @override
@@ -48,7 +52,11 @@ class _AccountTypeState extends State<AccountType> {
                 height: 20,
               ),
               GestureDetector(
-                onTap: () async => setState(() => selectedType = 'Designer'),
+                onTap: () async{
+                  setState(() => selectedType = 'Designer');
+                 
+                 
+                },
                 child: Container(
                   height: 170.h,
                   width: Get.width.w,
@@ -151,6 +159,7 @@ class _AccountTypeState extends State<AccountType> {
               AppButton(
                   title: 'Continue',
                   onTap: () {
+                     controller.accountType.value = selectedType;
                     Get.toNamed(OnbaordingView.route);
                     // Get.toNamed(Explore_Trending.route);
                   }),

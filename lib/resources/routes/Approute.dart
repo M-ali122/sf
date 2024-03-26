@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
 import 'package:sf_app/pages/auth/screens/login.dart';
 import 'package:sf_app/pages/categories/screens/category_products.dart';
 import 'package:sf_app/pages/community/view/community_card_design.dart';
@@ -51,5 +52,14 @@ class AppRoute {
     CardDesign.route: (p0) => CardDesign(),
     Inbox.route: (p0) => const Inbox(),
     
+
+
+
+    /// designer side navbar 
+    DesingerBottomnavBar.route: (p0) => DesingerBottomnavBar(),
+
+
+
+
   };
 }
