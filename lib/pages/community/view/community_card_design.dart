@@ -25,9 +25,6 @@ class CardDesign extends StatelessWidget {
             width: 380,
             padding: EdgeInsets.symmetric(horizontal: 24),
             decoration: BoxDecoration(
-
-
-
               borderRadius: BorderRadius.circular(24),
               // color: AppColor.white,
               boxShadow: const [

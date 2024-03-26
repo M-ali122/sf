@@ -791,7 +791,7 @@ class DesignerProfile extends StatelessWidget {
 //                     ],
 //                   ),
 //                 ),
-//               ),
+              // ),
               Positioned(
                 top: 560.h,
                 left: 24.w,

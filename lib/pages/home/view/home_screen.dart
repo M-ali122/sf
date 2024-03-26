@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -61,7 +62,16 @@ class HomeScreen extends StatelessWidget {
                       },
                       child: SvgPicture.string(Svgs.shop)),
                   SizedBox(width: 20.h),
-                  SvgPicture.string(Svgs.chat),
+                  GestureDetector(
+                    onTap: (){
+                      Get.defaultDialog(
+                        title: 'ALert',
+                        content: Image.asset('assets/underbuild.png',height: 80,width: 60,),
+                        actions: [
+                          Text('App Under build')
+                        ]                      );
+                    },
+                    child: SvgPicture.string(Svgs.chat),),
                 ],
               ),
             ),
