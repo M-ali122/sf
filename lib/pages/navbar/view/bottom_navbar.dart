@@ -49,7 +49,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.home,
+                          Appicons.homeBorder,
                           color: controller.currentIndex.value == 0
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -81,7 +81,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.document,
+                          Appicons.documentBorder,
                           color: controller.currentIndex.value == 1
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -112,7 +112,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.diccovery,
+                          Appicons.discoveryBorder,
                           color: controller.currentIndex.value == 2
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -143,7 +143,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.profile,
+                          Appicons.profileBorder,
                           color: controller.currentIndex.value == 3
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -155,7 +155,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           style: TextStyle(
                             fontSize: 11.sp,
                             color: controller.currentIndex.value == 3
-                                ? Colors.white
+                                ? AppColor.primaryColor500
                                 : const Color(0xff5E5E67),
                           ),
                         )

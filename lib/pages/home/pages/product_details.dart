@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -132,16 +133,16 @@ class ProductDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                width: 380,
-                height: 52,
+                width: 380.w,
+                height: 52.h,
                 decoration: BoxDecoration(
                     color: AppColor.backGroundSilver,
                     borderRadius: BorderRadius.circular(40)),
                 child: Row(
                   children: [
                     Container(
-                      width: 170,
-                      height: 52,
+                      width: 190.w,
+                      height: 52.h,
                       decoration: BoxDecoration(
                           gradient: const LinearGradient(
                             colors: [
@@ -162,8 +163,8 @@ class ProductDetails extends StatelessWidget {
                       )),
                     ),
                     Container(
-                      width: 170,
-                      height: 52,
+                      width: 190.w,
+                      height: 52.h,
                       decoration: BoxDecoration(
                           // gradient: LinearGradient(
                           //   colors: [

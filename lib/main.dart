@@ -33,8 +33,8 @@ class MainApp extends StatelessWidget {
           translations: AppDictionary(),
           // home: child,
           routes: AppRoute().routes,
-          //  initialRoute: Splash_View.route,
-          initialRoute: DesingerBottomnavBar.route,
+           initialRoute: Splash_View.route,
+          // initialRoute: DesingerBottomnavBar.route,
         );
       },
     );

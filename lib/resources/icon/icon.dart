@@ -1379,6 +1379,27 @@ static String mastercardlogo = '''
 
 ''';
 
+static String chatBorderwithbadge = '''
+
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.5957 14.4818H18.6062" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.9189 14.4818H13.9294" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.24117 14.4818H9.25167" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.2492 22.2488C18.6849 25.8147 13.4042 26.5851 9.0837 24.587C8.44588 24.3302 4.31766 25.4735 3.42191 24.5788C2.52615 23.6829 3.67047 19.5541 3.4137 18.9162C1.41466 14.5963 2.18614 9.31368 5.75158 5.74893C10.3031 1.19567 17.6977 1.19567 22.2492 5.74893C26.8101 10.3092 26.8007 17.6967 22.2492 22.2488Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="23" cy="6" r="4" fill="#F54336"/>
+</svg>
+
+
+''';
+
+static String eyesicon = '''
+<svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.99971 4.48947C7.89138 4.48947 6.98971 5.39114 6.98971 6.49947C6.98971 7.6078 7.89138 8.50947 8.99971 8.50947C10.108 8.50947 11.0097 7.6078 11.0097 6.49947C11.0097 5.39114 10.108 4.48947 8.99971 4.48947Z" fill="#C9B372"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.99971 9.75971C7.20221 9.75971 5.73971 8.29721 5.73971 6.49971C5.73971 4.70221 7.20221 3.23971 8.99971 3.23971C10.7972 3.23971 12.2597 4.70221 12.2597 6.49971C12.2597 8.29721 10.7972 9.75971 8.99971 9.75971ZM8.99971 -0.00195312C4.49805 -0.00195312 0.873047 3.55471 0.873047 6.49971C0.873047 9.44471 4.49805 13.0014 8.99971 13.0014C13.5014 13.0014 17.1264 9.44471 17.1264 6.49971C17.1264 3.55471 13.5014 -0.00195312 8.99971 -0.00195312Z" fill="#C9B372"/>
+</svg>
+
+''';
+
 
 
 }
