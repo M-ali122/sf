@@ -3,7 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sf_app/pages/home/pages/women_categories.dart';
+import 'package:sf_app/helper/extensions/spacings.dart';
+import 'package:sf_app/pages/categories/views/top_categories.dart';
+import 'package:sf_app/pages/community/view/desinger_profile.dart';
+import 'package:sf_app/pages/order/view/order_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -11,45 +14,18 @@ import 'package:sf_app/resources/icon/svgs.dart';
 class HomeScreen extends StatelessWidget {
   static const String route = "HomeScreen";
 
+  HomeScreen({super.key});
+
+  List image = [
+    'assets/aubrey.png',
+    'assets/darell.png',
+    'assets/julie.png',
+    'assets/sami.png',
+    'assets/brandi.png',
+  ];
   @override
   Widget build(BuildContext context) {
     final theme = Get.theme;
-
-    Widget buildCategory(String label, String imagePath,  {TextStyle? textStyle}) {
-      return Container(
-        width: 162,
-        height: 80,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: const Color.fromRGBO(76, 175, 80, 0.08),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 5.0),
-                child: Text(
-                  label,
-                  style: textStyle  ,
-                  ),
-              ),
-            ),
-            Container(
-              height: Get.height,
-              width: 80,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imagePath),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -60,29 +36,43 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Image.asset('assets/Image.png'),
-                  SizedBox(width: 10.h),
+                  16.width,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text('Welcome Back'),
+                      6.height,
                       Text(
                         'User Name',
                         style: GoogleFonts.mulish(
                           fontWeight: FontWeight.w700,
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           color: AppColor.GreyScale900,
                         ),
                       ),
                     ],
                   ),
                   const Spacer(),
-                  SvgPicture.string(Svgs.shop),
+                  InkWell(
+                      onTap: () {
+                        Get.to(OrderView());
+                      },
+                      child: SvgPicture.string(Svgs.shop)),
                   SizedBox(width: 20.h),
-                  SvgPicture.string(Svgs.chat),
+                  GestureDetector(
+                    onTap: (){
+                      Get.defaultDialog(
+                        title: 'ALert',
+                        content: Image.asset('assets/underbuild.png',height: 80,width: 60,),
+                        actions: [
+                          const Text('App Under build')
+                        ]);
+                    },
+                    child: SvgPicture.string(Svgs.chat),),
                 ],
               ),
             ),
-            SizedBox(height: 30.h),
+            24.height,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: TextField(
@@ -116,134 +106,91 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
-                children: [
-                  Text(
-                    'Top Categories',
-                    style: theme.textTheme.headline6,
-                  ),
-                  const Spacer(),
-                  SvgPicture.string(Appicons.arrowforword),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Get.toNamed(WomenCategroies.route);
-                    },
-                    child: buildCategory(
-                      'Women',
-                      'assets/women.png',
-                      textStyle: theme.textTheme.headline5
+            24.height,
+            const TopCategoriesView(),
+            24.height,
+            InkWell(
+              onTap: () {
+                // Get.to(Designers());
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Row(
+                  children: [
+                    Text(
+                      'Top Designers',
+                      style: theme.textTheme.headline6,
                     ),
-                  ),
-                  const Spacer(),
-                  buildCategory('Men', 'assets/men.png',
-                      textStyle: theme.textTheme.headline5),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  buildCategory('Shoe', 'assets/shoe.png',
-                      textStyle: theme.textTheme.headline5),
-                  const Spacer(),
-                  buildCategory('Bag', 'assets/bag.png',
-                      textStyle: theme.textTheme.headline5),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  buildCategory('Lifestyle', 'assets/lifestyle.png',
-                      textStyle: theme.textTheme.headline5),
-                  const Spacer(),
-                  buildCategory('Sports', 'assets/sport.png',
-                      textStyle: theme.textTheme.headline5),
-                ],
-              ),
-            ),
-            SizedBox(height: 20.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                children: [
-                  Text(
-                    'Top Designers',
-                    style: theme.textTheme.headline6,
-                  ),
-                  const Spacer(),
-                  SvgPicture.string(Appicons.arrowforword),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: SizedBox(
-                height: 70,
-                child: ListView(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: CircleAvatar(
-                        radius: 35,
-                        backgroundImage: AssetImage("assets/aubrey.png"),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: CircleAvatar(
-                        radius: 35,
-                        backgroundImage: AssetImage("assets/darell.png"),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: CircleAvatar(
-                        radius: 35,
-                        backgroundImage: AssetImage("assets/julie.png"),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: CircleAvatar(
-                        radius: 35,
-                        backgroundImage: AssetImage("assets/sami.png"),
-                      ),
-                    ),
-                    CircleAvatar(
-                      radius: 35,
-                      backgroundImage: AssetImage("assets/brandi.png"),
-                    ),
+                    const Spacer(),
+                    SvgPicture.string(Appicons.arrowforword),
                   ],
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
+            24.height,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: SizedBox(
+                height: 70.h,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: image.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(DesignerProfile());
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: CircleAvatar(
+                          radius: 35,
+                          backgroundImage: AssetImage(image[index]),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                // child: ListView(
+                //   shrinkWrap: true,
+                //   scrollDirection: Axis.horizontal,
+                //   children: const [
+                //     Padding(
+                //       padding: EdgeInsets.only(right: 15.0),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundImage: AssetImage("assets/aubrey.png"),
+                //       ),
+                //     ),
+                //     Padding(
+                //       padding: EdgeInsets.only(right: 15.0),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundImage: AssetImage("assets/darell.png"),
+                //       ),
+                //     ),
+                //     Padding(
+                //       padding: EdgeInsets.only(right: 15.0),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundImage: AssetImage("assets/julie.png"),
+                //       ),
+                //     ),
+                //     Padding(
+                //       padding: EdgeInsets.only(right: 15.0),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundImage: AssetImage("assets/sami.png"),
+                //       ),
+                //     ),
+                //     CircleAvatar(
+                //       radius: 35,
+                //       backgroundImage: AssetImage("assets/brandi.png"),
+                //     ),
+                //   ],
+              ),
             ),
+            24.height,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Row(
@@ -257,9 +204,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            24.height,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Container(
@@ -275,7 +220,7 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   children: [
-                    Container(
+                    SizedBox(
                       height: 292,
                       width: 203,
                       child: Stack(

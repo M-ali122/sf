@@ -5,6 +5,9 @@ class OnboardingController extends GetxController{
   final pagecontrol = PageController();
   RxBool isLast = false.obs;
   RxInt pageIndex = 0.obs;
+  RxString accountType = ''.obs;
+  
+   
   @override
   void dispose() {
     // TODO: implement dispose

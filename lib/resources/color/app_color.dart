@@ -1,20 +1,32 @@
-
 import 'package:flutter/material.dart';
 
 class AppColor {
+  static MaterialColor primarySwatch = MaterialColor(0xFF475736, {
+    50: const Color(0xFF475736).withOpacity(0.05),
+    100: const Color(0xFFC7D4BA).withOpacity(0.1),
+    200: const Color(0xFF95AD7B),
+    300: const Color(0xFF7B975E),
+    400: const Color(0xFF62784A),
+    500: const Color(0xff475736),
+    600: const Color(0xFF475736),
+    700: const Color(0xFF475736),
+    800: const Color(0xFF475736),
+    900: const Color(0xFF475736),
+  });
+
   static const Color primaryColor500 = Color(0xFF475736);
   static const Color primaryColor400 = Color(0xFF62784A);
   static const Color primaryColor300 = Color(0xFF7B975E);
   static const Color primaryColor200 = Color(0xFF95AD7B);
   static const Color primaryColor100 = Color(0xFFC7D4BA);
 
-
+  static const Color borderColor = Color(0xffC9B372);
   static const Color secondaryColor500 = Color.fromRGBO(201, 179, 114, 1);
 
   static const Color secondaryColor400 = Color(0xFFD7C798);
   static const Color secondaryColor300 = Color(0xFFE6DBBD);
   static const Color secondaryColor200 = Color(0xFFF4EFE1);
-  static const Color secondaryColor100 = Color(0xFFFBF9F4);
+  static const Color secondaryColor100 = Color.fromRGBO(251, 249, 244, 1);
 
   static const Color alartSuccess = Color(0xFF4ADE80);
   static const Color alartInfo = Color(0xFF246BFD);
@@ -24,21 +36,21 @@ class AppColor {
   static const Color alartDisabledButton = Color(0xFF393939);
 
   ///Gradients
-  static  LinearGradient mainGradient = const LinearGradient(
-    colors: [Color(0xFF72975E),Color(0xFF475736), ],
+  static LinearGradient mainGradient = const LinearGradient(
+    colors: [
+      Color(0xFF72975E),
+      Color(0xFF475736),
+    ],
     // begin: Alignment.topLeft,
     // end: Alignment.bottomRight,
     // stops: [0.0, 1.0],
     // tileMode: TileMode.clamp,
   );
 
-
-  static  LinearGradient textfieldGredient = const LinearGradient(
-    colors: [
-      Color.fromRGBO(153, 153, 153, 0.4),
-      Color.fromRGBO(202, 202, 202, 0.4),
-    ]
-    );
+  static LinearGradient textfieldGredient = const LinearGradient(colors: [
+    Color.fromRGBO(153, 153, 153, 0.4),
+    Color.fromRGBO(202, 202, 202, 0.4),
+  ]);
 
   static const LinearGradient buttonGredient = LinearGradient(
     colors: [Color(0xffF3F3F3), Color(0xffF3F3F3)],
@@ -48,15 +60,13 @@ class AppColor {
     // tileMode: TileMode.clamp,
   );
 
-
   static const LinearGradient blackGradient = LinearGradient(
     colors: [Color(0xFF101010), Color(0xFF313130)],
   );
 
-  static const LinearGradient welcomeConatiner = LinearGradient(
-      colors: [Color(0xffFFFFFF),Color(0xffFFFFFF00)]
-  );
-  
+  static const LinearGradient welcomeConatiner =
+      LinearGradient(colors: [Color(0xffFFFFFF), Color(0xffFFFFFF00)]);
+
   static const LinearGradient blueGradient = LinearGradient(
     colors: [Color(0xFF335EF7), Color(0xFF5F82FF)],
     begin: Alignment.topLeft,
@@ -81,12 +91,10 @@ class AppColor {
     tileMode: TileMode.clamp,
   );
 
-  static const LinearGradient circleButtonGradient = LinearGradient(
-      colors: [
-        Color(0xFFF3F3F3),
-        Color(0xFFF3F3F3),
-      ]
-  );
+  static const LinearGradient circleButtonGradient = LinearGradient(colors: [
+    Color(0xFFF3F3F3),
+    Color(0xFFF3F3F3),
+  ]);
 
   static const LinearGradient greenGradient = LinearGradient(
     colors: [Color(0xFF22BB9C), Color(0xFF35DEBC)],
@@ -105,7 +113,7 @@ class AppColor {
   );
 
   ///Grey scale
-  static const Color  GreyScale900 = Color(0xFF212121);
+  static const Color GreyScale900 = Color(0xFF212121);
   static const Color GreyScale800 = Color(0xFF424242);
   static const Color GreyScale700 = Color(0xFF616161);
   static const Color GreyScale600 = Color(0xFF757575);
@@ -132,19 +140,15 @@ class AppColor {
 
   ///transparent
 
-  // static Color transparentrallow = Color(0xffFACC1514).withOpacity(0.2); 
-  static  Color transparentSilver = const Color(0xFF101010).withOpacity(0.08);
-  static  Color transparentPurple = const Color(0xFF7210FF).withOpacity(0.8);
-  static  Color transparentBlue = const Color(0xFF335EF7).withOpacity(0.8);
-  static  Color transparentOrange = const Color(0xFFFF9800).withOpacity(0.8);
-  static  Color transparentYellow = const Color(0xFFFACC15).withOpacity(0.8);
-  static  Color transparentRed = const Color(0xFFF75555).withOpacity(0.8);
-  static  Color transparentGreen = const Color(0xFF4CAF50).withOpacity(0.8);
-  static  Color transparentCyan = const Color(0xFF00BCD4).withOpacity(0.8);
-
-
-
-
+  // static Color transparentrallow = Color(0xffFACC1514).withOpacity(0.2);
+  static Color transparentSilver = const Color(0xFF101010).withOpacity(0.08);
+  static Color transparentPurple = const Color(0xFF7210FF).withOpacity(0.8);
+  static Color transparentBlue = const Color(0xFF335EF7).withOpacity(0.8);
+  static Color transparentOrange = const Color(0xFFFF9800).withOpacity(0.8);
+  static Color transparentYellow = const Color(0xFFFACC15).withOpacity(0.8);
+  static Color transparentRed = const Color(0xFFF75555).withOpacity(0.8);
+  static Color transparentGreen = const Color(0xFF4CAF50).withOpacity(0.8);
+  static Color transparentCyan = const Color(0xFF00BCD4).withOpacity(0.8);
 
   ///other
   static const Color white = Color(0xFFFFFFFF);
@@ -167,12 +171,4 @@ class AppColor {
   static const Color deepOrange = Color(0xFFFF5726);
   static const Color brown = Color(0xFF7A5548);
   static const Color blueGrey = Color(0xFF607D8A);
-
-
-
-
-
-
-
-
 }

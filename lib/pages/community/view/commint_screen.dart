@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sf_app/pages/community/view/desinger_profile.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -19,8 +21,8 @@ class CommintScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              width: 428,
-              height: 530.06,
+              width: 428.w,
+              height: 530.06.h,
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(20),
@@ -34,8 +36,8 @@ class CommintScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(
-                      height: 100,
+                     SizedBox(
+                      height: 100.h,
                     ),
                     GestureDetector(
                       onTap: () {
@@ -46,10 +48,13 @@ class CommintScreen extends StatelessWidget {
                         color: AppColor.white,
                       ),
                     ),
-                    const SizedBox(
-                      height: 30,
+                     SizedBox(
+                      height: 30.h,
                     ),
                     ListTile(
+                      onTap: (){
+                        Get.to(()=> DesignerProfile());
+                      },
                       contentPadding: const EdgeInsets.only(right: 20),
                       leading: const CircleAvatar(
                         radius: 25,

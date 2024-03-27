@@ -2,10 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../../resources/color/app_color.dart';
 
 ///This is generic class for action button in whole app
 class AppButton extends StatelessWidget {
@@ -15,8 +11,10 @@ class AppButton extends StatelessWidget {
   final onTap;
   final Gradient? gradient;
   final Color? background;
+  final TextStyle? style;
   final double? width;
   final double? height;
+  final double? radius;
   final Color? foreground;
   final double margin;
   const AppButton(
@@ -27,8 +25,10 @@ class AppButton extends StatelessWidget {
       this.height,
       this.background,
       this.foreground,
+      this.style,
       this.margin = 0,
-      this.gradient});
+      this.gradient,
+      this.radius});
 
   @override
   Widget build(BuildContext context) {
@@ -36,18 +36,13 @@ class AppButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: width ?? Get.width,
-        height: height ?? 58.h,
+        width: (width ?? 380).w,
+        height: (height ?? 58).h,
         margin: EdgeInsets.symmetric(horizontal: margin),
+        // color: background,
         decoration: BoxDecoration(
-          // boxShadow: [
-          //   BoxShadow(
-          //       color: const Color(0xff4F633D33).withOpacity(0.2),
-          //       blurRadius: 20,
-          //       offset: const Offset(3, 7))
-          // ],
           gradient: gradient ??
-              LinearGradient(
+              const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
@@ -56,16 +51,17 @@ class AppButton extends StatelessWidget {
                 ],
               ),
           // gradient: gradient ?? AppColor.mainGradient,
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(radius ?? 100.r),
         ),
         // padding: const EdgeInsets.all(16),
         alignment: Alignment.center,
         child: Text(
           title,
-          style: GoogleFonts.mulish(
+          style: style ?? TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 16,
-              color: foreground ?? Colors.white),
+              fontSize: 16.sp,
+              color: foreground ?? Colors.white
+              ),
         ),
       ),
     );
