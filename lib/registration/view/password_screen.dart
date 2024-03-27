@@ -42,7 +42,7 @@ class PasswordScreen extends StatelessWidget {
 
                         /// Custom progress bar
                         const Expanded(
-                          child: CustomeProgressBar(progressValue: 0.6),
+                          child: CustomeProgressBar(),
                         ),
                         const SizedBox(width: 50),
                       ],
