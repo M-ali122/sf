@@ -1,25 +1,25 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sf_app/pages/categories/models/category_model.dart';
-import 'package:sf_app/pages/home/pages/product_details.dart';
-import 'package:sf_app/resources/color/app_color.dart';
-import 'package:sf_app/resources/icon/icon.dart';
-import 'package:sf_app/resources/icon/svgs.dart';
+  import 'package:flutter/material.dart';
+  import 'package:flutter_svg/svg.dart';
+  import 'package:get/get.dart';
+  import 'package:google_fonts/google_fonts.dart';
+  import 'package:sf_app/pages/categories/models/category_model.dart';
+  import 'package:sf_app/pages/home/pages/product_details.dart';
+  import 'package:sf_app/resources/color/app_color.dart';
+  import 'package:sf_app/resources/icon/icon.dart';
+  import 'package:sf_app/resources/icon/svgs.dart';
 
-class CategoryProducts extends StatelessWidget {
-  static String route = '/category-product';
-  const CategoryProducts({super.key});
+  class CategoryProducts extends StatelessWidget {
+    static String route = '/category-product';
+    const CategoryProducts({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    CategoryModel category = Get.arguments;
-    final theme = Get.theme;
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
+    @override
+    Widget build(BuildContext context) {
+      // CategoryModel category = Get.arguments;
+      final dynamic arguments = Get.arguments;
+      final CategoryModel category = arguments ?? CategoryModel();
+      final theme = Get.theme;
+      return Scaffold(
+        body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: ListView(
             shrinkWrap: true,
@@ -41,7 +41,7 @@ class CategoryProducts extends StatelessWidget {
                     width: 20,
                   ),
                   Text(
-                    category.category,
+                    category.category ?? 'Category Name',
                     style: theme.textTheme.headline4,
                   ),
                 ],
@@ -182,7 +182,7 @@ class CategoryProducts extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Get.toNamed(ProductDetails.route);
+                      Get.to(ProductDetails());
                     },
                     child: Card(
                       child: Container(
@@ -289,7 +289,6 @@ class CategoryProducts extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
+    }
   }
-}

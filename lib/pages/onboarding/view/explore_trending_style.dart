@@ -18,6 +18,7 @@ class Explore_Trending extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     OnboardingController onboardingController = Get.put(OnboardingController());
+    bool isDesigner = onboardingController.accountType.value == "Designer";
     var theme = Get.theme;
     return Scaffold(
       body: Stack(
@@ -39,7 +40,8 @@ class Explore_Trending extends StatelessWidget {
                 onTap: () {
                   onboardingController.pagecontrol.jumpToPage(2);
                 },
-                child: Text('Skip',
+                child: Text(
+                  'Skip',
                     style: GoogleFonts.mulish(
                         color: const Color.fromRGBO(71, 87, 54, 1),
                         decoration: TextDecoration.underline,
@@ -98,12 +100,18 @@ class Explore_Trending extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Explore Trending Styles',
+                    isDesigner ? 'Create Your Products': 'Explore Trending Styles',
                     style: theme.textTheme.headline4,
                   ),
                   8.height,
                   Text(
-                    'Dive into a world of inspiration! Explore trending styles, browse curated collections, and discover fashion pieces that resonate with your unique taste.',
+                    isDesigner ? 
+                    'Bring your designs to life by creating'
+                    'collections. Upload high-quality images,'
+                    ' add descriptions, and share the inspiration behind each piece.':
+                     'Dive into a world of inspiration! Explore trending styles,'
+                     ' browse curated collections, and discover fashion pieces that'
+                     ' resonate with your unique taste.',
                     style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w500,
                       fontSize: 18.sp,

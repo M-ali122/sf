@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/pages/categories/views/top_categories.dart';
+import 'package:sf_app/pages/community/view/desinger_profile.dart';
+import 'package:sf_app/pages/order/view/order_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -12,8 +14,15 @@ import 'package:sf_app/resources/icon/svgs.dart';
 class HomeScreen extends StatelessWidget {
   static const String route = "HomeScreen";
 
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
+  List image = [
+    'assets/aubrey.png',
+    'assets/darell.png',
+    'assets/julie.png',
+    'assets/sami.png',
+    'assets/brandi.png',
+  ];
   @override
   Widget build(BuildContext context) {
     final theme = Get.theme;
@@ -44,9 +53,25 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  SvgPicture.string(Svgs.shop),
+                  InkWell(
+                      onTap: () {
+                        Get.to(OrderView());
+                      },
+                      child: SvgPicture.string(Svgs.shop)),
                   SizedBox(width: 20.h),
-                  SvgPicture.string(Svgs.chat),
+                  GestureDetector(
+                    onTap: () {
+                      Get.defaultDialog(
+                          title: 'ALert',
+                          content: Image.asset(
+                            'assets/underbuild.png',
+                            height: 80,
+                            width: 60,
+                          ),
+                          actions: [const Text('App Under build')]);
+                    },
+                    child: SvgPicture.string(Svgs.chat),
+                  ),
                 ],
               ),
             ),
@@ -87,17 +112,22 @@ class HomeScreen extends StatelessWidget {
             24.height,
             const TopCategoriesView(),
             24.height,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
-                children: [
-                  Text(
-                    'Top Designers',
-                    style: theme.textTheme.headline6,
-                  ),
-                  const Spacer(),
-                  SvgPicture.string(Appicons.arrowforword),
-                ],
+            InkWell(
+              onTap: () {
+                // Get.to(Designers());
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Row(
+                  children: [
+                    Text(
+                      'Top Designers',
+                      style: theme.textTheme.headline6,
+                    ),
+                    const Spacer(),
+                    SvgPicture.string(Appicons.arrowforword),
+                  ],
+                ),
               ),
             ),
             24.height,
@@ -105,44 +135,62 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: SizedBox(
                 height: 70.h,
-                child: ListView(
+                child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: CircleAvatar(
-                        radius: 35,
-                        backgroundImage: AssetImage("assets/aubrey.png"),
+                  itemCount: image.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(DesignerProfile());
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: CircleAvatar(
+                          radius: 35,
+                          backgroundImage: AssetImage(image[index]),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: CircleAvatar(
-                        radius: 35,
-                        backgroundImage: AssetImage("assets/darell.png"),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: CircleAvatar(
-                        radius: 35,
-                        backgroundImage: AssetImage("assets/julie.png"),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: CircleAvatar(
-                        radius: 35,
-                        backgroundImage: AssetImage("assets/sami.png"),
-                      ),
-                    ),
-                    CircleAvatar(
-                      radius: 35,
-                      backgroundImage: AssetImage("assets/brandi.png"),
-                    ),
-                  ],
+                    );
+                  },
                 ),
+                // child: ListView(
+                //   shrinkWrap: true,
+                //   scrollDirection: Axis.horizontal,
+                //   children: const [
+                //     Padding(
+                //       padding: EdgeInsets.only(right: 15.0),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundImage: AssetImage("assets/aubrey.png"),
+                //       ),
+                //     ),
+                //     Padding(
+                //       padding: EdgeInsets.only(right: 15.0),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundImage: AssetImage("assets/darell.png"),
+                //       ),
+                //     ),
+                //     Padding(
+                //       padding: EdgeInsets.only(right: 15.0),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundImage: AssetImage("assets/julie.png"),
+                //       ),
+                //     ),
+                //     Padding(
+                //       padding: EdgeInsets.only(right: 15.0),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundImage: AssetImage("assets/sami.png"),
+                //       ),
+                //     ),
+                //     CircleAvatar(
+                //       radius: 35,
+                //       backgroundImage: AssetImage("assets/brandi.png"),
+                //     ),
+                //   ],
               ),
             ),
             24.height,

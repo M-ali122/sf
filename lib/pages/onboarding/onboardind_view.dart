@@ -7,6 +7,11 @@ import 'package:sf_app/helper/extensions/spacings.dart';
 
 import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
 
+import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
+
+import 'package:sf_app/helper/extensions/spacings.dart';
+import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
+
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/pages/onboarding/view/explore_trending_style.dart';
 import 'package:sf_app/pages/onboarding/view/onboard_second_screen.dart';
@@ -22,6 +27,7 @@ class OnbaordingView extends GetWidget<OnboardingController> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDesigner = controller.accountType.value == "Designer";
     return GetBuilder<OnboardingController>(
       init: OnboardingController(),
       builder: (controller) {
@@ -59,7 +65,10 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                               if (controller.isLast.isTrue) {
                                 /// home screen call here
 
-                                Get.offAllNamed(BottomnavBar.route);
+                                isDesigner
+                                    ? Get.offAllNamed(
+                                        DesingerBottomnavBar.route)
+                                    : Get.offAllNamed(BottomnavBar.route);
                                 // Get.offAllNamed()
                               } else {
                                 controller.pagecontrol.nextPage(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
 import 'package:sf_app/pages/auth/screens/login.dart';
 import 'package:sf_app/pages/categories/screens/category_products.dart';
 import 'package:sf_app/pages/community/view/community_card_design.dart';
@@ -12,6 +13,9 @@ import 'package:sf_app/pages/message/view/inbox.dart';
 import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
 import 'package:sf_app/pages/onboarding/onboardind_view.dart';
 import 'package:sf_app/pages/onboarding/view/account_type.dart';
+import 'package:sf_app/pages/onboarding/view/explore_trending_style.dart';
+import 'package:sf_app/pages/onboarding/view/onboard_second_screen.dart';
+import 'package:sf_app/pages/onboarding/view/onboarding_third_screen.dart';
 import 'package:sf_app/pages/order/view/order_detail_tabs.dart';
 
 import 'package:sf_app/pages/registration/screens/registration_screen.dart';
@@ -19,14 +23,14 @@ import 'package:sf_app/pages/registration/view/otp_screen.dart';
 
 import 'package:sf_app/pages/order/view/order_screen.dart';
 
-import 'package:sf_app/pages/splash/view/splash_view.dart';
+import 'package:sf_app/pages/order/view/order_screen.dart';
+import 'package:sf_app/pages/registration/screens/registration_screen.dart';
+import 'package:sf_app/pages/registration/view/otp_screen.dart';
+import 'package:sf_app/pages/registration/view/password_screen.dart';
+import 'package:sf_app/pages/registration/view/terms_and_condition.dart';
+import 'package:sf_app/pages/registration/view/uplaod_profile_screen.dart';
 
-import '../../pages/onboarding/view/explore_trending_style.dart';
-import '../../pages/onboarding/view/onboard_second_screen.dart';
-import '../../pages/onboarding/view/onboarding_third_screen.dart';
-import '../../pages/registration/view/password_screen.dart';
-import '../../pages/registration/view/terms_and_condition.dart';
-import '../../pages/registration/view/uplaod_profile_screen.dart';
+import 'package:sf_app/pages/splash/view/splash_view.dart';
 
 class AppRoute {
   final Map<String, Widget Function(BuildContext)> routes = {
@@ -54,10 +58,16 @@ class AppRoute {
     WomenCategroies.route: (p0) => WomenCategroies(),
     ProductDetails.route: (p0) => const ProductDetails(),
 
+    HomeScreen.route: (p0) => HomeScreen(),
+    WomenCategroies.route: (p0) => WomenCategroies(),
+
     OnbaordingView.route: (p0) => const OnbaordingView(),
     OrderTabbarScreen.route: (p0) => const OrderTabbarScreen(),
     CommunityTabs.route: (p0) => const CommunityTabs(),
     CardDesign.route: (p0) => CardDesign(),
     Inbox.route: (p0) => const Inbox(),
+
+    /// designer side navbar
+    DesingerBottomnavBar.route: (p0) => DesingerBottomnavBar(),
   };
 }

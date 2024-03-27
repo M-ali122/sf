@@ -147,7 +147,8 @@ class Settings extends StatelessWidget {
                   },
                   title: 'Delete Account',
                   leadings: Appicons.deleteBorder,
-                  colors: 0xFFF75555),
+                  colors: 0xFFF75555
+              ),
             ],
           ),
         ),
