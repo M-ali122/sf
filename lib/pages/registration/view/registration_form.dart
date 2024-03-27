@@ -45,9 +45,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
+import 'package:sf_app/helper/view/custome_textfield.dart';
 import 'package:sf_app/pages/registration/controller/registration_controller.dart';
-
-import '../../../helper/view/textfield.dart';
 
 class RegistrationForm extends GetWidget<RegistrationController> {
   const RegistrationForm({super.key});

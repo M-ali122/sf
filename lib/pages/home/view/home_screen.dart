@@ -9,10 +9,10 @@ import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
 
-class HomeView extends StatelessWidget {
-  static const String route = "HomeView";
+class HomeScreen extends StatelessWidget {
+  static const String route = "HomeScreen";
 
-  const HomeView({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

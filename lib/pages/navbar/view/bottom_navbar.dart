@@ -25,7 +25,7 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
             ),
           ),
           bottomNavigationBar: Container(
-            height: 70.h,
+            height: 75.h,
             width: 375.w,
             margin: EdgeInsets.only(bottom: 16.h),
             decoration: BoxDecoration(

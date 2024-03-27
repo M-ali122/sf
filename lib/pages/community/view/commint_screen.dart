@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -39,7 +38,7 @@ class CommintScreen extends StatelessWidget {
                       height: 100,
                     ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Get.back();
                       },
                       child: SvgPicture.string(
@@ -119,13 +118,59 @@ class CommintScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ListTile(
-                        contentPadding: const EdgeInsets.symmetric(horizontal: -20),
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: -20),
                         title: const Text('Kristin Watson'),
                         leading: const CircleAvatar(
                           radius: 25,
                           foregroundImage: AssetImage('assets/profile3.png'),
                         ),
-                        trailing: SvgPicture.string(Appicons.moresquareBorder),
+                        trailing: PopupMenuButton(
+                          // padding: EdgeInsets.only(right: 10,top: 20),
+                          position: PopupMenuPosition.under,
+                          color: AppColor.white,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                            ),
+                          ),
+                          
+                          itemBuilder: (context) => [
+                            PopupMenuItem(
+                              value: 'option1',
+                              child: Row(
+                                children: [
+                                  SvgPicture.string(Appicons.profileBorderplus),
+                                  const SizedBox(
+                                    width: 20,
+                                  ),
+                                  const Text('Follow user'),
+                                ],
+                              ),
+                            ),
+                            PopupMenuItem(
+                              value: 'option1',
+                              child: Row(
+                                children: [
+                                  SvgPicture.string(
+                                      Appicons.dangertriangleBorder),
+                                  const SizedBox(
+                                    width: 20,
+                                  ),
+                                  const Text('Flag comment'),
+                                ],
+                              ),
+                            ),
+                          ],
+                          onSelected: (value) {
+                            // Handle selection
+                            print('Selected: $value');
+                          },
+                          child: SvgPicture.string(Appicons.moresquareBorder),
+                        ),
+
                       ),
                       const SizedBox(
                         height: 10,
@@ -195,7 +240,8 @@ class CommintScreen extends StatelessWidget {
                         height: 10,
                       ),
                       ListTile(
-                        contentPadding: const EdgeInsets.symmetric(horizontal: -20),
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: -20),
                         title: const Text('Jhon'),
                         leading: const CircleAvatar(
                           radius: 25,
@@ -259,89 +305,100 @@ class CommintScreen extends StatelessWidget {
           ],
         ),
       ),
-    
-bottomSheet: Container(
-  height: 150,
-  width: Get.width,
-  color: AppColor.white,
-  child: Column(
-    children: [
-      Container(
-        decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              color: Colors.grey, // Choose the color of your border
-              width: 1.0, // Choose the width of your border
-            ),
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-          child: Column(
-            children: [
-              Image.asset('assets/allEmoji.png'),
-              const SizedBox(height: 10), // Adding some space between emoji and TextField
-              Container(
-                height: 56,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
-                  color: Color.fromRGBO(250, 250, 250, 1), // Change the color as per your requirement
+      bottomSheet: Container(
+        height: 150,
+        width: Get.width,
+        color: AppColor.white,
+        child: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    color: Colors.grey, // Choose the color of your border
+                    width: 1.0, // Choose the width of your border
+                  ),
                 ),
-                child: Row(
+              ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+                child: Column(
                   children: [
-                    Expanded(
-                      
-                      child: TextField(
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-                          hintText: 'Message...',
-                          hintStyle: GoogleFonts.mulish(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: AppColor.GreyScale500
-                          ),
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          disabledBorder: InputBorder.none,
-                          errorBorder: InputBorder.none,
-                          border: InputBorder.none, // Remove default border
-                        ),
+                    Image.asset('assets/allEmoji.png'),
+                    const SizedBox(
+                        height:
+                            10), // Adding some space between emoji and TextField
+                    Container(
+                      height: 56,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(24),
+                        color: Color.fromRGBO(250, 250, 250,
+                            1), // Change the color as per your requirement
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: SvgPicture.string(Appicons.image3border),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 16),
-                      child: SvgPicture.string(Appicons.cameraBorder,color: AppColor.GreyScale500,),
-                    ),
-                    GestureDetector(
-                      onTap: (){},
-                      child: Container(
-                        height: 56,
-                        width: 56,
-                        decoration: const ShapeDecoration(
-                          shape: CircleBorder(),
-                          color: AppColor.primaryColor500,
-                        ),
-                        child: Center(
-                          child: SvgPicture.string(Appicons.send,color: Colors.white,),
-                        ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              style: GoogleFonts.mulish(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14,
+                                  color: Color.fromRGBO(201, 179, 114, 1)),
+                              decoration: InputDecoration(
+                                contentPadding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                hintText: 'Message...',
+                                hintStyle: GoogleFonts.mulish(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: AppColor.GreyScale500),
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                disabledBorder: InputBorder.none,
+                                errorBorder: InputBorder.none,
+                                border:
+                                    InputBorder.none, // Remove default border
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: SvgPicture.string(Appicons.image3border),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, right: 16),
+                            child: SvgPicture.string(
+                              Appicons.cameraBorder,
+                              color: AppColor.GreyScale500,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              height: 56,
+                              width: 56,
+                              decoration: const ShapeDecoration(
+                                shape: CircleBorder(),
+                                color: AppColor.primaryColor500,
+                              ),
+                              child: Center(
+                                child: SvgPicture.string(
+                                  Appicons.send,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-    ],
-  ),
-),
-
     );
   }
 }
-

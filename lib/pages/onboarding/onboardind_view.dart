@@ -2,8 +2,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import 'package:sf_app/helper/extensions/spacings.dart';
-import 'package:sf_app/pages/navbar/view/navbar_view.dart';
+
+import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
+
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/pages/onboarding/view/explore_trending_style.dart';
 import 'package:sf_app/pages/onboarding/view/onboard_second_screen.dart';

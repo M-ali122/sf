@@ -32,7 +32,7 @@ class MainApp extends StatelessWidget {
           translations: AppDictionary(),
           // home: child,
           routes: AppRoute().routes,
-          // initialRoute: BottomnavBar.route,
+
           initialRoute: Splash_View.route,
         );
       },

@@ -14,37 +14,37 @@ class OtpCustomConatiner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // alignment: Alignment.center,
-      width: 390.w,
-      height: 90.h,
-      child: Stack(
-        children: [
-          Positioned(
-            left: 16,
-            bottom: 0,
-            top: 0,
-            child: OtpTextField(
-              fillColor: AppColor.GreyScale50,
-              filled: true,
-              margin: const EdgeInsets.all(8),
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
-              enabledBorderColor: AppColor.GreyScale200,
-              focusedBorderColor: AppColor.secondaryColor500,
-              numberOfFields: 4,
-              borderRadius: BorderRadius.circular(16),
-              fieldWidth: 70.w,
-              showFieldAsBox: true,
-              textStyle: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
+
+        // alignment: Alignment.center,
+        width: 390.w,
+        height: 90.h,
+        child: Stack(
+          children: [
+            Positioned(
+              left: 16,
+              bottom: 0,
+              top: 0,
+              child: OtpTextField(
+                fillColor: AppColor.GreyScale50,
+                filled: true,
+                margin: const EdgeInsets.all(8),
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                enabledBorderColor: AppColor.GreyScale200,
+                focusedBorderColor: AppColor.secondaryColor500,
+                numberOfFields: 4,
+                borderRadius: BorderRadius.circular(16),
+                fieldWidth: 70.w,
+                showFieldAsBox: true,
+                textStyle: TextStyle(
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+                decoration: const InputDecoration(),
               ),
-              decoration: const InputDecoration(),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ));
   }
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/helper/view/custome_textfield.dart';
 import 'package:sf_app/pages/registration/controller/registration_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 
 import '../../../helper/view/Appbutton.dart';
-import '../../../helper/view/textfield.dart';
+
 import '../controller/passController.dart';
 
 class PasswordScreen extends GetWidget<RegistrationController> {

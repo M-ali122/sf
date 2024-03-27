@@ -71,10 +71,6 @@ class CustomTextField extends StatelessWidget {
                 prefixIcon: icon,
               ),
 
-              // validator: (value) {
-              //
-              //
-              // },
             ),
           ),
         ],
