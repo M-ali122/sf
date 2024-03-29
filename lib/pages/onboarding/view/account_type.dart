@@ -6,6 +6,8 @@ import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/pages/onboarding/onboardind_view.dart';
+import 'package:sf_app/pages/registration/controller/registration_controller.dart';
+import 'package:sf_app/pages/registration/view/terms_and_condition.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -21,7 +23,9 @@ class AccountType extends StatefulWidget {
 class _AccountTypeState extends State<AccountType> {
    
    final OnboardingController controller = Get.put(OnboardingController());
-
+  
+    final RegistrationController _registrationController = Get.put(RegistrationController());
+ 
   final theme = Get.theme;
   String selectedType = 'Customer';
   @override
@@ -36,7 +40,7 @@ class _AccountTypeState extends State<AccountType> {
               24.height,
               GestureDetector(
                 onTap: () {
-                  Get.back();
+                  Get.toNamed(TermAndCondition.route);
                 },
                 child: SvgPicture.string(Appicons.backIcon),
               ),

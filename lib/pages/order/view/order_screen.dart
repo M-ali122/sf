@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
@@ -61,17 +62,17 @@ class OrderView extends StatelessWidget {
               ),
               const SizedBox(height: 20,),
                 Container(
-                  height: 170,
-                  width: Get.width,
+                  height: 170.h,
+                  width: 380.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(32),
                     color: AppColor.white,
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 0,
-                        offset: const Offset(0, 0),
-                        spreadRadius: 1,
-                        color: Colors.grey.withOpacity(0.1)
+                        blurRadius: 60,
+                        offset: const Offset(0, 4),
+                        spreadRadius: 0,
+                        color: Color.fromRGBO(4, 6, 15, 0.05)
                       )
                     ]
                   ),
@@ -157,10 +158,10 @@ class OrderView extends StatelessWidget {
                     color: AppColor.white,
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 0,
-                        offset: const Offset(0, 0),
-                        spreadRadius: 1,
-                        color: Colors.grey.withOpacity(0.1)
+                        blurRadius: 60,
+                        offset: const Offset(0, 4),
+                        spreadRadius: 0,
+                        color: Color.fromRGBO(4, 6, 15, 0.05)
                       )
                     ]
                   ),
@@ -244,10 +245,10 @@ class OrderView extends StatelessWidget {
                     color: AppColor.white,
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 0,
-                        offset: const Offset(0, 0),
-                        spreadRadius: 1,
-                        color: Colors.grey.withOpacity(0.1)
+                        blurRadius: 60,
+                        offset: const Offset(0, 4),
+                        spreadRadius: 0,
+                        color: Color.fromRGBO(4, 6, 15, 0.05)
                       )
                     ]
                   ),

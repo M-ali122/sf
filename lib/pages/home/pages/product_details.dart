@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/pages/home/pages/cart_screen.dart';
+import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -13,24 +14,30 @@ class ProductDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    OnboardingController onboardingController = Get.put(OnboardingController());
+    bool isDesigner = onboardingController.accountType.value == "Designer";
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               width: Get.width,
-              height: 400,
-              decoration: const BoxDecoration(
+              height: 428.h,
+              decoration: BoxDecoration(
                   image: DecorationImage(
+                    alignment: const Alignment(-1, -1),
                       fit: BoxFit.cover,
                       image: AssetImage(
-                        "assets/product.png",
-                      ))),
+                         isDesigner ? "assets/rounde_neck_shirt.png" : "assets/product.png",
+                      ),
+                      )
+                  ),
               child: Stack(
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsets.only(left: 24.0, right: 24, top: 58),
+                         EdgeInsets.only(left: 24.0.w, right: 24.w, top: 58.h),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       // mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +57,7 @@ class ProductDetails extends StatelessWidget {
                           width: 30,
                         ),
                         Text(
-                          'Product details',
+                          isDesigner ? '': 'Product details',
                           style: GoogleFonts.mulish(
                             fontWeight: FontWeight.w700,
                             fontSize: 24,
@@ -71,17 +78,21 @@ class ProductDetails extends StatelessWidget {
                                 bottomLeft: Radius.circular(20),
                               ),
                             ),
-
+        
                             itemBuilder: (context) => [
                               PopupMenuItem(
                                 value: 'option1',
                                 child: Row(
                                   children: [
-                                    SvgPicture.string(Appicons.sendBorder),
+                                    SvgPicture.string(
+                                      isDesigner ? Appicons.editBorder: Appicons.sendBorder
+                                    ),
                                     const SizedBox(
                                       width: 20,
                                     ),
-                                    const Text('Share product'),
+                                    Text(
+                                      isDesigner ? 'Edit product' :'Share product',
+                                    ),
                                   ],
                                 ),
                               ),
@@ -89,11 +100,15 @@ class ProductDetails extends StatelessWidget {
                                 value: 'option2',
                                 child: Row(
                                   children: [
-                                    SvgPicture.string(Appicons.paperBorder),
+                                    SvgPicture.string(
+                                      isDesigner ? Appicons.chartBorder: Appicons.paperBorder,
+                                    ),
                                     const SizedBox(
                                       width: 20,
                                     ),
-                                    const Text('Size gide'),
+                                    Text(
+                                      isDesigner ? 'Manage stock':'Size gide'
+                                    ),
                                   ],
                                 ),
                               ),
@@ -101,14 +116,34 @@ class ProductDetails extends StatelessWidget {
                                 value: 'option3',
                                 child: Row(
                                   children: [
-                                    SvgPicture.string(Appicons.chatBorder),
+                                    SvgPicture.string(
+                                      isDesigner ? Appicons.ticketstarBorder:
+                                      Appicons.chatBorder),
                                     const SizedBox(
                                       width: 20,
                                     ),
-                                    const Text('Message designer'),
+                                    Text(
+                                      isDesigner ? 'Offer promotion':
+                                      'Message designer'),
                                   ],
                                 ),
                               ),
+                              isDesigner ? PopupMenuItem(
+                                value: 'option4',
+                                child: Row(
+                                  children: [
+                                    SvgPicture.string(
+                                       Appicons.sendBorder
+                                      ),
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    const Text(
+                                      'Share product',
+                                    ),
+                                  ],
+                                ),
+                              ) : PopupMenuItem(child: SizedBox())
                             ],
                             onSelected: (value) {
                               // Handle selection
@@ -132,16 +167,16 @@ class ProductDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                width: 380,
-                height: 52,
+                width: 380.w,
+                height: 52.h,
                 decoration: BoxDecoration(
                     color: AppColor.backGroundSilver,
                     borderRadius: BorderRadius.circular(40)),
                 child: Row(
                   children: [
                     Container(
-                      width: 170,
-                      height: 52,
+                      width: 190.w,
+                      height: 52.h,
                       decoration: BoxDecoration(
                           gradient: const LinearGradient(
                             colors: [
@@ -162,16 +197,9 @@ class ProductDetails extends StatelessWidget {
                       )),
                     ),
                     Container(
-                      width: 170,
-                      height: 52,
+                      width: 190.w,
+                      height: 52.h,
                       decoration: BoxDecoration(
-                          // gradient: LinearGradient(
-                          //   colors: [
-                          //     Color.fromRGBO(114, 151, 94, 1), // Starting color
-                          //     Color.fromRGBO(71, 87, 54, 1),        // Ending color (modify as needed)
-                          //   ],
-                          // ),
-
                           borderRadius: BorderRadius.circular(40)),
                       child: Center(
                           child: Text(
@@ -191,11 +219,11 @@ class ProductDetails extends StatelessWidget {
               // mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 15.0, top: 15),
+                 Padding(
+                  padding: const EdgeInsets.only(left: 15.0, top: 15),
                   child: Text(
-                    'Green Polo',
-                    style: TextStyle(
+                    isDesigner ? 'Round neck shirt' : 'Polo Shirt',
+                    style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 32,
                         color: Color.fromRGBO(33, 33, 33, 1)),
@@ -204,7 +232,7 @@ class ProductDetails extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-
+        
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, top: 10),
                   child: Row(
@@ -269,11 +297,8 @@ class ProductDetails extends StatelessWidget {
                         color: const Color.fromRGBO(66, 66, 66, 1)),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
+                isDesigner ? const SizedBox(): Padding(
+                  padding: const EdgeInsets.only(left: 15.0,top: 20),
                   child: Text(
                     'Materiel Details',
                     style: GoogleFonts.mulish(
@@ -281,12 +306,9 @@ class ProductDetails extends StatelessWidget {
                         fontSize: 18,
                         color: const Color.fromRGBO(33, 33, 33, 1)),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
+                ), 
+                isDesigner ? const SizedBox():Padding(
+                  padding: const EdgeInsets.only(left: 15.0,top: 10),
                   child: Text(
                     "100% Coton",
                     style: GoogleFonts.mulish(
@@ -350,9 +372,11 @@ class ProductDetails extends StatelessWidget {
                           width: 80,
                           height: 80,
                           decoration: BoxDecoration(
-                            image: const DecorationImage(
+                            image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("assets/ariveldesigin.png")),
+                                image: AssetImage(
+                                  isDesigner ? "assets/rounde_neck_shirt.png":
+                                  "assets/ariveldesigin.png")),
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
@@ -368,7 +392,7 @@ class ProductDetails extends StatelessWidget {
           ],
         ),
       ),
-      bottomSheet: Container(
+      bottomSheet: SizedBox(
         height: 60,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -398,7 +422,7 @@ class ProductDetails extends StatelessWidget {
             ),
             GestureDetector(
               onTap: (){
-                Get.to(CartScreen());
+                Get.to(const CartScreen());
               },
               child: Container(
                 width: 160,

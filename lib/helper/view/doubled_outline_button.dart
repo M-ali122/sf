@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../resources/color/app_color.dart';
@@ -13,16 +14,16 @@ class DoubledOutlineButton extends StatelessWidget {
     return   Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        // width: 380,
-        height: 52,
+        width: 380.w,
+        height: 52.h,
         decoration: BoxDecoration(
             color: AppColor.backGroundSilver,
             borderRadius: BorderRadius.circular(40)),
         child: Row(
           children: [
             Container(
-              width: 155,
-              height: 52,
+              width: 190.w,
+              height: 52.h,
               decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [
@@ -37,14 +38,14 @@ class DoubledOutlineButton extends StatelessWidget {
                     "$titleOne",
                     style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w700,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       color: const Color.fromRGBO(255, 255, 255, 1),
                     ),
                   )),
             ),
             Container(
-              width: 155,
-              height: 52,
+              width: 190.w,
+              height: 52.h,
               decoration: BoxDecoration(
                 // gradient: LinearGradient(
                 //   colors: [
@@ -59,7 +60,7 @@ class DoubledOutlineButton extends StatelessWidget {
                     "$titleTwo",
                     style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w700,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       color: const Color.fromRGBO(33, 33, 33, 1),
                     ),
                   )),

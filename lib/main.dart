@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
+import 'package:sf_app/desinger_side/pages/dashboard/view/dashboard_screen.dart';
+
 import 'package:sf_app/modules/global/controllers/bindings.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 import 'package:sf_app/resources/languages/dictionary.dart';
@@ -34,6 +38,7 @@ class MainApp extends StatelessWidget {
           routes: AppRoute().routes,
 
           initialRoute: Splash_View.route,
+          // initialRoute: DesignerDashbaord.route,
         );
       },
     );
