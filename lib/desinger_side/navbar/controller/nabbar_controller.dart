@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/desinger_side/pages/dashboard/view/dashboard_screen.dart';
+import 'package:sf_app/pages/community/view/commint_screen.dart';
+import 'package:sf_app/pages/community/view/community_tab_screen.dart';
+import 'package:sf_app/pages/order/view/order_screen.dart';
 
 class DesignerBottomNavBarController extends GetxController {
   RxInt currentIndex = 0.obs;
@@ -12,16 +15,12 @@ class DesignerBottomNavBarController extends GetxController {
   }
 
   final List<Widget> pages = [
-    const Center(
-      child: DesignerDashbaord(),
-    ),
-    const Center(
-      child: Text('Order'),
-    ),
+    DesignerDashbaord(),
+    OrderView(),
     const Center(
       child: Text('add'),
     ),
-    const Center(child:Text('Community')),
+    CommunityTabs(),
     const Center(
       child: Text('profile'),
     )

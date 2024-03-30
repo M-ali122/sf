@@ -3,10 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sf_app/helper/extensions/spacings.dart';
+import 'package:sf_app/helper/view/doubled_outline_button.dart';
+import 'package:sf_app/pages/home/dp/popup_list.dart';
 import 'package:sf_app/pages/home/pages/cart_screen.dart';
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
+import 'package:sf_app/resources/icon/svgs.dart';
 
 class ProductDetails extends StatelessWidget {
   static const String route = 'ProductDetails';
@@ -14,7 +18,6 @@ class ProductDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     OnboardingController onboardingController = Get.put(OnboardingController());
     bool isDesigner = onboardingController.accountType.value == "Designer";
     return Scaffold(
@@ -26,24 +29,25 @@ class ProductDetails extends StatelessWidget {
               height: 428.h,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                    alignment: const Alignment(-1, -1),
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                         isDesigner ? "assets/rounde_neck_shirt.png" : "assets/product.png",
-                      ),
-                      )
-                  ),
+                alignment: const Alignment(-1, -1),
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  isDesigner
+                      ? "assets/rounde_neck_shirt.png"
+                      : "assets/product.png",
+                ),
+              )),
               child: Stack(
                 children: [
                   Padding(
                     padding:
-                         EdgeInsets.only(left: 24.0.w, right: 24.w, top: 58.h),
+                        EdgeInsets.only(left: 24.0.w, right: 24.w, top: 58.h),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       // mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
+                          padding: const EdgeInsets.only(top: 8.0),
                           child: GestureDetector(
                               onTap: () {
                                 Get.back();
@@ -57,7 +61,7 @@ class ProductDetails extends StatelessWidget {
                           width: 30,
                         ),
                         Text(
-                          isDesigner ? '': 'Product details',
+                          isDesigner ? '' : 'Product details',
                           style: GoogleFonts.mulish(
                             fontWeight: FontWeight.w700,
                             fontSize: 24,
@@ -65,90 +69,44 @@ class ProductDetails extends StatelessWidget {
                           ),
                         ),
                         const Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: PopupMenuButton(
-                            // padding: EdgeInsets.only(right: 10,top: 20),
-                            position: PopupMenuPosition.under,
-                            color: AppColor.white,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                bottomRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(20),
-                              ),
+                        PopupMenuButton(
+                          color: AppColor.white,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
                             ),
-        
-                            itemBuilder: (context) => [
-                              PopupMenuItem(
-                                value: 'option1',
-                                child: Row(
-                                  children: [
-                                    SvgPicture.string(
-                                      isDesigner ? Appicons.editBorder: Appicons.sendBorder
+                          ),
+                          itemBuilder: (context) => PopUpMenuData()
+                              .popupmenudata
+                              .map(
+                                (e) => PopupMenuItem(
+                                  padding: EdgeInsets.zero,
+                                  child: ListTile(
+                                    visualDensity: VisualDensity(vertical: -4),
+                                    leading: Container(
+                                      margin: const EdgeInsets.only(left: 16),
+                                      child: SvgPicture.string(e.icon,
+                                      color: const Color.fromRGBO(33, 33, 33, 1),),
                                     ),
-                                    const SizedBox(
-                                      width: 20,
+                                    title: Text(e.menu,
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight:FontWeight.w600,
+                                      color: const Color.fromRGBO(33, 33, 33, 1)
                                     ),
-                                    Text(
-                                      isDesigner ? 'Edit product' :'Share product',
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                              PopupMenuItem(
-                                value: 'option2',
-                                child: Row(
-                                  children: [
-                                    SvgPicture.string(
-                                      isDesigner ? Appicons.chartBorder: Appicons.paperBorder,
-                                    ),
-                                    const SizedBox(
-                                      width: 20,
-                                    ),
-                                    Text(
-                                      isDesigner ? 'Manage stock':'Size gide'
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              PopupMenuItem(
-                                value: 'option3',
-                                child: Row(
-                                  children: [
-                                    SvgPicture.string(
-                                      isDesigner ? Appicons.ticketstarBorder:
-                                      Appicons.chatBorder),
-                                    const SizedBox(
-                                      width: 20,
-                                    ),
-                                    Text(
-                                      isDesigner ? 'Offer promotion':
-                                      'Message designer'),
-                                  ],
-                                ),
-                              ),
-                              isDesigner ? PopupMenuItem(
-                                value: 'option4',
-                                child: Row(
-                                  children: [
-                                    SvgPicture.string(
-                                       Appicons.sendBorder
-                                      ),
-                                    const SizedBox(
-                                      width: 20,
-                                    ),
-                                    const Text(
-                                      'Share product',
-                                    ),
-                                  ],
-                                ),
-                              ) : PopupMenuItem(child: SizedBox())
-                            ],
-                            onSelected: (value) {
-                              // Handle selection
-                              print('Selected: $value');
-                            },
+                              )
+                              .toList(),
+                          onSelected: (value) {
+                            // Handle selection
+                            print('Selected: $value');
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 11.0),
                             child: SvgPicture.string(
                               Appicons.moresquareBorder,
                               color: AppColor.white,
@@ -164,78 +122,28 @@ class ProductDetails extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: 380.w,
-                height: 52.h,
-                decoration: BoxDecoration(
-                    color: AppColor.backGroundSilver,
-                    borderRadius: BorderRadius.circular(40)),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 190.w,
-                      height: 52.h,
-                      decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color.fromRGBO(114, 151, 94, 1), // Starting color
-                              Color.fromRGBO(71, 87, 54,
-                                  1), // Ending color (modify as needed)
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(40)),
-                      child: Center(
-                          child: Text(
-                        "Information",
-                        style: GoogleFonts.mulish(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: const Color.fromRGBO(255, 255, 255, 1),
-                        ),
-                      )),
-                    ),
-                    Container(
-                      width: 190.w,
-                      height: 52.h,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40)),
-                      child: Center(
-                          child: Text(
-                        "Reviews",
-                        style: GoogleFonts.mulish(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          color: const Color.fromRGBO(33, 33, 33, 1),
-                        ),
-                      )),
-                    ),
-                  ],
-                ),
-              ),
+            DoubledOutlineButton(
+              titleOne: 'information',
+              titleTwo: 'Review',
             ),
-            Column(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                 Padding(
-                  padding: const EdgeInsets.only(left: 15.0, top: 15),
-                  child: Text(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  10.height,
+                  Text(
                     isDesigner ? 'Round neck shirt' : 'Polo Shirt',
                     style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 32,
                         color: Color.fromRGBO(33, 33, 33, 1)),
                   ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-        
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, top: 10),
-                  child: Row(
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Row(
                     children: [
                       Container(
                         height: 20,
@@ -263,166 +171,239 @@ class ProductDetails extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
-                // Padding(
-                //   padding: const EdgeInsets.only(left: 15.0),
-                //   child: SvgPicture.string(Svgs.arivelRow),
-                // ),
-                // const SizedBox(
-                //   height: 5,
-                // ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Text(
+                  20.height,
+                  Row(
+                    children: [
+                      Container(
+                        height: 25.h,
+                        width: 55.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: const Color.fromRGBO(215, 199, 152, 1),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Female',
+                            style: GoogleFonts.mulish(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 10,
+                                color: AppColor.white),
+                          ),
+                        ),
+                      ),
+                      10.width,
+                      Container(
+                        height: 25.h,
+                        width: 43.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: const Color.fromRGBO(215, 199, 152, 1),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Shirt',
+                            style: GoogleFonts.mulish(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 10,
+                                color: AppColor.white),
+                          ),
+                        ),
+                      ),
+                      10.width,
+                      Container(
+                        height: 25.h,
+                        width: 64.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: const Color.fromRGBO(215, 199, 152, 1),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'M / L / XL',
+                            style: GoogleFonts.mulish(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 10,
+                                color: AppColor.white),
+                          ),
+                        ),
+                      ),
+                      10.width,
+                      Container(
+                          height: 25.h,
+                          width: 55.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6),
+                            color: const Color.fromRGBO(215, 199, 152, 1),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SvgPicture.string(Svgs.twostar),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              Text(
+                                '4.6',
+                                style: GoogleFonts.mulish(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 10,
+                                    color: AppColor.white),
+                              )
+                            ],
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
                     'Description',
                     style: GoogleFonts.mulish(
                         fontWeight: FontWeight.w700,
                         fontSize: 18,
                         color: const Color.fromRGBO(33, 33, 33, 1)),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15),
-                  child: Text(
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
                     style: GoogleFonts.mulish(
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
                         color: const Color.fromRGBO(66, 66, 66, 1)),
                   ),
-                ),
-                isDesigner ? const SizedBox(): Padding(
-                  padding: const EdgeInsets.only(left: 15.0,top: 20),
-                  child: Text(
-                    'Materiel Details',
-                    style: GoogleFonts.mulish(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 18,
-                        color: const Color.fromRGBO(33, 33, 33, 1)),
+                  isDesigner
+                      ? const SizedBox()
+                      : Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Text(
+                            'Materiel Details',
+                            style: GoogleFonts.mulish(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18,
+                                color: const Color.fromRGBO(33, 33, 33, 1)),
+                          ),
+                        ),
+                  isDesigner
+                      ? const SizedBox()
+                      : Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Text(
+                            "100% Coton",
+                            style: GoogleFonts.mulish(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                                color: const Color.fromRGBO(66, 66, 66, 1)),
+                          ),
+                        ),
+                  const SizedBox(
+                    height: 20,
                   ),
-                ), 
-                isDesigner ? const SizedBox():Padding(
-                  padding: const EdgeInsets.only(left: 15.0,top: 10),
-                  child: Text(
-                    "100% Coton",
-                    style: GoogleFonts.mulish(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        color: const Color.fromRGBO(66, 66, 66, 1)),
+                  isDesigner
+                      ? const Text('')
+                      : Text(
+                          'Care Instructions',
+                          style: GoogleFonts.mulish(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                              color: const Color.fromRGBO(33, 33, 33, 1)),
+                        ),
+                  const SizedBox(
+                    height: 10,
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Text(
-                    'Care Instructions',
-                    style: GoogleFonts.mulish(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 18,
-                        color: const Color.fromRGBO(33, 33, 33, 1)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15),
-                  child: Text(
+                  Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
                     style: GoogleFonts.mulish(
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
                         color: const Color.fromRGBO(66, 66, 66, 1)),
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Text(
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
                     'Gallery Photos',
                     style: GoogleFonts.mulish(
                         fontWeight: FontWeight.w700,
                         fontSize: 18,
                         color: const Color.fromRGBO(33, 33, 33, 1)),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  height: 100,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 6,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 80,
-                          height: 80,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                  isDesigner ? "assets/rounde_neck_shirt.png":
-                                  "assets/ariveldesigin.png")),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                      );
-                    },
+                  const SizedBox(
+                    height: 10,
                   ),
-                ),
-                const SizedBox(
-                  height: 70,
-                ),
-              ],
+                  Container(
+                    height: 100,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 6,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(isDesigner
+                                      ? "assets/rounde_neck_shirt.png"
+                                      : "assets/ariveldesigin.png")),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 130,
+                  ),
+                ],
+              ),
             )
           ],
         ),
       ),
-      bottomSheet: SizedBox(
-        height: 60,
+      bottomSheet: Container(
+        height: 114.h,
+        decoration: const BoxDecoration(
+            color: AppColor.white,
+            border: Border(
+                top: BorderSide(color: Color.fromRGBO(245, 245, 245, 1)))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              width: 160,
-              height: 54,
-              decoration: BoxDecoration(
-                  color: const Color.fromRGBO(243, 243, 243, 1),
-                  // gradient: const LinearGradient(
-                  //   colors: [
-                  //     Color.fromRGBO(114, 151, 94, 1), // Starting color
-                  //     Color.fromRGBO(71, 87, 54,
-                  //         1), // Ending color (modify as needed)
-                  //   ],
-                  // ),
-                  borderRadius: BorderRadius.circular(40)),
-              child: Center(
-                  child: Text(
-                "Buy Now",
-                style: GoogleFonts.mulish(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16,
-                  color: const Color.fromRGBO(33, 33, 33, 1),
-                ),
-              )),
+            GestureDetector(
+              onTap: () {
+                Get.snackbar(
+                  snackPosition: SnackPosition.BOTTOM,
+                  duration: const Duration(seconds: 1),
+                  'Buy Now',
+                  'comming soon',
+                );
+              },
+              child: Container(
+                width: 160,
+                height: 54,
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(243, 243, 243, 1),
+                    borderRadius: BorderRadius.circular(40)),
+                child: Center(
+                    child: Text(
+                  "Buy Now",
+                  style: GoogleFonts.mulish(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16.sp,
+                    color: const Color.fromRGBO(33, 33, 33, 1),
+                  ),
+                )),
+              ),
             ),
             GestureDetector(
-              onTap: (){
-                Get.to(const CartScreen());
+              onTap: () {
+                isDesigner ? null : Get.to(CartScreen());
               },
               child: Container(
                 width: 160,

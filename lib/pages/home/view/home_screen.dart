@@ -40,7 +40,14 @@ class HomeScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Welcome Back'),
+                       Text(
+                        'Welcome Back',
+                         style: GoogleFonts.mulish(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: AppColor.GreyScale600
+                         ),
+                        ),
                       6.height,
                       Text(
                         'User Name',
@@ -108,7 +115,7 @@ class HomeScreen extends StatelessWidget {
             ),
             24.height,
             const TopCategoriesView(),
-            24.height,
+            20.height,
             InkWell(
               onTap: () {
                 // Get.to(Designers());
@@ -142,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                         Get.to(DesignerProfile());
                       },
                       child: Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
+                        padding: EdgeInsets.only(right: 10.0.w),
                         child: CircleAvatar(
                           radius: 35,
                           backgroundImage: AssetImage(image[index]),
@@ -151,43 +158,6 @@ class HomeScreen extends StatelessWidget {
                     );
                   },
                 ),
-                // child: ListView(
-                //   shrinkWrap: true,
-                //   scrollDirection: Axis.horizontal,
-                //   children: const [
-                //     Padding(
-                //       padding: EdgeInsets.only(right: 15.0),
-                //       child: CircleAvatar(
-                //         radius: 35,
-                //         backgroundImage: AssetImage("assets/aubrey.png"),
-                //       ),
-                //     ),
-                //     Padding(
-                //       padding: EdgeInsets.only(right: 15.0),
-                //       child: CircleAvatar(
-                //         radius: 35,
-                //         backgroundImage: AssetImage("assets/darell.png"),
-                //       ),
-                //     ),
-                //     Padding(
-                //       padding: EdgeInsets.only(right: 15.0),
-                //       child: CircleAvatar(
-                //         radius: 35,
-                //         backgroundImage: AssetImage("assets/julie.png"),
-                //       ),
-                //     ),
-                //     Padding(
-                //       padding: EdgeInsets.only(right: 15.0),
-                //       child: CircleAvatar(
-                //         radius: 35,
-                //         backgroundImage: AssetImage("assets/sami.png"),
-                //       ),
-                //     ),
-                //     CircleAvatar(
-                //       radius: 35,
-                //       backgroundImage: AssetImage("assets/brandi.png"),
-                //     ),
-                //   ],
               ),
             ),
             24.height,
@@ -208,14 +178,17 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Container(
-                height: 292,
-                decoration: BoxDecoration(boxShadow: [
+                height: 292.h,
+                decoration: const BoxDecoration(
+                  boxShadow: [
                   BoxShadow(
-                      blurRadius: 40,
-                      offset: const Offset(0, 1),
+                      blurRadius: 60,
+                      offset: const Offset(0, 4),
                       spreadRadius: 0,
-                      color: const Color(0xff04060F14).withOpacity(0.2)),
-                ]),
+                      color: Color.fromRGBO(4, 6, 15, 0.08) 
+                      ),
+                ]
+                ),
                 child: ListView(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -327,14 +300,15 @@ class HomeScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 143.0),
                             child: Container(
-                              height: 148,
-                              width: 203,
+                              height: 148.h,
+                              width: 203.w,
                               decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.only(
                                     bottomRight: Radius.circular(12),
                                     bottomLeft: Radius.circular(12),
                                   ),
-                                  color: AppColor.white),
+                                  color: AppColor.white
+                                  ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [

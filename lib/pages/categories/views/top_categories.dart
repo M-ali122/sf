@@ -42,8 +42,9 @@ class TopCategoriesView extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(16),
           width: Get.width,
-          height: 320.h,
+          height: 335.h,
           child: GridView.builder(
+            physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 16,

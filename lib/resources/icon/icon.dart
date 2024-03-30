@@ -262,9 +262,10 @@ class Appicons {
 </svg>
 ''';
   static String tickSquare = '''
-<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M15.181 15.4577C15.035 15.6037 14.843 15.6777 14.651 15.6777C14.458 15.6777 14.267 15.6037 14.12 15.4577L12.247 13.5847L10.38 15.4517C10.234 15.5987 10.042 15.6717 9.85 15.6717C9.659 15.6717 9.466 15.5987 9.32 15.4517C9.027 15.1587 9.027 14.6847 9.32 14.3917L11.186 12.5237L9.32 10.6577C9.027 10.3647 9.027 9.89067 9.32 9.59767C9.613 9.30467 10.087 9.30467 10.38 9.59767L12.246 11.4637L14.11 9.59967C14.403 9.30667 14.877 9.30667 15.17 9.59967C15.463 9.89267 15.463 10.3667 15.17 10.6597L13.307 12.5237L15.181 14.3967C15.474 14.6897 15.474 15.1647 15.181 15.4577ZM12.25 2.78467C5.052 2.78467 2.5 5.33667 2.5 12.5347C2.5 19.7327 5.052 22.2847 12.25 22.2847C19.449 22.2847 22 19.7327 22 12.5347C22 5.33667 19.449 2.78467 12.25 2.78467Z" fill="#212121"/>
+<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.2915 10.5003C2.2915 16.2812 4.219 18.2087 9.99984 18.2087C15.7807 18.2087 17.7082 16.2812 17.7082 10.5003C17.7082 4.71949 15.7807 2.79199 9.99984 2.79199C4.219 2.79199 2.2915 4.71949 2.2915 10.5003Z" stroke="#C9B372" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
+
 ''';
   static String diccovery = '''
 <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1042,7 +1043,7 @@ class Appicons {
 
   ''';
   static String deleteBorder = '''
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="13.46" height="15.4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M18.8892 9.55408C18.8892 17.5731 20.0435 21.1979 12.2797 21.1979C4.5149 21.1979 5.693 17.5731 5.693 9.55408" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M20.3651 6.47985H4.2146" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M15.7148 6.47983C15.7148 6.47983 16.2434 2.71411 12.2891 2.71411C8.33578 2.71411 8.86435 6.47983 8.86435 6.47983" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1050,7 +1051,7 @@ class Appicons {
 
   ''';
   static String editBorder = '''
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="12.89" height="13.13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.3352 19.5078H19.7122" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0578 4.85889V4.85889C14.7138 3.85089 12.8078 4.12289 11.7998 5.46589C11.7998 5.46589 6.78679 12.1439 5.04779 14.4609C3.30879 16.7789 4.95379 19.6509 4.95379 19.6509C4.95379 19.6509 8.19779 20.3969 9.91179 18.1119C11.6268 15.8279 16.6638 9.11689 16.6638 9.11689C17.6718 7.77389 17.4008 5.86689 16.0578 4.85889Z" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M10.5042 7.21143L15.3682 10.8624" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1322,7 +1323,7 @@ static String laptop = '''
 
 
 static String tickfill = '''
-<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="16.25" height="16.25" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4092 6.96417L8.45083 10.9192C8.33333 11.0367 8.175 11.1025 8.00917 11.1025C7.84333 11.1025 7.68417 11.0367 7.56667 10.9192L5.59083 8.94167C5.34667 8.6975 5.34667 8.30167 5.59083 8.0575C5.83583 7.81333 6.23167 7.815 6.475 8.0575L8.00917 9.59333L11.525 6.08C11.7692 5.83583 12.165 5.83667 12.4092 6.08C12.6533 6.32417 12.6533 6.72 12.4092 6.96417ZM9 0.375C3.00167 0.375 0.875 2.50167 0.875 8.5C0.875 14.4983 3.00167 16.625 9 16.625C14.9983 16.625 17.125 14.4983 17.125 8.5C17.125 2.50167 14.9983 0.375 9 0.375Z" fill="#C9B372"/>
 </svg>
 
