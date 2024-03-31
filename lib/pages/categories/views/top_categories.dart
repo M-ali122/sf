@@ -49,7 +49,7 @@ class TopCategoriesView extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () async {
-                  Get.to(() => CategoryProducts.route,
+                  Get.to(() => CategoryProducts(),
                       arguments: CategoriesStaticData().categories[index]);
                 },
                 child: CategoryCardView(

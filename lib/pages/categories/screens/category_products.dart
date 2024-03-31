@@ -182,7 +182,7 @@ class CategoryProducts extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Get.toNamed(ProductDetails.route);
+                      Get.to(ProductDetails());
                     },
                     child: Card(
                       child: Container(

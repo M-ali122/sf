@@ -6,6 +6,7 @@ import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 import 'package:sf_app/pages/home/pages/product_details.dart';
 import 'package:sf_app/pages/home/pages/women_categories.dart';
 import 'package:sf_app/pages/home/view/home_screen.dart';
+import 'package:sf_app/pages/message/view/chat_screen.dart';
 
 import 'package:sf_app/pages/message/view/inbox.dart';
 import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
@@ -49,6 +50,7 @@ class AppRoute {
     OrderTabbarScreen.route: (p0) => const OrderTabbarScreen(),
     CommunityTabs.route: (p0) => const CommunityTabs(),
     CardDesign.route: (p0) => CardDesign(),
-    Inbox.route: (p0) => const Inbox(),
+    Inbox.route: (p0) =>  Inbox(),
+    ChatScreen.route:(p0) => ChatScreen(),
   };
 }
