@@ -34,15 +34,9 @@ class MainApp extends StatelessWidget {
           theme: MainTheme().theme,
           initialBinding: MainBindings(),
           translations: AppDictionary(),
-          // home: child,
+        
           routes: AppRoute().routes,
-<<<<<<< HEAD
-          //  initialRoute: Splash_View.route,
-          initialRoute: Inbox.route,
-=======
            initialRoute: Splash_View.route,
-          // initialRoute: DesignerDashbaord.route,
->>>>>>> d8500ae39de64517f2e8880eb038e20a3cc38ab7
         );
       },
     );

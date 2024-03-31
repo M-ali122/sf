@@ -53,11 +53,7 @@ class AppRoute {
     OrderTabbarScreen.route: (p0) => const OrderTabbarScreen(),
     CommunityTabs.route: (p0) => const CommunityTabs(),
     CardDesign.route: (p0) => CardDesign(),
-<<<<<<< HEAD
     Inbox.route: (p0) =>  Inbox(),
-    ChatScreen.route:(p0) => ChatScreen(),
-=======
-    Inbox.route: (p0) => const Inbox(),
     
 
 
@@ -67,8 +63,5 @@ class AppRoute {
     DesignerDashbaord.route: (p0) => DesignerDashbaord(),
 ProductGallery.route: (p0) => ProductGallery(),
 
-
-
->>>>>>> d8500ae39de64517f2e8880eb038e20a3cc38ab7
   };
 }
