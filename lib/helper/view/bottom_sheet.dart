@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -18,11 +20,30 @@ class OrderDetailBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: Get.width,
-      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppColor.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(40),
+          topRight: Radius.circular(40),
+        )
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child:  Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          SizedBox(height:10.h),
+          Center(
+            child: Container(
+              height: 3.h,
+              width: 38.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(2),
+                color: Color.fromRGBO(224, 224, 224, 1)
+              ),
+            ),
+          ),
+          SizedBox(height: 15.h,),
           Center(
             child: Text(
               'Filter',
@@ -30,7 +51,7 @@ class OrderDetailBottomSheet extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          const Divider(),
+          const Divider(color: Color.fromRGBO(238, 238, 238, 1),),
           const SizedBox(height: 15,),
            Text('Date',
           style: theme.textTheme.labelLarge ,
@@ -181,7 +202,7 @@ class OrderDetailBottomSheet extends StatelessWidget {
          SvgPicture.string(Svgs.priceSlider),
          
           const SizedBox(height: 20,),
-          const Divider(),
+           const Divider(color: Color.fromRGBO(238, 238, 238, 1),),
           const SizedBox(height: 20,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -204,6 +225,7 @@ class OrderDetailBottomSheet extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 20.h,),
         ],
       ),
     );

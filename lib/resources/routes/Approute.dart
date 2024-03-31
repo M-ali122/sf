@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
+import 'package:sf_app/desinger_side/pages/dashboard/view/dashboard_screen.dart';
+import 'package:sf_app/desinger_side/pages/dashboard/view/product_gallery.dart';
 import 'package:sf_app/pages/auth/screens/login.dart';
 import 'package:sf_app/pages/categories/screens/category_products.dart';
 import 'package:sf_app/pages/community/view/community_card_design.dart';
@@ -35,7 +38,7 @@ class AppRoute {
     PasswordScreen.route: (p0) => const PasswordScreen(),
     UploadProfileView.route: (p0) => const UploadProfileView(),
     TermAndCondition.route: (p0) => TermAndCondition(),
-
+ ProductDetails.route: (p0) => ProductDetails(),
     AccountType.route: (p0) => const AccountType(),
     Explore_Trending.route: (p0) => const Explore_Trending(),
     OnboardSecond.route: (p0) => const OnboardSecond(),
@@ -50,7 +53,22 @@ class AppRoute {
     OrderTabbarScreen.route: (p0) => const OrderTabbarScreen(),
     CommunityTabs.route: (p0) => const CommunityTabs(),
     CardDesign.route: (p0) => CardDesign(),
+<<<<<<< HEAD
     Inbox.route: (p0) =>  Inbox(),
     ChatScreen.route:(p0) => ChatScreen(),
+=======
+    Inbox.route: (p0) => const Inbox(),
+    
+
+
+
+    /// designer side navbar 
+    DesingerBottomnavBar.route: (p0) => DesingerBottomnavBar(),
+    DesignerDashbaord.route: (p0) => DesignerDashbaord(),
+ProductGallery.route: (p0) => ProductGallery(),
+
+
+
+>>>>>>> d8500ae39de64517f2e8880eb038e20a3cc38ab7
   };
 }

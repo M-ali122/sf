@@ -23,31 +23,22 @@ class CardDesign extends StatelessWidget {
           Container(
             height: 395,
             width: 380,
-            padding: EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             decoration: BoxDecoration(
-
-
-
               borderRadius: BorderRadius.circular(24),
               // color: AppColor.white,
               boxShadow: const [
                 BoxShadow(
-                  color: Color.fromRGBO(4, 6, 15, 0.08),
+                  color: Color.fromRGBO(4, 6, 15, 0.05),
                   spreadRadius: 0,
                   blurRadius: 60,
                   offset: Offset(0, 4),
-                ),
-                BoxShadow(
-                  color: Color.fromRGBO(4, 6, 15, 0.08),
-                  spreadRadius: 0,
-                  blurRadius: 60,
-                  offset: Offset(6, 0),
                 ),
               ],
             ),
             child: Card(
               color: AppColor.white,
-              elevation: 6,
+              // elevation: 6,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24),
               ),
@@ -241,22 +232,16 @@ class CardDesign extends StatelessWidget {
               // color: AppColor.white,
               boxShadow: const [
                 BoxShadow(
-                  color: Color.fromRGBO(4, 6, 15, 0.08),
+                  color: Color.fromRGBO(4, 6, 15, 0.05),
                   spreadRadius: 0,
                   blurRadius: 60,
                   offset: Offset(0, 4),
-                ),
-                BoxShadow(
-                  color: Color.fromRGBO(4, 6, 15, 0.08),
-                  spreadRadius: 0,
-                  blurRadius: 60,
-                  offset: Offset(6, 0),
                 ),
               ],
             ),
             child: Card(
               color: AppColor.white,
-              elevation: 6,
+              // elevation: 6,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24),
               ),

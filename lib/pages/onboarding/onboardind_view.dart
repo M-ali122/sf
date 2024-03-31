@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
 
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
@@ -20,6 +21,7 @@ class OnbaordingView extends GetWidget<OnboardingController> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDesigner = controller.accountType.value == "Designer";
     return GetBuilder<OnboardingController>(
       init: OnboardingController(),
       builder: (controller) {
@@ -57,6 +59,8 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                               if (controller.isLast.isTrue) {
                                 /// home screen call here
 
+                                isDesigner ? Get.offAllNamed(DesingerBottomnavBar.route)
+                                : 
                                 Get.offAllNamed(BottomnavBar.route);
                                 // Get.offAllNamed()
                               } else {

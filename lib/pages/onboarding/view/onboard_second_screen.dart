@@ -17,7 +17,8 @@ class OnboardSecond extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Get.theme;
-    OnboardingController onboardingController = Get.put(OnboardingController());
+     OnboardingController onboardingController = Get.put(OnboardingController());
+    bool isDesigner = onboardingController.accountType.value == "Designer";
     return Scaffold(
       body: Stack(
         children: [
@@ -94,13 +95,18 @@ class OnboardSecond extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Build Your Wishlist',
+                    isDesigner ? 'Manage Your Orders':'Build Your Wishlist',
                     style: theme.textTheme.headline4,
                   ),
                   8.height,
                   Text(
+                    isDesigner  ? "Ready to turn your passion into profit? Open" 
+                    "your virtual store. Set prices, manage inventory, and watch"
+                    " your designs become the next fashion trend!"
+                    : 
                     "Found something you love? Add it to your wishlist! Whether you'"
-                    "re browsing for inspiration or ready to make a purchase, It is your closet filled with  fashion finds.",
+                    "re browsing for inspiration or ready to make a purchase,"
+                    " It is your closet filled with  fashion finds.",
                     style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w500,
                       fontSize: 18.sp,

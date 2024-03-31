@@ -7,6 +7,7 @@ import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
 
+// ignore: must_be_immutable
 class WomenCategroies extends StatelessWidget {
   static String route = 'WomenCategories';
   WomenCategroies({super.key});
@@ -23,7 +24,7 @@ class WomenCategroies extends StatelessWidget {
           child: ListView(
             shrinkWrap: true,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Row(
@@ -36,7 +37,7 @@ class WomenCategroies extends StatelessWidget {
                       },
                       child: SvgPicture.string(Appicons.backIcon)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Text(
@@ -45,7 +46,7 @@ class WomenCategroies extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextField(
@@ -78,7 +79,7 @@ class WomenCategroies extends StatelessWidget {
                   hintStyle: const TextStyle(color: AppColor.GreyScale400),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -105,7 +106,7 @@ class WomenCategroies extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
                     Container(
@@ -124,7 +125,7 @@ class WomenCategroies extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
                     Container(
@@ -143,7 +144,7 @@ class WomenCategroies extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 13,
                     ),
                     Container(
@@ -165,14 +166,14 @@ class WomenCategroies extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               GridView.builder(
                 itemCount: 4,
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 5,
                     crossAxisSpacing: 5,
@@ -186,7 +187,7 @@ class WomenCategroies extends StatelessWidget {
                     },
                     child: Card(
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(16),
                           topRight: Radius.circular(16),
@@ -196,7 +197,7 @@ class WomenCategroies extends StatelessWidget {
                             Container(
                               width: 178,
                               height: 143,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(16),
                                     topRight: Radius.circular(16),
@@ -216,14 +217,14 @@ class WomenCategroies extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 15.0),
                               child: SvgPicture.string(Svgs.arivelRow),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Padding(
@@ -233,47 +234,47 @@ class WomenCategroies extends StatelessWidget {
                                   Container(
                                     height: 12,
                                     width: 12,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: Color(0xffFFCD90)),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Container(
                                     height: 12,
                                     width: 12,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: AppColor.red),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Container(
                                     height: 12,
                                     width: 12,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: Color(0xff313131)),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
-                                  Icon(
+                                  const Icon(
                                     Icons.add_circle_outline,
                                     size: 16,
                                   ),
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
-                            Align(
+                            const Align(
                               alignment: Alignment.topLeft,
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 15.0),
+                                padding: EdgeInsets.only(left: 15.0),
                                 child: Text('100 SAR'),
                               ),
                             )

@@ -48,6 +48,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -88,15 +89,15 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            children: [
-              // give the tab bar a height [can change hheight to preferred height]
-              const SizedBox(
-                height: 25,
-              ),
-              Row(
+        child: Column(
+          children: [
+            // give the tab bar a height [can change hheight to preferred height]
+             SizedBox(
+              height: 25.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Row(
                 children: [
                   GestureDetector(
                     onTap: () {
@@ -104,8 +105,8 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                     },
                     child: SvgPicture.string(Appicons.backIcon),
                   ),
-                  const SizedBox(
-                    width: 20,
+                   SizedBox(
+                    width: 20.h,
                   ),
                   Text(
                     'Order detail',
@@ -123,7 +124,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                           children: [
                             SvgPicture.string(Appicons.arrowdone),
                             SizedBox(
-                              width: 10,
+                              width: 10.h,
                             ),
                             Text('Complete order'),
                           ],
@@ -135,7 +136,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                           children: [
                             SvgPicture.string(Appicons.chatBorder),
                             SizedBox(
-                              width: 10,
+                              width: 10.h,
                             ),
                             Text('Contact deigner'),
                           ],
@@ -147,7 +148,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                           children: [
                             SvgPicture.string(Appicons.cancellOrder),
                             SizedBox(
-                              width: 10,
+                              width: 10.h,
                             ),
                             Text('Cancel order'),
                           ],
@@ -158,11 +159,14 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                height: 52,
+            ),
+             SizedBox(
+              height: 30.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Container(
+                height: 52.h,
                 decoration: BoxDecoration(
                   color: Colors.grey[300],
                   borderRadius: BorderRadius.circular(
@@ -195,24 +199,24 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                   ],
                 ),
               ),
-              // tab bar view here
-              Expanded(
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    //  const SizedBox(height: 20,),
-                    OrderDetailScreen(),
-
-                    // second tab bar view widget
-                    Center(child: TrackingOrder()),
-                    Center(
-                      child: OrderMessage(),
-                    ),
-                  ],
-                ),
+            ),
+            // tab bar view here
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  //  const SizedBox(height: 20,),
+                  OrderDetailScreen(),
+        
+                  // second tab bar view widget
+                  Center(child: TrackingOrder()),
+                  Center(
+                    child: OrderMessage(),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -16,7 +16,8 @@ class OnboardThird extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Get.theme;
-    OnboardingController onboardingController = Get.put(OnboardingController());
+     OnboardingController onboardingController = Get.put(OnboardingController());
+    bool isDesigner = onboardingController.accountType.value == "Designer";
     return Scaffold(
       body: Stack(
         children: [
@@ -93,12 +94,16 @@ class OnboardThird extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Shop with Confidence',
+                    isDesigner ? 'Enjoy the community ': 'Shop with Confidence',
                     style: theme.textTheme.headline4,
                   ),
                   8.height,
                   Text(
-                    "Ready to elevate your wardrobe? Shop confidently "
+                  isDesigner ? "Engage with fellow designers, fashion bloggers,"
+                  " and potential customers. Follow your favorite designers,"
+                  " participate in discussions and more!"
+                  :
+                  "Ready to elevate your wardrobe? Shop confidently "
                     "from a diverse range of brands, designers, and "
                     "styles. Enjoy secure transactions, easy returns, and deals !",
                     style: GoogleFonts.mulish(
