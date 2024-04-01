@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
 import 'package:sf_app/desinger_side/pages/dashboard/view/dashboard_screen.dart';
 import 'package:sf_app/modules/global/controllers/bindings.dart';
+import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 import 'package:sf_app/resources/languages/dictionary.dart';
 import 'package:sf_app/resources/routes/Approute.dart';
@@ -36,7 +37,8 @@ class MainApp extends StatelessWidget {
           translations: AppDictionary(),
         
           routes: AppRoute().routes,
-           initialRoute: Splash_View.route,
+           initialRoute: BottomnavBar.route,
+          // initialRoute: HomeScreen.route,
         );
       },
     );

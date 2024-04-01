@@ -1,69 +1,159 @@
+// // import 'package:flutter/material.dart';
+// // import 'package:flutter_screenutil/flutter_screenutil.dart';
+// // import 'package:google_fonts/google_fonts.dart';
+
+// // import '../../resources/color/app_color.dart';
+
+// // class DoubledOutlineButton extends StatelessWidget {
+// //   String titleOne;
+// //   String titleTwo;
+// //    DoubledOutlineButton({super.key,required this.titleOne,required this.titleTwo});
+
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return   Padding(
+// //       padding: const EdgeInsets.all(8.0),
+// //       child: Container(
+// //         width: 380.w,
+// //         height: 52.h,
+// //         decoration: BoxDecoration(
+// //             color: AppColor.backGroundSilver,
+// //             borderRadius: BorderRadius.circular(40)),
+// //         child: Row(
+// //           children: [
+// //             Container(
+// //               width: 190.w,
+// //               height: 52.h,
+// //               decoration: BoxDecoration(
+// //                   gradient: const LinearGradient(
+// //                     colors: [
+// //                       Color.fromRGBO(114, 151, 94, 1), // Starting color
+// //                       Color.fromRGBO(71, 87, 54,
+// //                           1), // Ending color (modify as needed)
+// //                     ],
+// //                   ),
+// //                   borderRadius: BorderRadius.circular(40)),
+// //               child: Center(
+// //                   child: Text(
+// //                     "$titleOne",
+// //                     style: GoogleFonts.mulish(
+// //                       fontWeight: FontWeight.w700,
+// //                       fontSize: 16.sp,
+// //                       color: const Color.fromRGBO(255, 255, 255, 1),
+// //                     ),
+// //                   )),
+// //             ),
+// //             Container(
+// //               width: 190.w,
+// //               height: 52.h,
+// //               decoration: BoxDecoration(
+// //                 // gradient: LinearGradient(
+// //                 //   colors: [
+// //                 //     Color.fromRGBO(114, 151, 94, 1), // Starting color
+// //                 //     Color.fromRGBO(71, 87, 54, 1),        // Ending color (modify as needed)
+// //                 //   ],
+// //                 // ),
+
+// //                   borderRadius: BorderRadius.circular(40)),
+// //               child: Center(
+// //                   child: Text(
+// //                     "$titleTwo",
+// //                     style: GoogleFonts.mulish(
+// //                       fontWeight: FontWeight.w700,
+// //                       fontSize: 16.sp,
+// //                       color: const Color.fromRGBO(33, 33, 33, 1),
+// //                     ),
+// //                   )),
+// //             ),
+// //           ],
+// //         ),
+// //       ),
+// //     );
+// //   }
+// // }
+
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 // import '../../resources/color/app_color.dart';
 
-// class DoubledOutlineButton extends StatelessWidget {
-//   String titleOne;
-//   String titleTwo;
-//    DoubledOutlineButton({super.key,required this.titleOne,required this.titleTwo});
+// class DoubledOutlineButton extends StatefulWidget {
+//   final String titleOne;
+//   final String titleTwo;
+
+//   DoubledOutlineButton({Key? key, required this.titleOne, required this.titleTwo})
+//       : super(key: key);
+
+//   @override
+//   _DoubledOutlineButtonState createState() => _DoubledOutlineButtonState();
+// }
+
+// class _DoubledOutlineButtonState extends State<DoubledOutlineButton> {
+//   int _selectedIndex = 0;
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return   Padding(
+//     return Padding(
 //       padding: const EdgeInsets.all(8.0),
 //       child: Container(
 //         width: 380.w,
 //         height: 52.h,
 //         decoration: BoxDecoration(
 //             color: AppColor.backGroundSilver,
-//             borderRadius: BorderRadius.circular(40)),
+//              borderRadius: BorderRadius.circular(40)),
 //         child: Row(
 //           children: [
-//             Container(
-//               width: 190.w,
-//               height: 52.h,
-//               decoration: BoxDecoration(
-//                   gradient: const LinearGradient(
-//                     colors: [
-//                       Color.fromRGBO(114, 151, 94, 1), // Starting color
-//                       Color.fromRGBO(71, 87, 54,
-//                           1), // Ending color (modify as needed)
-//                     ],
+//             InkWell(
+//               onTap: () {
+//                 setState(() {
+//                   _selectedIndex = 0;
+//                 });
+//               },
+//               child: Container(
+//                 width: 190.w,
+//                 height: 52.h,
+//                 decoration: BoxDecoration(
+//                     gradient: _selectedIndex == 0 ? AppColor.mainGradient:
+//                   null,
+//                     borderRadius: BorderRadius.circular(40)),
+//                 child: Center(
+//                     child: Text(
+//                   "${widget.titleOne}",
+//                   style: GoogleFonts.mulish(
+//                     fontWeight: FontWeight.w700,
+//                     fontSize: 16.sp,
+//                     color: _selectedIndex == 0
+//                         ? const Color.fromRGBO(255, 255, 255, 1)
+//                         : const Color.fromRGBO(33, 33, 33, 1),
 //                   ),
-//                   borderRadius: BorderRadius.circular(40)),
-//               child: Center(
-//                   child: Text(
-//                     "$titleOne",
-//                     style: GoogleFonts.mulish(
-//                       fontWeight: FontWeight.w700,
-//                       fontSize: 16.sp,
-//                       color: const Color.fromRGBO(255, 255, 255, 1),
-//                     ),
-//                   )),
+//                 )),
+//               ),
 //             ),
-//             Container(
-//               width: 190.w,
-//               height: 52.h,
-//               decoration: BoxDecoration(
-//                 // gradient: LinearGradient(
-//                 //   colors: [
-//                 //     Color.fromRGBO(114, 151, 94, 1), // Starting color
-//                 //     Color.fromRGBO(71, 87, 54, 1),        // Ending color (modify as needed)
-//                 //   ],
-//                 // ),
-
+//             InkWell(
+//               onTap: () {
+//                 setState(() {
+//                   _selectedIndex = 1;
+//                 });
+//               },
+//               child: Container(
+//                 width: 190.w,
+//                 height: 52.h,
+//                 decoration: BoxDecoration(
+//                   gradient: _selectedIndex == 1? AppColor.mainGradient : null,
 //                   borderRadius: BorderRadius.circular(40)),
-//               child: Center(
-//                   child: Text(
-//                     "$titleTwo",
-//                     style: GoogleFonts.mulish(
-//                       fontWeight: FontWeight.w700,
-//                       fontSize: 16.sp,
-//                       color: const Color.fromRGBO(33, 33, 33, 1),
-//                     ),
-//                   )),
+//                 child: Center(
+//                     child: Text(
+//                   "${widget.titleTwo}",
+//                   style: GoogleFonts.mulish(
+//                     fontWeight: FontWeight.w700,
+//                     fontSize: 16.sp,
+//                     color: _selectedIndex == 1
+//                         ? const Color.fromRGBO(255, 255, 255, 1)
+//                         : const Color.fromRGBO(33, 33, 33, 1),
+//                   ),
+//                 )),
+//               ),
 //             ),
 //           ],
 //         ),
@@ -74,15 +164,22 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sf_app/pages/products/controllers/product_controller.dart';
 
 import '../../resources/color/app_color.dart';
 
 class DoubledOutlineButton extends StatefulWidget {
+  ProductController controller = Get.put(ProductController());
   final String titleOne;
   final String titleTwo;
-
-  DoubledOutlineButton({Key? key, required this.titleOne, required this.titleTwo})
+  final ValueChanged<int> onIndexChanged;
+  DoubledOutlineButton(
+      {Key? key,
+      required this.titleOne,
+      required this.onIndexChanged,
+      required this.titleTwo})
       : super(key: key);
 
   @override
@@ -91,78 +188,77 @@ class DoubledOutlineButton extends StatefulWidget {
 
 class _DoubledOutlineButtonState extends State<DoubledOutlineButton> {
   int _selectedIndex = 0;
+ 
+  ProductController controller = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: 380.w,
-        height: 52.h,
-        decoration: BoxDecoration(
-            color: AppColor.backGroundSilver,
-             borderRadius: BorderRadius.circular(40)),
-        child: Row(
-          children: [
-            InkWell(
-              onTap: () {
-                setState(() {
-                  _selectedIndex = 0;
-                });
-              },
-              child: Container(
-                width: 190.w,
-                height: 52.h,
-                decoration: BoxDecoration(
-                    gradient: _selectedIndex == 0 ? AppColor.mainGradient:
-                  null,
-                    borderRadius: BorderRadius.circular(40)),
-                child: Center(
-                    child: Text(
-                  "${widget.titleOne}",
-                  style: GoogleFonts.mulish(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16.sp,
-                    color: _selectedIndex == 0
-                        ? const Color.fromRGBO(255, 255, 255, 1)
-                        : const Color.fromRGBO(33, 33, 33, 1),
-                  ),
-                )),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                setState(() {
-                  _selectedIndex = 1;
-                });
-              },
-              child: Container(
-                width: 190.w,
-                height: 52.h,
-                decoration: BoxDecoration(
-                  gradient: _selectedIndex == 1? AppColor.mainGradient : null,
+    return Container(
+      width: 370.w,
+      height: 52.h,
+      decoration: BoxDecoration(
+          color: AppColor.backGroundSilver,
+          borderRadius: BorderRadius.circular(40)),
+      child: Row(
+        children: [
+          InkWell(
+            onTap: () {
+              setState(() {
+                _selectedIndex = 0;
+              });
+            widget.onIndexChanged(_selectedIndex);
+            
+            },
+            child: Container(
+              width: 185.w,
+              height: 52.h,
+              decoration: BoxDecoration(
+                  gradient:
+                      _selectedIndex == 0 ? AppColor.mainGradient : null,
                   borderRadius: BorderRadius.circular(40)),
-                child: Center(
-                    child: Text(
-                  "${widget.titleTwo}",
-                  style: GoogleFonts.mulish(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16.sp,
-                    color: _selectedIndex == 1
-                        ? const Color.fromRGBO(255, 255, 255, 1)
-                        : const Color.fromRGBO(33, 33, 33, 1),
-                  ),
-                )),
-              ),
+              child: Center(
+                  child: Text(
+                "${widget.titleOne}",
+                style: GoogleFonts.mulish(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16.sp,
+                  color: _selectedIndex == 0
+                      ? const Color.fromRGBO(255, 255, 255, 1)
+                      : const Color.fromRGBO(33, 33, 33, 1),
+                ),
+              )),
             ),
-          ],
-        ),
+          ),
+          InkWell(
+            onTap: () {
+              setState(() {
+                _selectedIndex = 1;
+              });
+              // Navigate to ReviewField screen when second container is clicked
+            widget.onIndexChanged(_selectedIndex);
+            },
+            child: Container(
+              width: 185.w,
+              height: 52.h,
+              decoration: BoxDecoration(
+                  gradient:
+                      _selectedIndex == 1 ? AppColor.mainGradient : null,
+                  borderRadius: BorderRadius.circular(40)),
+              child: Center(
+                  child: Text(
+                "${widget.titleTwo}",
+                style: GoogleFonts.mulish(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16.sp,
+                  color: _selectedIndex == 1
+                      ? const Color.fromRGBO(255, 255, 255, 1)
+                      : const Color.fromRGBO(33, 33, 33, 1),
+                ),
+              )),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
-
-
-
-
-

@@ -6,7 +6,7 @@ import 'package:sf_app/pages/auth/screens/login.dart';
 import 'package:sf_app/pages/categories/screens/category_products.dart';
 import 'package:sf_app/pages/community/view/community_card_design.dart';
 import 'package:sf_app/pages/community/view/community_tab_screen.dart';
-import 'package:sf_app/pages/home/pages/product_details.dart';
+import 'package:sf_app/pages/products/screens/product_details.dart';
 import 'package:sf_app/pages/home/pages/women_categories.dart';
 import 'package:sf_app/pages/home/view/home_screen.dart';
 import 'package:sf_app/pages/message/view/chat_screen.dart';
