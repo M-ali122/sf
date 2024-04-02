@@ -6,11 +6,8 @@ import 'package:sf_app/pages/auth/screens/login.dart';
 import 'package:sf_app/pages/categories/screens/category_products.dart';
 import 'package:sf_app/pages/community/view/community_card_design.dart';
 import 'package:sf_app/pages/community/view/community_tab_screen.dart';
-import 'package:sf_app/pages/home/pages/product_details.dart';
-
 import 'package:sf_app/pages/home/pages/women_categories.dart';
 import 'package:sf_app/pages/home/view/home_screen.dart';
-
 import 'package:sf_app/pages/message/view/inbox.dart';
 import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
 import 'package:sf_app/pages/onboarding/onboardind_view.dart';
@@ -19,19 +16,13 @@ import 'package:sf_app/pages/onboarding/view/explore_trending_style.dart';
 import 'package:sf_app/pages/onboarding/view/onboard_second_screen.dart';
 import 'package:sf_app/pages/onboarding/view/onboarding_third_screen.dart';
 import 'package:sf_app/pages/order/view/order_detail_tabs.dart';
-
-import 'package:sf_app/pages/registration/screens/registration_screen.dart';
-import 'package:sf_app/pages/registration/view/otp_screen.dart';
-
 import 'package:sf_app/pages/order/view/order_screen.dart';
-
-import 'package:sf_app/pages/order/view/order_screen.dart';
+import 'package:sf_app/pages/products/screens/product_details.dart';
 import 'package:sf_app/pages/registration/screens/registration_screen.dart';
 import 'package:sf_app/pages/registration/view/otp_screen.dart';
 import 'package:sf_app/pages/registration/view/password_screen.dart';
 import 'package:sf_app/pages/registration/view/terms_and_condition.dart';
 import 'package:sf_app/pages/registration/view/uplaod_profile_screen.dart';
-
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 
 class AppRoute {
@@ -54,20 +45,18 @@ class AppRoute {
     OrderView.route: (p0) => OrderView(),
 
     CategoryProducts.route: (p0) => const CategoryProducts(),
-    ProductDetails.route: (p0) => const ProductDetails(),
 
     HomeScreen.route: (p0) => HomeScreen(),
     WomenCategroies.route: (p0) => WomenCategroies(),
-    ProductDetails.route: (p0) => const ProductDetails(),
 
-    HomeScreen.route: (p0) => HomeScreen(),
     WomenCategroies.route: (p0) => WomenCategroies(),
 
     OnbaordingView.route: (p0) => const OnbaordingView(),
     OrderTabbarScreen.route: (p0) => const OrderTabbarScreen(),
     CommunityTabs.route: (p0) => const CommunityTabs(),
     CardDesign.route: (p0) => CardDesign(),
-    Inbox.route: (p0) => const Inbox(),
+
+    Inbox.route: (p0) => Inbox(),
 
     /// designer side navbar
     DesingerBottomnavBar.route: (p0) => DesingerBottomnavBar(),

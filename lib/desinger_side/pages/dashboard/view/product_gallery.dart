@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
-import 'package:sf_app/pages/home/pages/product_details.dart';
+import 'package:sf_app/pages/products/screens/product_details.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -34,7 +33,11 @@ class ProductGallery extends StatelessWidget {
                 children: [
                   Positioned(
                     left: 321.69.w,
-                    child: SvgPicture.string(Svgs.designerhalfCircle),
+                    child: GestureDetector(
+                      onTap: (){
+                        Get.back();
+                      },
+                      child: SvgPicture.string(Svgs.designerhalfCircle)),
                   ),
                   Positioned(
                     left: 24.w,
@@ -95,11 +98,8 @@ class ProductGallery extends StatelessWidget {
                           },
                           child: Card(
                             child: Container(
-                              decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(16),
-                                topRight: Radius.circular(16),
-                               ),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
                                color: AppColor.white,
                                boxShadow: [
                                 BoxShadow(

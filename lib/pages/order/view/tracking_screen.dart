@@ -54,7 +54,6 @@ class TrackingOrder extends StatelessWidget {
               color: AppColor.white,
                 ),
                 child: Stack(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 20,),
                     Padding(

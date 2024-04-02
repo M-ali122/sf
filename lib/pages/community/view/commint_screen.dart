@@ -37,7 +37,7 @@ class CommintScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                      SizedBox(
-                      height: 100.h,
+                      height: 60.h,
                     ),
                     GestureDetector(
                       onTap: () {

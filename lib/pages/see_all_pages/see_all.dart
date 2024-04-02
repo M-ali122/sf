@@ -6,8 +6,6 @@ import 'package:sf_app/pages/categories/db/statuc_data.dart';
 import 'package:sf_app/pages/categories/views/category_card_view.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
-import '../categories/screens/category_products.dart';
-
 class SeeAll extends StatelessWidget {
   SeeAll({super.key});
 

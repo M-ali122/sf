@@ -37,7 +37,7 @@ class CategoryCardView extends StatelessWidget {
           ),
           Container(
             height: Get.height,
-            width: 80.w,
+            width: 100.w,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(category.image),
