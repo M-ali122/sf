@@ -8,9 +8,11 @@ class HomeController extends GetxController {
     update();
   }
 
-  // RxString selected
-  // toggleButton()
+RxList<bool> isCheckedList = <bool>[false,false,false].obs;
 
 
+void toggleCheckbox (int index){
+  isCheckedList[index] = !isCheckedList[index];
+}
 
 }

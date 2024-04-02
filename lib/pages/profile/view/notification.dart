@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
 class Notifications extends StatefulWidget {
@@ -29,7 +28,11 @@ class _NotificationsState extends State<Notifications> {
                   SizedBox(
                     width: 10.w,
                   ),
-                  SvgPicture.string(Appicons.backIcon),
+                  GestureDetector(
+                    onTap: (){
+                      Get.back();
+                    },
+                    child: SvgPicture.string(Appicons.backIcon)),
                   SizedBox(
                     width: 20.w,
                   ),

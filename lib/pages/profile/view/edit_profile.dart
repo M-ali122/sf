@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
-import 'package:sf_app/helper/view/doubled_outline_button.dart';
 import 'package:sf_app/helper/view/custome_textfield.dart';
+import 'package:sf_app/helper/view/doubled_outline_button.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
 class EditProfile extends StatelessWidget {
@@ -25,7 +24,11 @@ class EditProfile extends StatelessWidget {
                     SizedBox(
                       width: 10,
                     ),
-                    SvgPicture.string(Appicons.backIcon),
+                    GestureDetector(
+                      onTap: (){
+                        Get.back();
+                      },
+                      child: SvgPicture.string(Appicons.backIcon)),
                     const SizedBox(
                       width: 20,
                     ),
@@ -42,7 +45,9 @@ class EditProfile extends StatelessWidget {
                   height: 30,
                 ),
                 DoubledOutlineButton(
-                    titleOne: "Information", titleTwo: 'Photo'),
+                    titleOne: "Information", titleTwo: 'Photo',
+                     onIndexChanged: (value) async{},
+                    ),
                 SizedBox(
                   height: 10,
                 ),

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/desinger_side/navbar/controller/nabbar_controller.dart';
+import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -13,6 +14,9 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
   const DesingerBottomnavBar({super.key});
   @override
   Widget build(BuildContext context) {
+    
+     OnboardingController onboardingController = Get.put(OnboardingController());
+    bool isDesigner = onboardingController.accountType.value == "Designer";
     return GetBuilder<DesignerBottomNavBarController>(
       init: DesignerBottomNavBarController(),
       builder: (controller) {
@@ -56,7 +60,7 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.category,
+                          controller.currentIndex.value == 0? Appicons.category: Appicons.categoryBorder,
                           color: controller.currentIndex.value == 0
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -88,7 +92,7 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.documentBorder,
+                          controller.currentIndex.value == 1 ? Appicons.document:Appicons.documentBorder,
                           color: controller.currentIndex.value == 1
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -169,8 +173,8 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.discoveryBorder,
-                          color: controller.currentIndex.value == 2
+                          controller.currentIndex.value == 3 ? Appicons.diccovery:Appicons.discoveryBorder,
+                          color: controller.currentIndex.value == 3
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
                           height: 24.h,
@@ -180,7 +184,7 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           "Community",
                           style: TextStyle(
                               fontSize: 11.sp,
-                              color: controller.currentIndex.value == 2
+                              color: controller.currentIndex.value == 3
                                   ? AppColor.primaryColor500
                                   : AppColor.GreyScale500),
                         )
@@ -200,8 +204,8 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.profileBorder,
-                          color: controller.currentIndex.value == 3
+                          controller.currentIndex.value == 4 ?Appicons.profile:Appicons.profileBorder,
+                          color: controller.currentIndex.value == 4
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
                           height: 24.h,
@@ -211,10 +215,9 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           "Profile",
                           style: TextStyle(
                             fontSize: 11.sp,
-                            color: controller.currentIndex.value == 3
-                                ? Colors.white
-                                : const Color(0xff5E5E67),
-                          ),
+                            color: controller.currentIndex.value == 4
+                                ? AppColor.primaryColor500
+                              : AppColor.GreyScale500, ),
                         )
                       ],
                     ),

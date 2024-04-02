@@ -3,7 +3,7 @@
   import 'package:get/get.dart';
   import 'package:google_fonts/google_fonts.dart';
   import 'package:sf_app/pages/categories/models/category_model.dart';
-  import 'package:sf_app/pages/home/pages/product_details.dart';
+  import 'package:sf_app/pages/products/screens/product_details.dart';
   import 'package:sf_app/resources/color/app_color.dart';
   import 'package:sf_app/resources/icon/icon.dart';
   import 'package:sf_app/resources/icon/svgs.dart';
@@ -29,14 +29,11 @@
               ),
               Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: GestureDetector(
-                        onTap: () {
-                          Get.back();
-                        },
-                        child: SvgPicture.string(Appicons.backIcon)),
-                  ),
+                  GestureDetector(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: SvgPicture.string(Appicons.backIcon)),
                   const SizedBox(
                     width: 20,
                   ),
@@ -187,9 +184,10 @@
                     child: Card(
                       child: Container(
                         decoration: BoxDecoration(
+                          color: AppColor.white,
                             borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(16),
-                          topRight: Radius.circular(16),
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
                         )),
                         child: Column(
                           children: [

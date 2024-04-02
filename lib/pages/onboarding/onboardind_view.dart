@@ -2,10 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'package:sf_app/helper/extensions/spacings.dart';
+
+import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
+
 import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
 
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
+
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/pages/onboarding/view/explore_trending_style.dart';
 import 'package:sf_app/pages/onboarding/view/onboard_second_screen.dart';
@@ -59,9 +65,10 @@ class OnbaordingView extends GetWidget<OnboardingController> {
                               if (controller.isLast.isTrue) {
                                 /// home screen call here
 
-                                isDesigner ? Get.offAllNamed(DesingerBottomnavBar.route)
-                                : 
-                                Get.offAllNamed(BottomnavBar.route);
+                                isDesigner
+                                    ? Get.offAllNamed(
+                                        DesingerBottomnavBar.route)
+                                    : Get.offAllNamed(BottomnavBar.route);
                                 // Get.offAllNamed()
                               } else {
                                 controller.pagecontrol.nextPage(
