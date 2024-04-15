@@ -67,15 +67,18 @@ class HomeScreen extends StatelessWidget {
                       child: SvgPicture.string(Svgs.shop)),
                   SizedBox(width: 20.h),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Get.defaultDialog(
-                        title: 'ALert',
-                        content: Image.asset('assets/underbuild.png',height: 80,width: 60,),
-                        actions: [
-                          const Text('App Under build')
-                        ]);
+                          title: 'ALert',
+                          content: Image.asset(
+                            'assets/underbuild.png',
+                            height: 80,
+                            width: 60,
+                          ),
+                          actions: [const Text('App Under build')]);
                     },
-                    child: SvgPicture.string(Svgs.chat),),
+                    child: SvgPicture.string(Svgs.chat),
+                  ),
                 ],
               ),
             ),

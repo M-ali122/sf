@@ -14,6 +14,7 @@ class OtpCustomConatiner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      // alignment: Alignment.center,
       width: 390.w,
       height: 90.h,
       child: Stack(
@@ -32,7 +33,7 @@ class OtpCustomConatiner extends StatelessWidget {
               focusedBorderColor: AppColor.secondaryColor500,
               numberOfFields: 4,
               borderRadius: BorderRadius.circular(16),
-              fieldWidth: 65.w,
+              fieldWidth: 70.w,
               showFieldAsBox: true,
               textStyle: TextStyle(
                 fontSize: 24.sp,
@@ -41,7 +42,7 @@ class OtpCustomConatiner extends StatelessWidget {
               ),
               decoration: const InputDecoration(),
             ),
-          ),
+          )
         ],
       ),
     );

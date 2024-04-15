@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:sf_app/desinger_side/navbar/view/designer_side_navbar.dart';
-import 'package:sf_app/desinger_side/pages/dashboard/view/dashboard_screen.dart';
 import 'package:sf_app/modules/global/controllers/bindings.dart';
-import 'package:sf_app/pages/home/view/home_screen.dart';
-import 'package:sf_app/pages/navbar/view/bottom_navbar.dart';
 import 'package:sf_app/pages/splash/view/splash_view.dart';
 import 'package:sf_app/resources/languages/dictionary.dart';
 import 'package:sf_app/resources/routes/Approute.dart';
 import 'package:sf_app/resources/theme/main_theme.dart';
 import 'package:sf_app/resources/utils.dart';
-
-import 'pages/message/view/inbox.dart';
 
 void main() {
   runApp(const MainApp());
@@ -36,10 +30,10 @@ class MainApp extends StatelessWidget {
           theme: MainTheme().theme,
           initialBinding: MainBindings(),
           translations: AppDictionary(),
-        
+
           routes: AppRoute().routes,
-          //  initialRoute: BottomnavBar.route,
-          initialRoute: HomeScreen.route,
+          initialRoute: Splash_View.route,
+          // initialRoute: DesignerDashbaord.route,
         );
       },
     );

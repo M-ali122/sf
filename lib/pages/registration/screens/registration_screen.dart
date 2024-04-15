@@ -38,7 +38,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           title: AnimatedContainer(
               duration: const Duration(milliseconds: 900),
               curve: Curves.easeIn,
-              child: const CustomeProgressBar()),
+              child: CustomeProgressBar()),
           centerTitle: true,
         ),
         body: AnimatedContainer(
