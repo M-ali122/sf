@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/desinger_side/navbar/controller/nabbar_controller.dart';
 import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
@@ -36,7 +37,7 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                   topLeft: Radius.circular(30.r),
                 ),
                 color: AppColor.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 60,
                     offset: Offset(0, 4),
@@ -69,12 +70,13 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                         ),
                         Text(
                           "Dashboard",
-                          style: TextStyle(
-                            fontSize: 11.sp,
-                            color: controller.currentIndex.value == 0
-                                ? AppColor.primaryColor500
-                                : AppColor.GreyScale500,
-                          ),
+                            style: GoogleFonts.mulish(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w700,
+                              color: controller.currentIndex.value == 0
+                                  ? const Color.fromRGBO(71, 87, 54, 1)
+                                  : const Color.fromRGBO(158, 158, 158, 1)
+                                  ),
                         )
                       ],
                     ),
@@ -101,11 +103,13 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                         ),
                         Text(
                           "Order",
-                          style: TextStyle(
-                              fontSize: 11.sp,
+                          style: GoogleFonts.mulish(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w700,
                               color: controller.currentIndex.value == 1
-                                  ? AppColor.primaryColor500
-                                  : AppColor.GreyScale500),
+                                  ? const Color.fromRGBO(71, 87, 54, 1)
+                                  : const Color.fromRGBO(158, 158, 158, 1)
+                                  ),
                         )
                       ],
                     ),
@@ -133,7 +137,7 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                         Container(
                           height: 40.h,
                           width: 40.w,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             shape: CircleBorder(),
                             color: AppColor.primaryColor500,
                              shadows: [

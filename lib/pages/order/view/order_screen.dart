@@ -13,6 +13,30 @@ class OrderView extends StatelessWidget {
    OrderView({super.key});
 
   final theme = Get.theme;
+
+  var itemStatusType = [
+    'Pending',
+    'Processing',
+    'Shipped',
+  ];
+
+  var itemStatusTypeColor = [
+     const Color.fromRGBO(201, 179, 114, 1),
+    const Color.fromRGBO(255, 87, 38, 1),
+    const Color.fromRGBO(71, 87, 54, 1)
+  ]; 
+  var itemPhotosList = [
+    'assets/shoe.png',
+    'assets/bag.png',
+    'assets/jogger.png'
+  ];
+
+  var orderStatusContainerColor = [
+    const Color.fromRGBO(250, 204, 21, 0.08),
+    const Color.fromRGBO(255, 152, 0, 0.08),
+    const Color.fromRGBO(76, 175, 80, 0.08)
+  ]; 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,275 +80,112 @@ class OrderView extends StatelessWidget {
                     padding: EdgeInsets.only(left: 20.0, right: 10),
                     child: Icon(Icons.search, size: 30, color: AppColor.GreyScale400),
                   ),
-                  hintText: 'Search Products, designers',
+                  hintText: 'Search order',
                   hintStyle: const TextStyle(color: AppColor.GreyScale400),
                 ),
               ),
               const SizedBox(height: 20,),
-                Container(
-                  height: 170.h,
-                  width: 380.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(32),
-                    color: AppColor.white,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 60,
-                        offset: const Offset(0, 4),
-                        spreadRadius: 0,
-                        color: Color.fromRGBO(4, 6, 15, 0.05)
-                      )
-                    ]
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 33,
-                        left: 20,
-                        child: Container(
-                          height: 102,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: AppColor.backGroundSilver
-                          ),
-                          child: Center(
-                            child: Image.asset('assets/shoe.png'),
-                            ),
-                        ),
+              ListView.builder(
+                itemCount: itemPhotosList.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: GestureDetector(
+                    onTap: (){
+                      _showDetailBottomSheet(context);
+                    },
+                    child: Container(
+                      height: 170.h,
+                      width: 380.w,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(32),
+                        color: AppColor.white,
+                        boxShadow: const [
+                          BoxShadow(
+                            blurRadius: 60,
+                            offset: Offset(0, 4),
+                            spreadRadius: 0,
+                            color: Color.fromRGBO(4, 6, 15, 0.05)
+                          )
+                        ]
                       ),
-                      Positioned(
-                        left: 150,
-                        top: 20,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Product Name',
-                              style: theme.textTheme.labelLarge,
-                              ),
-                              const SizedBox(height: 10 ,),
-                            Text('Client Name',
-                             style: theme.textTheme.bodySmall,
-                            ),
-                            const SizedBox(height: 10,),
-                              Container(
-                                height: 25,
-                                width: 60,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(6),
-                                  color: const Color.fromRGBO(250, 204, 21, 0.08)
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Pending',
-                                    style: GoogleFonts.mulish(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 10,
-                                      color: AppColor.secondaryColor500
-                                    ),
-                                    ),
-                                ),
-                              ),
-                            const SizedBox(height: 10,),
-                            Row(
-                              children: [
-                                Text('44.00 SAR',
-                                style: theme.textTheme.bodyLarge,
-                                ),
-                                const SizedBox(width: 3,),
-                                AppButton(
-                                  title: 'See detail',
-                                   onTap: (){
-                                    Get.toNamed(OrderTabbarScreen.route);
-                                   },
-                                   width: 100,
-                                   height: 32,
-                                   )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 20,),
-                Container(
-                  height: 170,
-                  width: Get.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(32),
-                    color: AppColor.white,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 60,
-                        offset: const Offset(0, 4),
-                        spreadRadius: 0,
-                        color: Color.fromRGBO(4, 6, 15, 0.05)
-                      )
-                    ]
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 33,
-                        left: 20,
-                        child: Container(
-                          height: 102,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: AppColor.backGroundSilver
-                          ),
-                          child: Center(
-                            child: Image.asset('assets/bag.png'),
-                            ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 150,
-                        top: 20,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Product Name',
-                              style: theme.textTheme.labelLarge,
-                              ),
-                              const SizedBox(height: 10 ,),
-                            Text('Client Name',
-                             style: theme.textTheme.bodySmall,
-                            ),
-                            const SizedBox(height: 10,),
-                            Container(
-                              height: 25,
-                              width: 73,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 33,
+                            left: 20,
+                            child: Container(
+                              height: 102,
+                              width: 120,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                color: const Color.fromRGBO(255, 152, 0, 0.08)
+                                borderRadius: BorderRadius.circular(16),
+                                color: AppColor.backGroundSilver
                               ),
                               child: Center(
-                                child: Text(
-                                  'Preocessing',
-                                  style: GoogleFonts.mulish(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 10,
-                                    color: AppColor.deepOrange
-                                  ),
-                                  ),
-                              ),
-                            ),
-                            const SizedBox(height: 10,),
-                            Row(
-                              children: [
-                                Text('44.00 SAR',
-                                style: theme.textTheme.bodyLarge,
+                                child: Image.asset(itemPhotosList[index]),
                                 ),
-                                const SizedBox(width: 3,),
-                                AppButton(
-                                  title: 'See detail',
-                                   onTap: (){},
-                                   width: 100,
-                                   height: 32,
-                                   )
-                              ],
                             ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 20,),
-                Container(
-                  height: 170,
-                  width: Get.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(32),
-                    color: AppColor.white,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 60,
-                        offset: const Offset(0, 4),
-                        spreadRadius: 0,
-                        color: Color.fromRGBO(4, 6, 15, 0.05)
-                      )
-                    ]
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 33,
-                        left: 20,
-                        child: Container(
-                          height: 102,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: AppColor.backGroundSilver
                           ),
-                          child: Center(
-                            child: Image.asset('assets/jogger.png'),
-                            ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 150,
-                        top: 20,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Product Name',
-                              style: theme.textTheme.labelLarge,
-                              ),
-                              const SizedBox(height: 10 ,),
-                            Text('Client Name',
-                             style: theme.textTheme.bodySmall,
-                            ),
-                            const SizedBox(height: 10,),
-                            Container(
-                              height: 25,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                color: const Color.fromRGBO(76, 175, 80, 0.08)
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Shipped',
-                                  style: GoogleFonts.mulish(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 10,
-                                    color: AppColor.primaryColor500
-                                  ),
-                                  ),
-                              ),
-                            ),
-                            const SizedBox(height: 10,),
-                            Row(
+                          Positioned(
+                            left: 150,
+                            top: 20,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('44.00 SAR',
-                                style: theme.textTheme.bodyLarge,
+                                Text(
+                                  'Product Name',
+                                  style: theme.textTheme.labelLarge,
+                                  ),
+                                  const SizedBox(height: 10 ,),
+                                Text('Client Name',
+                                 style: theme.textTheme.bodySmall,
                                 ),
-                                const SizedBox(width: 3,),
-                                AppButton(
-                                  title: 'See detail',
-                                   onTap: (){
-                                    _showDetailBottomSheet(context);
-                                   },
-                                   width: 100,
-                                   height: 32,
-                                   )
+                                const SizedBox(height: 10,),
+                                  Container(
+                                    height: 25,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(6),
+                                      color: orderStatusContainerColor[index]
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        itemStatusType[index],
+                                        style: GoogleFonts.mulish(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 10,
+                                          color: itemStatusTypeColor[index]
+                                        ),
+                                        ),
+                                    ),
+                                  ),
+                                const SizedBox(height: 10,),
+                                Row(
+                                  children: [
+                                    Text('44.00 SAR',
+                                    style: theme.textTheme.bodyLarge,
+                                    ),
+                                    const SizedBox(width: 3,),
+                                    AppButton(
+                                      title: 'See detail',
+                                       onTap: (){
+                                        Get.toNamed(OrderTabbarScreen.route);
+                                       },
+                                       width: 100,
+                                       height: 32,
+                                       )
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
+                    ),
+                                    ),
+                  );
+                },)
             ],
           ),
         ),

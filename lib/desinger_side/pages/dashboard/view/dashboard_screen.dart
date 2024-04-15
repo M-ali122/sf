@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/desinger_side/pages/dashboard/view/product_gallery.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
+import 'package:sf_app/pages/order/view/order_detail_tabs.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -454,7 +455,7 @@ class DesignerDashbaord extends StatelessWidget {
                                         AppButton(
                                           title: 'See detail',
                                            onTap: (){
-                                            // Get.toNamed(OrderTabbarScreen.route);
+                                            Get.toNamed(OrderTabbarScreen.route);
                                            },
                                            width: 100,
                                            height: 32,
@@ -548,7 +549,7 @@ class DesignerDashbaord extends StatelessWidget {
                                         AppButton(
                                           title: 'See detail',
                                            onTap: (){
-                                            // Get.toNamed(OrderTabbarScreen.route);
+                                            Get.toNamed(OrderTabbarScreen.route);
                                            },
                                            width: 100,
                                            height: 32,

@@ -164,13 +164,13 @@ class OrderDetailScreen extends StatelessWidget {
              height: 235,
              width: Get.width,
              padding: EdgeInsets.symmetric(horizontal: 24.w),
-             decoration: BoxDecoration(
+             decoration: const BoxDecoration(
              boxShadow: [
              BoxShadow(
              color: Color.fromRGBO(4, 6, 15, 0.05),// Shadow color
              spreadRadius:0,
              blurRadius: 60,
-             offset: const Offset(0, 4), 
+             offset:  Offset(0, 4), 
             ),
              ],
             ),
@@ -252,13 +252,13 @@ class OrderDetailScreen extends StatelessWidget {
              height: 186,
              width: Get.width,
              padding: EdgeInsets.symmetric(horizontal: 24.w),
-             decoration: BoxDecoration(
+             decoration: const BoxDecoration(
              boxShadow: [
              BoxShadow(
              color: Color.fromRGBO(4, 6, 15, 0.05),// Shadow color
              spreadRadius:0,
              blurRadius: 60,
-             offset: const Offset(0, 4), 
+             offset: Offset(0, 4), 
             ),
              ],
             ),
