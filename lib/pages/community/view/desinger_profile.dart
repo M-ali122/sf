@@ -474,8 +474,11 @@ class _DesignerProfileState extends State<DesignerProfile> {
                                                 value: 'option1',
                                                 child: Row(
                                                   children: [
-                                                    SvgPicture.string(Appicons
-                                                        .profileBorderplus),
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(left: 3.0),
+                                                      child: SvgPicture.string(Appicons
+                                                          .profileBorderplus),
+                                                    ),
                                                     SizedBox(
                                                       width: 20.w,
                                                     ),

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sf_app/pages/community/model/designer_cart_model.dart';
 import 'package:sf_app/pages/community/view/desinger_profile.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
@@ -10,7 +11,9 @@ import 'package:sf_app/resources/icon/svgs.dart';
 
 class CommintScreen extends StatelessWidget {
   static String route = 'CommintScreen';
-  CommintScreen({super.key});
+  DesignerCartModel designerCartModel;
+  CommintScreen({super.key, required this.designerCartModel});
+
 
   final theme = Get.theme;
 
@@ -56,9 +59,9 @@ class CommintScreen extends StatelessWidget {
                         Get.to(()=> DesignerProfile());
                       },
                       contentPadding: const EdgeInsets.only(right: 20),
-                      leading: const CircleAvatar(
+                      leading:  CircleAvatar(
                         radius: 25,
-                        foregroundImage: AssetImage('assets/profile2.png'),
+                        foregroundImage: AssetImage(designerCartModel!.profileImage),
                       ),
                       title: Padding(
                         padding: const EdgeInsets.only(left: 10.0),
@@ -88,14 +91,14 @@ class CommintScreen extends StatelessWidget {
                       text: TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                            text: 'The new air jordan is wild.',
+                            text: designerCartModel!.disc,
                             style: GoogleFonts.mulish(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 14,
                                 color: AppColor.white),
                           ),
                           TextSpan(
-                            text: ' #Nike',
+                            text: designerCartModel!.secondDis,
                             style: GoogleFonts.mulish(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 14,
