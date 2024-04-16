@@ -5,8 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 
 class OrderDetailScreen extends StatelessWidget {
+  final int? index;
     static String route = 'OrderDetailScreen';
-   OrderDetailScreen({super.key});
+   OrderDetailScreen({super.key, this.index});
     
     final theme = Get.theme;
 

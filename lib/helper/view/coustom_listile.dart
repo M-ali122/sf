@@ -34,7 +34,7 @@ class CoustomListile extends StatelessWidget {
         child: Center(
           child: ListTile(
             onTap: (){
-              Get.toNamed(ChatScreen.route);
+              Get.to(() => ChatScreen());
             },
             leading: Container(
               width: 60.w,

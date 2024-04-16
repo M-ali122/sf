@@ -80,7 +80,7 @@ class CardDesign extends StatelessWidget {
                         trailing: PopupMenuButton(
                           // padding: EdgeInsets.only(right: 10,top: 20),
                           position: PopupMenuPosition.under,
-                          color: AppColor.white,
+                          color: const Color.fromRGBO(255, 255, 255, 1),
                           shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(20),
@@ -88,15 +88,18 @@ class CardDesign extends StatelessWidget {
                               bottomLeft: Radius.circular(20),
                             ),
                           ),
-                          
                           itemBuilder: (context) => [
                             PopupMenuItem(
                               value: 'option1',
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: Row(
                                 children: [
-                                  SvgPicture.string(Appicons.profileBorderplus),
-                                  const SizedBox(
-                                    width: 20,
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 3.0),
+                                    child: SvgPicture.string(Appicons.profileBorderplus),
+                                  ),
+                                   SizedBox(
+                                    width: 23.w,
                                   ),
                                   const Text('Follow user'),
                                 ],
@@ -104,6 +107,7 @@ class CardDesign extends StatelessWidget {
                             ),
                             PopupMenuItem(
                               value: 'option1',
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: Row(
                                 children: [
                                   SvgPicture.string(Appicons.bookmarkBorder),
@@ -116,6 +120,7 @@ class CardDesign extends StatelessWidget {
                             ),
                             PopupMenuItem(
                               value: 'option1',
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: Row(
                                 children: [
                                   SvgPicture.string(Appicons.swapBorder),
@@ -128,6 +133,7 @@ class CardDesign extends StatelessWidget {
                             ),
                             PopupMenuItem(
                               value: 'option1',
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: Row(
                                 children: [
                                   SvgPicture.string(
@@ -199,7 +205,7 @@ class CardDesign extends StatelessWidget {
                         height: 48,
                         width: 348,
                         decoration: BoxDecoration(
-                          gradient: RadialGradient(
+                          gradient: const RadialGradient(
                               colors: [
                                 Color.fromRGBO(153, 153, 153, 0.9),
                                 Color.fromRGBO(202, 202, 202, 0.9 ),
@@ -226,7 +232,7 @@ class CardDesign extends StatelessWidget {
           Container(
             height: 395,
             width: 380,
-            padding: EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
               // color: AppColor.white,
@@ -402,7 +408,7 @@ class CardDesign extends StatelessWidget {
                         height: 48,
                         width: 348,
                         decoration: BoxDecoration(
-                          gradient: RadialGradient(
+                          gradient: const RadialGradient(
                               colors: [
                                 Color.fromRGBO(153, 153, 153, 0.9),
                                 Color.fromRGBO(202, 202, 202, 0.9 ),

@@ -92,7 +92,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
         child: Column(
           children: [
             // give the tab bar a height [can change hheight to preferred height]
-             SizedBox(
+            SizedBox(
               height: 25.h,
             ),
             Padding(
@@ -105,7 +105,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                     },
                     child: SvgPicture.string(Appicons.backIcon),
                   ),
-                   SizedBox(
+                  SizedBox(
                     width: 20.h,
                   ),
                   Text(
@@ -115,6 +115,13 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                   const Spacer(),
                   PopupMenuButton<String>(
                     color: AppColor.white,
+                     shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(16),
+                              bottomRight: Radius.circular(16),
+                              bottomLeft: Radius.circular(16  ),
+                            ),
+                          ),
                     onSelected: (value) {},
                     itemBuilder: (BuildContext context) =>
                         <PopupMenuEntry<String>>[
@@ -126,7 +133,13 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                             SizedBox(
                               width: 10.h,
                             ),
-                            Text('Complete order'),
+                            Text(
+                              'Complete order',
+                              style: GoogleFonts.mulish(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp,
+                                  color: const Color.fromRGBO(33, 33, 33, 1)),
+                            ),
                           ],
                         ),
                       ),
@@ -138,7 +151,13 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                             SizedBox(
                               width: 10.h,
                             ),
-                            Text('Contact deigner'),
+                            Text(
+                              'Contact deigner',
+                              style: GoogleFonts.mulish(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp,
+                                  color: const Color.fromRGBO(33, 33, 33, 1)),
+                            ),
                           ],
                         ),
                       ),
@@ -150,7 +169,13 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                             SizedBox(
                               width: 10.h,
                             ),
-                            Text('Cancel order'),
+                            Text(
+                              'Cancel order',
+                              style: GoogleFonts.mulish(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp,
+                                  color: const Color.fromRGBO(33, 33, 33, 1)),
+                            ),
                           ],
                         ),
                       ),
@@ -160,7 +185,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                 ],
               ),
             ),
-             SizedBox(
+            SizedBox(
               height: 30.h,
             ),
             Padding(
@@ -207,7 +232,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                 children: [
                   //  const SizedBox(height: 20,),
                   OrderDetailScreen(),
-        
+
                   // second tab bar view widget
                   Center(child: TrackingOrder()),
                   Center(

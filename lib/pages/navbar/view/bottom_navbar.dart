@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/pages/navbar/controller/navbarController.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
@@ -49,19 +50,20 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.homeBorder,
+                          controller.currentIndex.value == 0? Appicons.home: Appicons.homeBorder,
                           color: controller.currentIndex.value == 0
-                              ? AppColor.primaryColor500
+                              ? const Color.fromRGBO(71, 87, 54, 1)
                               : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
                         ),
                         Text(
                           "Home",
-                          style: TextStyle(
-                            fontSize: 11.sp,
+                          style: GoogleFonts.mulish(
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
                             color: controller.currentIndex.value == 0
-                                ? AppColor.primaryColor500
+                                ? const Color.fromRGBO(71, 87, 54, 1)
                                 : AppColor.GreyScale500,
                           ),
                         )
@@ -81,19 +83,20 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.documentBorder,
+                          controller.currentIndex == 1? Appicons.document:Appicons.documentBorder ,
                           color: controller.currentIndex.value == 1
-                              ? AppColor.primaryColor500
+                              ? const Color.fromRGBO(71, 87, 54, 1)
                               : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
                         ),
                         Text(
                           "Order",
-                          style: TextStyle(
-                              fontSize: 11.sp,
+                          style: GoogleFonts.mulish(
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
                               color: controller.currentIndex.value == 1
-                                  ? AppColor.primaryColor500
+                                  ? const Color.fromRGBO(71, 87, 54, 1)
                                   : AppColor.GreyScale500),
                         )
                       ],
@@ -112,19 +115,20 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.discoveryBorder,
+                         controller.currentIndex.value== 2?Appicons.diccovery: Appicons.discoveryBorder,
                           color: controller.currentIndex.value == 2
-                              ? AppColor.primaryColor500
+                              ? const Color.fromRGBO(71, 87, 54, 1)
                               : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
                         ),
                         Text(
                           "Community",
-                          style: TextStyle(
-                              fontSize: 11.sp,
+                          style: GoogleFonts.mulish(
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
                               color: controller.currentIndex.value == 2
-                                  ? AppColor.primaryColor500
+                                  ? const Color.fromRGBO(71, 87, 54, 1)
                                   : AppColor.GreyScale500),
                         )
                       ],
@@ -143,19 +147,20 @@ class BottomnavBar extends GetWidget<BottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          Appicons.profileBorder,
+                           controller.currentIndex.value == 3?Appicons.profile: Appicons.profileBorder,
                           color: controller.currentIndex.value == 3
-                              ? AppColor.primaryColor500
+                              ? const Color.fromRGBO(71, 87, 54, 1)
                               : AppColor.GreyScale500,
                           height: 24.h,
                           width: 24.w,
                         ),
                         Text(
                           "Profile",
-                          style: TextStyle(
-                            fontSize: 11.sp,
+                          style: GoogleFonts.mulish(
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
                             color: controller.currentIndex.value == 3
-                                ? AppColor.primaryColor500
+                                ? const Color.fromRGBO(71, 87, 54, 1)
                                 : const Color(0xff5E5E67),
                           ),
                         )

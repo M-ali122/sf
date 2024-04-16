@@ -16,6 +16,7 @@ import 'package:sf_app/pages/review/view/review.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
+// ignore: must_be_immutable
 class ProductDetails extends StatelessWidget {
   static const String route = 'ProductDetails';
    ProductDetails({super.key});
