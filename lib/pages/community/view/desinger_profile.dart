@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/doubled_outline_button.dart';
+import 'package:sf_app/pages/home/model/designer_profile_model.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
 
-class DesignerProfile extends StatefulWidget {
-  DesignerProfile({super.key});
+// ignore: must_be_immutable
+class DesignerProfile extends StatelessWidget {
+  DesignerProfileModel designerData;
+  DesignerProfile({super.key, required this.designerData});
 
-  @override
-  State<DesignerProfile> createState() => _DesignerProfileState();
-}
-
-class _DesignerProfileState extends State<DesignerProfile> {
   final theme = Get.theme;
+
   String selectedOption = 'Posts';
 
   @override
@@ -116,21 +114,21 @@ class _DesignerProfileState extends State<DesignerProfile> {
                   ),
                 ),
               ),
-              Positioned(
-                top: 210.h,
-                left: 294.w,
-                child: Container(
-                  height: 110.h,
-                  width: 110.w,
-                  decoration: const ShapeDecoration(
-                      shape: CircleBorder(),
-                      image: DecorationImage(
-                          image: AssetImage(
-                            'assets/designerProfile.png',
-                          ),
-                          fit: BoxFit.cover)),
-                ),
-              ),
+              // Positioned(
+              //   top: 210.h,
+              //   left: 294.w,
+              //   child: Container(
+              //     height: 110.h,
+              //     width: 110.w,
+              //     decoration: ShapeDecoration(
+              //         shape: CircleBorder(),
+              //         image: DecorationImage(
+              //             image: AssetImage(
+              //               designerData.profileImage,
+              //             ),
+              //             fit: BoxFit.cover)),
+              //   ),
+              // ),
               30.height,
               Positioned(
                 top: 210.h,
@@ -138,11 +136,11 @@ class _DesignerProfileState extends State<DesignerProfile> {
                 child: Container(
                   height: 110.h,
                   width: 110.w,
-                  decoration: const ShapeDecoration(
+                  decoration:  ShapeDecoration(
                       shape: CircleBorder(),
                       image: DecorationImage(
                           image: AssetImage(
-                            'assets/designerProfile.png',
+                            designerData.profileImage,
                           ),
                           fit: BoxFit.cover)),
                 ),
@@ -157,7 +155,7 @@ class _DesignerProfileState extends State<DesignerProfile> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Sabri Bou', style: theme.textTheme.headline6),
+                      Text(designerData.userName, style: theme.textTheme.headline6),
                       10.height,
                       Text('My bio is my bio',
                           style: GoogleFonts.mulish(

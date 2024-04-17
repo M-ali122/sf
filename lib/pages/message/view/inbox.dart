@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -9,22 +10,33 @@ import 'package:sf_app/pages/message/controller/message_controller.dart';
 import 'package:sf_app/pages/products/controllers/product_controller.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
-import '../../../helper/view/notification_tile.dart';
 import '../../../resources/color/app_color.dart';
 
 class Inbox extends GetWidget<MessageController> {
   static const String route = "Inbox";
-   Inbox({super.key});
+
+  Inbox({super.key});
 
   final theme = Get.theme;
+
+var listdes = [
+    'Still available?',
+    'Is it possible to send it sooner',
+    'Is there other colors ?'
+  ];
+
+var listdate = [
+    '20:20 Pm',
+    'Yesterday',
+    'Jan 18, 2024'
+  ];
   @override
   Widget build(BuildContext context) {
-  ProductController productController = Get.put(ProductController());
+    ProductController productController = Get.put(ProductController());
     return GetBuilder<MessageController>(
       init: MessageController(),
       builder: (controller) {
         return Scaffold(
-          // backgroundColor: AppColor.backGroundSilver,
           body: ListView(
             children: [
               SizedBox(height: 10.h),
@@ -32,7 +44,11 @@ class Inbox extends GetWidget<MessageController> {
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Row(
                   children: [
-                    SvgPicture.string(Appicons.backIcon),
+                    GestureDetector(
+                      onTap: (){
+                        Get.back();
+                      },
+                      child: SvgPicture.string(Appicons.backIcon)),
                     SizedBox(
                       width: 15.w,
                     ),
@@ -51,17 +67,17 @@ class Inbox extends GetWidget<MessageController> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: DoubledOutlineButton(
-                            titleOne: 'information',
-                            titleTwo: 'Review',
-                            onIndexChanged: (value)async{
-                productController.chnageIndexValue(value);
-                            },
-                          ),
+                  titleOne: 'information',
+                  titleTwo: 'notification',
+                  onIndexChanged: (value) async {
+                    productController.chnageIndexValue(value);
+                  },
+                ),
               ),
               SizedBox(height: 30.h),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: TextField(
+                child: Obx(() => TextField(
                   decoration: InputDecoration(
                     filled: true,
                     contentPadding: const EdgeInsets.symmetric(vertical: 20),
@@ -87,65 +103,79 @@ class Inbox extends GetWidget<MessageController> {
                       child: Icon(Icons.search,
                           size: 30.sp, color: AppColor.GreyScale400),
                     ),
-                    hintText: 'Search messages',
+                    hintText: productController.productOtption.value == 0
+                        ? 'Search messages'
+                        : 'Search notification',
                     hintStyle: const TextStyle(color: AppColor.GreyScale400),
                   ),
-                ),
+                ),)
               ),
-             Obx(() =>  Visibility(
-               visible: controller.selectedIndex.value == 1 ? true :false,
-               child: Row(
-                 children: [
-                   Padding(
-                     padding:  EdgeInsets.symmetric(
-                         vertical: 10.0),
-                     child: Text(
-                       "Today",style: theme.textTheme.subtitle2,
-          
-                     ),
-                   ),
-                   Flexible(
-                     child: Padding(
-                       padding: EdgeInsets.symmetric(
-                         horizontal: 10.0,
-                       ),
-                       child: Container(
-                         width: 323.w,
-                         height: 1.5.h,
-                         color: Color.fromRGBO(238, 238, 238, 1),
-          
-                       ),
-                     ),
-                   ),
-                 ],
-               ),
-             ),),
-             SizedBox(height: 20.h,),
-          Container(
-                    width: Get.width,
-                    height: 580.h,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: 4,
-                      itemBuilder: (context, index) {
-                        return Obx(() =>  productController.productOtption.value == 0
-                            ? Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: CoustomListile(),
-                            )
-                            : NotificationTile());
-                      },
+              Obx(() => Visibility(
+                    visible: controller.selectedIndex.value == 1 ? true : false,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10.0),
+                          child: Text(
+                            "Today",
+                            style: theme.textTheme.subtitle2,
+                          ),
+                        ),
+                        Flexible(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.0,
+                            ),
+                            child: Container(
+                              width: 323.w,
+                              height: 1.5.h,
+                              color: Color.fromRGBO(238, 238, 238, 1),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-          
-              // SizedBox(height: 30.h),
-              // CoustomListile(),
-              // SizedBox(height: 30.h),
-              // CoustomListile(
-              //   countDot: true,
-              // ),
-              // SizedBox(height: 30.h),
-              // CoustomListile(),
+                  )),
+              SizedBox(height: 20.h,),
+              SizedBox(
+                width: Get.width,
+                height: 580.h,
+                child: Obx(() {
+                  if (productController.productOtption.value == 0) {
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        if(index == 1){
+                          return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 13.0),
+                          child: CoustomListile(
+                            countDot: true,
+                             des: listdes[index],
+                             date: listdate[index],
+                          ),
+                        );
+                        }else{
+                          return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 13.0),
+                          child: CoustomListile(
+                            des: listdes[index],
+                             date: listdate[index],
+                          ),
+                        );
+                        }
+                      },
+                    );
+                  } else {
+                    return Center(
+                      child: Text(
+                        'No notification found',
+                        style: TextStyle(fontSize: 20.sp),
+                      ),
+                    );
+                  }
+                }),
+              ),
             ],
           ),
         );

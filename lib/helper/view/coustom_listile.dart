@@ -9,7 +9,9 @@ import 'package:sf_app/resources/color/app_color.dart';
 
 class CoustomListile extends StatelessWidget {
   bool? countDot = false;
-  CoustomListile({super.key, this.countDot});
+  String? des ;
+  String? date;
+  CoustomListile({super.key, this.countDot,this.des , this.date});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,9 @@ class CoustomListile extends StatelessWidget {
       decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
-            blurRadius: 60,
+            blurRadius: 40,
             color: Color.fromRGBO(4, 6, 15, 0.05),
-            offset: Offset(0, 4),
+            offset: Offset(0, 2),
           )
         ]
       ),
@@ -54,7 +56,7 @@ class CoustomListile extends StatelessWidget {
               ),
             ),
             subtitle: Text(
-              'Still available?',
+              '$des',
               style: GoogleFonts.mulish(
                 fontWeight: FontWeight.w500,
                 fontSize: 14.sp,
@@ -64,6 +66,7 @@ class CoustomListile extends StatelessWidget {
             trailing: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
+                // 8.height,
                 countDot == true
                     ? CircleAvatar(
                         radius: 10,
@@ -80,15 +83,15 @@ class CoustomListile extends StatelessWidget {
                       )
                     : const SizedBox.shrink(),
                 const Spacer(),
-                Text("20:20Pm",
+                Text("$date",
                     style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w500,
                       fontSize: 14.sp,
                       color: const Color.fromRGBO(97, 97, 97, 1),
                     )),
                 SizedBox(
-                  height: 8.h,
-                )
+                  height: 5.h,
+                ),
               ],
             ),
           ),

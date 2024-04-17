@@ -4,9 +4,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
+import 'package:sf_app/pages/categories/screens/new_arival.dart';
 import 'package:sf_app/pages/categories/views/top_categories.dart';
+import 'package:sf_app/pages/community/view/community_tab_screen.dart';
 import 'package:sf_app/pages/community/view/desinger_profile.dart';
+import 'package:sf_app/pages/home/dp/designer_static_data.dart';
 import 'package:sf_app/pages/order/view/order_screen.dart';
+import 'package:sf_app/pages/profile/view/profile_view.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -23,6 +27,16 @@ class HomeScreen extends StatelessWidget {
     'assets/sami.png',
     'assets/brandi.png',
   ];
+
+  List designerName = [
+    'Aubrey',
+    'Darrell',
+    'Julie',
+    'Sami',
+    'Brandie',
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     final theme = Get.theme;
@@ -32,22 +46,25 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 children: [
-                  Image.asset('assets/Image.png'),
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(()=> ProfileView()); 
+                    },
+                    child: Image.asset('assets/Image.png')),
                   16.width,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                       Text(
+                      Text(
                         'Welcome Back',
-                         style: GoogleFonts.mulish(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          color: AppColor.GreyScale600
-                         ),
-                        ),
+                        style: GoogleFonts.mulish(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: AppColor.GreyScale600),
+                      ),
                       6.height,
                       Text(
                         'User Name',
@@ -84,7 +101,7 @@ class HomeScreen extends StatelessWidget {
             ),
             24.height,
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextField(
                 decoration: InputDecoration(
                   filled: true,
@@ -121,14 +138,78 @@ class HomeScreen extends StatelessWidget {
             20.height,
             InkWell(
               onTap: () {
-                // Get.to(Designers());
+                // Get.to(()=> TopCateries());
               },
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: GestureDetector(
+                  onTap: (){
+                    Get.to(()=> const CommunityTabs());
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        'Top Designers',
+                        style: theme.textTheme.headline6,
+                      ),
+                      const Spacer(),
+                      SvgPicture.string(Appicons.arrowforword),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            24.height,
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: SizedBox(
+                height: 100.h,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: DynaminUserData().dynaminUserData.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(DesignerProfile(
+                          designerData: DynaminUserData().dynaminUserData[index],
+                        ));
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 10.0.w),
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 35,
+                              backgroundImage: AssetImage(DynaminUserData().dynaminUserData[index].profileImage),
+                            ),
+                            5.height,
+                            Text(DynaminUserData().dynaminUserData[index].userName,
+                             style: GoogleFonts.mulish(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14.sp,
+                              color: const Color.fromRGBO(33, 33, 33, 1)
+                             ),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            24.height,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(() => const NewArival());
+                },
                 child: Row(
                   children: [
                     Text(
-                      'Top Designers',
+                      'New Arrival',
                       style: theme.textTheme.headline6,
                     ),
                     const Spacer(),
@@ -139,59 +220,16 @@ class HomeScreen extends StatelessWidget {
             ),
             24.height,
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: SizedBox(
-                height: 70.h,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: image.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Get.to(DesignerProfile());
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.only(right: 10.0.w),
-                        child: CircleAvatar(
-                          radius: 35,
-                          backgroundImage: AssetImage(image[index]),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            24.height,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
-                children: [
-                  Text(
-                    'New Arrival',
-                    style: theme.textTheme.headline6,
-                  ),
-                  const Spacer(),
-                  SvgPicture.string(Appicons.arrowforword),
-                ],
-              ),
-            ),
-            24.height,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Container(
-                height: 292.h,
-                decoration: const BoxDecoration(
-                  boxShadow: [
+                height: 291.h,
+                decoration: const BoxDecoration(boxShadow: [
                   BoxShadow(
                       blurRadius: 60,
-                      offset: const Offset(0, 4),
+                      offset:  Offset(0, 4),
                       spreadRadius: 0,
-                      color: Color.fromRGBO(4, 6, 15, 0.08) 
-                      ),
-                ]
-                ),
+                      color: Color.fromRGBO(4, 6, 15, 0.08)),
+                ]),
                 child: ListView(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -212,7 +250,13 @@ class HomeScreen extends StatelessWidget {
                                     bottomRight: Radius.circular(12),
                                     bottomLeft: Radius.circular(12),
                                   ),
-                                  color: AppColor.white),
+                                  color: AppColor.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                        blurRadius: 60,
+                                        offset: Offset(0, 1),
+                                        color: Color.fromRGBO(4, 6, 15, 0.04))
+                                  ]),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -276,12 +320,19 @@ class HomeScreen extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 10,
+                                  SizedBox(
+                                    height: 5.h,
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.only(left: 15.0),
-                                    child: Text('100 SAR'),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 15.0),
+                                    child: Text(
+                                      '100 SAR',
+                                      style: GoogleFonts.mulish(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 18.sp,
+                                          color: const Color.fromRGBO(
+                                              33, 33, 33, 1)),
+                                    ),
                                   )
                                 ],
                               ),
@@ -290,12 +341,12 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      height: 100,
-                      width: 15,
+                    SizedBox(
+                      height: 100.h,
+                      width: 15.w,
                     ),
-                    Container(
-                      height: 292,
+                    SizedBox(
+                      height: 291,
                       width: 203,
                       child: Stack(
                         children: [
@@ -310,8 +361,13 @@ class HomeScreen extends StatelessWidget {
                                     bottomRight: Radius.circular(12),
                                     bottomLeft: Radius.circular(12),
                                   ),
-                                  color: AppColor.white
-                                  ),
+                                  color: AppColor.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                        blurRadius: 60,
+                                        offset: Offset(0, 1),
+                                        color: Color.fromRGBO(4, 6, 15, 0.04))
+                                  ]),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -378,9 +434,16 @@ class HomeScreen extends StatelessWidget {
                                   const SizedBox(
                                     height: 10,
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.only(left: 15.0),
-                                    child: Text('100 SAR'),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 15.0),
+                                    child: Text(
+                                      '100 SAR',
+                                      style: GoogleFonts.mulish(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 18.sp,
+                                          color: const Color.fromRGBO(
+                                              33, 33, 33, 1)),
+                                    ),
                                   )
                                 ],
                               ),

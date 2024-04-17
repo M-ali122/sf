@@ -39,7 +39,7 @@ class Designers extends StatelessWidget {
             ListView.builder(
               itemCount: 20,
               itemBuilder: (context, index) {
-                return Padding(
+                return const Padding(
                   padding: EdgeInsets.only(right: 15.0),
                   child: CircleAvatar(
                     radius: 35,

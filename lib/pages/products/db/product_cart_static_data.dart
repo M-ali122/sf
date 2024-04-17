@@ -9,7 +9,7 @@ class ProductCartStaticData {
       clientName: 'Client Name',
        productStatus: 'Pendding',
         prodctPrice: '44.00 SAR'
-    ),
+    ),  
     ProductCartModel(
       image: 'assets/bag.png',
        productName: 'Product Name',

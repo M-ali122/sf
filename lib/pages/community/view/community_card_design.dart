@@ -218,7 +218,8 @@ class CardDesign extends StatelessWidget {
                           
                           child: GestureDetector(
                              onTap: (){
-                              Get.to(CommintScreen(
+                              Get.to(
+                                CommintScreen(
                                 designerCartModel: DesignerCartData().models[index],
                               ));
                              },

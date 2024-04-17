@@ -45,4 +45,7 @@ class CategoriesStaticData {
       updatedAt: DateTime.now(),
     ),
   ];
+
+
+  
 }

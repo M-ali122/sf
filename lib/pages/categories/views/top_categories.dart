@@ -17,12 +17,12 @@ class TopCategoriesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        GestureDetector(
-          onTap: () {
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: GestureDetector(
+            onTap: () {
             Get.to(SeeAll());
           },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Row(
               children: [
                 Text(
@@ -30,11 +30,7 @@ class TopCategoriesView extends StatelessWidget {
                   style: Get.theme.textTheme.headline6,
                 ),
                 const Spacer(),
-                GestureDetector(
-                  onTap: (){
-                    Get.back();
-                  },
-                  child: SvgPicture.string(Appicons.arrowforword)),
+                SvgPicture.string(Appicons.arrowforword),
               ],
             ),
           ),

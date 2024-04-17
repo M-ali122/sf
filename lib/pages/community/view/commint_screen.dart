@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/pages/community/model/designer_cart_model.dart';
-import 'package:sf_app/pages/community/view/desinger_profile.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
@@ -56,12 +55,12 @@ class CommintScreen extends StatelessWidget {
                     ),
                     ListTile(
                       onTap: (){
-                        Get.to(()=> DesignerProfile());
+                        // Get.to(()=> DesignerProfile());
                       },
                       contentPadding: const EdgeInsets.only(right: 20),
                       leading:  CircleAvatar(
                         radius: 25,
-                        foregroundImage: AssetImage(designerCartModel!.profileImage),
+                        foregroundImage: AssetImage(designerCartModel.profileImage),
                       ),
                       title: Padding(
                         padding: const EdgeInsets.only(left: 10.0),
@@ -91,14 +90,14 @@ class CommintScreen extends StatelessWidget {
                       text: TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                            text: designerCartModel!.disc,
+                            text: designerCartModel.disc,
                             style: GoogleFonts.mulish(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 14,
                                 color: AppColor.white),
                           ),
                           TextSpan(
-                            text: designerCartModel!.secondDis,
+                            text: designerCartModel.secondDis,
                             style: GoogleFonts.mulish(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 14,

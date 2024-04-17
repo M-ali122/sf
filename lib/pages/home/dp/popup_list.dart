@@ -1,8 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_svg/svg.dart';
 import 'package:sf_app/resources/icon/icon.dart';
-import 'package:sf_app/resources/icon/svgs.dart';
 
 class PopUpMenuData {
 final List<PopupMenuModel> popupmenudata =[
