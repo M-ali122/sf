@@ -28,7 +28,7 @@ class RegistrationController extends GetxController {
     Get.dialog(const RegistrationProgressDialog());
     //TODO: wait for response
     Timer(const Duration(seconds: 2), () async {
-      Get.offAllNamed(AccountType.route);
+      Get.toNamed(AccountType.route);
     });
   }
 

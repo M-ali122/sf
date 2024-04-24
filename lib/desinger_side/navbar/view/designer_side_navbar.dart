@@ -14,8 +14,7 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
   const DesingerBottomnavBar({super.key});
   @override
   Widget build(BuildContext context) {
-    
-     OnboardingController onboardingController = Get.put(OnboardingController());
+    OnboardingController onboardingController = Get.put(OnboardingController());
     bool isDesigner = onboardingController.accountType.value == "Designer";
     return GetBuilder<DesignerBottomNavBarController>(
       init: DesignerBottomNavBarController(),
@@ -37,14 +36,12 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                 ),
                 color: AppColor.white,
                 boxShadow: [
-                  BoxShadow(
-                    blurRadius: 60,
-                    offset: Offset(0, 4),
-                    spreadRadius: 0,
-                    color: Color.fromRGBO(4, 6, 15, 0.04)
-                  )
-                ]
-                ),
+                  const BoxShadow(
+                      blurRadius: 60,
+                      offset: Offset(0, 4),
+                      spreadRadius: 0,
+                      color: Color.fromRGBO(4, 6, 15, 0.04))
+                ]),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -60,7 +57,9 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          controller.currentIndex.value == 0? Appicons.category: Appicons.categoryBorder,
+                          controller.currentIndex.value == 0
+                              ? Appicons.category
+                              : Appicons.categoryBorder,
                           color: controller.currentIndex.value == 0
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -92,7 +91,9 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          controller.currentIndex.value == 1 ? Appicons.document:Appicons.documentBorder,
+                          controller.currentIndex.value == 1
+                              ? Appicons.document
+                              : Appicons.documentBorder,
                           color: controller.currentIndex.value == 1
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -133,21 +134,23 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                         Container(
                           height: 40.h,
                           width: 40.w,
-                          decoration: ShapeDecoration(
-                            shape: CircleBorder(),
-                            color: AppColor.primaryColor500,
-                             shadows: [
-                              BoxShadow(
-                                blurRadius: 24,
-                                offset: Offset(4,8),
-                                spreadRadius: 0,
-                                color: Color.fromRGBO(79, 99, 61, 0.2),
-                              ),
-                             ]
+                          decoration: const ShapeDecoration(
+                              shape: CircleBorder(),
+                              color: AppColor.primaryColor500,
+                              shadows: [
+                                BoxShadow(
+                                  blurRadius: 24,
+                                  offset: Offset(4, 8),
+                                  spreadRadius: 0,
+                                  color: Color.fromRGBO(79, 99, 61, 0.2),
+                                ),
+                              ]),
+                          child: const Center(
+                            child: Icon(
+                              Icons.add,
+                              color: AppColor.white,
                             ),
-                            child: Center(
-                              child: Icon(Icons.add,color: AppColor.white,),
-                            ),
+                          ),
                         ),
                         // Text(
                         //   "Community",
@@ -173,7 +176,9 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          controller.currentIndex.value == 3 ? Appicons.diccovery:Appicons.discoveryBorder,
+                          controller.currentIndex.value == 3
+                              ? Appicons.diccovery
+                              : Appicons.discoveryBorder,
                           color: controller.currentIndex.value == 3
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -204,7 +209,9 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 17.h,
                         ),
                         SvgPicture.string(
-                          controller.currentIndex.value == 4 ?Appicons.profile:Appicons.profileBorder,
+                          controller.currentIndex.value == 4
+                              ? Appicons.profile
+                              : Appicons.profileBorder,
                           color: controller.currentIndex.value == 4
                               ? AppColor.primaryColor500
                               : AppColor.GreyScale500,
@@ -217,7 +224,8 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                             fontSize: 11.sp,
                             color: controller.currentIndex.value == 4
                                 ? AppColor.primaryColor500
-                              : AppColor.GreyScale500, ),
+                                : AppColor.GreyScale500,
+                          ),
                         )
                       ],
                     ),

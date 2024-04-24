@@ -11,7 +11,7 @@ import 'package:sf_app/resources/icon/icon.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
 
 class DesignerDashbaord extends StatelessWidget {
- static String route = 'DesignerDashbaord';
+  static String route = 'DesignerDashbaord';
   const DesignerDashbaord({Key? key}) : super(key: key);
 
   @override
@@ -98,7 +98,7 @@ class DesignerDashbaord extends StatelessWidget {
                       'Total Sales',
                       style: GoogleFonts.mulish(
                           fontWeight: FontWeight.w500,
-                          fontSize: 14,
+                          fontSize: 12,
                           color: AppColor.white),
                     ),
                   ],
@@ -196,7 +196,9 @@ class DesignerDashbaord extends StatelessWidget {
                         style: theme.textTheme.headline6,
                       ),
                     ),
-                    SizedBox(height: 20.h,),
+                    SizedBox(
+                      height: 20.h,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24.0),
                       child: Row(
@@ -206,33 +208,33 @@ class DesignerDashbaord extends StatelessWidget {
                             width: 52.w,
                             decoration: const ShapeDecoration(
                                 shape: CircleBorder(),
-                                color: Color.fromRGBO(201, 179, 114, 0.1)
-                            ),
+                                color: Color.fromRGBO(201, 179, 114, 0.1)),
                             child: Center(
-                              child: SvgPicture.string(Appicons.document,color: AppColor.secondaryColor500,),
+                              child: SvgPicture.string(
+                                Appicons.document,
+                                color: AppColor.secondaryColor500,
+                              ),
                             ),
                           ),
-                          SizedBox(width: 15.w,),
+                          SizedBox(
+                            width: 15.w,
+                          ),
                           RichText(
                             text: TextSpan(
-                              style:
-                                  GoogleFonts.mulish(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColor.Dark1,
-                                    ),
+                              style: GoogleFonts.mulish(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w600,
+                                color: AppColor.Dark1,
+                              ),
                               // ignore: prefer_const_literals_to_create_immutables
                               children: <TextSpan>[
                                 const TextSpan(text: 'Orders'),
                                 TextSpan(
                                     text: '\n04',
                                     style: GoogleFonts.mulish(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 18,
-                                      height: 1.6
-                                    )
-                                        
-                                      ),
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 18,
+                                        height: 1.6)),
                               ],
                             ),
                           ),
@@ -242,36 +244,37 @@ class DesignerDashbaord extends StatelessWidget {
                             width: 52.w,
                             decoration: const ShapeDecoration(
                                 shape: CircleBorder(),
-                                color: Color.fromRGBO(201, 179, 114, 0.1)
-                            ),
+                                color: Color.fromRGBO(201, 179, 114, 0.1)),
                             child: Center(
-                              child: SvgPicture.string(Appicons.eyesicon,color: AppColor.secondaryColor500,),
+                              child: SvgPicture.string(
+                                Appicons.eyesicon,
+                                color: AppColor.secondaryColor500,
+                              ),
                             ),
                           ),
-                          SizedBox(width: 15.w,),
+                          SizedBox(
+                            width: 15.w,
+                          ),
                           GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Get.toNamed(ProductGallery.route);
                             },
                             child: RichText(
                               text: TextSpan(
-                                style:
-                                    GoogleFonts.mulish(
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColor.Dark1,
-                                      ),
+                                style: GoogleFonts.mulish(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColor.Dark1,
+                                ),
                                 // ignore: prefer_const_literals_to_create_immutables
                                 children: <TextSpan>[
                                   const TextSpan(text: 'Product views '),
                                   TextSpan(
                                       text: '\n220',
                                       style: GoogleFonts.mulish(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 18,
-                                        height: 1.6
-                                      )      
-                                    ),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 18,
+                                          height: 1.6)),
                                 ],
                               ),
                             ),
@@ -279,7 +282,9 @@ class DesignerDashbaord extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 30.h,),
+                    SizedBox(
+                      height: 30.h,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24.0),
                       child: Row(
@@ -289,33 +294,33 @@ class DesignerDashbaord extends StatelessWidget {
                             width: 52.w,
                             decoration: const ShapeDecoration(
                                 shape: CircleBorder(),
-                                color: Color.fromRGBO(201, 179, 114, 0.1)
-                            ),
+                                color: Color.fromRGBO(201, 179, 114, 0.1)),
                             child: Center(
-                              child: SvgPicture.string(Appicons.personplus,color: AppColor.secondaryColor500,),
+                              child: SvgPicture.string(
+                                Appicons.personplus,
+                                color: AppColor.secondaryColor500,
+                              ),
                             ),
                           ),
-                          SizedBox(width: 15.w,),
+                          SizedBox(
+                            width: 15.w,
+                          ),
                           RichText(
                             text: TextSpan(
-                              style:
-                                  GoogleFonts.mulish(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColor.Dark1,
-                                    ),
+                              style: GoogleFonts.mulish(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w600,
+                                color: AppColor.Dark1,
+                              ),
                               // ignore: prefer_const_literals_to_create_immutables
                               children: <TextSpan>[
                                 const TextSpan(text: 'Followers'),
                                 TextSpan(
                                     text: '\n550',
                                     style: GoogleFonts.mulish(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 18,
-                                      height: 1.6
-                                    )
-                                        
-                                      ),
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 18,
+                                        height: 1.6)),
                               ],
                             ),
                           ),
@@ -325,32 +330,33 @@ class DesignerDashbaord extends StatelessWidget {
                             width: 52.w,
                             decoration: const ShapeDecoration(
                                 shape: CircleBorder(),
-                                color: Color.fromRGBO(201, 179, 114, 0.1)
-                            ),
+                                color: Color.fromRGBO(201, 179, 114, 0.1)),
                             child: Center(
-                              child: SvgPicture.string(Appicons.threeUser,color: AppColor.secondaryColor500,),
+                              child: SvgPicture.string(
+                                Appicons.threeUser,
+                                color: AppColor.secondaryColor500,
+                              ),
                             ),
                           ),
-                          SizedBox(width: 15.w,),
+                          SizedBox(
+                            width: 15.w,
+                          ),
                           RichText(
                             text: TextSpan(
-                              style:
-                                  GoogleFonts.mulish(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColor.Dark1,
-                                    ),
+                              style: GoogleFonts.mulish(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w600,
+                                color: AppColor.Dark1,
+                              ),
                               // ignore: prefer_const_literals_to_create_immutables
                               children: <TextSpan>[
                                 const TextSpan(text: 'Engagements '),
                                 TextSpan(
                                     text: '\n60',
                                     style: GoogleFonts.mulish(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 18,
-                                      height: 1.6
-                                    )      
-                                  ),
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 18,
+                                        height: 1.6)),
                               ],
                             ),
                           ),
@@ -363,204 +369,223 @@ class DesignerDashbaord extends StatelessWidget {
                       child: Text(
                         'Active Orders',
                         style: GoogleFonts.mulish(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20.sp,
-                          color: AppColor.Dark1
-                        ),
-                        ),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20.sp,
+                            color: AppColor.Dark1),
+                      ),
                     ),
                     Container(
                       height: 300.h,
                       child: ListView(
                         shrinkWrap: true,
-                        padding: EdgeInsets.only(bottom: 0,top: 20),
+                        padding: EdgeInsets.only(bottom: 0, top: 20),
                         children: [
                           Container(
                             height: 170.h,
                             width: 380.w,
-                      padding: EdgeInsets.symmetric(horizontal: 24),
-                            decoration: const BoxDecoration(
-                          boxShadow:  [
-                             BoxShadow(
-                              blurRadius: 60,
-                              offset: Offset(0, 4),
-                              spreadRadius: 0,
-                              color: Color.fromRGBO(4, 6, 15, 0.05)
-                            )
-                          ]
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                               borderRadius: BorderRadius.circular(32),
-                          color: AppColor.white,
-                            ),
-                            child: Stack(
-                            children: [
-                              Positioned(
-                                top: 33,
-                                left: 20,
-                                child: Container(
-                                  height: 102,
-                                  width: 120,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    color: AppColor.backGroundSilver
-                                  ),
-                                  child: Center(
-                                    child: Image.asset('assets/shoe.png'),
-                                    ),
-                                ),
+                            padding: EdgeInsets.symmetric(horizontal: 24),
+                            decoration: const BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 60,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                  color: Color.fromRGBO(4, 6, 15, 0.05))
+                            ]),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(32),
+                                color: AppColor.white,
                               ),
-                              Positioned(
-                                left: 150,
-                                top: 20,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Product Name',
-                                      style: theme.textTheme.labelLarge,
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    top: 33,
+                                    left: 20,
+                                    child: Container(
+                                      height: 102,
+                                      width: 120,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                          color: AppColor.backGroundSilver),
+                                      child: Center(
+                                        child: Image.asset('assets/shoe.png'),
                                       ),
-                                      const SizedBox(height: 10 ,),
-                                    Text('Client Name',
-                                     style: theme.textTheme.bodySmall,
                                     ),
-                                    const SizedBox(height: 10,),
-                                      Container(
-                                        height: 25,
-                                        width: 60,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(6),
-                                          color: const Color.fromRGBO(250, 204, 21, 0.08)
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Pending',
-                                            style: GoogleFonts.mulish(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 10,
-                                              color: AppColor.secondaryColor500
-                                            ),
-                                            ),
-                                        ),
-                                      ),
-                                    const SizedBox(height: 10,),
-                                    Row(
+                                  ),
+                                  Positioned(
+                                    left: 150,
+                                    top: 20,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text('44.00 SAR',
-                                        style: theme.textTheme.bodyLarge,
+                                        Text(
+                                          'Product Name',
+                                          style: theme.textTheme.labelLarge,
                                         ),
-                                        const SizedBox(width: 10,),
-                                        AppButton(
-                                          title: 'See detail',
-                                           onTap: (){
-                                            // Get.toNamed(OrderTabbarScreen.route);
-                                           },
-                                           width: 100,
-                                           height: 32,
-                                           )
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          'Client Name',
+                                          style: theme.textTheme.bodySmall,
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                          height: 25,
+                                          width: 60,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(6),
+                                              color: const Color.fromRGBO(
+                                                  250, 204, 21, 0.08)),
+                                          child: Center(
+                                            child: Text(
+                                              'Pending',
+                                              style: GoogleFonts.mulish(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 10,
+                                                  color: AppColor
+                                                      .secondaryColor500),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              '44.00 SAR',
+                                              style: theme.textTheme.bodyLarge,
+                                            ),
+                                            const SizedBox(
+                                              width: 10,
+                                            ),
+                                            AppButton(
+                                              title: 'See detail',
+                                              onTap: () {
+                                                // Get.toNamed(OrderTabbarScreen.route);
+                                              },
+                                              width: 100,
+                                              height: 32,
+                                            )
+                                          ],
+                                        ),
                                       ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
                             ),
                           ),
+                          SizedBox(
+                            height: 10.h,
                           ),
-                          SizedBox(height: 10.h,),
                           Container(
                             height: 170.h,
                             width: 380.w,
-                      padding: EdgeInsets.symmetric(horizontal: 24),
-                            decoration: const BoxDecoration(
-                          boxShadow:  [
-                             BoxShadow(
-                              blurRadius: 60,
-                              offset: Offset(0, 4),
-                              spreadRadius: 0,
-                              color: Color.fromRGBO(4, 6, 15, 0.05)
-                            )
-                          ]
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                               borderRadius: BorderRadius.circular(32),
-                          color: AppColor.white,
-                            ),
-                            child: Stack(
-                            children: [
-                              Positioned(
-                                top: 33,
-                                left: 20,
-                                child: Container(
-                                  height: 102,
-                                  width: 120,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    color: AppColor.backGroundSilver
-                                  ),
-                                  child: Center(
-                                    child: Image.asset('assets/shoe.png'),
-                                    ),
-                                ),
+                            padding: EdgeInsets.symmetric(horizontal: 24),
+                            decoration: const BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 60,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                  color: Color.fromRGBO(4, 6, 15, 0.05))
+                            ]),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(32),
+                                color: AppColor.white,
                               ),
-                              Positioned(
-                                left: 150,
-                                top: 20,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Product Name',
-                                      style: theme.textTheme.labelLarge,
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    top: 33,
+                                    left: 20,
+                                    child: Container(
+                                      height: 102,
+                                      width: 120,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                          color: AppColor.backGroundSilver),
+                                      child: Center(
+                                        child: Image.asset('assets/shoe.png'),
                                       ),
-                                      const SizedBox(height: 10 ,),
-                                    Text('Client Name',
-                                     style: theme.textTheme.bodySmall,
                                     ),
-                                    const SizedBox(height: 10,),
-                                      Container(
-                                        height: 25,
-                                        width: 60,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(6),
-                                          color: const Color.fromRGBO(250, 204, 21, 0.08)
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Pending',
-                                            style: GoogleFonts.mulish(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 10,
-                                              color: AppColor.secondaryColor500
-                                            ),
-                                            ),
-                                        ),
-                                      ),
-                                    const SizedBox(height: 10,),
-                                    Row(
+                                  ),
+                                  Positioned(
+                                    left: 150,
+                                    top: 20,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text('44.00 SAR',
-                                        style: theme.textTheme.bodyLarge,
+                                        Text(
+                                          'Product Name',
+                                          style: theme.textTheme.labelLarge,
                                         ),
-                                        const SizedBox(width: 10,),
-                                        AppButton(
-                                          title: 'See detail',
-                                           onTap: (){
-                                            // Get.toNamed(OrderTabbarScreen.route);
-                                           },
-                                           width: 100,
-                                           height: 32,
-                                           )
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          'Client Name',
+                                          style: theme.textTheme.bodySmall,
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                          height: 25,
+                                          width: 60,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(6),
+                                              color: const Color.fromRGBO(
+                                                  250, 204, 21, 0.08)),
+                                          child: Center(
+                                            child: Text(
+                                              'Pending',
+                                              style: GoogleFonts.mulish(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 10,
+                                                  color: AppColor
+                                                      .secondaryColor500),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              '44.00 SAR',
+                                              style: theme.textTheme.bodyLarge,
+                                            ),
+                                            const SizedBox(
+                                              width: 10,
+                                            ),
+                                            AppButton(
+                                              title: 'See detail',
+                                              onTap: () {
+                                                // Get.toNamed(OrderTabbarScreen.route);
+                                              },
+                                              width: 100,
+                                              height: 32,
+                                            )
+                                          ],
+                                        ),
                                       ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
                             ),
-                          ),
                           ),
                           100.height,
                         ],
