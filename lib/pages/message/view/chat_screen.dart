@@ -31,7 +31,12 @@ class _ChatScreenState extends State<ChatScreen> {
               SizedBox(height: 10.h),
               Row(
                 children: [
-                  SvgPicture.string(Appicons.backIcon),
+                  GestureDetector(
+                      onTap: () {Get.back();},
+                      child: SvgPicture.string(
+                        Appicons.backIcon,
+                      ),
+                    ),
                   SizedBox(
                     width: 15.w,
                   ),

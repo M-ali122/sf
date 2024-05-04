@@ -152,7 +152,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                               width: 10.h,
                             ),
                             Text(
-                              'Contact deigner',
+                              'Contact customer',
                               style: GoogleFonts.mulish(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 14.sp,
@@ -165,12 +165,12 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                         value: 'option3',
                         child: Row(
                           children: [
-                            SvgPicture.string(Appicons.cancellOrder),
+                            SvgPicture.string(Appicons.locationBorder),
                             SizedBox(
                               width: 10.h,
                             ),
                             Text(
-                              'Cancel order',
+                              'Update tracking',
                               style: GoogleFonts.mulish(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 14.sp,

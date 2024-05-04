@@ -6,6 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/desinger_side/pages/dashboard/view/product_gallery.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
+import 'package:sf_app/pages/message/view/chat_screen.dart';
+import 'package:sf_app/pages/message/view/inbox.dart';
 import 'package:sf_app/pages/order/view/order_detail_tabs.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
@@ -66,7 +68,7 @@ class DesignerDashbaord extends StatelessWidget {
                     ),
                     SizedBox(width: 10.h),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {Get.to(Inbox());},
                       child: SvgPicture.string(
                         Appicons.chatBorderwithbadge,
                       ),
@@ -76,7 +78,7 @@ class DesignerDashbaord extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 144.h,
+              top: 159.h,
               left: 24.w,
               child: SvgPicture.string(Svgs.divider),
             ),
@@ -84,7 +86,7 @@ class DesignerDashbaord extends StatelessWidget {
               top: 160.h,
               left: 24.w,
               child: SizedBox(
-                height: 101.h,
+                height: 110.h,
                 width: 380.w,
                 child: Column(
                   children: [
@@ -109,7 +111,7 @@ class DesignerDashbaord extends StatelessWidget {
             Positioned(
                 top: 207.05.h, child: SvgPicture.string(Svgs.designercircle)),
             Positioned(
-              top: 293.h,
+              top: 273.h,
               left: 24.w,
               child: SizedBox(
                 height: 32.h,
@@ -172,7 +174,7 @@ class DesignerDashbaord extends StatelessWidget {
 
             /// white conatiner
             Positioned(
-              top: 357.h,
+              top: 320.h,
               child: Container(
                 height: 629.h,
                 width: Get.width,

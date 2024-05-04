@@ -36,7 +36,7 @@ class ProfileView extends StatelessWidget {
                       'Profile',
                       style: theme.textTheme.headline1,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     GestureDetector(
                       onTap: () {
                         Get.to(Settings());
@@ -50,7 +50,7 @@ class ProfileView extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Stack(
@@ -75,7 +75,7 @@ class ProfileView extends StatelessWidget {
                                 "Full Name",
                                 style: theme.textTheme.headline6,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8,
                               ),
                               SvgPicture.string(Appicons.varificationIcon),
@@ -88,7 +88,7 @@ class ProfileView extends StatelessWidget {
                               ))
                         ],
                       ))),
-                  Positioned(
+                  const Positioned(
                     top: 20,
                     right: 0,
                     left: 0,
@@ -101,7 +101,7 @@ class ProfileView extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               DoubledOutlineButton(
