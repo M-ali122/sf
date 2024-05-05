@@ -124,7 +124,7 @@ class ProductScreenTwo extends StatelessWidget {
                                 ),
                                 child: Center(
                                     child: Text(
-                                        colorControllerButton.boxNames[index],style: TextStyle(fontSize: 17),)),
+                                        colorControllerButton.boxNames[index],style: colorControllerButton.selectedSize == index ? TextStyle(color: Colors.white) :const TextStyle(color: Colors.black),)),
                               ),
                             ],
                           ),
