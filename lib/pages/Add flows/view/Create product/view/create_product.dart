@@ -56,9 +56,11 @@ class _CreateProductState extends State<CreateProduct> {
                 heading: 'Product Material',
                 title: 'Write Here',
               ),  
-              SizedBox(height: 30.h,),
+              
               // ignore: prefer_const_constructors
-              AppButton(title: 'Post event', onTap: () {Get.to(ProductScreenTwo());})
+              Spacer(),
+              AppButton(title: 'Post event', onTap: () {Get.to(ProductScreenTwo());}),
+              SizedBox(height: 10,)
 
             ],
           ),

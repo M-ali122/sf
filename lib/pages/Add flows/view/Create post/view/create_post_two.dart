@@ -66,7 +66,7 @@ class _CreatePostTWoState extends State<CreatePostTWo> {
                   ],
                 ),
               ),
-              SizedBox(height: 400.h,),
+              Spacer(),
               
               // ignore: prefer_const_constructors
               
@@ -120,7 +120,8 @@ class _CreatePostTWoState extends State<CreatePostTWo> {
                           );
                         },
                         context: context);
-                  },)
+                  },),
+                  SizedBox(height: 10.h,)
               
               
 

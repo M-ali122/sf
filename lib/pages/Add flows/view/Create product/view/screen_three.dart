@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/helper/view/product_bottom_sheet_tabs.dart';
 import 'package:sf_app/helper/view/product_category_tabs.dart';
 import 'package:sf_app/pages/Add%20flows/view/Create%20product/controller/slider_controller.dart';
+import 'package:sf_app/pages/Add%20flows/view/Create%20product/view/screen_four.dart';
 
 class ScreenThree extends StatelessWidget {
   final SliderController controller = Get.put(SliderController());
@@ -73,7 +76,21 @@ class ScreenThree extends StatelessWidget {
               ),
             ),
             ProductCategoryTabs(titleOne: 'Men', titleTwo: 'Women', titleThree: 'Shoe', titleFour: 'Bag', titleFive:'Beauty',titleSix: 'Lifestyle', onIndexChanged: (val){},),
-            
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child:  Row(
+                children: [
+                  Text('Product sub Category',style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      color: Color.fromRGBO(33, 33, 33, 1)),),
+                ],
+              ),
+            ),
+            ProductSubCategoryTabs(titleOne: 'Shirt', titleTwo: 'Pants', titleThree: 'Underwear', titleFour: 'Jacket', onIndexChanged: (val){}),
+            const Spacer(),
+            AppButton(title: 'Continue', onTap: (){Get.to(const UploadProductImage());}),
+            const SizedBox(height: 10,),
 
 
           ],

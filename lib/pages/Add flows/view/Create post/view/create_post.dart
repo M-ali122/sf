@@ -51,9 +51,10 @@ class _CreatePostState extends State<CreatePost> {
                 heading: 'Event Description',
                 title: 'Write Here',
               ),  
-              SizedBox(height: 100.h,),
+              Spacer(),
               // ignore: prefer_const_constructors
-              AppButton(title: 'Post event', onTap: () {Get.to(CreatePostTWo());})
+              AppButton(title: 'Post event', onTap: () {Get.to(CreatePostTWo());}),
+              SizedBox(height: 10.h,)
 
             ],
           ),

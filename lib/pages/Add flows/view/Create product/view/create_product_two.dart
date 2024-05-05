@@ -23,9 +23,9 @@ class ProductScreenTwo extends StatelessWidget {
                 SizedBox(
                   height: 20.h,
                 ),
-                Row(
+                const Row(
                   children: [
-                    const Text(
+                    Text(
                       'Fill the information \nbelow',
                       style: TextStyle(
                           fontSize: 30,
@@ -124,14 +124,14 @@ class ProductScreenTwo extends StatelessWidget {
                                 ),
                                 child: Center(
                                     child: Text(
-                                        colorControllerButton.boxNames[index],style: colorControllerButton.selectedSize == index ? TextStyle(color: Colors.white) :const TextStyle(color: Colors.black),)),
+                                        colorControllerButton.boxNames[index],style: colorControllerButton.selectedSize == index ? const TextStyle(color: Colors.white) :const TextStyle(color: Colors.black),)),
                               ),
                             ],
                           ),
                         ));
                   },
                 ),
-                SizedBox(height: 35.h,),
+                const Spacer(),
 
                 // SizedBox(
                 //     height: 280.h,
@@ -176,7 +176,8 @@ class ProductScreenTwo extends StatelessWidget {
                     title: 'Continue',
                     onTap: () {
                       Get.to( ScreenThree());
-                    })
+                    }),
+                    const SizedBox(height: 10,)
               ]))),
     );
   }
