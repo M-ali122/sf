@@ -5,11 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:sf_app/client_side_design/registration/controller/registration_controller.dart';
+import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/create_product_controller.dart';
 
-class CustomeProgressBar extends GetWidget<RegistrationController> {
+class DesignerSideCustomeProgressBar extends GetWidget<CreateProductController> {
   final Color? bg, fg;
-  const CustomeProgressBar({
+  const DesignerSideCustomeProgressBar({
     super.key,
     this.fg,
     this.bg,
@@ -17,8 +17,8 @@ class CustomeProgressBar extends GetWidget<RegistrationController> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<RegistrationController>(
-      init: Get.find<RegistrationController>(),
+    return GetBuilder<CreateProductController>(
+      init: Get.put(CreateProductController())  ,
       builder: (controller) {
         return AnimatedContainer(
           duration: const Duration(milliseconds: 900),
@@ -28,7 +28,7 @@ class CustomeProgressBar extends GetWidget<RegistrationController> {
               () => LinearProgressIndicator(
                 minHeight: 8,
                 value: handlePercentage(
-                    controller.currentSelectedViewIndex.value,
+                    controller.currentSelectIndexView.value,
                     controller.views.length),
                 borderRadius: BorderRadius.circular(12),
                 backgroundColor: const Color(0xffEEEEEE),

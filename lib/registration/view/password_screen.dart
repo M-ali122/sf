@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:sf_app/pages/registration/controller/passController.dart';
+import 'package:sf_app/client_side_design/registration/controller/passController.dart';
 
-import 'package:sf_app/pages/registration/view/uplaod_profile_screen.dart';
+import 'package:sf_app/client_side_design/registration/view/uplaod_profile_screen.dart';
 
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
