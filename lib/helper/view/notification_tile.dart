@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:sf_app/resources/icon/icon.dart';
 
 class NotificationTile extends StatelessWidget {
   const NotificationTile({super.key});
@@ -84,7 +82,7 @@ class NotificationTile extends StatelessWidget {
       width: 380.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
-      
+      color: Colors.black
       ),
       // child: ListTile(
       //   leading: Icon(icon),

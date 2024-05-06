@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class AppColor {
@@ -41,10 +43,13 @@ class AppColor {
       Color(0xFF72975E),
       Color(0xFF475736),
     ],
-    // begin: Alignment.topLeft,
-    // end: Alignment.bottomRight,
-    // stops: [0.0, 1.0],
-    // tileMode: TileMode.clamp,
+  );
+
+  static LinearGradient tabbarGradient = const LinearGradient(
+    colors: [
+      Color.fromRGBO(243, 243, 243, 1),
+      Color.fromRGBO(243, 243, 243, 1),
+    ],
   );
 
   static LinearGradient textfieldGredient = const LinearGradient(colors: [
