@@ -8,7 +8,9 @@ class Apis {
 
   String get baseApiUrl => "$baseUrl/api";
 
-  String get signIn => "$baseApiUrl/settings";
+  String get settings => "$baseApiUrl/settings";
+  String get createPassword => "$baseApiUrl/create_password"; 
+  String get uploadProfileImage => "$baseApiUrl/images";
   // String get signUpWithEmail => '$baseApiUrl/signup-with-email';
   // String get loginWithEmail => '$baseApiUrl/login-with-email';
   // String get forget => '$baseApiUrl/password-reset-api';

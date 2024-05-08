@@ -226,7 +226,7 @@ class AuthRequest {
   }
 
   _setRequestOptions({bool multipart = false}) {
-    UserController authController = g.Get.find();
+    UserController authController = g.Get.put(UserController());
     authController.loadUser();
     if (kDebugMode) {
       print(authController.user.value.token);
