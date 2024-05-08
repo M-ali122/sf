@@ -68,7 +68,7 @@ class CardDesign extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 5.0),
                             child: Text(
                               'User Name',
-                              style: theme.textTheme.bodyText1,
+                              style: theme.textTheme.bodyLarge,
                             ),
                           ),
                           subtitle: Padding(

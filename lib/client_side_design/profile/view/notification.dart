@@ -41,7 +41,7 @@ class _NotificationsState extends State<Notifications> {
                   ),
                   Text(
                     'Notification',
-                    style: theme.textTheme.headline1,
+                    style: theme.textTheme.displayLarge,
                   ),
                 ],
               ),

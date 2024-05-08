@@ -34,10 +34,10 @@ class ProductGallery extends StatelessWidget {
                   Positioned(
                     left: 321.69.w,
                     child: GestureDetector(
-                      onTap: (){
-                        Get.back();
-                      },
-                      child: SvgPicture.string(Svgs.designerhalfCircle)),
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: SvgPicture.string(Svgs.designerhalfCircle)),
                   ),
                   Positioned(
                     left: 24.w,
@@ -85,11 +85,11 @@ class ProductGallery extends StatelessWidget {
                       shrinkWrap: true,
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           mainAxisSpacing: 5,
                           crossAxisSpacing: 5,
-                          mainAxisExtent: 324,
+                          mainAxisExtent: 350.h,
                           childAspectRatio: 178),
                       itemBuilder: (context, index) {
                         return GestureDetector(
@@ -100,30 +100,32 @@ class ProductGallery extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
-                               color: AppColor.white,
-                               boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 60,
-                                  offset: Offset(0, 4),
-                                  color: Color.fromRGBO(4, 6, 15, 0.08),
-                                )
-                               ]
-                              ),
+                                  color: AppColor.white,
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      blurRadius: 60,
+                                      offset: Offset(0, 4),
+                                      color: Color.fromRGBO(4, 6, 15, 0.08),
+                                    )
+                                  ]),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    width: 178,
-                                    height: 143,
+                                    width: 178.w,
+                                    height: 143.h,
                                     decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(16),
                                           topRight: Radius.circular(16),
                                         ),
                                         image: DecorationImage(
-                                            fit: BoxFit.cover,
+                                            fit: BoxFit.fill,
                                             image: AssetImage(
-                                                "assets/rounde_neck_shirt.png"))),
+                                                "assets/rounde_neck_shirt.png",
+                                              ),
+                                            )
+                                          ),
                                   ),
                                   Align(
                                     alignment: Alignment.topLeft,
@@ -132,49 +134,56 @@ class ProductGallery extends StatelessWidget {
                                           top: 15.0, left: 15),
                                       child: Text(
                                         'Round neck shirt',
-                                        style: theme.textTheme.button,
+                                        style: theme.textTheme.labelLarge,
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 5,
+                                  SizedBox(
+                                    height: 5.h,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 15.0.w),
                                     child: Row(
                                       children: [
                                         Container(
                                           width: 41.w,
                                           height: 25.h,
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(6),
-                                            color: AppColor.secondaryColor400
-                                          ),
+                                              borderRadius:
+                                                  BorderRadius.circular(6),
+                                              color:
+                                                  AppColor.secondaryColor400),
                                           child: Center(
-                                            child: Text('Man',
-                                            style: GoogleFonts.mulish(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 10,
-                                              color: AppColor.white,
-                                            ),
+                                            child: Text(
+                                              'Man',
+                                              style: GoogleFonts.mulish(
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 10.sp,
+                                                color: AppColor.white,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 10.w,),
+                                        SizedBox(
+                                          width: 10.w,
+                                        ),
                                         Container(
                                           width: 41.w,
                                           height: 25.h,
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(6),
-                                            color: AppColor.secondaryColor400
-                                          ),
+                                              borderRadius:
+                                                  BorderRadius.circular(6),
+                                              color:
+                                                  AppColor.secondaryColor400),
                                           child: Center(
-                                            child: Text('Shirt',
-                                            style: GoogleFonts.mulish(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 10,
-                                              color: AppColor.white,
-                                            ),
+                                            child: Text(
+                                              'Shirt',
+                                              style: GoogleFonts.mulish(
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 10.sp,
+                                                color: AppColor.white,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -182,67 +191,72 @@ class ProductGallery extends StatelessWidget {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.only(left : 15,top: 10),
+                                    padding:
+                                        EdgeInsets.only(left: 15.w, top: 10.h),
                                     child: Container(
-                                            width: 54.w,
-                                            height: 25.h,
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(6),
-                                              color: AppColor.secondaryColor400
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                SvgPicture.string(Svgs.twostar),
-                                                SizedBox(width: 5.w,),
-                                                Text('4.6',
-                                                style: GoogleFonts.mulish(
-                                                  fontWeight: FontWeight.w400,
-                                                  fontSize: 10,
-                                                  color: AppColor.white,
-                                                ),
-                                                ),
-                                              ],
+                                      width: 54.w,
+                                      height: 25.h,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(6),
+                                          color: AppColor.secondaryColor400),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          SvgPicture.string(Svgs.twostar),
+                                          SizedBox(
+                                            width: 5.w,
+                                          ),
+                                          Text(
+                                            '4.6',
+                                            style: GoogleFonts.mulish(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 10.sp,
+                                              color: AppColor.white,
                                             ),
                                           ),
+                                        ],
+                                      ),
+                                    ),
                                   ),
-                                  const SizedBox(
-                                    height: 5,
+                                  SizedBox(
+                                    height: 5.h,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 15.0, top: 10),
+                                    padding: EdgeInsets.only(
+                                        left: 15.0.w, top: 10.h),
                                     child: Row(
                                       children: [
                                         Container(
-                                          height: 12,
-                                          width: 12,
+                                          height: 12.h,
+                                          width: 12.w,
                                           decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xffFFCD90)),
                                         ),
-                                        const SizedBox(
-                                          width: 10,
+                                        SizedBox(
+                                          width: 10.w,
                                         ),
                                         Container(
-                                          height: 12,
-                                          width: 12,
+                                          height: 12.h,
+                                          width: 12.w,
                                           decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: AppColor.red),
                                         ),
-                                        const SizedBox(
-                                          width: 10,
+                                        SizedBox(
+                                          width: 10.w,
                                         ),
                                         Container(
-                                          height: 12,
-                                          width: 12,
+                                          height: 12.h,
+                                          width: 12.w,
                                           decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xff313131)),
                                         ),
-                                        const SizedBox(
-                                          width: 10,
+                                        SizedBox(
+                                          width: 10.w,
                                         ),
                                         const Icon(
                                           Icons.add_circle_outline,
@@ -251,14 +265,13 @@ class ProductGallery extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 10,
+                                  SizedBox(
+                                    height: 10.h,
                                   ),
-                                  const Align(
+                                  Align(
                                     alignment: Alignment.topLeft,
                                     child: Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 15.0),
+                                      padding: EdgeInsets.only(left: 15.0.w),
                                       child: Text('100 SAR'),
                                     ),
                                   )

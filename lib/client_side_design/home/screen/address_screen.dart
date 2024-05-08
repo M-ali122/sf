@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
-import 'package:sf_app/client_side_design/home/pages/payment_screen.dart';
+import 'package:sf_app/client_side_design/home/screen/payment_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -20,7 +20,7 @@ class AddressScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Address',
-          style: theme.textTheme.headline1,
+          style: theme.textTheme.displayLarge,
         ),
       ),
       body: Padding(
@@ -47,7 +47,7 @@ class AddressScreen extends StatelessWidget {
                     Row(
                       children: [
                         Text('Home',
-                         style: theme.textTheme.button,
+                         style: theme.textTheme.labelLarge,
                         ),
                         SizedBox(width: 20,),
                         Container(
@@ -73,7 +73,7 @@ class AddressScreen extends StatelessWidget {
                     Divider(color: AppColor.GreyScale200,),
                     7.height,
                     Text('Full Name',
-                         style: theme.textTheme.button,
+                         style: theme.textTheme.labelLarge,
                     ),
                     7.height,
                     Text(

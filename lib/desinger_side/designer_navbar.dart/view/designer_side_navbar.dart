@@ -36,25 +36,14 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                   topLeft: Radius.circular(30.r),
                 ),
                 color: AppColor.white,
-<<<<<<< HEAD:lib/desinger_side/navbar/view/designer_side_navbar.dart
-                boxShadow: [
-                  const BoxShadow(
+                boxShadow: const [
+                  BoxShadow(
                       blurRadius: 60,
                       offset: Offset(0, 4),
                       spreadRadius: 0,
                       color: Color.fromRGBO(4, 6, 15, 0.04))
                 ]),
-=======
-                boxShadow: const [
-                  BoxShadow(
-                    blurRadius: 60,
-                    offset: Offset(0, 4),
-                    spreadRadius: 0,
-                    color: Color.fromRGBO(4, 6, 15, 0.04)
-                  )
-                ]
-                ),
->>>>>>> a7a1f2f6439e2dc672403bf19f4578d7e82e0637:lib/desinger_side/designer_navbar.dart/view/designer_side_navbar.dart
+// >>>>>>> a7a1f2f6439e2dc672403bf19f4578d7e82e0637:lib/desinger_side/designer_navbar.dart/view/designer_side_navbar.dart
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -81,13 +70,12 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                         ),
                         Text(
                           "Dashboard",
-                            style: GoogleFonts.mulish(
+                          style: GoogleFonts.mulish(
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w700,
                               color: controller.currentIndex.value == 0
                                   ? const Color.fromRGBO(71, 87, 54, 1)
-                                  : const Color.fromRGBO(158, 158, 158, 1)
-                                  ),
+                                  : const Color.fromRGBO(158, 158, 158, 1)),
                         )
                       ],
                     ),
@@ -121,8 +109,7 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                               fontWeight: FontWeight.w700,
                               color: controller.currentIndex.value == 1
                                   ? const Color.fromRGBO(71, 87, 54, 1)
-                                  : const Color.fromRGBO(158, 158, 158, 1)
-                                  ),
+                                  : const Color.fromRGBO(158, 158, 158, 1)),
                         )
                       ],
                     ),
@@ -151,7 +138,6 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                           height: 40.h,
                           width: 40.w,
                           decoration: const ShapeDecoration(
-<<<<<<< HEAD:lib/desinger_side/navbar/view/designer_side_navbar.dart
                               shape: CircleBorder(),
                               color: AppColor.primaryColor500,
                               shadows: [
@@ -162,25 +148,10 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                                   color: Color.fromRGBO(79, 99, 61, 0.2),
                                 ),
                               ]),
-                          child: const Center(
+                          child: Center(
                             child: Icon(
                               Icons.add,
                               color: AppColor.white,
-=======
-                            shape: CircleBorder(),
-                            color: AppColor.primaryColor500,
-                             shadows: [
-                              BoxShadow(
-                                blurRadius: 24,
-                                offset: Offset(4,8),
-                                spreadRadius: 0,
-                                color: Color.fromRGBO(79, 99, 61, 0.2),
-                              ),
-                             ]
-                            ),
-                            child: Center(
-                              child: Icon(Icons.add,color: AppColor.white,),
->>>>>>> a7a1f2f6439e2dc672403bf19f4578d7e82e0637:lib/desinger_side/designer_navbar.dart/view/designer_side_navbar.dart
                             ),
                           ),
                         ),

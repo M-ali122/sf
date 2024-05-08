@@ -80,7 +80,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: "Message...",
-                        hintStyle: theme.textTheme.subtitle2!.copyWith(
+                        hintStyle: theme.textTheme.titleSmall!.copyWith(
                             fontWeight: FontWeight.w400,
                             color: Color.fromRGBO(158, 158, 158, 1)),
                         filled: true,

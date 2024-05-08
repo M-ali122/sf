@@ -26,7 +26,7 @@ class TermAndCondition extends GetWidget<RegistrationController> {
             children: [
               Text(
                 'Terms and Conditions',
-                style: theme.textTheme.headline4,
+                style: theme.textTheme.headlineMedium,
               ),
               24.height,
               Row(
@@ -52,7 +52,7 @@ class TermAndCondition extends GetWidget<RegistrationController> {
                   ),
                   RichText(
                     text: TextSpan(
-                      style: theme.textTheme.headline2,
+                      style: theme.textTheme.displayMedium,
                       children: <TextSpan>[
                         TextSpan(
                             text: 'I agree to the ',
@@ -100,7 +100,7 @@ class TermAndCondition extends GetWidget<RegistrationController> {
                   ),
                   RichText(
                     text: TextSpan(
-                      style: theme.textTheme.headline2,
+                      style: theme.textTheme.displayMedium,
                       children: const <TextSpan>[
                         TextSpan(
                             text:

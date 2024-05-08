@@ -40,17 +40,17 @@ class _CommunityTabsState extends State<CommunityTabs>
         child: Column(
           children: [
             // give the tab bar a height [can change hheight to preferred height]
-            const SizedBox(
-              height: 25,
+             SizedBox(
+              height: 25.h,
             ),
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 24.0),
+                  padding: EdgeInsets.only(left: 24.0.w),
                   child: Image.asset('assets/s_f_logo.png'),
                 ),
-                const SizedBox(
-                  width: 20,
+                 SizedBox(
+                  width: 20.w,
                 ),
                 Text(
                   'Community',
@@ -60,19 +60,18 @@ class _CommunityTabsState extends State<CommunityTabs>
                   width: 130.w,
                 ),
                Padding(
-                 padding: const EdgeInsets.only(left: 24.0),
+                 padding:  EdgeInsets.only(left: 24.0.w),
                  child: SvgPicture.string(Appicons.searchBorder),
                )
               ],
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: 30.h,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              padding: EdgeInsets.symmetric(horizontal: 24.0.w),
               child: Container(
-                height: 52,
-                
+                height: 52.h,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(243, 243, 243, 1),
                   borderRadius: BorderRadius.circular(
@@ -80,7 +79,7 @@ class _CommunityTabsState extends State<CommunityTabs>
                   ),
                 ),
                 child: TabBar(
-                  labelStyle: theme.textTheme.bodyText1,
+                  labelStyle: theme.textTheme.bodyLarge,
                   dividerColor: Colors.transparent,
                   indicatorSize: TabBarIndicatorSize.tab,
                   controller: _tabController,
@@ -98,7 +97,7 @@ class _CommunityTabsState extends State<CommunityTabs>
                       ),
                   labelColor: Colors.white,
                   // unselectedLabelColor: Colors.black,
-                  unselectedLabelStyle: theme.textTheme.bodyText1,
+                  unselectedLabelStyle: theme.textTheme.bodyLarge,
                   
                   tabs: const [
                     Tab(

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/helper/view/custome_textfield.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/create_product_controller.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/controller/create_product_controller.dart';
 
 class CreaeteProductScreenform extends GetWidget<CreateProductController>{
 const CreaeteProductScreenform({super.key});
@@ -15,13 +15,13 @@ return Scaffold(
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             children: [
-               SizedBox(
-                  height: 30.h,
-                ),
-                const Text(
+              //  SizedBox(
+              //     height: 30.h,
+              //   ),
+                Text(
                 'Fill the information below',
                 style: TextStyle(
-                    fontSize: 38,
+                    fontSize: 38.sp,
                     fontWeight: FontWeight.w700,
                     color: Color.fromRGBO(33, 33, 33, 1)),
               ),
@@ -57,7 +57,7 @@ return Scaffold(
                onTap: () async {
                     controller.createProduct();
                   }),
-              SizedBox(height: 10,)
+              SizedBox(height: 10.h,)
           
             ],
           ),

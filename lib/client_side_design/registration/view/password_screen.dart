@@ -28,7 +28,7 @@ class PasswordScreen extends GetWidget<RegistrationController> {
               children: [
                 Text(
                   'Create your account password',
-                  style: theme.textTheme.headline4,
+                  style: theme.textTheme.headlineMedium,
                 ),
                 SizedBox(
                   height: 30.h,
@@ -94,7 +94,7 @@ class PasswordScreen extends GetWidget<RegistrationController> {
                         Obx(
                           () => Text(
                             passwordStrengthController.passwordStrength.value,
-                            style: theme.textTheme.subtitle2,
+                            style: theme.textTheme.titleSmall,
                           ),
                         ),
                       ],

@@ -54,7 +54,7 @@ class UploadProfileView extends GetWidget<RegistrationController> {
                     ),
                     Text(
                       'Profile Picture',
-                      style: theme.textTheme.subtitle1,
+                      style: theme.textTheme.titleMedium,
                     ),
                   ],
                 ),
@@ -83,7 +83,7 @@ class UploadProfileView extends GetWidget<RegistrationController> {
                     ),
                     Text(
                       'Brand Logo',
-                      style: theme.textTheme.subtitle1,
+                      style: theme.textTheme.titleMedium,
                     ),
                   ],
                 ),
@@ -102,7 +102,7 @@ class UploadProfileView extends GetWidget<RegistrationController> {
                   ),
                   Text(
                     ' or ',
-                    style: theme.textTheme.bodyText2,
+                    style: theme.textTheme.bodyMedium,
                   ),
                   const SizedBox(
                     width: 10,
@@ -133,7 +133,7 @@ class UploadProfileView extends GetWidget<RegistrationController> {
                       ),
                       Text(
                         'Open Camera & Take Photo',
-                        style: theme.textTheme.bodyText1,
+                        style: theme.textTheme.bodyLarge,
                       ),
                     ],
                   ),

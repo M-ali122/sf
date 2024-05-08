@@ -199,7 +199,7 @@ class _OrderTabbarScreenState extends State<OrderTabbarScreen>
                   ),
                 ),
                 child: TabBar(
-                  labelStyle: theme.textTheme.bodyText1,
+                  labelStyle: theme.textTheme.bodyLarge,
                   dividerColor: Colors.transparent,
                   indicatorSize: TabBarIndicatorSize.tab,
                   controller: _tabController,

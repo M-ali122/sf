@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/helper/view/custome_textfield.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20post/view/create_post_two.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_post/view/create_post_two.dart';
 
 class CreatePost extends StatefulWidget {
   const CreatePost({super.key});

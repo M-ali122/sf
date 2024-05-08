@@ -20,21 +20,22 @@ class ProfileView extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
+              10.height,
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: EdgeInsets.symmetric(horizontal: 24.0.w),
                 child: Row(
                   children: [
                     Image.asset(
                       'assets/s_f_logo.png',
-                      width: 32,
-                      height: 36.35,
+                      width: 32.w,
+                      height: 36.35.h,
                     ),
-                    const SizedBox(
-                      width: 20,
+                    SizedBox(
+                      width: 20.w,
                     ),
                     Text(
                       'Profile',
-                      style: theme.textTheme.headline1,
+                      style: theme.textTheme.displayLarge,
                     ),
                     const Spacer(),
                     GestureDetector(
@@ -50,33 +51,34 @@ class ProfileView extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
+               SizedBox(
+                height: 20.h,
               ),
               Stack(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 16.0, horizontal: 20),
+                    padding: EdgeInsets.symmetric(
+                        vertical: 16.0.h, horizontal: 20.w),
                     child: SvgPicture.string(Svgs.dotedBackgorund),
                   ),
                   Positioned(
-                      top: 120,
-                      left: 0,
-                      right: 0,
+                      top: 120.h,
+                      left: 0.w,
+                      right: 0.w,
                       child: Center(
                           child: Column(
                         children: [
+                          20.height,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
                                 "Full Name",
-                                style: theme.textTheme.headline6,
+                                style: theme.textTheme.titleLarge,
                               ),
-                              const SizedBox(
-                                width: 8,
+                              SizedBox(
+                                width: 8.w,
                               ),
                               SvgPicture.string(Appicons.varificationIcon),
                             ],
@@ -84,15 +86,15 @@ class ProfileView extends StatelessWidget {
                           Text("Your Bio",
                               style: GoogleFonts.mulish(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 14,
+                                fontSize: 14.sp,
                               ))
                         ],
                       ))),
-                  const Positioned(
-                    top: 20,
-                    right: 0,
-                    left: 0,
-                    child: Center(
+                  Positioned(
+                    top: 20.h,
+                    right: 0.w,
+                    left: 0.w,
+                    child: const Center(
                       child: CircleAvatar(
                         radius: 45,
                         backgroundImage: AssetImage('assets/profile.png'),
@@ -101,15 +103,13 @@ class ProfileView extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 15,
+              SizedBox(
+                height: 15.h,
               ),
               DoubledOutlineButton(
                 titleOne: 'Saves',
                 titleTwo: 'Following',
-                onIndexChanged: (value) async{
-                  
-                },
+                onIndexChanged: (value) async {},
               ),
               10.height,
               FeedCard(),

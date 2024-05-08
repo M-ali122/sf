@@ -22,7 +22,7 @@ class WelcomeView extends StatelessWidget {
             fit: BoxFit.contain,
           ),
           Positioned(
-            top: 100,
+            top: 100.h,
             child: Image.asset('assets/Rectangle.png'),
           ),
           //Logo badge
@@ -39,9 +39,9 @@ class WelcomeView extends StatelessWidget {
                 child: Image.asset('assets/s1.png'),
               )),
           Positioned(
-            top: 70,
+            top: 70.h,
             child: Container(
-              height: 500,
+              height: 500.h,
               width: Get.width,
               decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -69,10 +69,10 @@ class WelcomeView extends StatelessWidget {
                 children: [
                   Text(
                     'Connecting Threads, Creating Style.',
-                    style: theme.textTheme.headline4,
+                    style: theme.textTheme.headlineMedium,
                   ),
-                  const SizedBox(
-                    height: 15,
+                   SizedBox(
+                    height: 15.h,
                   ),
                   Text(
                     'Welcome to the only fashion app you will ever need!',

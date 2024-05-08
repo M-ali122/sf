@@ -60,7 +60,7 @@ class TrackingOrder extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10),
                       child: Text(
                         'Delivery Status',
-                        style: theme.textTheme.headline6,
+                        style: theme.textTheme.bodyLarge,
                         ),
                     ), 
                       const Padding(
@@ -85,7 +85,7 @@ class TrackingOrder extends StatelessWidget {
                             ),
                           trailing: Text(
                             '08:40 AM',
-                            style: theme.textTheme.caption,
+                            style: theme.textTheme.bodySmall,
                             ),
                           subtitle: const Text('address name'),
                         ),
@@ -108,7 +108,7 @@ class TrackingOrder extends StatelessWidget {
                             ),
                           trailing: Text(
                             '08:40 AM',
-                            style: theme.textTheme.caption,
+                            style: theme.textTheme.bodySmall,
                             ),
                           subtitle: const Text('address name'),
                                              ),
@@ -131,7 +131,7 @@ class TrackingOrder extends StatelessWidget {
                             ),
                           trailing: Text(
                             '08:40 AM',
-                            style: theme.textTheme.caption,
+                            style: theme.textTheme.bodySmall,
                             ),
                           subtitle: const Text('address name'),
                                              ),
@@ -150,7 +150,7 @@ class TrackingOrder extends StatelessWidget {
                             ),
                           trailing: Text(
                             '08:40 AM',
-                            style: theme.textTheme.caption,
+                            style: theme.textTheme.bodySmall,
                             ),
                           subtitle: const Text('address name'),
                                              ),

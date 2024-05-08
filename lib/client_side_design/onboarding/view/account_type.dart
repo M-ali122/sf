@@ -47,7 +47,7 @@ class _AccountTypeState extends State<AccountType> {
               24.height,
               Text(
                 'How will you use the app as?',
-                style: theme.textTheme.headline4!.copyWith(
+                style: theme.textTheme.headlineMedium!.copyWith(
                   fontSize: 32.sp,
                   fontWeight: FontWeight.w700,
                 ),
@@ -93,12 +93,12 @@ class _AccountTypeState extends State<AccountType> {
                         16.height,
                         Text(
                           'Designer',
-                          style: theme.textTheme.headline6,
+                          style: theme.textTheme.titleLarge,
                         ),
                         8.height,
                         Text(
                           'Showcase your creativity and connect with fashion enthusiasts around the world.',
-                          style: theme.textTheme.caption!.copyWith(
+                          style: theme.textTheme.bodySmall!.copyWith(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -144,12 +144,12 @@ class _AccountTypeState extends State<AccountType> {
                         16.height,
                         Text(
                           'Customer',
-                          style: theme.textTheme.headline6,
+                          style: theme.textTheme.titleLarge,
                         ),
                         8.height,
                         Text(
                           'Discovering the latest trends, supporting independent designers, and expressing your unique style',
-                          style: theme.textTheme.caption!.copyWith(
+                          style: theme.textTheme.bodySmall!.copyWith(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
                           ),

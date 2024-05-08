@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/desinger_side/ui/dashboard/view/product_gallery.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
@@ -45,14 +46,14 @@ class DesignerDashbaord extends StatelessWidget {
                   'Welcome Back',
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w500,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       color: AppColor.white),
                 ),
                 subtitle: Text(
                   'User Name',
                   style: GoogleFonts.mulish(
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       color: AppColor.white),
                 ),
                 trailing: Row(
@@ -100,7 +101,7 @@ class DesignerDashbaord extends StatelessWidget {
                       'Total Sales',
                       style: GoogleFonts.mulish(
                           fontWeight: FontWeight.w500,
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           color: AppColor.white),
                     ),
                   ],
@@ -125,14 +126,14 @@ class DesignerDashbaord extends StatelessWidget {
                         '1D',
                         style: GoogleFonts.mulish(
                             fontWeight: FontWeight.w600,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: AppColor.white),
                       ),
                       Text(
                         '1W',
                         style: GoogleFonts.mulish(
                             fontWeight: FontWeight.w600,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: AppColor.white),
                       ),
                       Container(
@@ -146,7 +147,7 @@ class DesignerDashbaord extends StatelessWidget {
                             '1M',
                             style: GoogleFonts.mulish(
                                 fontWeight: FontWeight.w600,
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 color: AppColor.white),
                           ),
                         ),
@@ -155,14 +156,14 @@ class DesignerDashbaord extends StatelessWidget {
                         '3M',
                         style: GoogleFonts.mulish(
                             fontWeight: FontWeight.w600,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: AppColor.white),
                       ),
                       Text(
                         '1Y',
                         style: GoogleFonts.mulish(
                             fontWeight: FontWeight.w600,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: AppColor.white),
                       ),
                     ],
@@ -195,7 +196,7 @@ class DesignerDashbaord extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 24.0),
                       child: Text(
                         'Month Stats',
-                        style: theme.textTheme.headline6,
+                        style: theme.textTheme.titleLarge,
                       ),
                     ),
                     SizedBox(
@@ -224,7 +225,7 @@ class DesignerDashbaord extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               style: GoogleFonts.mulish(
-                                fontSize: 14.0,
+                                fontSize: 14.0.sp,
                                 fontWeight: FontWeight.w600,
                                 color: AppColor.Dark1,
                               ),
@@ -235,7 +236,7 @@ class DesignerDashbaord extends StatelessWidget {
                                     text: '\n04',
                                     style: GoogleFonts.mulish(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 18,
+                                        fontSize: 18.sp,
                                         height: 1.6)),
                               ],
                             ),
@@ -264,7 +265,7 @@ class DesignerDashbaord extends StatelessWidget {
                             child: RichText(
                               text: TextSpan(
                                 style: GoogleFonts.mulish(
-                                  fontSize: 14.0,
+                                  fontSize: 14.0.sp,
                                   fontWeight: FontWeight.w600,
                                   color: AppColor.Dark1,
                                 ),
@@ -275,7 +276,7 @@ class DesignerDashbaord extends StatelessWidget {
                                       text: '\n220',
                                       style: GoogleFonts.mulish(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: 18,
+                                          fontSize: 18.sp,
                                           height: 1.6)),
                                 ],
                               ),
@@ -310,7 +311,7 @@ class DesignerDashbaord extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               style: GoogleFonts.mulish(
-                                fontSize: 14.0,
+                                fontSize: 14.0.sp,
                                 fontWeight: FontWeight.w600,
                                 color: AppColor.Dark1,
                               ),
@@ -321,7 +322,7 @@ class DesignerDashbaord extends StatelessWidget {
                                     text: '\n550',
                                     style: GoogleFonts.mulish(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 18,
+                                        fontSize: 18.sp,
                                         height: 1.6)),
                               ],
                             ),
@@ -346,7 +347,7 @@ class DesignerDashbaord extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               style: GoogleFonts.mulish(
-                                fontSize: 14.0,
+                                fontSize: 14.0.sp,
                                 fontWeight: FontWeight.w600,
                                 color: AppColor.Dark1,
                               ),
@@ -357,7 +358,7 @@ class DesignerDashbaord extends StatelessWidget {
                                     text: '\n60',
                                     style: GoogleFonts.mulish(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 18,
+                                        fontSize: 18.sp,
                                         height: 1.6)),
                               ],
                             ),
@@ -401,11 +402,11 @@ class DesignerDashbaord extends StatelessWidget {
                               child: Stack(
                                 children: [
                                   Positioned(
-                                    top: 33,
-                                    left: 20,
+                                    top: 33.h,
+                                    left: 20.w,
                                     child: Container(
-                                      height: 102,
-                                      width: 120,
+                                      height: 102.h,
+                                      width: 120.w,
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(16),
@@ -416,8 +417,8 @@ class DesignerDashbaord extends StatelessWidget {
                                     ),
                                   ),
                                   Positioned(
-                                    left: 150,
-                                    top: 20,
+                                    left: 150.w,
+                                    top: 20.h,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -426,19 +427,19 @@ class DesignerDashbaord extends StatelessWidget {
                                           'Product Name',
                                           style: theme.textTheme.labelLarge,
                                         ),
-                                        const SizedBox(
-                                          height: 10,
+                                        SizedBox(
+                                          height: 10.h,
                                         ),
                                         Text(
                                           'Client Name',
                                           style: theme.textTheme.bodySmall,
                                         ),
-                                        const SizedBox(
-                                          height: 10,
+                                         SizedBox(
+                                          height: 10.h,
                                         ),
                                         Container(
-                                          height: 25,
-                                          width: 60,
+                                          height: 25.h,
+                                          width: 60.w,
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(6),
@@ -449,14 +450,14 @@ class DesignerDashbaord extends StatelessWidget {
                                               'Pending',
                                               style: GoogleFonts.mulish(
                                                   fontWeight: FontWeight.w600,
-                                                  fontSize: 10,
+                                                  fontSize: 10.sp,
                                                   color: AppColor
                                                       .secondaryColor500),
                                             ),
                                           ),
                                         ),
-                                        const SizedBox(
-                                          height: 10,
+                                         SizedBox(
+                                          height: 10.h,
                                         ),
                                         Row(
                                           children: [
@@ -464,31 +465,19 @@ class DesignerDashbaord extends StatelessWidget {
                                               '44.00 SAR',
                                               style: theme.textTheme.bodyLarge,
                                             ),
-                                            const SizedBox(
-                                              width: 10,
+                                          SizedBox(
+                                              width: 10.w,
                                             ),
                                             AppButton(
                                               title: 'See detail',
                                               onTap: () {
                                                 // Get.toNamed(OrderTabbarScreen.route);
                                               },
-                                              width: 100,
-                                              height: 32,
+                                              width: 100.w,
+                                              height: 32.h,
                                             )
                                           ],
                                         ),
-<<<<<<< HEAD:lib/desinger_side/pages/dashboard/view/dashboard_screen.dart
-=======
-                                        const SizedBox(width: 10,),
-                                        AppButton(
-                                          title: 'See detail',
-                                           onTap: (){
-                                            Get.toNamed(OrderTabbarScreen.route);
-                                           },
-                                           width: 100,
-                                           height: 32,
-                                           )
->>>>>>> a7a1f2f6439e2dc672403bf19f4578d7e82e0637:lib/desinger_side/ui/dashboard/view/dashboard_screen.dart
                                       ],
                                     ),
                                   ),
@@ -518,11 +507,11 @@ class DesignerDashbaord extends StatelessWidget {
                               child: Stack(
                                 children: [
                                   Positioned(
-                                    top: 33,
-                                    left: 20,
+                                    top: 33.h,
+                                    left: 20.w,
                                     child: Container(
-                                      height: 102,
-                                      width: 120,
+                                      height: 102.h,
+                                      width: 120.w,
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(16),
@@ -533,8 +522,8 @@ class DesignerDashbaord extends StatelessWidget {
                                     ),
                                   ),
                                   Positioned(
-                                    left: 150,
-                                    top: 20,
+                                    left: 150.w,
+                                    top: 20.h,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -543,19 +532,19 @@ class DesignerDashbaord extends StatelessWidget {
                                           'Product Name',
                                           style: theme.textTheme.labelLarge,
                                         ),
-                                        const SizedBox(
-                                          height: 10,
+                                        SizedBox(
+                                          height: 10.h,
                                         ),
                                         Text(
                                           'Client Name',
                                           style: theme.textTheme.bodySmall,
                                         ),
-                                        const SizedBox(
-                                          height: 10,
+                                         SizedBox(
+                                          height: 10.h,
                                         ),
                                         Container(
-                                          height: 25,
-                                          width: 60,
+                                          height: 25.h,
+                                          width: 60.w,
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(6),
@@ -566,14 +555,14 @@ class DesignerDashbaord extends StatelessWidget {
                                               'Pending',
                                               style: GoogleFonts.mulish(
                                                   fontWeight: FontWeight.w600,
-                                                  fontSize: 10,
+                                                  fontSize: 10.sp,
                                                   color: AppColor
                                                       .secondaryColor500),
                                             ),
                                           ),
                                         ),
-                                        const SizedBox(
-                                          height: 10,
+                                        SizedBox(
+                                          height: 10.h,
                                         ),
                                         Row(
                                           children: [
@@ -581,31 +570,28 @@ class DesignerDashbaord extends StatelessWidget {
                                               '44.00 SAR',
                                               style: theme.textTheme.bodyLarge,
                                             ),
-                                            const SizedBox(
-                                              width: 10,
+                                             SizedBox(
+                                              width: 10.h,
                                             ),
                                             AppButton(
                                               title: 'See detail',
                                               onTap: () {
                                                 // Get.toNamed(OrderTabbarScreen.route);
                                               },
-                                              width: 100,
-                                              height: 32,
+                                              width: 100.w,
+                                              height: 32.h,
                                             )
                                           ],
                                         ),
-<<<<<<< HEAD:lib/desinger_side/pages/dashboard/view/dashboard_screen.dart
-=======
-                                        const SizedBox(width: 10,),
+                                         SizedBox(width: 10.h),
                                         AppButton(
                                           title: 'See detail',
                                            onTap: (){
                                             Get.toNamed(OrderTabbarScreen.route);
                                            },
-                                           width: 100,
-                                           height: 32,
+                                           width: 100.w,
+                                           height: 32.h,
                                            )
->>>>>>> a7a1f2f6439e2dc672403bf19f4578d7e82e0637:lib/desinger_side/ui/dashboard/view/dashboard_screen.dart
                                       ],
                                     ),
                                   ),

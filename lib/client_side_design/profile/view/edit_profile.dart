@@ -37,7 +37,7 @@ class EditProfile extends StatelessWidget {
                     ),
                     Text(
                       'Edit profile',
-                      style: theme.textTheme.headline1,
+                      style: theme.textTheme.displayLarge,
                     ),
                   ],
                 ),

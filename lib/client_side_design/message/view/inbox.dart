@@ -118,7 +118,7 @@ var listdate = [
                           padding: EdgeInsets.symmetric(vertical: 10.0),
                           child: Text(
                             "Today",
-                            style: theme.textTheme.subtitle2,
+                            style: theme.textTheme.titleSmall,
                           ),
                         ),
                         Flexible(
