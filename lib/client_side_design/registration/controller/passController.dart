@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sf_app/helper/component/apis/api_callback.dart';
+import 'package:sf_app/helper/component/apis/apis.dart';
+
+
 class PasswordStrengthController extends GetxController {
   final TextEditingController passwordController = TextEditingController();
   final RxString passwordStrength = ''.obs;
-
+@override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    // creataPassword();
+  }
   void checkPasswordStrength(String value) {
     if (value.length < 6) {
       passwordStrength.value = 'Weak';
@@ -35,5 +44,25 @@ class PasswordStrengthController extends GetxController {
       }
 
   }
+
+
+
+void createPassword(value) async {
+  try {
+      
+      Map<String, dynamic> postData = {
+      'password': value,
+    };
+
+    final req = await AuthRequest().post(api: Apis().createPassword, data: postData);
+
+    print('pass request is $postData');
+   
+  } catch (e) {
+    print('Error occurred while creating password: $e');
+  }
+}
+
+
 
 }
