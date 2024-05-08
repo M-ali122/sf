@@ -24,6 +24,9 @@ dependencies:
   image_picker: ^1.0.7
   smooth_page_indicator: ^1.1.0
   syncfusion_flutter_sliders: ^25.1.42
+  dio: ^5.4.3+1
+  connectivity_plus: ^6.0.3
+  file_picker: ^8.0.3
 
 dev_dependencies:
   flutter_test:
