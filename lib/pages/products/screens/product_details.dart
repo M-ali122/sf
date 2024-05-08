@@ -5,14 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sf_app/client_side_design/home/dp/popup_list.dart';
+import 'package:sf_app/client_side_design/home/pages/cart_screen.dart';
+import 'package:sf_app/client_side_design/message/view/inbox.dart';
+import 'package:sf_app/client_side_design/onboarding/controller/onboarding_controller.dart';
+import 'package:sf_app/client_side_design/products/controllers/product_controller.dart';
+import 'package:sf_app/client_side_design/products/views/product_desc_view.dart';
+import 'package:sf_app/client_side_design/review/view/review.dart';
 import 'package:sf_app/helper/view/doubled_outline_button.dart';
-import 'package:sf_app/pages/home/dp/popup_list.dart';
-import 'package:sf_app/pages/home/pages/cart_screen.dart';
-import 'package:sf_app/pages/message/view/inbox.dart';
-import 'package:sf_app/pages/onboarding/controller/onboarding_controller.dart';
-import 'package:sf_app/pages/products/controllers/product_controller.dart';
-import 'package:sf_app/pages/products/views/product_desc_view.dart';
-import 'package:sf_app/pages/review/view/review.dart';
+
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 

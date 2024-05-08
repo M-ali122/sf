@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sf_app/desinger_side/pages/dashboard/view/dashboard_screen.dart';
+import 'package:sf_app/client_side_design/Add%20flows/view/Create%20post/view/blank_index.dart';
+import 'package:sf_app/client_side_design/Add%20flows/view/Create%20post/view/create_post.dart';
+import 'package:sf_app/client_side_design/community/view/community_tab_screen.dart';
+import 'package:sf_app/client_side_design/order/view/order_screen.dart';
+import 'package:sf_app/desinger_side/ui/dashboard/view/dashboard_screen.dart';
 import 'package:sf_app/pages/Events/add_event.dart';
 import 'package:sf_app/pages/Events/dialogbox.dart';
-import 'package:sf_app/pages/Events/screens/create_post.dart';
-import 'package:sf_app/pages/community/view/commint_screen.dart';
-import 'package:sf_app/pages/community/view/community_tab_screen.dart';
-import 'package:sf_app/pages/order/view/order_screen.dart';
 
 class DesignerBottomNavBarController extends GetxController {
   RxInt currentIndex = 0.obs;
@@ -20,7 +20,7 @@ class DesignerBottomNavBarController extends GetxController {
   final List<Widget> pages = [
     const DesignerDashbaord(),
     OrderView(),
-    CreatePostScreen(),
+    BlankIndex(),
     const CommunityTabs(),
     const Center(
       child: Text('profile'),

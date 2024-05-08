@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:sf_app/pages/registration/controller/registration_controller.dart';
+import 'package:sf_app/client_side_design/registration/controller/registration_controller.dart';
 
 class CustomeProgressBar extends GetWidget<RegistrationController> {
   final Color? bg, fg;
