@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/client_side_design/registration/controller/upload_profileimage_controller.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/client_side_design/registration/controller/registration_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
@@ -17,7 +18,7 @@ class UploadProfileView extends GetWidget<RegistrationController> {
   @override
   Widget build(BuildContext context) {
     final theme = Get.theme;
-
+    // ProfileImageUploadController controller = Get.put(ProfileImageUploadController());
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -67,7 +68,7 @@ class UploadProfileView extends GetWidget<RegistrationController> {
                 width: Get.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
-                    color: Color.fromRGBO(250, 250, 250, 1),
+                    color: const Color.fromRGBO(250, 250, 250, 1),
                     border: Border.all(
                         width: 3,
                         color: const Color.fromRGBO(201, 179, 114, 1))),

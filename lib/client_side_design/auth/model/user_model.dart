@@ -4,75 +4,48 @@
 
 import 'dart:convert';
 
-UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
+List<UserModel> userModelFromJson(String str) =>
+    List<UserModel>.from(json.decode(str).map((x) => UserModel.fromJson(x)));
 
-String userModelToJson(UserModel data) => json.encode(data.toJson());
+String userModelToJson(List<UserModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class UserModel {
-  dynamic id;
-  dynamic name;
+  dynamic fullname;
+  dynamic username;
   dynamic email;
   dynamic phone;
-  dynamic image;
-  dynamic referralLink;
-  dynamic referralId;
-  dynamic level;
-  dynamic emailVerifiedAt;
-  dynamic otp;
-  dynamic deviceToken;
-  dynamic createdAt;
-  dynamic updatedAt, password;
   dynamic token;
+  dynamic id;
+  dynamic bio;
 
   UserModel({
-    this.id,
-    this.name,
+    this.fullname,
+    this.username,
     this.email,
     this.phone,
-    this.image,
-    this.referralLink,
-    this.referralId,
-    this.level,
-    this.emailVerifiedAt,
-    this.otp,
-    this.deviceToken,
-    this.createdAt,
-    this.updatedAt,
     this.token,
+    this.id,
+    this.bio,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        id: json["id"],
-        name: json["name"],
+        fullname: json["fullname"],
+        username: json["username"],
         email: json["email"],
         phone: json["phone"],
-        image: json["image"],
-        referralLink: json["referral_link"],
-        referralId: json["referral_id"],
-        level: json["level"],
-        emailVerifiedAt: json["email_verified_at"],
-        otp: json["otp"],
-        deviceToken: json["device_token"],
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
         token: json["token"],
+        id: json["id"],
+        bio: json["bio"],
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
+        "fullname": fullname,
+        "username": username,
         "email": email,
         "phone": phone,
-        "image": image,
-        "referral_link": referralLink,
-        "referral_id": referralId,
-        "level": level,
-        'password': password,
-        "email_verified_at": emailVerifiedAt,
-        "otp": otp,
-        "device_token": deviceToken,
-        "created_at": createdAt.toString(),
-        "updated_at": updatedAt.toString(),
         "token": token,
+        "id": id,
+        "bio": bio,
       };
 }

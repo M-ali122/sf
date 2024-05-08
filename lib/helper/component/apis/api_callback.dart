@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart' as g;
 import 'package:get/get_utils/get_utils.dart';
 import 'package:sf_app/client_side_design/auth/controllers/login_controller.dart';
+import 'package:sf_app/client_side_design/registration/controller/registration_controller.dart';
 
 
 
@@ -226,7 +227,8 @@ class AuthRequest {
   }
 
   _setRequestOptions({bool multipart = false}) {
-    UserController authController = g.Get.find();
+    // UserController authController = g.Get.find();
+    RegistrationController authController = g.Get.put(RegistrationController());
     authController.loadUser();
     if (kDebugMode) {
       print(authController.user.value.token);

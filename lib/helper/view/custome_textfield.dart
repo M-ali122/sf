@@ -10,10 +10,11 @@ class CustomTextField extends StatelessWidget {
   final Color? bg;
   final Color? fg;
   final String? heading;
-  final controller;
+  final TextEditingController? controller;
   final onChange;
   final Color? filledColor;
   final bool? isVisible;
+  // final  TextEditingController? controllers;
   const CustomTextField({
     super.key,
     this.icon,

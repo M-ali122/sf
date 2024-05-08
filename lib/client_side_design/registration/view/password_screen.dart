@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:password_strength_checker/password_strength_checker.dart';
 import 'package:sf_app/helper/view/custome_textfield.dart';
 import 'package:sf_app/client_side_design/registration/controller/registration_controller.dart';
+import 'package:sf_app/helper/view/loading.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 
 import '../../../helper/view/Appbutton.dart';
@@ -37,8 +39,10 @@ class PasswordScreen extends GetWidget<RegistrationController> {
                 /// otp custom Container
                 CustomTextField(
                   heading: 'Password',
+                  controller: passwordStrengthController.passwordController,
                   title: 'Password',
                   isVisible: true,
+                  
                   onChange: (val) {
                     passwordStrengthController.checkPasswordStrength(val);
                   },
@@ -104,7 +108,8 @@ class PasswordScreen extends GetWidget<RegistrationController> {
                 const SizedBox(
                   height: 20,
                 ),
-                const CustomTextField(
+             CustomTextField(
+                  controller: passwordStrengthController.confirmPasswordController,
                   heading: 'Confirm your password',
                   title: 'Write Here',
                 ),
@@ -113,10 +118,12 @@ class PasswordScreen extends GetWidget<RegistrationController> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(24),
-        child: AppButton(
+        child: controller.isBusy.isTrue? Loading(): AppButton(
           title: 'Continue',
           onTap: () async {
-            controller.setupPassword();
+            print(passwordStrengthController.passwordController);
+            print(passwordStrengthController.confirmPasswordController);
+            controller.setupPassword(passwordStrengthController.passwordController.text);
           },
         ),
       ),

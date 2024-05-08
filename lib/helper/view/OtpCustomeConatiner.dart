@@ -8,8 +8,9 @@ import '../../resources/color/app_color.dart';
 
 class OtpCustomConatiner extends StatelessWidget {
   final Color? color;
+   final Function(String)? onChange;
 
-  const OtpCustomConatiner({super.key, this.color});
+  const OtpCustomConatiner({super.key, this.color,this.onChange});
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,10 @@ class OtpCustomConatiner extends StatelessWidget {
             bottom: 0,
             top: 0,
             child: OtpTextField(
+              onCodeChanged: onChange,
+              // onSubmit: onChange,
+              
+                // onChanged: onChange,
               fillColor: AppColor.GreyScale50,
               filled: true,
               margin: const EdgeInsets.all(8),

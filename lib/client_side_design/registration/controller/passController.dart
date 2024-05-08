@@ -3,7 +3,11 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 class PasswordStrengthController extends GetxController {
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
   final RxString passwordStrength = ''.obs;
+
+
+  
 
   void checkPasswordStrength(String value) {
     if (value.length < 6) {

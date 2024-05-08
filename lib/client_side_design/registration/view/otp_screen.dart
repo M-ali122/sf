@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/client_side_design/registration/controller/registration_controller.dart';
+import 'package:sf_app/helper/view/loading.dart';
 
 import '../../../helper/view/Appbutton.dart';
 import '../../../helper/view/OtpCustomeConatiner.dart';
@@ -41,7 +42,14 @@ class OtpScreen extends GetWidget<RegistrationController> {
             24.height,
 
             /// otp custom Container
-            const OtpCustomConatiner(),
+           OtpCustomConatiner(
+
+              onChange: (v)async{
+                
+                controller.otp = v;
+                
+              },
+            ),
             const SizedBox(
               height: 30,
             ),
@@ -78,12 +86,17 @@ class OtpScreen extends GetWidget<RegistrationController> {
                 ),
               ),
             )),
+
+            TextButton(onPressed: (){
+  print('kjbkjkj');
+           print(controller.otp);
+            }, child: Text("check button"))
           ],
         ),
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(24),
-        child: AppButton(
+        child: controller.isBusy.isTrue? Loading(): AppButton(
           title: 'Continue',
           onTap: () async {
             controller.verifyOtp();
