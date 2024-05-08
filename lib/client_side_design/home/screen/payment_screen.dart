@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
-import 'package:sf_app/client_side_design/home/pages/payment_confrim.dart';
+import 'package:sf_app/client_side_design/home/screen/payment_confrim.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -26,7 +26,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       appBar: AppBar(
         title: Text(
           'Payment',
-          style: theme.textTheme.headline1,
+          style: theme.textTheme.displayLarge,
         ),
       ),
       body: Padding(

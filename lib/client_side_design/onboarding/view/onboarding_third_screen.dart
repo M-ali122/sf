@@ -95,7 +95,7 @@ class OnboardThird extends StatelessWidget {
                 children: [
                   Text(
                     isDesigner ? 'Enjoy the community ': 'Shop with Confidence',
-                    style: theme.textTheme.headline4,
+                    style: theme.textTheme.headlineMedium,
                   ),
                   8.height,
                   Text(

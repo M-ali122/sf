@@ -96,7 +96,7 @@ class OnboardSecond extends StatelessWidget {
                 children: [
                   Text(
                     isDesigner ? 'Manage Your Orders':'Build Your Wishlist',
-                    style: theme.textTheme.headline4,
+                    style: theme.textTheme.headlineMedium,
                   ),
                   8.height,
                   Text(

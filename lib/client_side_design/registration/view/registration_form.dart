@@ -11,68 +11,64 @@ class RegistrationForm extends GetWidget<RegistrationController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: ListView(
-            children: [
-              SizedBox(height: 30.h),
-              const Text(
-                'Fill the information below',
-                style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
-                    color: Color.fromRGBO(33, 33, 33, 1)),
-              ),
-              SizedBox(
-                height: 30.h,
-              ),
-              const CustomTextField(
-                heading: 'Full Name',
-                title: 'Write Here',
-              ),
-              SizedBox(
-                height: 45.h,
-              ),
-              const CustomTextField(
-                heading: 'User Name',
-                title: 'Write Here',
-              ),
-              SizedBox(
-                height: 45.h,
-              ),
-              const CustomTextField(
-                heading: 'Email',
-                title: 'Write Here',
-              ),
-              SizedBox(
-                height: 45.h,
-              ),
-              const CustomTextField(
-                heading: 'Phone Number',
-                title: 'Write Here',
-              ),
-              SizedBox(
-                height: 45.h,
-              ),
-              const CustomTextField(
-                heading: 'Bio (optional)',
-                title: 'Write Here',
-              ),
-              SizedBox(
-                height: 50.h,
-              ),
-              AppButton(
-                  title: 'Continue',
-                  onTap: () async {
-                    controller.onRegister();
-                  }),
-              const SizedBox(
-                height: 30,
-              ),
-            ],
+      body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        children: [
+          SizedBox(height: 30.h),
+          const Text(
+            'Fill the information below',
+            style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.w700,
+                color: Color.fromRGBO(33, 33, 33, 1)),
           ),
-        ),
+          SizedBox(
+            height: 30.h,
+          ),
+          const CustomTextField(
+            heading: 'Full Name',
+            title: 'Write Here',
+          ),
+          SizedBox(
+            height: 45.h,
+          ),
+          const CustomTextField(
+            heading: 'User Name',
+            title: 'Write Here',
+          ),
+          SizedBox(
+            height: 45.h,
+          ),
+          const CustomTextField(
+            heading: 'Email',
+            title: 'Write Here',
+          ),
+          SizedBox(
+            height: 45.h,
+          ),
+          const CustomTextField(
+            heading: 'Phone Number',
+            title: 'Write Here',
+          ),
+          SizedBox(
+            height: 45.h,
+          ),
+          const CustomTextField(
+            heading: 'Bio (optional)',
+            title: 'Write Here',
+          ),
+          SizedBox(
+            height: 50.h,
+          ),
+          AppButton(
+              title: 'Continue',
+              onTap: () async {
+                controller.onRegister();
+              }),
+          const SizedBox(
+            height: 30,
+          ),
+        ],
       ),
     );
   }

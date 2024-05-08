@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/client_side_design/home/controller/home_controller.dart';
-import 'package:sf_app/client_side_design/home/pages/address_screen.dart';
+import 'package:sf_app/client_side_design/home/screen/address_screen.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -36,7 +36,7 @@ class CartScreen extends StatelessWidget {
                     child: SvgPicture.string(Appicons.backIcon)),
                   SizedBox(width: 20.w,),
                   Text('Cart',
-                        style: theme.textTheme.headline1,),
+                        style: theme.textTheme.displayLarge,),
                 ],
               ),
             ),
@@ -213,7 +213,7 @@ class CartScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     '44.00 SAR',
-                                    style: theme.textTheme.bodyText1,
+                                    style: theme.textTheme.bodyLarge,
                                   ),
                                   const SizedBox(
                                     width: 3,

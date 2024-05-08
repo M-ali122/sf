@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/view/designer_custome_progress_bar.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/create_product_controller.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/controller/create_product_controller.dart';
 
 class CreateProduct extends StatefulWidget {
   const CreateProduct({super.key});
@@ -35,6 +36,12 @@ class _CreateProductState extends State<CreateProduct> {
       },
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: (){
+              Get.back();
+            }, 
+            icon: Icon(Icons.arrow_back)
+          ),
           title: AnimatedContainer(
             duration: const Duration(milliseconds: 900),
             curve: Curves.easeIn,
@@ -45,7 +52,7 @@ class _CreateProductState extends State<CreateProduct> {
         body: AnimatedContainer(
           duration: Duration(milliseconds: 900),
           curve: Curves.easeIn,
-          padding: EdgeInsets.only(top: 16),
+          padding: EdgeInsets.only(top: 16.h),
           child: Obx(() => controller.views[controller.currentSelectIndexView.value]),
         ),
       ),

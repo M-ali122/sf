@@ -73,7 +73,7 @@ class _NewArivalState extends State<NewArival> {
                                   const EdgeInsets.only(left: 15.0, top: 15),
                               child: Text(
                                 'Green Polo',
-                                style: theme.textTheme.button,
+                                style: theme.textTheme.labelLarge,
                               ),
                             ),
                             const SizedBox(
@@ -189,7 +189,7 @@ class _NewArivalState extends State<NewArival> {
                                   const EdgeInsets.only(left: 15.0, top: 15),
                               child: Text(
                                 'Round neck shirt',
-                                style: theme.textTheme.button,
+                                style: theme.textTheme.labelLarge,
                               ),
                             ),
                             const SizedBox(

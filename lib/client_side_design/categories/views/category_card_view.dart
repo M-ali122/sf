@@ -25,7 +25,7 @@ class CategoryCardView extends StatelessWidget {
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: const EdgeInsets.only(top: 5.0),
+              padding:  EdgeInsets.only(top: 5.0.w),
               child: Text(
                 category.category,
                 style: TextStyle(
@@ -41,7 +41,7 @@ class CategoryCardView extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(category.image),
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
           ),

@@ -32,7 +32,7 @@ class ProductView extends StatelessWidget {
       itemCount: ProductCartStaticData().productCart.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.only(top: 10.0),
+          padding:  EdgeInsets.only(top: 10.0.h),
           child: GestureDetector(
                       onTap: (){
                         _showDetailBottomSheet(context);
@@ -55,11 +55,11 @@ class ProductView extends StatelessWidget {
                         child: Stack(
                           children: [
                             Positioned(
-                              top: 33,
-                              left: 20,
+                              top: 33.h,
+                              left: 20.w,
                               child: Container(
-                                height: 102,
-                                width: 120,
+                                height: 102.h,
+                                width: 120.w,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
                                   color: AppColor.backGroundSilver
@@ -74,8 +74,8 @@ class ProductView extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              left: 150,
-                              top: 20,
+                              left: 150.w,
+                              top: 20.h,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -83,14 +83,14 @@ class ProductView extends StatelessWidget {
                                     'Product Name',
                                     style: theme.textTheme.labelLarge,
                                     ),
-                                    const SizedBox(height: 10 ,),
+                                     SizedBox(height: 10.h,),
                                   Text('Client Name',
                                    style: theme.textTheme.bodySmall,
                                   ),
-                                  const SizedBox(height: 10,),
+                                  SizedBox(height: 10.h),
                                     Container(
-                                      height: 25,
-                                      width: 80,
+                                      height: 25.h,
+                                      width: 80.w,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(6),
                                         color: orderStatusContainerColor[index]
@@ -100,13 +100,13 @@ class ProductView extends StatelessWidget {
                                           ProductCartStaticData().productCart[index].productStatus,
                                           style: GoogleFonts.mulish(
                                             fontWeight: FontWeight.w600,
-                                            fontSize: 10,
+                                            fontSize: 10.sp,
                                             color: itemStatusTypeColor[index]
                                           ),
                                           ),
                                       ),
                                     ),
-                                  const SizedBox(height: 10,),
+                                  SizedBox(height: 10.sp),
                                   Row(
                                     children: [
                                       Text('44.00 SAR',
@@ -118,8 +118,8 @@ class ProductView extends StatelessWidget {
                                          onTap: (){
                                           Get.toNamed(OrderTabbarScreen.route);
                                          },
-                                         width: 100,
-                                         height: 32,
+                                         width: 100.w,
+                                         height: 32.h,
                                          )
                                     ],
                                   ),

@@ -33,12 +33,12 @@ class _CategoryProductsState extends State<CategoryProducts> {
     final theme = Get.theme;
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: 24.0.w),
         child: ListView(
           shrinkWrap: true,
           children: [
-            const SizedBox(
-              height: 25,
+             SizedBox(
+              height: 25.h,
             ),
             Row(
               children: [
@@ -53,7 +53,7 @@ class _CategoryProductsState extends State<CategoryProducts> {
                 ),
                 Text(
                   category.category ?? 'Category Name',
-                  style: theme.textTheme.headline4,
+                  style: theme.textTheme.headlineMedium,
                 ),
               ],
             ),
@@ -159,7 +159,7 @@ class _CategoryProductsState extends State<CategoryProducts> {
                                 padding: const EdgeInsets.only(top: 15.0, left: 15),
                                 child: Text(
                                   'Green Polo',
-                                  style: theme.textTheme.button,
+                                  style: theme.textTheme.labelLarge,
                                 ),
                               ),
                             ),

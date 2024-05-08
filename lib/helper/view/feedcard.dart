@@ -1,11 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/resources/icon/icon.dart';
 
@@ -24,8 +22,8 @@ class FeedCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
       ),
       child: Container(
-        height: 395,
-        width: 380,
+        height: 395.h,
+        width: 380.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           color: AppColor.white,
@@ -39,15 +37,15 @@ class FeedCard extends StatelessWidget {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          padding:  EdgeInsets.symmetric(horizontal: 5.0.w),
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 10.0),
+                padding: EdgeInsets.only(top: 10.0.h),
                 child: ListTile(
                   leading: Container(
-                    height: 48,
-                    width: 48,
+                    height: 48.h,
+                    width: 48.w,
                     decoration: const ShapeDecoration(
                         shape: CircleBorder(),
                         image: DecorationImage(
@@ -55,69 +53,69 @@ class FeedCard extends StatelessWidget {
                             fit: BoxFit.cover)),
                   ),
                   title: Padding(
-                    padding: const EdgeInsets.only(left: 5.0),
+                    padding: EdgeInsets.only(left: 5.0.w),
                     child: Text(
                       'User Name',
-                      style: theme.textTheme.bodyText1,
+                      style: theme.textTheme.titleMedium,
                     ),
                   ),
                   subtitle: Padding(
-                    padding: const EdgeInsets.only(left: 5.0),
+                    padding: EdgeInsets.only(left: 5.0.w),
                     child: Text(
                       '3 Hours ago',
                       style: GoogleFonts.mulish(
-                          fontWeight: FontWeight.w400, fontSize: 14),
+                          fontWeight: FontWeight.w400, fontSize: 14.sp),
                     ),
                   ),
                   trailing: PopupMenuButton(
                     itemBuilder: (context) => [
-                      PopupMenuItem(
+                       PopupMenuItem(
                         value: 'option1',
                         child: Row(
                           children: [
                             // SvgPicture.string(Appicons.profileBorderplus),
                             SizedBox(
-                              width: 10,
+                              width: 10.w,
                             ),
-                            Text('Follow user'),
+                            const Text('Follow user'),
                           ],
                         ),
                       ),
                       PopupMenuItem(
+                        value: 'option1',
                         child: Row(
                           children: [
                             // SvgPicture.string(Appicons.bookmarkBorder),
                             SizedBox(
-                              width: 10,
+                              width: 10.w,
                             ),
                             Text('Save post'),
                           ],
                         ),
-                        value: 'option1',
                       ),
                       PopupMenuItem(
+                        value: 'option1',
                         child: Row(
                           children: [
                             // SvgPicture.string(Appicons.swapBorder),
                             SizedBox(
-                              width: 10,
+                              width: 10.w,
                             ),
                             Text('Share post'),
                           ],
                         ),
-                        value: 'option1',
                       ),
                       PopupMenuItem(
-                        child: Row(
+                        value: 'option1',
+                        child:  Row(
                           children: [
                             // SvgPicture.string(Appicons.dangertriangleBorder),
                             SizedBox(
-                              width: 10,
+                              width: 10.w,
                             ),
                             Text('Flag post'),
                           ],
                         ),
-                        value: 'option1',
                       ),
                     ],
                     onSelected: (value) {
@@ -128,11 +126,11 @@ class FeedCard extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 90.0, left: 20, right: 20),
+                padding: EdgeInsets.only(top: 90.0.h, left: 20.w, right: 20.w),
                 child: RichText(
                   text: TextSpan(
                     children: <TextSpan>[
@@ -141,14 +139,14 @@ class FeedCard extends StatelessWidget {
                             'Great event with the fashion store today it was really a pleasure ',
                         style: GoogleFonts.mulish(
                             fontWeight: FontWeight.w500,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: AppColor.Dark1),
                       ),
                       TextSpan(
                         text: 'View More ',
                         style: GoogleFonts.mulish(
                             fontWeight: FontWeight.w700,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: const Color.fromRGBO(201, 179, 114, 1)),
                       ),
                     ],
@@ -156,10 +154,10 @@ class FeedCard extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 150.0, left: 15, right: 15),
+                padding: EdgeInsets.only(top: 150.0.h, left: 15.w, right: 15.w),
                 child: Container(
-                  height: 196,
-                  width: 348,
+                  height: 196.h,
+                  width: 348.w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: const Color.fromRGBO(108, 143, 89, 0.05),
@@ -169,10 +167,10 @@ class FeedCard extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 335.0, right: 15, left: 15),
+                padding: EdgeInsets.only(top: 335.0.h, right: 15.w, left: 15.w),
                 child: Container(
-                  height: 48,
-                  width: 348,
+                  height: 48.h,
+                  width: 348.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                   ),

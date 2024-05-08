@@ -25,7 +25,7 @@ class OtpScreen extends GetWidget<RegistrationController> {
           children: [
             Text(
               'Email verification needed',
-              style: theme.textTheme.headline4,
+              style: theme.textTheme.headlineMedium,
             ),
             const SizedBox(
               height: 10,
@@ -33,7 +33,7 @@ class OtpScreen extends GetWidget<RegistrationController> {
             Text(
               'We have sent the OTP verification code to '
               'your email. Check your email and enter the code below.',
-              style: theme.textTheme.bodyText2!.copyWith(
+              style: theme.textTheme.bodyMedium!.copyWith(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w400,
                   color: const Color(0xff424242)),
@@ -59,7 +59,7 @@ class OtpScreen extends GetWidget<RegistrationController> {
                 child: Obx(
               () => RichText(
                 text: TextSpan(
-                  style: theme.textTheme.overline,
+                  style: theme.textTheme.labelSmall,
                   children: [
                     TextSpan(
                         text: "You can resend code in ",

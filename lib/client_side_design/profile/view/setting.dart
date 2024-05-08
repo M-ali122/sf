@@ -38,7 +38,7 @@ class Settings extends StatelessWidget {
                   ),
                   Text(
                     'Settings',
-                    style: theme.textTheme.headline1,
+                    style: theme.textTheme.displayLarge,
                   ),
                 ],
               ),
@@ -99,7 +99,7 @@ class Settings extends StatelessWidget {
                             icon: SvgPicture.string(Svgs.redGroup),
                             title: Text(
                               'Delete your account',
-                              style: theme.textTheme.headline1,
+                              style: theme.textTheme.displayLarge,
                             ),
                             actions: [
                               const Text(
@@ -153,7 +153,7 @@ class Settings extends StatelessWidget {
                                   child: Center(
                                       child: Text(
                                     "Delete",
-                                    style: theme.textTheme.bodyText1,
+                                    style: theme.textTheme.bodyLarge,
                                   )),
                                 ),
                               ),
@@ -197,7 +197,7 @@ class Settings extends StatelessWidget {
           ),
           Text(
             "Logout",
-            style: theme.textTheme.headline1!
+            style: theme.textTheme.displayLarge!
                 .copyWith(color: const Color.fromRGBO(247, 85, 85, 1)),
           ),
           SizedBox(
@@ -212,7 +212,7 @@ class Settings extends StatelessWidget {
           ),
           Text(
             "Are you sure you want to log out?",
-            style: theme.textTheme.headline6!
+            style: theme.textTheme.titleLarge!
                 .copyWith(color: const Color(0xff424242)),
           ),
           SizedBox(
@@ -253,7 +253,7 @@ class Settings extends StatelessWidget {
                 child: Center(
                     child: Text(
                   "Yes, Logout",
-                  style: theme.textTheme.bodyText1,
+                  style: theme.textTheme.bodyLarge,
                 )),
               ),
               // AppButton(

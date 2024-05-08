@@ -3,42 +3,44 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/button_color_condition.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/create_product_controller.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/tapable_colors_circleavatar.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/controller/button_color_condition.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/controller/create_product_controller.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/controller/tapable_colors_circleavatar.dart';
 
-class ProductScreenTwo extends GetWidget<CreateProductController>{
- const ProductScreenTwo({super.key});
-Widget build(BuildContext context){
-  final ColorController colorController = Get.put(ColorController());
-  final ColorControllerButton colorControllerButton =
-      Get.put(ColorControllerButton());
+class ProductColorChiose extends GetWidget<CreateProductController> {
+  const ProductColorChiose({super.key});
+  @override
+  Widget build(BuildContext context) {
+    final ColorController colorController = Get.put(ColorController());
+    final ColorControllerButton colorControllerButton =
+        Get.put(ColorControllerButton());
 
-  return Scaffold(
-      body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        children: [
-        
-        const Row(
+    return Scaffold(
+      body:
+          ListView(padding: EdgeInsets.symmetric(horizontal: 24.w), children: [
+        // SizedBox(
+        //   height: 20.h,
+        // ),
+        Row(
           children: [
             Text(
               'Fill the information \nbelow',
               style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 30.sp,
                   fontWeight: FontWeight.w700,
-                  color: Color.fromRGBO(33, 33, 33, 1)),
+                  color: const Color.fromRGBO(33, 33, 33, 1)),
             ),
           ],
         ),
         20.height,
-         Row(
+        Row(
           children: [
             Text(
               'Product Color Options',
               style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
-                  color: Color.fromRGBO(33, 33, 33, 1)),
+                  color: const Color.fromRGBO(33, 33, 33, 1)),
             ),
           ],
         ),
@@ -47,55 +49,63 @@ Widget build(BuildContext context){
         //       height: 300.h,
         //       child: GridView.count(crossAxisCount: 6,crossAxisSpacing: 10.0,mainAxisSpacing: 10.0, children: colorController.colorWidgets,)
         //     ))
-            
+        10.height,
         GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: colorController.colorNames.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 6, mainAxisSpacing: 10.0),
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: (){
+              onTap: () {
                 colorController.checkColor(index);
               },
               child: Column(
                 children: [
-                  Obx(() => Container(
-                    height: 40.h,
-                    width: 40.w,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: colorController.colors[index],border: Border.all(width: .2)),
-              
-              child: colorController.selectedColour == index ? const Icon(Icons.check,color: Colors.white,) : null ,
-              
-                  ),),
+                  Obx(
+                    () => Container(
+                      height: 40.h,
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: colorController.colors[index],
+                          border: Border.all(width: .2)),
+                      child: colorController.selectedColour == index
+                          ? const Icon(
+                              Icons.check,
+                              color: Colors.white,
+                            )
+                          : null,
+                    ),
+                  ),
                   Text(
                     colorController.colorNames[index],
-                    style: const TextStyle(fontSize: 13),
+                    style: TextStyle(fontSize: 12.sp),
                   )
                 ],
               ),
             );
           },
         ),
-            
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 15),
+
+         Padding(
+          padding: EdgeInsets.symmetric(vertical: 20.h),
           child: Row(
             children: [
               Text(
                 'Product Size Options',
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromRGBO(33, 33, 33, 1)),
+                    color: const Color.fromRGBO(33, 33, 33, 1)),
               ),
             ],
           ),
         ),
         GridView.builder(
           shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: colorControllerButton.boxNames.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 6, mainAxisSpacing: 5.0),
@@ -111,23 +121,26 @@ Widget build(BuildContext context){
                         height: 40.h,
                         width: 40.w,
                         decoration: BoxDecoration(
-                          color: colorControllerButton.selectedSize ==
-                                  index
+                          color: colorControllerButton.selectedSize == index
                               ? const Color(0xffC9B372)
                               : const Color(0xffF3F3F3),
-                          borderRadius: BorderRadius.circular(50),
+                          shape: BoxShape.circle,
                         ),
                         child: Center(
                             child: Text(
-                                colorControllerButton.boxNames[index],style: colorControllerButton.selectedSize == index ? const TextStyle(color: Colors.white) :const TextStyle(color: Colors.black),)),
+                          colorControllerButton.boxNames[index],
+                          style: colorControllerButton.selectedSize == index
+                              ? const TextStyle(color: Colors.white)
+                              : const TextStyle(color: Colors.black),
+                        )),
                       ),
                     ],
                   ),
                 ));
           },
         ),
-       40.height,
-            
+        40.height,
+
         // SizedBox(
         //     height: 280.h,
         //     child: GridView.builder(
@@ -166,14 +179,16 @@ Widget build(BuildContext context){
         //             }),
         //           );
         //         })),
-            
+
         AppButton(
             title: 'Continue',
-            onTap: ()async {
-             controller.productScreenTwo();
+            onTap: () async {
+              controller.productScreenTwo();
             }),
-            const SizedBox(height: 10,)
+        const SizedBox(
+          height: 10,
+        )
       ]),
     );
-}
+  }
 }

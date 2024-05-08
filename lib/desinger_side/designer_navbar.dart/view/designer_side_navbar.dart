@@ -9,8 +9,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/client_side_design/Add%20flows/view/Create%20event/view/create_event.dart';
 import 'package:sf_app/client_side_design/Add%20flows/view/Create%20event/view/create_eventt.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20post/view/create_post.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/view/create_product.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_post/view/create_post.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/screen/create_product.dart';
 import 'package:sf_app/desinger_side/designer_navbar.dart/controller/nabbar_controller.dart';
 import 'package:sf_app/client_side_design/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
@@ -234,7 +234,7 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                                   color: Color.fromRGBO(79, 99, 61, 0.2),
                                 ),
                               ]),
-                          child: const Center(
+                          child: Center(
                             child: Icon(
                               Icons.add,
                               color: AppColor.white,

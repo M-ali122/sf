@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/create_product_controller.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/controller/create_product_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
 import 'package:sf_app/resources/icon/svgs.dart';
 
@@ -18,13 +18,12 @@ class UploadProductImage extends GetWidget<CreateProductController> {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         children: [
-          
-          const Row(
+           Row(
             children: [
               Text(
-                "Upload your product's \npictures ( Max 12 )",
+                'Upload your product \npictures ( Max 12 )',
                 style: TextStyle(
-                    fontSize: 32,
+                    fontSize: 35.sp,
                     fontWeight: FontWeight.w700,
                     color: Color.fromRGBO(33, 33, 33, 1)),
               ),
@@ -117,7 +116,7 @@ class UploadProductImage extends GetWidget<CreateProductController> {
               ),
             ],
           ),
-          const SizedBox(height: 50,),
+          30.height,
           AppButton(
             title: 'Create Product',
             onTap: () {
@@ -129,10 +128,10 @@ class UploadProductImage extends GetWidget<CreateProductController> {
                         borderRadius: BorderRadius.circular(40.0),
                       ),
                       // backgroundColor: Color.fromRGBO(r, g, b, opacity),
-                      icon: Image.asset('assets/greenGroup.png'),
+                      icon: SvgPicture.string(Svgs.redGroup),
                       title: Text(
                         'Product created',
-                        style: theme.textTheme.headline1,
+                        style: theme.textTheme.displayLarge,
                       ),
                       actions: [
                          Text(
@@ -142,30 +141,28 @@ class UploadProductImage extends GetWidget<CreateProductController> {
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
                             fontFamily: "Mulish",
-                            color: const Color.fromRGBO(33, 33, 33, 1),
+                            color: Color.fromRGBO(33, 33, 33, 1),
                           ),
                         ),
-                        const SizedBox(
-                          height: 25,
+                         SizedBox(
+                          height: 25.h,
                         ),
-                        Center(
-                          child: InkWell(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: Container(
-                              width: 250.w,
-                              height: 58.h,
-                              decoration: BoxDecoration(
-                                gradient: AppColor.mainGradient,
-                                borderRadius: BorderRadius.circular(100.r),
-                              ),
-                              child: const Center(
-                                  child:  Text(
-                                "Back",
-                                style: TextStyle(color: Colors.white),
-                              )),
+                        InkWell(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: Container(
+                            width: 250.w,
+                            height: 58.h,
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(243, 243, 243, 1),
+                              borderRadius: BorderRadius.circular(100.r),
                             ),
+                            child: Center(
+                                child: Text(
+                              "Back",
+                              style: theme.textTheme.bodyLarge,
+                            )),
                           ),
                         ),
                       ],
@@ -176,7 +173,9 @@ class UploadProductImage extends GetWidget<CreateProductController> {
                   // controller.uploadProductImage();
             },
           ),
-          
+           SizedBox(
+            height: 10.h,
+          ),
         ],
       ),
     );

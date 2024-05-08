@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sf_app/client_side_design/home/dp/popup_list.dart';
-import 'package:sf_app/client_side_design/home/pages/cart_screen.dart';
+import 'package:sf_app/client_side_design/home/screen/cart_screen.dart';
 import 'package:sf_app/client_side_design/message/view/inbox.dart';
 import 'package:sf_app/client_side_design/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/client_side_design/products/controllers/product_controller.dart';

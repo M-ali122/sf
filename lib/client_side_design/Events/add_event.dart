@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sf_app/pages/Events/dialogbox.dart';
 
 class AddEventDialogue extends StatefulWidget {
   const AddEventDialogue({super.key});

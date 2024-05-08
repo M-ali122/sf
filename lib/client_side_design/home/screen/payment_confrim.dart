@@ -20,7 +20,7 @@ class PaymentConfrimScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Confirmation',
-          style: theme.textTheme.headline1,
+          style: theme.textTheme.displayLarge,
         ),
       ),
       body: ListView(
@@ -188,7 +188,7 @@ class PaymentConfrimScreen extends StatelessWidget {
                           children: [
                             Text(
                               '44.00 SAR',
-                              style: theme.textTheme.bodyText1,
+                              style: theme.textTheme.bodyLarge,
                             ),
                             const SizedBox(
                               width: 3,
@@ -229,7 +229,7 @@ class PaymentConfrimScreen extends StatelessWidget {
                       children: [
                         Text(
                           'Home',
-                          style: theme.textTheme.button,
+                          style: theme.textTheme.labelLarge,
                         ),
                         SizedBox(
                           width: 20,
@@ -259,7 +259,7 @@ class PaymentConfrimScreen extends StatelessWidget {
                     7.height,
                     Text(
                       'Full Name',
-                      style: theme.textTheme.button,
+                      style: theme.textTheme.labelLarge,
                     ),
                     7.height,
                     Text(
@@ -350,7 +350,7 @@ class PaymentConfrimScreen extends StatelessWidget {
                     ListTile(
                       contentPadding: EdgeInsets.only(right: 20),
                       leading: SvgPicture.string(Appicons.paperBorder),
-                      title: Text('Review Summary',style: theme.textTheme.headline6,),
+                      title: Text('Review Summary',style: theme.textTheme.titleLarge,),
                     ),
                     Divider(),
                     ListTile(
@@ -502,7 +502,7 @@ class PaymentConfrimScreen extends StatelessWidget {
                             icon: SvgPicture.string(Svgs.paymentsuccessiloglogo),
                             title: Text(
                               'Payment successful ',
-                              style: theme.textTheme.headline1,
+                              style: theme.textTheme.displayLarge,
                             ),
                             actions: [
                               const Text(

@@ -35,42 +35,42 @@ class MainTheme {
         textTheme:
             Typography.englishLike2018.apply(fontSizeFactor: 1.sp).copyWith(
                   // ignore: deprecated_member_use
-                  headline1: GoogleFonts.mulish(
+                  displayLarge: GoogleFonts.mulish(
                       fontSize: 24.sp, fontWeight: FontWeight.w700),
-                  headline2: GoogleFonts.urbanist(
+                  displayMedium: GoogleFonts.urbanist(
                       fontSize: 18.sp, fontWeight: FontWeight.w600),
-                  headline3:
+                  displaySmall:
                       TextStyle(fontSize: 48.sp, fontWeight: FontWeight.w700),
-                  headline4: GoogleFonts.mulish(
+                  headlineMedium: GoogleFonts.mulish(
                       fontSize: 30.sp,
                       fontWeight: FontWeight.w700,
                       color: Colors.black),
-                  headline5: GoogleFonts.mulish(
+                  headlineSmall: GoogleFonts.mulish(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
                   ),
-                  headline6: GoogleFonts.mulish(
+                  titleLarge: GoogleFonts.mulish(
                       fontSize: 20.sp, fontWeight: FontWeight.w700),
-                  subtitle1: GoogleFonts.mulish(
+                  titleMedium: GoogleFonts.mulish(
                     fontSize: 16.sp,
                     color: AppColor.GreyScale500,
                     fontWeight: FontWeight.w500,
                   ),
-                  subtitle2: GoogleFonts.mulish(
+                  titleSmall: GoogleFonts.mulish(
                       fontSize: 14.sp, fontWeight: FontWeight.w600),
                   // bodySmall:GoogleFonts.mulish(fontSize: 14, fontWeight: FontWeight.w500) ,
-                  bodyText1: GoogleFonts.mulish(
+                  bodyLarge: GoogleFonts.mulish(
                       fontSize: 16.sp, fontWeight: FontWeight.w700),
-                  bodyText2: GoogleFonts.mulish(
+                  bodyMedium: GoogleFonts.mulish(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColor.GreyScale700),
-                  button: GoogleFonts.mulish(
+                  labelLarge: GoogleFonts.mulish(
                       fontSize: 18.sp, fontWeight: FontWeight.w700),
-                  caption: GoogleFonts.mulish(
+                  bodySmall: GoogleFonts.mulish(
                       fontSize: 12.sp, fontWeight: FontWeight.w400),
                   // overline: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                  overline: GoogleFonts.mulish(
+                  labelSmall: GoogleFonts.mulish(
                       fontSize: 18.sp, fontWeight: FontWeight.w500),
 
 

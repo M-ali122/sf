@@ -47,7 +47,7 @@ class Explore_Trending extends StatelessWidget {
                         decoration: TextDecoration.underline,
                         decorationStyle: TextDecorationStyle.solid,
                         decorationThickness: 2,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w700)),
               )),
           //Image
@@ -101,7 +101,7 @@ class Explore_Trending extends StatelessWidget {
                 children: [
                   Text(
                     isDesigner ? 'Create Your Products': 'Explore Trending Styles',
-                    style: theme.textTheme.headline4,
+                    style: theme.textTheme.headlineMedium,
                   ),
                   8.height,
                   Text(

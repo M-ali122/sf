@@ -23,7 +23,8 @@ dependencies:
   regexpattern: ^2.6.0
   image_picker: ^1.0.7
   smooth_page_indicator: ^1.1.0
-  font_awesome_flutter: ^10.7.0
+  font_awesome_flutter: 10.7.0
+  syncfusion_flutter_sliders: ^25.1.42
 
 dev_dependencies:
   flutter_test:

@@ -155,7 +155,7 @@ class DesignerProfile extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(designerData.userName, style: theme.textTheme.headline6),
+                      Text(designerData.userName, style: theme.textTheme.titleLarge),
                       10.height,
                       Text('My bio is my bio',
                           style: GoogleFonts.mulish(
@@ -441,7 +441,7 @@ class DesignerProfile extends StatelessWidget {
                                                 left: 5.0),
                                             child: Text(
                                               'User Name',
-                                              style: theme.textTheme.bodyText1,
+                                              style: theme.textTheme.bodyLarge,
                                             ),
                                           ),
                                           subtitle: Padding(

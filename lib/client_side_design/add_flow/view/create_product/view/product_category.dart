@@ -1,41 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/controller/create_product_controller.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/controller/slider_controller.dart';
+import 'package:sf_app/helper/extensions/spacings.dart';
 import 'package:sf_app/helper/view/Appbutton.dart';
 import 'package:sf_app/helper/view/product_category_tabs.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/create_product_controller.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/controller/slider_controller.dart';
-import 'package:sf_app/client_side_design/Add%20flows/view/Create%20product/view/screen_four.dart';
 
-class ScreenThree extends GetWidget<CreateProductController>{
+class ScreenThree extends GetWidget<CreateProductController> {
   Widget build(BuildContext context) {
     final SliderController sliderController = Get.put(SliderController());
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         children: [
-          
-          const Row(
+          Row(
             children: [
               Text(
                 'Fill the information \nbelow',
                 style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 30.sp,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromRGBO(33, 33, 33, 1)),
+                    color: const Color.fromRGBO(33, 33, 33, 1)),
               ),
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 20.h),
             child: Row(
               children: [
                 Text(
                   'Product Price',
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(33, 33, 33, 1)),
+                      color: const Color.fromRGBO(33, 33, 33, 1)),
                 ),
               ],
             ),
@@ -54,23 +53,23 @@ class ScreenThree extends GetWidget<CreateProductController>{
                     onChanged: (value) {
                       sliderController.updateSliderValue(value);
                     },
-                    activeColor: const Color(
-                        0xffC9B372), // Set the slider active color
+                    activeColor:
+                        const Color(0xffC9B372), // Set the slider active color
                   ),
                 )
               ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 20.h),
             child: Row(
               children: [
                 Text(
                   'Product Category',
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(33, 33, 33, 1)),
+                      color: const Color.fromRGBO(33, 33, 33, 1)),
                 ),
               ],
             ),
@@ -84,16 +83,16 @@ class ScreenThree extends GetWidget<CreateProductController>{
             titleSix: 'Lifestyle',
             onIndexChanged: (val) {},
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 20.h),
             child: Row(
               children: [
                 Text(
                   'Product sub Category',
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(33, 33, 33, 1)),
+                      color: const Color.fromRGBO(33, 33, 33, 1)),
                 ),
               ],
             ),
@@ -104,15 +103,15 @@ class ScreenThree extends GetWidget<CreateProductController>{
               titleThree: 'Underwear',
               titleFour: 'Jacket',
               onIndexChanged: (val) {}),
-
-              SizedBox(height: 50.h,),
-          
+          40.height,
           AppButton(
               title: 'Continue',
-              onTap: () async{
+              onTap: () async {
                 controller.screenThree();
               }),
-          
+          SizedBox(
+            height: 10.h,
+          ),
         ],
       ),
     );

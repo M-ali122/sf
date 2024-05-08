@@ -42,7 +42,7 @@ class WomenCategroies extends StatelessWidget {
                   ),
                   Text(
                     'women',
-                    style: theme.textTheme.headline4,
+                    style: theme.textTheme.headlineMedium,
                   ),
                 ],
               ),
@@ -213,7 +213,7 @@ class WomenCategroies extends StatelessWidget {
                                 padding: const EdgeInsets.only(top: 15.0, left: 15),
                                 child: Text(
                                   'Green Polo',
-                                  style: theme.textTheme.button,
+                                  style: theme.textTheme.labelLarge,
                                 ),
                               ),
                             ),
