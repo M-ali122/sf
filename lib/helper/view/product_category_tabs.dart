@@ -217,6 +217,169 @@ class _ProductCategoryTabsState extends State<ProductCategoryTabs> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
+// <<<<<<< HEAD
+//         height: widget.tabHeight ?? 110.h, // Use provided tabHeight or default value
+//         decoration: BoxDecoration(
+//           borderRadius: BorderRadius.circular(24),
+//         ),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [Row(
+//           children: [
+//             GestureDetector(
+//               onTap: () {
+//                 setState(() {
+//                   _selectedIndex = 0;
+//                 });
+//                 widget.onIndexChanged(_selectedIndex);
+//               },
+//               child: Container(
+//                 width: widget.tabWidth ?? 72.w, // Use provided tabWidth or default value
+//                 height: widget.tabHeight ?? 42.h, // Use provided tabHeight or default value
+//                 decoration: BoxDecoration(
+//                   color: _selectedIndex == 0 ? Color(0xffC9B372) : Color(0xffF3F3F3),
+//                   borderRadius: BorderRadius.circular(24),
+//                 ),
+//                 child: Center(
+//                   child: Text(
+//                     widget.titleOne,
+//                     style: GoogleFonts.mulish(
+//                       fontWeight: FontWeight.w700,
+//                       fontSize: 16.sp,
+//                       color: _selectedIndex == 0
+//                           ? const Color.fromRGBO(255, 255, 255, 1)
+//                           : const Color.fromRGBO(33, 33, 33, 1),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//             SizedBox(width: 15.w),
+//             GestureDetector(
+//               onTap: () {
+//                 setState(() {
+//                   _selectedIndex = 1;
+//                 });
+//                 widget.onIndexChanged(_selectedIndex);
+//               },
+//               child: Container(
+//                 width: widget.tabWidth ?? 95.w,
+//                 height: widget.tabHeight ?? 42.h,
+//                 decoration: BoxDecoration(
+//                   color: _selectedIndex == 1 ? Color(0xffC9B372) : Color(0xffF3F3F3),
+//                   borderRadius: BorderRadius.circular(24),
+//                 ),
+//                 child: Center(
+//                   child: Text(
+//                     widget.titleTwo,
+//                     style: GoogleFonts.mulish(
+//                       fontWeight: FontWeight.w700,
+//                       fontSize: 16.sp,
+//                       color: _selectedIndex == 1
+//                           ? const Color.fromRGBO(255, 255, 255, 1)
+//                           : const Color.fromRGBO(33, 33, 33, 1),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//             SizedBox(width: 15.w),
+//             GestureDetector(
+//               onTap: () {
+//                 setState(() {
+//                   _selectedIndex = 2;
+//                 });
+//                 widget.onIndexChanged(_selectedIndex);
+//               },
+//               child: Container(
+//                 width: widget.tabWidth ?? 77.w,
+//                 height: widget.tabHeight ?? 42.h,
+//                 decoration: BoxDecoration(
+//                   color: _selectedIndex == 2 ? Color(0xffC9B372) : Color(0xffF3F3F3),
+//                   borderRadius: BorderRadius.circular(24),
+//                 ),
+//                 child: Center(
+//                   child: Text(
+//                     widget.titleThree,
+//                     style: GoogleFonts.mulish(
+//                       fontWeight: FontWeight.w700,
+//                       fontSize: 16.sp,
+//                       color: _selectedIndex == 2
+//                           ? const Color.fromRGBO(255, 255, 255, 1)
+//                           : const Color.fromRGBO(33, 33, 33, 1),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//             SizedBox(width: 15.w),
+//             GestureDetector(
+//               onTap: () {
+//                 setState(() {
+//                   _selectedIndex = 3;
+//                 });
+//                 widget.onIndexChanged(_selectedIndex);
+//               },
+//               child: Container(
+//                 width: widget.tabWidth ?? 69.w,
+//                 height: widget.tabHeight ?? 42.h,
+//                 decoration: BoxDecoration(
+//                   color: _selectedIndex == 3 ? Color(0xffC9B372) : Color(0xffF3F3F3),
+//                   borderRadius: BorderRadius.circular(24),
+//                 ),
+//                 child: Center(
+//                   child: Text(
+//                     widget.titleFour,
+//                     style: GoogleFonts.mulish(
+//                       fontWeight: FontWeight.w700,
+//                       fontSize: 16.sp,
+//                       color: _selectedIndex == 3
+//                           ? const Color.fromRGBO(255, 255, 255, 1)
+//                           : const Color.fromRGBO(33, 33, 33, 1),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+            
+            
+//           ],
+//         ),
+//         SizedBox(height: 20.h,),
+//         Row(
+          
+//           children: [
+//           Padding(
+//             padding: const EdgeInsets.only(right: 15),
+//             child: GestureDetector(
+//               onTap: () {
+//                   setState(() {
+//                     _selectedIndex = 4;
+//                   });
+//                   widget.onIndexChanged(_selectedIndex);
+//                 },
+//               child: Container(
+//                 width: widget.tabWidth ?? 80.w,
+//                 height: widget.tabHeight ?? 38.h,
+//                 decoration: BoxDecoration(
+//                   color: _selectedIndex == 4 ? Color(0xffC9B372) : Color(0xffF3F3F3),
+//                   borderRadius: BorderRadius.circular(24),
+//                 ),
+//                 child: Center(
+//                   child: Text(
+//                     widget.titleFive,
+//                     style: GoogleFonts.mulish(
+//                       fontWeight: FontWeight.w700,
+//                       fontSize: 16.sp,
+//                       color: _selectedIndex == 4
+//                           ? const Color.fromRGBO(255, 255, 255, 1)
+//                           : const Color.fromRGBO(33, 33, 33, 1),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+// =======
           height: widget.tabHeight ??
               110.h, // Use provided tabHeight or default value
           decoration: BoxDecoration(

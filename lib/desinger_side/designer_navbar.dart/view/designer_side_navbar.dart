@@ -1,10 +1,16 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sf_app/client_side_design/Add%20flows/view/Create%20event/view/create_event.dart';
+import 'package:sf_app/client_side_design/Add%20flows/view/Create%20event/view/create_eventt.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_post/view/create_post.dart';
+import 'package:sf_app/client_side_design/add_flow/view/create_product/screen/create_product.dart';
 import 'package:sf_app/desinger_side/designer_navbar.dart/controller/nabbar_controller.dart';
 import 'package:sf_app/client_side_design/onboarding/controller/onboarding_controller.dart';
 import 'package:sf_app/resources/color/app_color.dart';
@@ -43,7 +49,6 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                       spreadRadius: 0,
                       color: Color.fromRGBO(4, 6, 15, 0.04))
                 ]),
-// >>>>>>> a7a1f2f6439e2dc672403bf19f4578d7e82e0637:lib/desinger_side/designer_navbar.dart/view/designer_side_navbar.dart
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -118,6 +123,87 @@ class DesingerBottomnavBar extends GetWidget<DesignerBottomNavBarController> {
                 GestureDetector(
                   onTap: () {
                     controller.changePage(2);
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Dialog(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
+                                child: Padding(
+                                  padding: EdgeInsets.only(top: 540.h),
+                                  child: Center(
+                                    child: Container(
+                                      height: 200.h,
+                                      width: 200.w,
+                                      // color: Colors.white,
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/Union.png")),
+                                      ),
+                                      child: Center(
+                                        child: Column(
+                                          children: [
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            GestureDetector(
+                                              onTap: (){
+                                                Get.to(CreatePostScreen());
+                                              },
+                                              child: Text(
+                                                "Post",
+                                                style: TextStyle(
+                                                    fontSize: 20.sp,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Colors.black),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 10,
+                                            ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                Get.to(const CreateEventt());
+                                              },
+                                              child: Text(
+                                                "Event",
+                                                style: TextStyle(
+                                                    fontSize: 20.sp,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Colors.black),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 10,
+                                            ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                Get.to(CreateProduct());
+                                              },
+                                              child: Text(
+                                                "Product",
+                                                style: TextStyle(
+                                                    fontSize: 20.sp,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Colors.black),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
                   },
                   child: Container(
                     padding: const EdgeInsets.all(2.0),

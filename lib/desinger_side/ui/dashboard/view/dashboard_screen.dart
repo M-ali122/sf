@@ -78,7 +78,7 @@ class DesignerDashbaord extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 159.h,
+              top: 144.h,
               left: 24.w,
               child: SvgPicture.string(Svgs.divider),
             ),

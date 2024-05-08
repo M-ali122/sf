@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/auth/Login%20view/view/login_screen.dart';
 import 'package:sf_app/desinger_side/designer_navbar.dart/view/designer_side_navbar.dart';
 import 'package:sf_app/desinger_side/ui/dashboard/view/dashboard_screen.dart';
 import 'package:sf_app/desinger_side/ui/dashboard/view/product_gallery.dart';
@@ -31,7 +32,7 @@ class AppRoute {
 
     /// client screen routes
     RegistrationScreen.route: (p0) => const RegistrationScreen(),
-    LoginScreen.route: (p0) => const LoginScreen(),
+    LoginScreenn.route: (p0) => LoginScreenn(),
     OtpScreen.route: (p0) => const OtpScreen(),
     PasswordScreen.route: (p0) => const PasswordScreen(),
     UploadProfileView.route: (p0) => const UploadProfileView(),

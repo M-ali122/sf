@@ -31,7 +31,7 @@ class ColorController extends GetxController {
     'Red',
     'Pink',
     'Purple',
-    'DeepPur..',
+    'DeepPur',
     'Indigo',
     'Blue',
     'LightBl..',
@@ -41,7 +41,7 @@ class ColorController extends GetxController {
     'Yellow',
     'Amber',
     'Orange',
-    'Deep Pur..',
+    'Deep Ora',
     'Brown',
     'BlueGr..',
   ];

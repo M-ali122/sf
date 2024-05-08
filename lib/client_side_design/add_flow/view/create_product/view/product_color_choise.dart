@@ -9,6 +9,7 @@ import 'package:sf_app/client_side_design/add_flow/view/create_product/controlle
 
 class ProductColorChiose extends GetWidget<CreateProductController> {
   const ProductColorChiose({super.key});
+  @override
   Widget build(BuildContext context) {
     final ColorController colorController = Get.put(ColorController());
     final ColorControllerButton colorControllerButton =
@@ -43,6 +44,7 @@ class ProductColorChiose extends GetWidget<CreateProductController> {
             ),
           ],
         ),
+        SizedBox(height: 15.h,),
         // Obx(() => SizedBox(
         //       height: 300.h,
         //       child: GridView.count(crossAxisCount: 6,crossAxisSpacing: 10.0,mainAxisSpacing: 10.0, children: colorController.colorWidgets,)
