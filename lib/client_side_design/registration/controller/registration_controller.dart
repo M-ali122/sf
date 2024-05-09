@@ -1,13 +1,14 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sf_app/client_side_design/auth/model/user_model.dart';
 import 'package:sf_app/client_side_design/onboarding/view/account_type.dart';
 import 'package:sf_app/client_side_design/registration/dialogs/registration_progressD_dialog.dart';
-import 'package:sf_app/client_side_design/registration/view/terms_and_condition.dart';
 import 'package:sf_app/client_side_design/registration/view/otp_screen.dart';
 import 'package:sf_app/client_side_design/registration/view/password_screen.dart';
 import 'package:sf_app/client_side_design/registration/view/registration_form.dart';
+import 'package:sf_app/client_side_design/registration/view/terms_and_condition.dart';
 import 'package:sf_app/client_side_design/registration/view/uplaod_profile_screen.dart';
 import 'package:sf_app/helper/component/apis/api_callback.dart';
 import 'package:sf_app/helper/component/apis/apis.dart';
@@ -115,23 +116,44 @@ class RegistrationController extends GetxController {
     update();
   }
 
+  // onRegister() async {
+  //   toggle();
+
+  //   try {
+  //     var req = await AuthRequest()
+  //         .post(api: Apis().registered, data: user.value.toJson());
+  //     //Navigate to Email verification
+
+  //     // if (req != null && req.data != null) {
+  //     print("Access Token ${req!.data['access_token']}");
+
+  //     user.value.token = req.data['access_token'];
+
+  //     onChangeView(1);
+  //     // }
+  //   } catch (e) {
+  //     throw Exception(e);
+  //   } finally {
+  //     toggle();
+  //   }
+  // }
+ 
   onRegister() async {
     toggle();
-
     try {
       var req = await AuthRequest()
           .post(api: Apis().registered, data: user.value.toJson());
-      //Navigate to Email verification
 
-      // if (req != null && req.data != null) {
-      print("Access Token ${req!.data['access_token']}");
-
-      user.value.token = req.data['access_token'];
-
-      onChangeView(1);
-      // }
+      if (req != null && req.data != null) {
+        print("Access Token ${req.data['access_token']}");
+        user.value.token = req.data['access_token'];
+        onChangeView(1);
+      } else {
+        throw Exception("Authentication request failed or returned null data.");
+      }
     } catch (e) {
-      throw Exception(e);
+      print("Error during authentication: $e");
+      throw Exception("Error during authentication: $e");
     } finally {
       toggle();
     }

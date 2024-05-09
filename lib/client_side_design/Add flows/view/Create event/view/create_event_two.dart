@@ -55,7 +55,7 @@ class _CreateEventTWoState extends State<CreateEventTWo> {
                 ),
                 Text(
                   'Cover photo',
-                  style: theme.textTheme.subtitle1,
+                  style: theme.textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -75,7 +75,7 @@ class _CreateEventTWoState extends State<CreateEventTWo> {
                         icon: SvgPicture.string(Svgs.eventdailog),
                         title: Text(
                           'Event created',
-                          style: theme.textTheme.headline1,
+                          style: theme.textTheme.displayLarge,
                         ),
                         actions: [
                           const Text(

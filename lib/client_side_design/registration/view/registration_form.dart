@@ -71,7 +71,7 @@ class RegistrationForm extends GetWidget<RegistrationController> {
           SizedBox(
             height: 50.h,
           ),
-         controller.isBusy.isTrue ? Loading() : AppButton(
+         controller.isBusy.isTrue ? const Center(child: Loading()) : AppButton(
               title: 'Continue',
               onTap: () async {
                 controller.onRegister();

@@ -18,27 +18,24 @@ class UserModel {
   dynamic token;
   dynamic id;
   dynamic bio;
-    dynamic emailVerifiedAt;
-    dynamic createdAt;
-    dynamic updatedAt;
-    dynamic accountType;
-   
-    dynamic password;
+  dynamic emailVerifiedAt;
+  dynamic createdAt;
+  dynamic updatedAt;
+  dynamic accountType;
+  dynamic password;
 
-  UserModel({
-    this.fullname,
-    this.username,
-    this.email,
-    this.phone,
-    this.token,
-    this.id,
-    this.bio,
+  UserModel(
+      {this.fullname,
+      this.username,
+      this.email,
+      this.phone,
+      this.token,
+      this.id,
+      this.bio,
       this.createdAt,
       this.updatedAt,
       this.accountType,
-  
-      this.password
-  });
+      this.password});
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         fullname: json["fullname"],
@@ -50,7 +47,6 @@ class UserModel {
         bio: json["bio"],
         updatedAt: json["updated_at"],
         accountType: json["account_type"],
-  
         password: json["password"],
       );
 
@@ -62,10 +58,9 @@ class UserModel {
         "token": token,
         "id": id,
         "bio": bio,
-          "created_at": createdAt,
+        "created_at": createdAt,
         "updated_at": updatedAt,
         "account_type": accountType,
-      
-        "password" : password,
+        "password": password,
       };
 }
