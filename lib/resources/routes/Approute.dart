@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sf_app/auth/Login%20view/view/login_screen.dart';
 import 'package:sf_app/desinger_side/designer_navbar.dart/view/designer_side_navbar.dart';
 import 'package:sf_app/desinger_side/ui/dashboard/view/dashboard_screen.dart';
 import 'package:sf_app/desinger_side/ui/dashboard/view/product_gallery.dart';

@@ -35,4 +35,4 @@ class UserController extends GetxController {
 
   loadUser() {}
 }
->>>>>>> 0bda1d2cf94e7fb574410eeea02e1e558f1b367a
+
