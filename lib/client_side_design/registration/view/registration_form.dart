@@ -32,7 +32,7 @@ class RegistrationForm extends GetWidget<RegistrationController> {
             height: 30.h,
           ),
            CustomTextField(
-            onChange: (val)=> controller.user.value.fullname = val,
+            onChange: (val)=> controller.registration.value.fullname = val,
             heading: 'Full Name',
             title: 'Write Here',
           ),
@@ -40,7 +40,7 @@ class RegistrationForm extends GetWidget<RegistrationController> {
             height: 45.h,
           ),
          CustomTextField(
-             onChange: (val)=> controller.user.value.username = val,
+             onChange: (val)=> controller.registration.value.username = val,
             heading: 'User Name',
             title: 'Write Here',
           ),
@@ -48,7 +48,7 @@ class RegistrationForm extends GetWidget<RegistrationController> {
             height: 45.h,
           ),
         CustomTextField(
-             onChange: (val)=> controller.user.value.email = val,
+             onChange: (val)=> controller.registration.value.email = val,
             heading: 'Email',
             title: 'Write Here',
           ),
@@ -56,7 +56,7 @@ class RegistrationForm extends GetWidget<RegistrationController> {
             height: 45.h,
           ),
          CustomTextField(
-             onChange: (val)=> controller.user.value.phone  = val,
+             onChange: (val)=> controller.registration.value.phone  = val,
             heading: 'Phone Number',
             title: 'Write Here',
           ),
@@ -64,7 +64,7 @@ class RegistrationForm extends GetWidget<RegistrationController> {
             height: 45.h,
           ),
       CustomTextField(
-             onChange: (val)=> controller.user.value.bio = val,
+             onChange: (val)=> controller.registration.value.bio = val,
             heading: 'Bio (optional)',
             title: 'Write Here',
           ),

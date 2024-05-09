@@ -2,7 +2,7 @@
 import 'package:flutter/foundation.dart';
 
 class Apis {
-  String get baseUrl => 'http://192.168.100.3:8001';
+  String get baseUrl => 'https://sfh.abulkalam.dev';
 
   String get baseApiUrl => "$baseUrl/api";
 
