@@ -87,10 +87,10 @@ class OtpScreen extends GetWidget<RegistrationController> {
               ),
             )),
 
-            TextButton(onPressed: (){
-  print('kjbkjkj');
-           print(controller.otp);
-            }, child: Text("check button"))
+  //           TextButton(onPressed: (){
+  // print('kjbkjkj');
+  //          print(controller.otp);
+  //           }, child: Text("check button"))
           ],
         ),
       ),

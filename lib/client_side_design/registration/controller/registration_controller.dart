@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sf_app/client_side_design/auth/model/user_model.dart';
+import 'package:sf_app/client_side_design/auth/model/login_model.dart';
 import 'package:sf_app/client_side_design/onboarding/view/account_type.dart';
 import 'package:sf_app/client_side_design/registration/dialogs/registration_progressD_dialog.dart';
 import 'package:sf_app/client_side_design/registration/view/terms_and_condition.dart';
@@ -13,7 +13,7 @@ import 'package:sf_app/helper/component/apis/api_callback.dart';
 import 'package:sf_app/helper/component/apis/apis.dart';
 
 class RegistrationController extends GetxController {
-  Rx<UserModel> user = UserModel().obs;
+  Rx<LoginModel> registration= LoginModel().obs;
 
   loadUser() {}
 
@@ -120,13 +120,14 @@ class RegistrationController extends GetxController {
 
     try {
       var req = await AuthRequest()
-          .post(api: Apis().registered, data: user.value.toJson());
+          .post(api: Apis().registered, data: registration.value.toJson());
       //Navigate to Email verification
 
       // if (req != null && req.data != null) {
       print("Access Token ${req!.data['access_token']}");
 
-      user.value.token = req.data['access_token'];
+/// ya  bhe user model me data bhajni ha ya remove hojyga 
+      registration.value.token = req.data['access_token'];
 
       onChangeView(1);
       // }

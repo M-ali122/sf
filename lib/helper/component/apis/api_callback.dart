@@ -9,6 +9,7 @@ import 'package:get/get.dart' as g;
 import 'package:get/get_utils/get_utils.dart';
 import 'package:sf_app/client_side_design/auth/controllers/login_controller.dart';
 import 'package:sf_app/client_side_design/registration/controller/registration_controller.dart';
+import 'package:sf_app/user/controller/user_controller.dart';
 
 
 
@@ -227,29 +228,26 @@ class AuthRequest {
   }
 
   _setRequestOptions({bool multipart = false}) {
-// <<<<<<< HEAD
-    // UserController authController = g.Get.find();
-    RegistrationController authController = g.Get.put(RegistrationController());
-// =======
-//     UserController authController = g.Get.put(UserController());
-// >>>>>>> 0bda1d2cf94e7fb574410eeea02e1e558f1b367a
-    authController.loadUser();
+
+   UserController userController = g.Get.put(UserController());
+
+    userController.loadUser();
     if (kDebugMode) {
-      print(authController.user.value.token);
-      print(authController.user.value.id);
+      print(userController.user.value.token);
+      print(userController.user.value.id);
     }
-    if (authController.user.value.token != null) {
+    if (userController.user.value.token != null) {
       _request.options = BaseOptions(
         receiveDataWhenStatusError: true,
         contentType: Headers.formUrlEncodedContentType,
         headers: multipart
             ? {
                 "Content-Type": "multipart/form-data",
-                'Authorization': "Bearer ${authController.user.value.token}",
+                'Authorization': "Bearer ${userController.user.value.token}",
                 'Access-Control-Allow-Origin': '*'
               }
             : {
-                'Authorization': "Bearer ${authController.user.value.token}",
+                'Authorization': "Bearer ${userController.user.value.token}",
                 'Access-Control-Allow-Origin': '*'
               },
       );

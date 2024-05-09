@@ -8,11 +8,12 @@ import 'package:sf_app/helper/view/custome_textfield.dart';
 
 class LoginScreenn extends StatelessWidget {
   static String route = '/login';
-  final UserController controller = Get.put(UserController());
+
    LoginScreenn({super.key});
 
   @override
   Widget build(BuildContext context) {
+      final LoginController controller = Get.put(LoginController());
     return Scaffold(
       appBar: AppBar(),
       body: ListView(
@@ -20,8 +21,8 @@ class LoginScreenn extends StatelessWidget {
         children: [
           SizedBox(height: 170.h,),
            CustomTextField(
-            // controller: userc,
-            onChange: (val) => controller.user.value.email,
+  
+            onChange: (val) => controller.loginModel.value.email = val,
             
             heading: 'Email',
             title: 'Enter your email',
@@ -29,7 +30,7 @@ class LoginScreenn extends StatelessWidget {
           ),
           const SizedBox(height: 30,),
            CustomTextField(
-            onChange: (val) => controller.user.value.password ,
+            onChange: (val) => controller.loginModel.value.password = val ,
             
             heading: 'Password',
             title: 'Enter your password',
