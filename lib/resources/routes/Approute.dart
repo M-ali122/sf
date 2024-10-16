@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sf_app/client_side_design/auth/screens/login_screen.dart';
 import 'package:sf_app/desinger_side/designer_navbar.dart/view/designer_side_navbar.dart';
 import 'package:sf_app/desinger_side/ui/dashboard/view/dashboard_screen.dart';
 import 'package:sf_app/desinger_side/ui/dashboard/view/product_gallery.dart';
-import 'package:sf_app/client_side_design/auth/screens/login.dart';
 import 'package:sf_app/client_side_design/categories/screens/category_products.dart';
 import 'package:sf_app/client_side_design/community/view/community_card_design.dart';
 import 'package:sf_app/client_side_design/community/view/community_tab_screen.dart';
