@@ -66,7 +66,7 @@ class OrderDetailScreen extends StatelessWidget {
                           height: 10.h,
                         ),
                         Text(
-                          'Client Name',
+                          'Client',
                           style: theme.textTheme.bodySmall,
                         ),
                         SizedBox(
